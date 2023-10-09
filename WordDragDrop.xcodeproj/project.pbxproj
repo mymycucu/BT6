@@ -13,6 +13,8 @@
 		D42BA3FF2AD476BF004666E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42BA3FE2AD476BF004666E0 /* Preview Assets.xcassets */; };
 		D42BA4012AD476BF004666E0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA4002AD476BF004666E0 /* Persistence.swift */; };
 		D42BA4042AD476BF004666E0 /* WordDragDrop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D42BA4022AD476BF004666E0 /* WordDragDrop.xcdatamodeld */; };
+		D42BA40B2AD4771A004666E0 /* LearningModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA40A2AD4771A004666E0 /* LearningModule.swift */; };
+		D42BA40D2AD4772D004666E0 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA40C2AD4772D004666E0 /* Word.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		D42BA3FE2AD476BF004666E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D42BA4002AD476BF004666E0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D42BA4032AD476BF004666E0 /* WordDragDrop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordDragDrop.xcdatamodel; sourceTree = "<group>"; };
+		D42BA40A2AD4771A004666E0 /* LearningModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningModule.swift; sourceTree = "<group>"; };
+		D42BA40C2AD4772D004666E0 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 			children = (
 				D42BA3F72AD476BD004666E0 /* WordDragDropApp.swift */,
 				D42BA3F92AD476BD004666E0 /* ContentView.swift */,
+				D42BA40A2AD4771A004666E0 /* LearningModule.swift */,
+				D42BA40E2AD4773F004666E0 /* Model */,
 				D42BA3FB2AD476BF004666E0 /* Assets.xcassets */,
 				D42BA4002AD476BF004666E0 /* Persistence.swift */,
 				D42BA4022AD476BF004666E0 /* WordDragDrop.xcdatamodeld */,
@@ -71,6 +77,14 @@
 				D42BA3FE2AD476BF004666E0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D42BA40E2AD4773F004666E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D42BA40C2AD4772D004666E0 /* Word.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D42BA40B2AD4771A004666E0 /* LearningModule.swift in Sources */,
 				D42BA4042AD476BF004666E0 /* WordDragDrop.xcdatamodeld in Sources */,
 				D42BA4012AD476BF004666E0 /* Persistence.swift in Sources */,
 				D42BA3FA2AD476BD004666E0 /* ContentView.swift in Sources */,
 				D42BA3F82AD476BD004666E0 /* WordDragDropApp.swift in Sources */,
+				D42BA40D2AD4772D004666E0 /* Word.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

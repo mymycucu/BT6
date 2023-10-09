@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+// MARK : Words Model
+
+struct Word: Identifiable, Hashable, Equatable {
+    var id = UUID().uuidString
+    var value: String
+    var padding: CGFloat = 10
+    var textSize: CGFloat = .zero
+    var fontSize: CGFloat = 19
+    var isShowing: Bool = false
+}
+
+var words_ : [Word] = [
+    Word(value: "Saya"),
+    Word(value: "Melukis"),
+    Word(value: "Bunga")
+]
