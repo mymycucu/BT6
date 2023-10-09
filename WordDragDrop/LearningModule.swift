@@ -68,6 +68,7 @@ struct LearningModule: View {
                                 RoundedRectangle(cornerRadius: 6, style: .continuous)
                                     .stroke(.gray)
                             }
+                            .opacity(item.isShowing ? 0 : 1)
                             .background{
                                 RoundedRectangle(cornerRadius: 6, style: .continuous)
                                     .fill(item.isShowing ?  .gray.opacity(0.25): .clear)
@@ -118,6 +119,7 @@ struct LearningModule: View {
                                                 let progress = (droppedCount/CGFloat(words.count))
                                                 item.isShowing = true
                                                 updateShuffledWords(word: item)
+                                                self.progress = progress
                                             }
                                         } else {
                                             animateView()
