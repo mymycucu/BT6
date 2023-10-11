@@ -1,0 +1,12 @@
+[
+    {
+        "id": "1",
+        "questionValue": ["Susi", "Melukis", "Bunga Mawar"],
+        "questionType": "sentence"
+    },
+    {
+        "id": "2",
+        "questionValue": ["Susi", "Mempunyai", "Kuas", "dan", "Cat"],
+        "questionType": "sentence"
+    }
+]
