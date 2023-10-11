@@ -30,10 +30,8 @@ struct LearningModule: View {
                     .fill(Color.orange)
                     .frame(height: 250)
                     .cornerRadius(20)
-                Rectangle()
-                    .fill(Color.orange)
+                LottieView(name: "cat-hat-lilac-rest", loopMode: .autoReverse)
                     .frame(height: 250)
-                    .cornerRadius(20)
             }
             .padding(30)
             DropArea()
