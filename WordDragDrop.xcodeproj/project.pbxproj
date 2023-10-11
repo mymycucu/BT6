@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40680442AD6A31C0083A0A8 /* QuestionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40680422AD6A31B0083A0A8 /* QuestionEntity+CoreDataClass.swift */; };
+		D40680452AD6A31C0083A0A8 /* QuestionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40680432AD6A31B0083A0A8 /* QuestionEntity+CoreDataProperties.swift */; };
+		D40680472AD707240083A0A8 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40680462AD707240083A0A8 /* Question.swift */; };
+		D40680492AD716AF0083A0A8 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = D40680482AD716AF0083A0A8 /* questions.json */; };
+		D406804B2AD71A5A0083A0A8 /* cat-hat-lilac-rest.json in Resources */ = {isa = PBXBuildFile; fileRef = D406804A2AD71A5A0083A0A8 /* cat-hat-lilac-rest.json */; };
+		D406804E2AD71C330083A0A8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D406804D2AD71C330083A0A8 /* Lottie */; };
 		D42BA3F82AD476BD004666E0 /* WordDragDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA3F72AD476BD004666E0 /* WordDragDropApp.swift */; };
 		D42BA3FA2AD476BD004666E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA3F92AD476BD004666E0 /* ContentView.swift */; };
 		D42BA3FC2AD476BF004666E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42BA3FB2AD476BF004666E0 /* Assets.xcassets */; };
@@ -16,10 +22,14 @@
 		D42BA40B2AD4771A004666E0 /* LearningModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA40A2AD4771A004666E0 /* LearningModule.swift */; };
 		D42BA40D2AD4772D004666E0 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA40C2AD4772D004666E0 /* Word.swift */; };
 		D47DF3762AD69454008754BA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47DF3752AD69454008754BA /* LottieView.swift */; };
-		D47DF3782AD69973008754BA /* cat-hat-lilac-rest.json in Resources */ = {isa = PBXBuildFile; fileRef = D47DF3772AD69973008754BA /* cat-hat-lilac-rest.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D40680422AD6A31B0083A0A8 /* QuestionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D40680432AD6A31B0083A0A8 /* QuestionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D40680462AD707240083A0A8 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		D40680482AD716AF0083A0A8 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		D406804A2AD71A5A0083A0A8 /* cat-hat-lilac-rest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cat-hat-lilac-rest.json"; sourceTree = "<group>"; };
 		D42BA3F42AD476BD004666E0 /* WordDragDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordDragDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42BA3F72AD476BD004666E0 /* WordDragDropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDragDropApp.swift; sourceTree = "<group>"; };
 		D42BA3F92AD476BD004666E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,7 +40,6 @@
 		D42BA40A2AD4771A004666E0 /* LearningModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningModule.swift; sourceTree = "<group>"; };
 		D42BA40C2AD4772D004666E0 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		D47DF3752AD69454008754BA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		D47DF3772AD69973008754BA /* cat-hat-lilac-rest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cat-hat-lilac-rest.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D406804E2AD71C330083A0A8 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,13 +73,16 @@
 		D42BA3F62AD476BD004666E0 /* WordDragDrop */ = {
 			isa = PBXGroup;
 			children = (
+				D40680422AD6A31B0083A0A8 /* QuestionEntity+CoreDataClass.swift */,
+				D40680432AD6A31B0083A0A8 /* QuestionEntity+CoreDataProperties.swift */,
 				D42BA3F72AD476BD004666E0 /* WordDragDropApp.swift */,
 				D42BA3F92AD476BD004666E0 /* ContentView.swift */,
 				D42BA40A2AD4771A004666E0 /* LearningModule.swift */,
 				D47DF3752AD69454008754BA /* LottieView.swift */,
 				D42BA40E2AD4773F004666E0 /* Model */,
 				D42BA3FB2AD476BF004666E0 /* Assets.xcassets */,
-				D47DF3772AD69973008754BA /* cat-hat-lilac-rest.json */,
+				D406804A2AD71A5A0083A0A8 /* cat-hat-lilac-rest.json */,
+				D40680482AD716AF0083A0A8 /* questions.json */,
 				D42BA4002AD476BF004666E0 /* Persistence.swift */,
 				D42BA4022AD476BF004666E0 /* WordDragDrop.xcdatamodeld */,
 				D42BA3FD2AD476BF004666E0 /* Preview Content */,
@@ -89,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				D42BA40C2AD4772D004666E0 /* Word.swift */,
+				D40680462AD707240083A0A8 /* Question.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +123,9 @@
 			dependencies = (
 			);
 			name = WordDragDrop;
+			packageProductDependencies = (
+				D406804D2AD71C330083A0A8 /* Lottie */,
+			);
 			productName = WordDragDrop;
 			productReference = D42BA3F42AD476BD004666E0 /* WordDragDrop.app */;
 			productType = "com.apple.product-type.application";
@@ -137,6 +154,9 @@
 				Base,
 			);
 			mainGroup = D42BA3EB2AD476BD004666E0;
+			packageReferences = (
+				D406804C2AD71C330083A0A8 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = D42BA3F52AD476BD004666E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -151,8 +171,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D47DF3782AD69973008754BA /* cat-hat-lilac-rest.json in Resources */,
+				D40680492AD716AF0083A0A8 /* questions.json in Resources */,
 				D42BA3FF2AD476BF004666E0 /* Preview Assets.xcassets in Resources */,
+				D406804B2AD71A5A0083A0A8 /* cat-hat-lilac-rest.json in Resources */,
 				D42BA3FC2AD476BF004666E0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,10 +187,13 @@
 			files = (
 				D42BA40B2AD4771A004666E0 /* LearningModule.swift in Sources */,
 				D42BA4042AD476BF004666E0 /* WordDragDrop.xcdatamodeld in Sources */,
+				D40680452AD6A31C0083A0A8 /* QuestionEntity+CoreDataProperties.swift in Sources */,
 				D42BA4012AD476BF004666E0 /* Persistence.swift in Sources */,
 				D42BA3FA2AD476BD004666E0 /* ContentView.swift in Sources */,
+				D40680472AD707240083A0A8 /* Question.swift in Sources */,
 				D47DF3762AD69454008754BA /* LottieView.swift in Sources */,
 				D42BA3F82AD476BD004666E0 /* WordDragDropApp.swift in Sources */,
+				D40680442AD6A31C0083A0A8 /* QuestionEntity+CoreDataClass.swift in Sources */,
 				D42BA40D2AD4772D004666E0 /* Word.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +400,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D406804C2AD71C330083A0A8 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D406804D2AD71C330083A0A8 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D406804C2AD71C330083A0A8 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D42BA4022AD476BF004666E0 /* WordDragDrop.xcdatamodeld */ = {

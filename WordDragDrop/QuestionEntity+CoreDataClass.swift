@@ -11,5 +11,6 @@ import CoreData
 
 @objc(QuestionEntity)
 public class QuestionEntity: NSManagedObject {
-
+    @NSManaged public var questionValue : [NSString]
+    
 }

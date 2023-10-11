@@ -9,77 +9,243 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
+    // MARK: Properties
+    @State var progress: CGFloat = 0
+    @State var words: [Word] = words_
+    
+    // MARK: Custom Grid Arrays
+    //drag words
+    @State var shuffledWords: [[Word]] = []
+    //drop
+    @State var rows: [[Word]] = []
+    
+    //animate wrong text dropped
+    @State var animateWrongText: Bool = false
+    @State var droppedCount: CGFloat = 0
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+        VStack(spacing:30){
+            NavBar()
+            HStack(spacing: 25){
+                Rectangle()
+                    .fill(Color.orange)
+                    .frame(height: 250)
+                    .cornerRadius(20)
+                LottieView(name: "cat-hat-lilac-rest", loopMode: .loop)
+                    .frame(height: 250)
+            }
+            .padding(30)
+            DropArea()
+                .padding(.vertical,30)
+            DragArea()
+            Spacer()
+        }
+        .padding(30)
+        .onAppear{
+            if rows.isEmpty{
+                words = words.shuffled()
+                shuffledWords = generatingGrid()
+                words = words_
+                rows = generatingGrid()
+            }
+        }
+        .offset(x: animateWrongText ? -30 : 0)
+    }
+    
+    // MARK: Drag Area
+    @ViewBuilder
+    func DragArea() -> some View{
+        VStack(spacing: 12){
+            ForEach(shuffledWords, id:\.self){ row in
+                HStack(spacing: 10){
+                    ForEach(row){ item in
+                        Text(item.value)
+                            .font(.title)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal, item.padding)
+                            .background{
+                                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                    .stroke(.gray)
+                            }
+                            .opacity(item.isShowing ? 0 : 1)
+                            .background{
+                                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                    .fill(item.isShowing ?  .gray.opacity(0.25): .clear)
+                            }
+                            .onDrag{
+                                return .init(contentsOf: URL(string: item.id))!
+                            }
                     }
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                if shuffledWords.last != row {
+                    Divider()
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                
+            }
+        }
+    }
+    
+    // MARK: Drop Area
+    @ViewBuilder
+    func DropArea() -> some View{
+        VStack(spacing: 12){
+            ForEach($rows, id:\.self){ $row in
+                HStack(spacing: 10){
+                    ForEach($row){ $item in
+                        Text(item.value)
+                            .font(.title)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal, item.padding)
+                            .opacity(item.isShowing ? 1:0 )
+                            .background{
+                                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                    .fill(item.isShowing ? .clear : .gray.opacity(0.25))
+                            }
+                            .background{
+                                //if item is dropped
+                                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                    .stroke(.gray)
+                            }
+                            .onDrop(of: [.url], isTargeted: .constant(false)){
+                                providers in
+                                
+                                if let first = providers.first{
+                                    let _ = first.loadObject(ofClass: URL.self) { value, error in
+                                        guard let url = value else {return}
+                                        if item.id == "\(url)"{
+                                            withAnimation {
+                                                droppedCount += 1
+                                                let progress = (droppedCount/CGFloat(words.count))
+                                                item.isShowing = true
+                                                updateShuffledWords(word: item)
+                                                self.progress = progress
+                                            }
+                                        } else {
+                                            animateView()
+                                        }
+                                    }
+                                }
+                                
+                                return false
+                            }
                     }
                 }
-            }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                if rows.last != row {
+                    Divider()
+                }
             }
         }
     }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+    
+    
+    // MARK: Custom NavBar
+    @ViewBuilder
+    func NavBar() -> some View {
+        HStack(spacing:15){
+            
+            Button{
+                
+            }label: {
+                Image(systemName: "xmark")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.gray)
+            }
+            
+            GeometryReader{ proxy in
+                ZStack(alignment: .leading){
+                    Capsule()
+                        .fill(.gray.opacity(0.25))
+                    Capsule()
+                        .fill(.green)
+                        .frame(width: proxy.size.width * progress)
+                }
+            }
+            .frame(height: 30)
+            
+            Button{
+                
+            }label: {
+                Image(systemName: "questionmark.circle")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.gray)
             }
         }
     }
+    
+    // MARK: Generating Custom Grid Columns
+    func generatingGrid() -> [[Word]]{
+        //Identifying each words width and updating into state var
+        for item in words.enumerated(){
+            let textSize = textSize(word: item.element)
+            
+            words[item.offset].textSize = textSize
+        }
+        
+        var gridArray: [[Word]] = []
+        var tempArray: [Word] = []
+        
+        //Current Width
+        var currentWidth: CGFloat = 0
+        // -30 -> Horizontal padding
+        let totalScreenWidth: CGFloat = UIScreen.main.bounds.width - 30
+        
+        for word in words{
+            currentWidth += word.textSize
+            
+            if currentWidth < totalScreenWidth {
+                tempArray.append(word)
+            }else{
+                gridArray.append(tempArray)
+                tempArray = []
+                currentWidth = word.textSize
+                tempArray.append(word)
+            }
+        }
+        //check
+        if !tempArray.isEmpty{
+            gridArray.append(tempArray)
+        }
+        
+        return gridArray
+    }
+    
+    // MARK: Identifying Text Size
+    func textSize (word: Word) -> CGFloat {
+        let font = UIFont.systemFont(ofSize: word.fontSize)
+        
+        let attributes = [NSAttributedString.Key.font : font]
+        
+        let size = (word.value as NSString).size(withAttributes: attributes)
+        
+        //Horizontal padding
+        return size.width + (word.padding * 2)
+    }
+    
+    // MARK: Updating Shuffled Words
+    func updateShuffledWords(word: Word){
+        for index in shuffledWords.indices{
+            for subIndex in shuffledWords[index].indices{
+                if shuffledWords[index][subIndex].id == word.id{
+                    shuffledWords[index][subIndex].isShowing = true
+                }
+            }
+        }
+    }
+    
+    // MARK: Animating View When Wrong Text Dropped
+    func animateView() {
+        withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.2, blendDuration:0.2)){
+            animateWrongText = true
+        }
+       
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
+            withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.2, blendDuration:0.2)){
+                animateWrongText = false
+            }
+        }
+    }
+    
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 #Preview {
     ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
