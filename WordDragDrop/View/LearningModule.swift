@@ -1,14 +1,14 @@
 //
-//  ContentView.swift
+//  LearningModule.swift
 //  WordDragDrop
 //
 //  Created by Sarah Uli Octavia on 10/10/23.
 //
 
-import SwiftUI
-import CoreData
 
-struct ContentView: View {
+import SwiftUI
+
+struct LearningModule: View {
     // MARK: Properties
     @State var progress: CGFloat = 0
     @State var words: [Word] = words_
@@ -27,10 +27,10 @@ struct ContentView: View {
             NavBar()
             HStack(spacing: 25){
                 Rectangle()
-                    .fill(Color.orange)
+                    .fill(Color.primary1)
                     .frame(height: 250)
                     .cornerRadius(20)
-                LottieView(name: "cat-hat-lilac-rest", loopMode: .loop)
+                LottieView(name: "cat-hat-lilac-rest", loopMode: .autoReverse)
                     .frame(height: 250)
             }
             .padding(30)
@@ -246,7 +246,7 @@ struct ContentView: View {
     
 }
 
-
 #Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    LearningModule()
 }
+
