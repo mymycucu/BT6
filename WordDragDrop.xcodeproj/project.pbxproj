@@ -13,6 +13,9 @@
 		D40680492AD716AF0083A0A8 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = D40680482AD716AF0083A0A8 /* questions.json */; };
 		D406804B2AD71A5A0083A0A8 /* cat-hat-lilac-rest.json in Resources */ = {isa = PBXBuildFile; fileRef = D406804A2AD71A5A0083A0A8 /* cat-hat-lilac-rest.json */; };
 		D406804E2AD71C330083A0A8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D406804D2AD71C330083A0A8 /* Lottie */; };
+		D40680502AD7A2220083A0A8 /* Extension+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406804F2AD7A2220083A0A8 /* Extension+Colors.swift */; };
+		D40680542AD7A4890083A0A8 /* Extension+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40680532AD7A4890083A0A8 /* Extension+Fonts.swift */; };
+		D40680572AD7A61C0083A0A8 /* PrimaryActiveButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40680562AD7A61C0083A0A8 /* PrimaryActiveButtonStyle.swift */; };
 		D42BA3F82AD476BD004666E0 /* WordDragDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA3F72AD476BD004666E0 /* WordDragDropApp.swift */; };
 		D42BA3FA2AD476BD004666E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA3F92AD476BD004666E0 /* ContentView.swift */; };
 		D42BA3FC2AD476BF004666E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42BA3FB2AD476BF004666E0 /* Assets.xcassets */; };
@@ -30,6 +33,11 @@
 		D40680462AD707240083A0A8 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D40680482AD716AF0083A0A8 /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		D406804A2AD71A5A0083A0A8 /* cat-hat-lilac-rest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "cat-hat-lilac-rest.json"; sourceTree = "<group>"; };
+		D406804F2AD7A2220083A0A8 /* Extension+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
+		D40680522AD7A3EA0083A0A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D40680532AD7A4890083A0A8 /* Extension+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Fonts.swift"; sourceTree = "<group>"; };
+		D40680552AD7A5B80083A0A8 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		D40680562AD7A61C0083A0A8 /* PrimaryActiveButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryActiveButtonStyle.swift; sourceTree = "<group>"; };
 		D42BA3F42AD476BD004666E0 /* WordDragDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordDragDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42BA3F72AD476BD004666E0 /* WordDragDropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDragDropApp.swift; sourceTree = "<group>"; };
 		D42BA3F92AD476BD004666E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +62,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D40680512AD7A32A0083A0A8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D40680552AD7A5B80083A0A8 /* Roboto-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D40680582AD7B9240083A0A8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D40680532AD7A4890083A0A8 /* Extension+Fonts.swift */,
+				D406804F2AD7A2220083A0A8 /* Extension+Colors.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D406805D2AD7D0720083A0A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D42BA40A2AD4771A004666E0 /* LearningModule.swift */,
+				D42BA3F92AD476BD004666E0 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D406805E2AD7D0BC0083A0A8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D42BA3EB2AD476BD004666E0 = {
 			isa = PBXGroup;
 			children = (
@@ -73,12 +114,14 @@
 		D42BA3F62AD476BD004666E0 /* WordDragDrop */ = {
 			isa = PBXGroup;
 			children = (
-				D40680422AD6A31B0083A0A8 /* QuestionEntity+CoreDataClass.swift */,
-				D40680432AD6A31B0083A0A8 /* QuestionEntity+CoreDataProperties.swift */,
+				D40680522AD7A3EA0083A0A8 /* Info.plist */,
 				D42BA3F72AD476BD004666E0 /* WordDragDropApp.swift */,
-				D42BA3F92AD476BD004666E0 /* ContentView.swift */,
-				D42BA40A2AD4771A004666E0 /* LearningModule.swift */,
+				D406805D2AD7D0720083A0A8 /* View */,
 				D47DF3752AD69454008754BA /* LottieView.swift */,
+				D406805E2AD7D0BC0083A0A8 /* ViewModel */,
+				D40680582AD7B9240083A0A8 /* Extension */,
+				D40680562AD7A61C0083A0A8 /* PrimaryActiveButtonStyle.swift */,
+				D40680512AD7A32A0083A0A8 /* Fonts */,
 				D42BA40E2AD4773F004666E0 /* Model */,
 				D42BA3FB2AD476BF004666E0 /* Assets.xcassets */,
 				D406804A2AD71A5A0083A0A8 /* cat-hat-lilac-rest.json */,
@@ -101,6 +144,8 @@
 		D42BA40E2AD4773F004666E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D40680422AD6A31B0083A0A8 /* QuestionEntity+CoreDataClass.swift */,
+				D40680432AD6A31B0083A0A8 /* QuestionEntity+CoreDataProperties.swift */,
 				D42BA40C2AD4772D004666E0 /* Word.swift */,
 				D40680462AD707240083A0A8 /* Question.swift */,
 			);
@@ -187,8 +232,11 @@
 			files = (
 				D42BA40B2AD4771A004666E0 /* LearningModule.swift in Sources */,
 				D42BA4042AD476BF004666E0 /* WordDragDrop.xcdatamodeld in Sources */,
+				D40680542AD7A4890083A0A8 /* Extension+Fonts.swift in Sources */,
+				D40680502AD7A2220083A0A8 /* Extension+Colors.swift in Sources */,
 				D40680452AD6A31C0083A0A8 /* QuestionEntity+CoreDataProperties.swift in Sources */,
 				D42BA4012AD476BF004666E0 /* Persistence.swift in Sources */,
+				D40680572AD7A61C0083A0A8 /* PrimaryActiveButtonStyle.swift in Sources */,
 				D42BA3FA2AD476BD004666E0 /* ContentView.swift in Sources */,
 				D40680472AD707240083A0A8 /* Question.swift in Sources */,
 				D47DF3762AD69454008754BA /* LottieView.swift in Sources */,
@@ -331,6 +379,7 @@
 				DEVELOPMENT_TEAM = 7364983R63;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WordDragDrop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -360,6 +409,7 @@
 				DEVELOPMENT_TEAM = 7364983R63;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WordDragDrop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

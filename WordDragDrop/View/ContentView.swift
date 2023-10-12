@@ -9,10 +9,19 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @Environment (\.managedObjectContext)
+    private var viewContext
+//    @FetchRequest(entity:Question.entity(),
+//                  sortDescriptors: [])
+//    private var items: FetchedResults<Question>
+    
+    @ObservedObject var data = QuestionViewModel()
+    
     // MARK: Properties
     @State var progress: CGFloat = 0
     @State var words: [Word] = words_
-//    @State var questions: [Question]
+    //    @State var questions: [Question]
+    
     
     // MARK: Custom Grid Arrays
     //drag words
@@ -31,15 +40,31 @@ struct ContentView: View {
                     .fill(Color.orange)
                     .frame(height: 250)
                     .cornerRadius(20)
-                LottieView(name: "cat-hat-lilac-rest", loopMode: .loop)
+                Rectangle()
+                    .fill(Color.orange)
                     .frame(height: 250)
+                    .cornerRadius(20)
+//                LottieView(name: "cat-hat-lilac-rest", loopMode: .loop)
+//                    .frame(height: 250)
             }
             .padding(30)
-            DropArea()
-                .padding(.vertical,30)
-            DragArea()
+//            DropArea()
+//                .padding(.vertical,30)
+//            DragArea()
             
-            Button("Button") {
+            List(data.question) { item in
+                Text(item.questionType)
+                    .font(.title)
+                    .foregroundStyle(Color.primary1)
+                
+                ForEach(item.questionValue, id: \.hash){word in
+                    Text(word as String)
+                }
+                
+            }
+            
+            
+            Button("Selesai") {
                 print("Primary Button")
             }
             .buttonStyle(PrimaryActiveButtonStyle())
@@ -56,6 +81,48 @@ struct ContentView: View {
         }
         .offset(x: animateWrongText ? -30 : 0)
     }
+    
+    
+//    private func loadData(){
+//        guard let url = Bundle.main.url(forResource: "questions", withExtension: "json") else {
+//            print("JSON File not found.")
+//            return
+//        }
+//        
+//        do {
+//            let data = try Data(contentsOf: url) // Try to load data; this line can throw errors
+//            let decoder = JSONDecoder()
+//            let questions = try decoder.decode([Question].self, from: data) // Try to decode data; this line can throw errors
+//            
+//            for item in questions {
+//                addQuestion(item: item)
+//            }
+//            saveContext()
+//        } catch {
+//            print("Error loading or decoding data: \(error.localizedDescription)")
+//        }
+//    }
+//    
+//    private func addQuestion(item: Question){
+//        withAnimation {
+//            if item.first(where: {$0.id == item}) == nil {
+//                let newQuestion = Question(context: viewContext)
+//                newQuestion.id = question.id
+//                newQuestion.questionType = question.questionType
+//                newQuestion.questionValue = question.questionValue
+//                
+//                saveContext()
+//            }
+//        }
+//    }
+//    
+//    func saveContext() {
+//        do {
+//            try viewContext.save()
+//        } catch {
+//            print("Error saving context: \(error.localizedDescription)")
+//        }
+//    }
     
     // MARK: Drag Area
     @ViewBuilder
@@ -242,7 +309,7 @@ struct ContentView: View {
         withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.2, blendDuration:0.2)){
             animateWrongText = true
         }
-       
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
             withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.2, blendDuration:0.2)){
                 animateWrongText = false
