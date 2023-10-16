@@ -7,11 +7,7 @@
 
 import Foundation
 import SwiftUI
-
-//enum QuestionType : String {
-//    case word = "word"
-//    case sentence = "sentence"
-//}
+import CoreData
 
 struct Question : Codable, Identifiable{
     
@@ -19,56 +15,25 @@ struct Question : Codable, Identifiable{
         case questionValue
         case questionType
     }
-    let id = UUID()
+    var id = UUID()
     var questionValue : [String]
     var questionType : String
     
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        
-//        // Decode properties based on their types
-//        questionValue = try container.decode([String].self, forKey: .questionValue)
-//        questionType = try container.decode(String.self, forKey: .questionType)
-//    }
-//    
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        
-//        // Encode properties based on their types
-//        try container.encode(id, forKey: .id)
-//        try container.encode(questionValue, forKey: .questionValue)
-//        try container.encode(questionType, forKey: .questionType)
-//    }
+    
+    
 }
-
-//extension Question{
-//    init?(from strings : [String]){
-//        self = .init(id: UUID(), questionValue: strings as  [NSString], questionType: QuestionType.sentence.rawValue)
-//    }
-//}
-
-
 
 
 class QuestionViewModel: ObservableObject {
+    static let shared = QuestionViewModel()
+    let viewContext = PersistenceController.shared.container.viewContext
     @Published var question = [Question]()
+    @Published var questionsList : [QuestionEntity] = []
     
     init() {
         loadData()
     }
     
-//    func loadData() {
-//        guard let url = Bundle.main.url(forResource: "questions", withExtension: "json")
-//            else {
-//                print("json file not found")
-//                return
-//            }
-//        
-//        let data = try? Data(contentsOf: url)
-//        let question = try? JSONDecoder().decode([Question].self, from: data!)
-//        
-//        self.question = question!
-//    }
     
     func loadData(){
         if let url = Bundle.main.url(forResource: "questions", withExtension: "json") {
@@ -79,10 +44,10 @@ class QuestionViewModel: ObservableObject {
                 let question = try decoder.decode([Question].self, from: data) // Try to decode data; this line can throw errors
                 self.question = question
                 
-    //            for item in questions {
-    //                addQuestion(item: item)
-    //            }
-    //            saveContext()
+                for item in question {
+                    addQuestion(item: item)
+                }
+                saveContext()
             } catch {
                 print("Error loading or decoding data: \(error.localizedDescription)")
             }
@@ -93,24 +58,71 @@ class QuestionViewModel: ObservableObject {
         }
     }
     
-//    func addQuestion(item: Question){
-//        withAnimation {
-//            if item.first(where: {$0.id == item}) == nil {
-//                let newQuestion = Question(context: viewContext)
-//                newQuestion.id = question.id
-//                newQuestion.questionType = question.questionType
-//                newQuestion.questionValue = question.questionValue
-//                
-//                saveContext()
-//            }
-//        }
-//    }
-//    
-//    func saveContext() {
-//        do {
-//            try viewContext.save()
-//        } catch {
-//            print("Error saving context: \(error.localizedDescription)")
-//        }
-//    }
+    
+    func fetchQuestionsFromCoreData() {
+        //        do {
+        //            let request: NSFetchRequest<QuestionEntity> = QuestionEntity.fetchRequest()
+        //            request.predicate = NSPredicate(value: true)
+        //            let questionEntities = try viewContext.fetch(request)
+        //            for questionEntity in questionEntities {
+        //                let question = Question(
+        //                    questionValue: questionEntity.questionValue,
+        //                    questionType: questionEntity.questionType!
+        //                )
+        //                self.question.append(question)
+        //            }
+        //        } catch {
+        //            print("Error fetching questions from Core Data: \(error.localizedDescription)")
+        //        }
+        
+        let request = NSFetchRequest<QuestionEntity>(entityName: "QuestionEntity")
+        withAnimation(Animation.default) {
+            do{
+                questionsList = try viewContext.fetch(request)
+            }
+            catch let error{
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func addQuestionToCoreData(value: [String], type: String) {
+        let newQuestion = QuestionEntity(context: viewContext)
+        newQuestion.questionValue = value
+        newQuestion.questionType = type
+        
+        
+        withAnimation(Animation.default) {
+            do{
+                try viewContext.save()
+            }
+            catch{
+                print(error.localizedDescription)
+            }
+        }
+        
+        fetchQuestionsFromCoreData()
+    }
+    
+    func addQuestion(item : Question) {
+        withAnimation {
+
+            if !questionsList.contains(where: { $0.questionValue == item.questionValue && $0.questionType == item.questionType }) {
+                // Create a new QuestionEntity and set its properties
+                let newQuestionEntity = QuestionEntity(context: viewContext)
+                newQuestionEntity.questionValue = item.questionValue
+                newQuestionEntity.questionType = item.questionType
+                
+                saveContext() // Save the updated list to Core Data
+            }
+        }
+    }
+    
+    func saveContext() {
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error saving context: \(error.localizedDescription)")
+        }
+    }
 }

@@ -11,11 +11,11 @@ import CoreData
 struct ContentView: View {
     @Environment (\.managedObjectContext)
     private var viewContext
-//    @FetchRequest(entity:Question.entity(),
-//                  sortDescriptors: [])
-//    private var items: FetchedResults<Question>
-    
-    @ObservedObject var data = QuestionViewModel()
+    //    @FetchRequest(entity:Question.entity(),
+    //                  sortDescriptors: [])
+    //    private var items: FetchedResults<Question>
+    @StateObject var viewModel : QuestionViewModel = QuestionViewModel.shared
+    //    @ObservedObject var data = QuestionViewModel()
     
     // MARK: Properties
     @State var progress: CGFloat = 0
@@ -32,97 +32,92 @@ struct ContentView: View {
     //animate wrong text dropped
     @State var animateWrongText: Bool = false
     @State var droppedCount: CGFloat = 0
+    
+    
+    @State var valueQ: [String] = ["Susi","Suka","Melukis"]
+    
+    @State var word1: String = ""
+    @State var word2: String = ""
+    @State var word3: String = ""
+    @State var qType: String = ""
+    @State var addedQ: Int = 0
+    
     var body: some View {
         VStack(spacing:30){
             NavBar()
-            HStack(spacing: 25){
-                Rectangle()
-                    .fill(Color.orange)
-                    .frame(height: 250)
-                    .cornerRadius(20)
-                Rectangle()
-                    .fill(Color.orange)
-                    .frame(height: 250)
-                    .cornerRadius(20)
+//            HStack(spacing: 25){
+//                Rectangle()
+//                    .fill(Color.orange)
+//                    .frame(height: 250)
+//                    .cornerRadius(20)
+//                Rectangle()
+//                    .fill(Color.orange)
+//                    .frame(height: 250)
+//                    .cornerRadius(20)
+//                
 //                LottieView(name: "cat-hat-lilac-rest", loopMode: .loop)
 //                    .frame(height: 250)
+//            }
+//            .padding(30)
+            TextField("Kata Pertama", text: $word1).autocorrectionDisabled(true)
+            TextField("Kata Kedua", text: $word2).autocorrectionDisabled(true)
+            TextField("Kata Ketiga", text: $word3).autocorrectionDisabled(true)
+            TextField("qType", text: $qType).autocorrectionDisabled(true)
+            Button("Add Question") {
+                viewModel.addQuestionToCoreData(value: [word1, word2, word3], type: qType)
+                addedQ += 1
             }
-            .padding(30)
-//            DropArea()
-//                .padding(.vertical,30)
-//            DragArea()
+            .buttonStyle(PrimaryActiveButtonStyle())
+            //            DropArea()
+            //                .padding(.vertical,30)
+            //            DragArea()
             
-            List(data.question) { item in
-                Text(item.questionType)
-                    .font(.title)
-                    .foregroundStyle(Color.primary1)
-                
+            Divider()
+            
+            List(viewModel.questionsList) { item in
                 ForEach(item.questionValue, id: \.hash){word in
                     Text(word as String)
+                        .accessibilityLabel(word as String)
                 }
                 
             }
             
             
-            Button("Selesai") {
-                print("Primary Button")
-            }
-            .buttonStyle(PrimaryActiveButtonStyle())
+            //            TextField(
+            //                "Value",
+            //                value: $valueQ
+            //            )
+            //            .onChange(of: valueQ) { newValue in
+            //                print ("valueQ: \(newValue)")
+            //            }
+            //
+            
+            
             Spacer()
         }
         .padding(30)
+        .offset(x: animateWrongText ? -30 : 0)
         .onAppear{
-            if rows.isEmpty{
-                words = words.shuffled()
-                shuffledWords = generatingGrid()
-                words = words_
-                rows = generatingGrid()
+//            if rows.isEmpty{
+//                words = words.shuffled()
+//                shuffledWords = generatingGrid()
+//                words = words_
+//                rows = generatingGrid()
+//            }
+            DispatchQueue.main.async {
+                viewModel.fetchQuestionsFromCoreData()
+            }
+            
+        }
+        .onChange(of: addedQ) { oldValue, newValue in
+            DispatchQueue.main.async {
+                viewModel.fetchQuestionsFromCoreData()
             }
         }
-        .offset(x: animateWrongText ? -30 : 0)
+        
     }
     
     
-//    private func loadData(){
-//        guard let url = Bundle.main.url(forResource: "questions", withExtension: "json") else {
-//            print("JSON File not found.")
-//            return
-//        }
-//        
-//        do {
-//            let data = try Data(contentsOf: url) // Try to load data; this line can throw errors
-//            let decoder = JSONDecoder()
-//            let questions = try decoder.decode([Question].self, from: data) // Try to decode data; this line can throw errors
-//            
-//            for item in questions {
-//                addQuestion(item: item)
-//            }
-//            saveContext()
-//        } catch {
-//            print("Error loading or decoding data: \(error.localizedDescription)")
-//        }
-//    }
-//    
-//    private func addQuestion(item: Question){
-//        withAnimation {
-//            if item.first(where: {$0.id == item}) == nil {
-//                let newQuestion = Question(context: viewContext)
-//                newQuestion.id = question.id
-//                newQuestion.questionType = question.questionType
-//                newQuestion.questionValue = question.questionValue
-//                
-//                saveContext()
-//            }
-//        }
-//    }
-//    
-//    func saveContext() {
-//        do {
-//            try viewContext.save()
-//        } catch {
-//            print("Error saving context: \(error.localizedDescription)")
-//        }
-//    }
     
     // MARK: Drag Area
     @ViewBuilder

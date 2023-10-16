@@ -6,5 +6,9 @@
     {
         "questionValue": ["Susi", "Mempunyai", "Kuas", "dan", "Cat"],
         "questionType": "sentence"
+    },
+    {
+        "questionValue": ["me", "lukis"],
+        "questionType": "words"
     }
 ]
