@@ -13,7 +13,7 @@ struct WordDragDropApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            QuizView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

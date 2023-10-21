@@ -19,8 +19,6 @@ struct Question : Codable, Identifiable{
     var questionValue : [String]
     var questionType : String
     
-    
-    
 }
 
 
@@ -34,14 +32,12 @@ class QuestionViewModel: ObservableObject {
         loadData()
     }
     
-    
     func loadData(){
         if let url = Bundle.main.url(forResource: "questions", withExtension: "json") {
             do {
-                let data = try Data(contentsOf: url) // Try to load data; this line can throw errors
-                print(String(data: data, encoding: .utf8)!)
+                let data = try Data(contentsOf: url) // Try to load data
                 let decoder = JSONDecoder()
-                let question = try decoder.decode([Question].self, from: data) // Try to decode data; this line can throw errors
+                let question = try decoder.decode([Question].self, from: data) // Try to decode data
                 self.question = question
                 
                 for item in question {
@@ -60,28 +56,14 @@ class QuestionViewModel: ObservableObject {
     
     
     func fetchQuestionsFromCoreData() {
-        //        do {
-        //            let request: NSFetchRequest<QuestionEntity> = QuestionEntity.fetchRequest()
-        //            request.predicate = NSPredicate(value: true)
-        //            let questionEntities = try viewContext.fetch(request)
-        //            for questionEntity in questionEntities {
-        //                let question = Question(
-        //                    questionValue: questionEntity.questionValue,
-        //                    questionType: questionEntity.questionType!
-        //                )
-        //                self.question.append(question)
-        //            }
-        //        } catch {
-        //            print("Error fetching questions from Core Data: \(error.localizedDescription)")
-        //        }
-        
         let request = NSFetchRequest<QuestionEntity>(entityName: "QuestionEntity")
+        request.predicate = NSPredicate(value: true)
         withAnimation(Animation.default) {
             do{
                 questionsList = try viewContext.fetch(request)
             }
             catch let error{
-                print(error.localizedDescription)
+                print("Error fetching questions from Core Data: \(error.localizedDescription)")
             }
         }
     }
@@ -105,14 +87,13 @@ class QuestionViewModel: ObservableObject {
     }
     
     func addQuestion(item : Question) {
-        withAnimation {
-
+        withAnimation(Animation.default){
             if !questionsList.contains(where: { $0.questionValue == item.questionValue && $0.questionType == item.questionType }) {
                 // Create a new QuestionEntity and set its properties
                 let newQuestionEntity = QuestionEntity(context: viewContext)
                 newQuestionEntity.questionValue = item.questionValue
                 newQuestionEntity.questionType = item.questionType
-                
+
                 saveContext() // Save the updated list to Core Data
             }
         }

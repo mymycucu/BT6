@@ -9,11 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment (\.managedObjectContext)
-    private var viewContext
-    //    @FetchRequest(entity:Question.entity(),
-    //                  sortDescriptors: [])
-    //    private var items: FetchedResults<Question>
+    @Environment (\.managedObjectContext) private var viewContext
     @StateObject var viewModel : QuestionViewModel = QuestionViewModel.shared
     //    @ObservedObject var data = QuestionViewModel()
     

@@ -11,7 +11,7 @@ import SwiftUI
 extension Color {
     
     //MARK: Primary Colors
-    static var primary1 = Color("primary10")
-    
+    static var orange_2 = Color("orange-2")
+    static var orange_3 = Color("orange-3")
     
 }

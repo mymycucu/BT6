@@ -24,6 +24,7 @@
 		D42BA4042AD476BF004666E0 /* WordDragDrop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D42BA4022AD476BF004666E0 /* WordDragDrop.xcdatamodeld */; };
 		D42BA40B2AD4771A004666E0 /* LearningModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA40A2AD4771A004666E0 /* LearningModule.swift */; };
 		D42BA40D2AD4772D004666E0 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA40C2AD4772D004666E0 /* Word.swift */; };
+		D464F89F2ADD8B6B00C8F8C1 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D464F89E2ADD8B6B00C8F8C1 /* QuizView.swift */; };
 		D47DF3762AD69454008754BA /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47DF3752AD69454008754BA /* LottieView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		D42BA4032AD476BF004666E0 /* WordDragDrop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordDragDrop.xcdatamodel; sourceTree = "<group>"; };
 		D42BA40A2AD4771A004666E0 /* LearningModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningModule.swift; sourceTree = "<group>"; };
 		D42BA40C2AD4772D004666E0 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		D464F89E2ADD8B6B00C8F8C1 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		D47DF3752AD69454008754BA /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,8 +84,9 @@
 		D406805D2AD7D0720083A0A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D42BA40A2AD4771A004666E0 /* LearningModule.swift */,
 				D42BA3F92AD476BD004666E0 /* ContentView.swift */,
+				D42BA40A2AD4771A004666E0 /* LearningModule.swift */,
+				D464F89E2ADD8B6B00C8F8C1 /* QuizView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				D40680472AD707240083A0A8 /* Question.swift in Sources */,
 				D47DF3762AD69454008754BA /* LottieView.swift in Sources */,
 				D42BA3F82AD476BD004666E0 /* WordDragDropApp.swift in Sources */,
+				D464F89F2ADD8B6B00C8F8C1 /* QuizView.swift in Sources */,
 				D40680442AD6A31C0083A0A8 /* QuestionEntity+CoreDataClass.swift in Sources */,
 				D42BA40D2AD4772D004666E0 /* Word.swift in Sources */,
 			);

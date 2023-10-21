@@ -27,7 +27,7 @@ struct LearningModule: View {
             NavBar()
             HStack(spacing: 25){
                 Rectangle()
-                    .fill(Color.primary1)
+                    .fill(Color.orange2)
                     .frame(height: 250)
                     .cornerRadius(20)
                 LottieView(name: "cat-hat-lilac-rest", loopMode: .autoReverse)
