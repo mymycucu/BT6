@@ -21,5 +21,9 @@ struct Word: Identifiable, Hashable, Equatable {
 var words_ : [Word] = [
     Word(value: "Saya"),
     Word(value: "Melukis"),
-    Word(value: "Bunga")
+    Word(value: "Bunga"),
+//    Word(value: "Yang"),
+//    Word(value: "Diberikan"),
+//    Word(value: "Oleh"),
+//    Word(value: "Dary"),
 ]

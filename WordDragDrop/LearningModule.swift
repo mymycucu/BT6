@@ -9,6 +9,22 @@
 import SwiftUI
 
 struct LearningModule: View {
+    
+    // MARK: Lottie Properties
+    
+    @State private var animationIndex = 0
+    @State private var animationNames = ["animation-test", "animation-test2","cat-hat-blue","cat-hat-brown","cat-hat-lilac","cat-hat-navy","cat-hat-red"]
+    @State private var viewID = UUID() // Add a UUID to trigger view reload
+    @State private var pageIndex = 0
+    
+    
+    // MARK: Video Properties
+    @State private var videoIndex = 0
+    @State private var videoNames = ["E_Bisindo", "F_Bisindo"]
+    @State private var viewvideoID = UUID()
+    
+    
+    
     // MARK: Properties
     @State var progress: CGFloat = 0
     @State var words: [Word] = words_
@@ -26,14 +42,26 @@ struct LearningModule: View {
         VStack(spacing:30){
             NavBar()
             HStack(spacing: 25){
-                Rectangle()
-                    .fill(Color.orange)
-                    .frame(height: 250)
-                    .cornerRadius(20)
-                Rectangle()
-                    .fill(Color.orange)
-                    .frame(height: 250)
-                    .cornerRadius(20)
+                
+                LottieView(name: animationNames[animationIndex], loopMode: .loop)
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
+                    .padding()
+                    .id(animationIndex)
+                
+//                VideoPlayerRepresented(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoNames[videoIndex], ofType: "mp4")!))
+//                    .aspectRatio(contentMode: .fit)
+//                    .cornerRadius(10)
+//                    .padding()
+//                    .id(videoIndex)
+                
+                VideoPlayerRepresented(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoNames[videoIndex], ofType: "mp4")!))
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
+                    .padding()
+                    .id(videoIndex)
+                
+
             }
             .padding(30)
             DropArea()
@@ -51,6 +79,41 @@ struct LearningModule: View {
             }
         }
         .offset(x: animateWrongText ? -30 : 0)
+        
+        Button(action: {
+            withAnimation(.easeInOut) {
+                // Change the animation index to the next one in the array
+                animationIndex = (animationIndex + 1) % animationNames.count
+                print(animationNames[animationIndex])
+                
+                videoIndex = (videoIndex + 1) % videoNames.count
+                print(videoNames[videoIndex])
+                
+                // Reset progress
+                progress = 0
+                
+                // Reset dropped count
+                droppedCount = 0
+                
+                // Reset the shuffledWords and rows arrays
+                shuffledWords = generatingGrid()
+                rows = generatingGrid()
+                
+                viewID = UUID() // Update the ID to force view reload
+                viewvideoID = UUID()
+                pageIndex += 1
+            }
+        }) {
+            Text("Next Animation")
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+        }
+        .padding(.bottom, 30)
+
+        
+        
     }
     
     // MARK: Drag Area
@@ -84,6 +147,7 @@ struct LearningModule: View {
                 
             }
         }
+        .aspectRatio(contentMode: .fit)
     }
     
     // MARK: Drop Area
@@ -136,6 +200,7 @@ struct LearningModule: View {
                 }
             }
         }
+        .aspectRatio(contentMode: .fit)
     }
     
     
@@ -145,7 +210,21 @@ struct LearningModule: View {
         HStack(spacing:15){
             
             Button{
+                withAnimation(.easeInOut){
+                    
+                    // Reset progress
+                    progress = 0
+                    
+                    // Reset dropped count
+                    droppedCount = 0
+                    
+                    // Reset the shuffledWords and rows arrays
+                    shuffledWords = generatingGrid()
+                    rows = generatingGrid()
+                    
+                }
                 
+
             }label: {
                 Image(systemName: "xmark")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -164,6 +243,7 @@ struct LearningModule: View {
             .frame(height: 30)
             
             Button{
+               
                 
             }label: {
                 Image(systemName: "questionmark.circle")
@@ -245,6 +325,7 @@ struct LearningModule: View {
             }
         }
     }
+    
     
 }
 

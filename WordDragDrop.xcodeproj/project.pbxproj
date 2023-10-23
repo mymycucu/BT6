@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052691002AD7D50600AAD53E /* Mp4Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052690FF2AD7D50600AAD53E /* Mp4Controller.swift */; };
+		052691022AD7D53800AAD53E /* E_Bisindo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 052691012AD7D53800AAD53E /* E_Bisindo.mp4 */; };
+		052691052AD7D54A00AAD53E /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052691042AD7D54A00AAD53E /* AVKit.framework */; };
+		052691072AD7D69A00AAD53E /* F_Bisindo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 052691062AD7D69A00AAD53E /* F_Bisindo.mp4 */; };
+		05CCCE482AD69451004F454B /* cat-hat-blue.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CCCE412AD69450004F454B /* cat-hat-blue.json */; };
+		05CCCE492AD69451004F454B /* cat-hat-sage.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CCCE422AD69451004F454B /* cat-hat-sage.json */; };
+		05CCCE4A2AD69451004F454B /* cat-hat-red.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CCCE432AD69451004F454B /* cat-hat-red.json */; };
+		05CCCE4B2AD69451004F454B /* cat-hat-lilac.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CCCE442AD69451004F454B /* cat-hat-lilac.json */; };
+		05CCCE4D2AD69451004F454B /* cat-hat-navy.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CCCE462AD69451004F454B /* cat-hat-navy.json */; };
+		05CCCE4E2AD69451004F454B /* cat-hat-brown.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CCCE472AD69451004F454B /* cat-hat-brown.json */; };
+		05CCCE502AD69458004F454B /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CCCE4F2AD69458004F454B /* Lottie.swift */; };
+		05CCCE532AD6945E004F454B /* animation-test.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CCCE512AD6945E004F454B /* animation-test.json */; };
+		05CCCE542AD6945E004F454B /* animation-test2.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CCCE522AD6945E004F454B /* animation-test2.json */; };
+		05CCCE572AD69482004F454B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 05CCCE562AD69482004F454B /* Lottie */; };
 		D42BA3F82AD476BD004666E0 /* WordDragDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA3F72AD476BD004666E0 /* WordDragDropApp.swift */; };
 		D42BA3FA2AD476BD004666E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BA3F92AD476BD004666E0 /* ContentView.swift */; };
 		D42BA3FC2AD476BF004666E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42BA3FB2AD476BF004666E0 /* Assets.xcassets */; };
@@ -18,6 +32,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		052690FF2AD7D50600AAD53E /* Mp4Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp4Controller.swift; sourceTree = "<group>"; };
+		052691012AD7D53800AAD53E /* E_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = E_Bisindo.mp4; sourceTree = "<group>"; };
+		052691042AD7D54A00AAD53E /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		052691062AD7D69A00AAD53E /* F_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = F_Bisindo.mp4; sourceTree = "<group>"; };
+		05CCCE412AD69450004F454B /* cat-hat-blue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "cat-hat-blue.json"; path = "WordDragDrop/Animation/cat-hat-blue.json"; sourceTree = SOURCE_ROOT; };
+		05CCCE422AD69451004F454B /* cat-hat-sage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "cat-hat-sage.json"; path = "WordDragDrop/Animation/cat-hat-sage.json"; sourceTree = SOURCE_ROOT; };
+		05CCCE432AD69451004F454B /* cat-hat-red.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "cat-hat-red.json"; path = "WordDragDrop/Animation/cat-hat-red.json"; sourceTree = SOURCE_ROOT; };
+		05CCCE442AD69451004F454B /* cat-hat-lilac.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "cat-hat-lilac.json"; path = "WordDragDrop/Animation/cat-hat-lilac.json"; sourceTree = SOURCE_ROOT; };
+		05CCCE462AD69451004F454B /* cat-hat-navy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "cat-hat-navy.json"; path = "WordDragDrop/Animation/cat-hat-navy.json"; sourceTree = SOURCE_ROOT; };
+		05CCCE472AD69451004F454B /* cat-hat-brown.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "cat-hat-brown.json"; path = "WordDragDrop/Animation/cat-hat-brown.json"; sourceTree = SOURCE_ROOT; };
+		05CCCE4F2AD69458004F454B /* Lottie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lottie.swift; path = "image-matching/image-matching/Lottie.swift"; sourceTree = SOURCE_ROOT; };
+		05CCCE512AD6945E004F454B /* animation-test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "animation-test.json"; path = "WordDragDrop/Animation/animation-test.json"; sourceTree = SOURCE_ROOT; };
+		05CCCE522AD6945E004F454B /* animation-test2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "animation-test2.json"; path = "WordDragDrop/Animation/animation-test2.json"; sourceTree = SOURCE_ROOT; };
 		D42BA3F42AD476BD004666E0 /* WordDragDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordDragDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42BA3F72AD476BD004666E0 /* WordDragDropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDragDropApp.swift; sourceTree = "<group>"; };
 		D42BA3F92AD476BD004666E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,17 +61,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				052691052AD7D54A00AAD53E /* AVKit.framework in Frameworks */,
+				05CCCE572AD69482004F454B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		052691032AD7D54A00AAD53E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				052691042AD7D54A00AAD53E /* AVKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		05CCCE582AD6A25F004F454B /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				052691012AD7D53800AAD53E /* E_Bisindo.mp4 */,
+				052691062AD7D69A00AAD53E /* F_Bisindo.mp4 */,
+				05CCCE472AD69451004F454B /* cat-hat-brown.json */,
+				05CCCE442AD69451004F454B /* cat-hat-lilac.json */,
+				05CCCE462AD69451004F454B /* cat-hat-navy.json */,
+				05CCCE432AD69451004F454B /* cat-hat-red.json */,
+				05CCCE422AD69451004F454B /* cat-hat-sage.json */,
+				05CCCE412AD69450004F454B /* cat-hat-blue.json */,
+				05CCCE512AD6945E004F454B /* animation-test.json */,
+				05CCCE522AD6945E004F454B /* animation-test2.json */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		D42BA3EB2AD476BD004666E0 = {
 			isa = PBXGroup;
 			children = (
 				D42BA3F62AD476BD004666E0 /* WordDragDrop */,
 				D42BA3F52AD476BD004666E0 /* Products */,
+				052691032AD7D54A00AAD53E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +117,9 @@
 				D42BA3F72AD476BD004666E0 /* WordDragDropApp.swift */,
 				D42BA3F92AD476BD004666E0 /* ContentView.swift */,
 				D42BA40A2AD4771A004666E0 /* LearningModule.swift */,
+				052690FF2AD7D50600AAD53E /* Mp4Controller.swift */,
+				05CCCE582AD6A25F004F454B /* Animation */,
+				05CCCE4F2AD69458004F454B /* Lottie.swift */,
 				D42BA40E2AD4773F004666E0 /* Model */,
 				D42BA3FB2AD476BF004666E0 /* Assets.xcassets */,
 				D42BA4002AD476BF004666E0 /* Persistence.swift */,
@@ -103,6 +161,9 @@
 			dependencies = (
 			);
 			name = WordDragDrop;
+			packageProductDependencies = (
+				05CCCE562AD69482004F454B /* Lottie */,
+			);
 			productName = WordDragDrop;
 			productReference = D42BA3F42AD476BD004666E0 /* WordDragDrop.app */;
 			productType = "com.apple.product-type.application";
@@ -131,6 +192,9 @@
 				Base,
 			);
 			mainGroup = D42BA3EB2AD476BD004666E0;
+			packageReferences = (
+				05CCCE552AD69482004F454B /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = D42BA3F52AD476BD004666E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -145,7 +209,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05CCCE492AD69451004F454B /* cat-hat-sage.json in Resources */,
 				D42BA3FF2AD476BF004666E0 /* Preview Assets.xcassets in Resources */,
+				05CCCE4E2AD69451004F454B /* cat-hat-brown.json in Resources */,
+				05CCCE542AD6945E004F454B /* animation-test2.json in Resources */,
+				05CCCE4B2AD69451004F454B /* cat-hat-lilac.json in Resources */,
+				052691072AD7D69A00AAD53E /* F_Bisindo.mp4 in Resources */,
+				052691022AD7D53800AAD53E /* E_Bisindo.mp4 in Resources */,
+				05CCCE532AD6945E004F454B /* animation-test.json in Resources */,
+				05CCCE482AD69451004F454B /* cat-hat-blue.json in Resources */,
+				05CCCE4A2AD69451004F454B /* cat-hat-red.json in Resources */,
+				05CCCE4D2AD69451004F454B /* cat-hat-navy.json in Resources */,
 				D42BA3FC2AD476BF004666E0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,8 +234,10 @@
 				D42BA40B2AD4771A004666E0 /* LearningModule.swift in Sources */,
 				D42BA4042AD476BF004666E0 /* WordDragDrop.xcdatamodeld in Sources */,
 				D42BA4012AD476BF004666E0 /* Persistence.swift in Sources */,
+				052691002AD7D50600AAD53E /* Mp4Controller.swift in Sources */,
 				D42BA3FA2AD476BD004666E0 /* ContentView.swift in Sources */,
 				D42BA3F82AD476BD004666E0 /* WordDragDropApp.swift in Sources */,
+				05CCCE502AD69458004F454B /* Lottie.swift in Sources */,
 				D42BA40D2AD4772D004666E0 /* Word.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WordDragDrop/Preview Content\"";
-				DEVELOPMENT_TEAM = 7364983R63;
+				DEVELOPMENT_TEAM = 45ZWLX2CYQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -325,7 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WordDragDrop/Preview Content\"";
-				DEVELOPMENT_TEAM = 7364983R63;
+				DEVELOPMENT_TEAM = 45ZWLX2CYQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -368,6 +444,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		05CCCE552AD69482004F454B /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		05CCCE562AD69482004F454B /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05CCCE552AD69482004F454B /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D42BA4022AD476BF004666E0 /* WordDragDrop.xcdatamodeld */ = {
