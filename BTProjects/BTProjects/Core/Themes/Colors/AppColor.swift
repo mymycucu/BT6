@@ -13,7 +13,8 @@ struct AppColor {
     static let orange = Color("orange")
     static let red = Color("red")
     static let yellow = Color("yellow")
-    
+        
 
     private init() {}
 }
+
