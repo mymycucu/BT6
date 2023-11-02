@@ -8,49 +8,58 @@
 import SwiftUI
 
 struct HomeView: View {
+    private let items = (1...3).map {"Item \($0)"}
+    
+    private let columns: [GridItem] = [
+        GridItem(.fixed(254), spacing: 24, alignment: .center),
+        GridItem(.fixed(254), spacing: 24, alignment: .center)
+    ]
     var body: some View {
         VStack(spacing: 20){
             //MARK: Header
-            HStack{
-                VStack(alignment: .leading){
-                    Text("Selamat Pagi,")
-                        .font(.Caption_Regular)
-                    Text("Sarah Octavia")
-                        .font(.Body_Medium)
+            HomeHeader()
+            
+            Spacer()
+            //MARK: List of Stories
+            ScrollView(.horizontal){
+                HStack {
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color.Gray6)
+                            .opacity(0.4)
+                            .frame(width: 896, height: 568)
+                        
+                        LazyHGrid(
+                            rows: columns, spacing: 24
+                        ){
+                            ForEach(items, id: \.self){ item in
+                                StoryBook()
+                            }
+                        }
+                    }
+                    .frame(width: 896, height: 568)
+                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color.Gray6)
+                            .opacity(0.4)
+                            .frame(width: 896, height: 568)
+                        
+                        LazyHGrid(
+                            rows: columns, spacing: 24
+                        ){
+                            ForEach(items, id: \.self){ item in
+                                StoryBook()
+                            }
+                        }
+                    }
+                    .frame(width: 896, height: 568)
                 }
-                Spacer()
-                Circle()
-                    .fill(.white)
-                    .frame(width: 52)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 100)
-                        .inset(by: 2)
-                        .stroke(Color(red: 0.59, green: 0.66, blue: 0.8), lineWidth: 4)
-
-                    )
-            }
-            .foregroundColor(.white)
-            
-            Circle()
-                .fill(.white)
-                .frame(width: 84)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 100)
-                    .inset(by: 2)
-                    .stroke(Color(red: 0.59, green: 0.66, blue: 0.8), lineWidth: 4)
-
-                )
-            
-            
-            ZStack{
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(.gray6)
-                    .opacity(0.4)
+                
                 
             }
-            .padding(.top, 20)
             
-            
+
         }
         .padding(40)
         .background(
@@ -58,7 +67,6 @@ struct HomeView: View {
                 LinearGradient(colors: [.PB600,.PB500], startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
             }
-            
             
         )
     }
