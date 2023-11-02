@@ -14,6 +14,7 @@
 		05025D512AE77FD100178653 /* Fredoka-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05025D4C2AE77FD100178653 /* Fredoka-Bold.ttf */; };
 		05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D532AE7817E00178653 /* ExtensionColors.swift */; };
 		05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D552AE78AE200178653 /* ExtensionFonts.swift */; };
+		ADBE94192AEB5383008A1390 /* BTModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94172AEB5383008A1390 /* BTModel.xcdatamodeld */; };
 		ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */; };
 		ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFA62AE3ADA000CED0DD /* LearningModuleView.swift */; };
 		ADE3CFA92AE3ADA200CED0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		05025D522AE77FDE00178653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05025D532AE7817E00178653 /* ExtensionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
 		05025D552AE78AE200178653 /* ExtensionFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFonts.swift; sourceTree = "<group>"; };
+		ADBE94182AEB5383008A1390 /* BTModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BTModel.xcdatamodel; sourceTree = "<group>"; };
 		ADE3CFA12AE3ADA000CED0DD /* BTProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTProjectsApp.swift; sourceTree = "<group>"; };
 		ADE3CFA62AE3ADA000CED0DD /* LearningModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningModuleView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */,
+				ADBE94172AEB5383008A1390 /* BTModel.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
 				05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */,
+				ADBE94192AEB5383008A1390 /* BTModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +577,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ADBE94172AEB5383008A1390 /* BTModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ADBE94182AEB5383008A1390 /* BTModel.xcdatamodel */,
+			);
+			currentVersion = ADBE94182AEB5383008A1390 /* BTModel.xcdatamodel */;
+			path = BTModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ADE3CF992AE3ADA000CED0DD /* Project object */;
 }
