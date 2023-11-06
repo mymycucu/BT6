@@ -11,17 +11,22 @@ struct ListOfPageView: View {
     
     @State var customAlert = false
     
+    //    private let columns: [GridItem] = [
+    //            GridItem(.fixed(254), spacing: 24, alignment: .center),
+    //            GridItem(.fixed(254), spacing: 24, alignment: .center)
+    //        ]
+    
     var body: some View {
-//        VStack() {
-//            Text("Halo")
-//
-//        }
-//        .padding(600)
-//        .background(
-//                LinearGradient(colors: [.PB600,.PB500], startPoint: .top, endPoint: .bottom)
-//                    .edgesIgnoringSafeArea(.all)
-//
-//        )
+        //        VStack() {
+        //            Text("Halo")
+        //
+        //        }
+        //        .padding(600)
+        //        .background(
+        //                LinearGradient(colors: [.PB600,.PB500], startPoint: .top, endPoint: .bottom)
+        //                    .edgesIgnoringSafeArea(.all)
+        //
+        //        )
         ZStack {
             VStack(spacing: 25) {
                 Button(action: {
@@ -37,51 +42,76 @@ struct ListOfPageView: View {
             }
         }
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-    
+        
     }
 }
 
 struct CustomListView: View {
     
     @Binding var show : Bool
+    @State var story1 = "story-1"
+    @State var story2 = "story-2"
+    
+    @State var isSelect = 1
     
     var body: some View {
         ZStack (alignment: Alignment(horizontal: .trailing, vertical: .top), content: {
             
-            ScrollView {
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
                     Text("Stories")
                         .font(.Heading2_Semibold)
                         .foregroundColor(.white)
                     
-                        VStack(spacing: 32) {
-                            HStack (spacing: 32) {
-                                Rectangle()
-                                    .frame(width: 316, height: 230)
-                                    .cornerRadius(12)
-                                Rectangle()
-                                    .frame(width: 316, height: 230)
-                                    .cornerRadius(12)
-                            }
-                            HStack (spacing: 32) {
-                                Rectangle()
-                                    .frame(width: 316, height: 230)
-                                    .cornerRadius(12)
-                                Rectangle()
-                                    .frame(width: 316, height: 230)
-                                    .cornerRadius(12)
-                            }
+                    VStack(spacing: 32) {
+                        HStack (spacing: 32) {
+                            Button(action: {
+                                isSelect = 1
+                            }, label: {
+                                ThumbnailPage(isSelect: $isSelect, order: 1)
+                            })
+                            
+                            Button(action: {
+                                isSelect = 2
+                            }, label: {
+                                ThumbnailPage(isSelect: $isSelect, order: 2)
+                            })
                         }
+                        HStack (spacing: 32) {
+                            Rectangle()
+                                .frame(width: 316, height: 230)
+                                .cornerRadius(12)
+                            Rectangle()
+                                .frame(width: 316, height: 230)
+                                .cornerRadius(12)
+                        }
+                    }
                     
-    //                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-    //                    Text("Back to Home")
-    //                        .foregroundColor(.white)
-    //                        .fontWeight(.bold)
-    //                        .padding(.vertical, 10)
-    //                        .padding(.horizontal, 25)
-    //                        .background(Color.purple)
-    //                        .clipShape(Capsule())
-    //                })
+
+                    Text("Question")
+                        .font(.Heading2_Semibold)
+                        .foregroundColor(.white)
+                    
+//                    VStack(spacing: 32) {
+//                        HStack (spacing: 32) {
+//                            ZStack {
+//                                ThumbnailPage()
+//                            }
+//                            
+//                            Image(story2)
+//                                .frame(width: 316, height: 230)
+//                                .cornerRadius(12)
+//                        }
+//                        HStack (spacing: 32) {
+//                            Rectangle()
+//                                .frame(width: 316, height: 230)
+//                                .cornerRadius(12)
+//                            Rectangle()
+//                                .frame(width: 316, height: 230)
+//                                .cornerRadius(12)
+//                        }
+//                    }
+        
                     
                 }
                 .padding(.vertical, 25)
@@ -110,7 +140,7 @@ struct CustomListView: View {
         .background(
             Color.primary.opacity(0.7)
         )
-
+        
     }
 }
 

@@ -14,6 +14,9 @@
 		05025D512AE77FD100178653 /* Fredoka-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05025D4C2AE77FD100178653 /* Fredoka-Bold.ttf */; };
 		05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D532AE7817E00178653 /* ExtensionColors.swift */; };
 		05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D552AE78AE200178653 /* ExtensionFonts.swift */; };
+		3C7F2AF22AF88AEA007A7E8C /* ListOfPagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7F2AF12AF88AEA007A7E8C /* ListOfPagesView.swift */; };
+		3C7F2AF62AF89ED1007A7E8C /* ThumbnailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7F2AF52AF89ED1007A7E8C /* ThumbnailPage.swift */; };
+		3C7F2AF82AF8A759007A7E8C /* RibbonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7F2AF72AF8A759007A7E8C /* RibbonPage.swift */; };
 		ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */; };
 		ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFA62AE3ADA000CED0DD /* LearningModuleView.swift */; };
 		ADE3CFA92AE3ADA200CED0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 		05025D522AE77FDE00178653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05025D532AE7817E00178653 /* ExtensionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
 		05025D552AE78AE200178653 /* ExtensionFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFonts.swift; sourceTree = "<group>"; };
+		3C7F2AF12AF88AEA007A7E8C /* ListOfPagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPagesView.swift; sourceTree = "<group>"; };
+		3C7F2AF52AF89ED1007A7E8C /* ThumbnailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailPage.swift; sourceTree = "<group>"; };
+		3C7F2AF72AF8A759007A7E8C /* RibbonPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RibbonPage.swift; sourceTree = "<group>"; };
 		ADE3CFA12AE3ADA000CED0DD /* BTProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTProjectsApp.swift; sourceTree = "<group>"; };
 		ADE3CFA62AE3ADA000CED0DD /* LearningModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningModuleView.swift; sourceTree = "<group>"; };
@@ -75,6 +81,32 @@
 			);
 			name = Extensions;
 			path = Components/Extensions;
+			sourceTree = "<group>";
+		};
+		3C7F2AF02AF88AD8007A7E8C /* ListOfPages */ = {
+			isa = PBXGroup;
+			children = (
+				3C7F2AF42AF89EB0007A7E8C /* Views */,
+				3C7F2AF32AF89EA9007A7E8C /* Components */,
+			);
+			path = ListOfPages;
+			sourceTree = "<group>";
+		};
+		3C7F2AF32AF89EA9007A7E8C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3C7F2AF52AF89ED1007A7E8C /* ThumbnailPage.swift */,
+				3C7F2AF72AF8A759007A7E8C /* RibbonPage.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3C7F2AF42AF89EB0007A7E8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C7F2AF12AF88AEA007A7E8C /* ListOfPagesView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ADE3CF982AE3ADA000CED0DD = {
@@ -228,6 +260,7 @@
 		ADE3CFC92AE3B02F00CED0DD /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3C7F2AF02AF88AD8007A7E8C /* ListOfPages */,
 				ADE3CFCA2AE3B05B00CED0DD /* LearningModule */,
 			);
 			path = Features;
@@ -361,10 +394,13 @@
 				ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */,
 				ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */,
 				ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */,
+				3C7F2AF82AF8A759007A7E8C /* RibbonPage.swift in Sources */,
 				ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
+				3C7F2AF62AF89ED1007A7E8C /* ThumbnailPage.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
+				3C7F2AF22AF88AEA007A7E8C /* ListOfPagesView.swift in Sources */,
 				05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
