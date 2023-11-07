@@ -24,6 +24,10 @@
 		ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */; };
 		ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */; };
 		D4BED4C82AF890940049DB30 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BED4C72AF890940049DB30 /* CategoryButton.swift */; };
+		D4C515FC2AFA17F5001A97E5 /* WordSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C515FB2AFA17F5001A97E5 /* WordSummary.swift */; };
+		D4C515FE2AFA182B001A97E5 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C515FD2AFA182B001A97E5 /* ProgressBar.swift */; };
+		D4C516032AFA7D80001A97E5 /* SummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C516022AFA7D80001A97E5 /* SummaryHeader.swift */; };
+		D4C516052AFA8834001A97E5 /* CircularButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C516042AFA8834001A97E5 /* CircularButtonStyle.swift */; };
 		D4FE434C2AF89EED00952948 /* CategoryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE434B2AF89EED00952948 /* CategoryMenu.swift */; };
 		D4FE434E2AF8D31800952948 /* StoryBookPerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE434D2AF8D31800952948 /* StoryBookPerCategory.swift */; };
 		D4FE9D872AF358CE000DAFEB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9D862AF358CE000DAFEB /* HomeView.swift */; };
@@ -52,6 +56,10 @@
 		ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		D4BED4C72AF890940049DB30 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
+		D4C515FB2AFA17F5001A97E5 /* WordSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSummary.swift; sourceTree = "<group>"; };
+		D4C515FD2AFA182B001A97E5 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		D4C516022AFA7D80001A97E5 /* SummaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeader.swift; sourceTree = "<group>"; };
+		D4C516042AFA8834001A97E5 /* CircularButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButtonStyle.swift; sourceTree = "<group>"; };
 		D4FE434B2AF89EED00952948 /* CategoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenu.swift; sourceTree = "<group>"; };
 		D4FE434D2AF8D31800952948 /* StoryBookPerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBookPerCategory.swift; sourceTree = "<group>"; };
 		D4FE9D862AF358CE000DAFEB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -189,6 +197,7 @@
 				05025D532AE7817E00178653 /* ExtensionColors.swift */,
 				D4FE9D902AF36EC0000DAFEB /* RoundedCorner.swift */,
 				05025D552AE78AE200178653 /* ExtensionFonts.swift */,
+				D4C516042AFA8834001A97E5 /* CircularButtonStyle.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -245,6 +254,7 @@
 			children = (
 				ADE3CFCA2AE3B05B00CED0DD /* LearningModule */,
 				D4FE9D882AF36ACA000DAFEB /* Home */,
+				D4C515FA2AFA17D5001A97E5 /* WordSummary */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -294,6 +304,24 @@
 		ADE3CFCF2AE3B0AD00CED0DD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D4C515FA2AFA17D5001A97E5 /* WordSummary */ = {
+			isa = PBXGroup;
+			children = (
+				D4C515FB2AFA17F5001A97E5 /* WordSummary.swift */,
+				D4C516012AFA751B001A97E5 /* Components */,
+			);
+			path = WordSummary;
+			sourceTree = "<group>";
+		};
+		D4C516012AFA751B001A97E5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D4C515FD2AFA182B001A97E5 /* ProgressBar.swift */,
+				D4C516022AFA7D80001A97E5 /* SummaryHeader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -406,17 +434,21 @@
 				ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */,
 				D4FE9D8F2AF36C10000DAFEB /* StoryBook.swift in Sources */,
 				ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */,
+				D4C515FE2AFA182B001A97E5 /* ProgressBar.swift in Sources */,
 				D4FE9D912AF36EC0000DAFEB /* RoundedCorner.swift in Sources */,
 				D4FE434C2AF89EED00952948 /* CategoryMenu.swift in Sources */,
 				D4FE434E2AF8D31800952948 /* StoryBookPerCategory.swift in Sources */,
 				D4FE9D872AF358CE000DAFEB /* HomeView.swift in Sources */,
 				ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */,
+				D4C516052AFA8834001A97E5 /* CircularButtonStyle.swift in Sources */,
 				D4BED4C82AF890940049DB30 /* CategoryButton.swift in Sources */,
 				ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
+				D4C516032AFA7D80001A97E5 /* SummaryHeader.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
 				D4FE9D8B2AF36B19000DAFEB /* HomeHeader.swift in Sources */,
+				D4C515FC2AFA17F5001A97E5 /* WordSummary.swift in Sources */,
 				05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

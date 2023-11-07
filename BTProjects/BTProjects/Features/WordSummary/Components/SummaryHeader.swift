@@ -9,7 +9,14 @@ import SwiftUI
 
 struct SummaryHeader: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            // Your action here
+        }) {
+            Image(systemName: "list.bullet")
+                .font(.Button)
+//                .frame(width: 62, height: 62) // Set the image size
+        }
+        .buttonStyle(CircularButtonStyle())
     }
 }
 
