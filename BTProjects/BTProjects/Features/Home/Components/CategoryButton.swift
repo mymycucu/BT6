@@ -13,19 +13,14 @@ struct CategoryButton: View {
     @State var action: () -> Void
     
     var body: some View {
-        VStack{
-            Button(action: action){
-                Circle()
-                    .fill(item.colors)
-                    .frame(height: 90)
-                    .overlay(
-                        Circle()
-                            .inset(by: 1)
-                            .stroke(Color.PB300, lineWidth: 3)
-                    )
-                
-                    
-            }
+        GeometryReader{ geo in
+            Circle()
+                .fill(item.colors)
+                .overlay(
+                    Circle()
+                        .inset(by: 1)
+                        .stroke(Color.PB300, lineWidth: 3)
+                )
         }
     }
 }

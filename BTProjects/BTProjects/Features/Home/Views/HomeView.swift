@@ -53,22 +53,24 @@ struct HomeView: View {
                             )
                             .opacity(0)
                         ForEach(0..<min(categories.count, 9), id: \.self) { index in
-                            let scale = calculateScale(index: index)
                             
+                            let scale = calculateScale(index: index)
                             Button {
                                 scrollID = index
                             } label: {
                                 Circle()
                                     .fill(categories[index].colors)
-                                    .frame(height: 90)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 100)
-                                            .inset(by: 1)
-                                            .stroke(Color.PB300, lineWidth: 3)
-                                    )
-                                    .scaleEffect(scale, anchor: .center)
                                     
+               
                             }
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 100)
+                                    .inset(by: 1)
+                                    .stroke(Color.PB300, lineWidth: 3)
+                            )
+                            
+                            .scaleEffect(scale, anchor: .center)
+
                             .onAppear {
                                 if index == 0 {
                                     withAnimation {
@@ -82,6 +84,7 @@ struct HomeView: View {
                                         x: phase.isIdentity ? 1.0 : 0,
                                         y: phase.isIdentity ? 1.0 : 0)
                             }
+                            .frame(maxWidth: 90)
                         }
                         Circle()
                             .frame(height: 90)
@@ -217,14 +220,17 @@ struct HomeView: View {
     
     func calculateScale(index: Int) -> CGFloat {
         let activeIndex = Int(scrollID ?? 0)
-        
-        if activeIndex == index {
-            return 1.0
-        } else if activeIndex - 1 == index || activeIndex + 1 == index {
-            return 0.75
-        } else {
-            return 0.5
+        var scale:CGFloat?
+        withAnimation{
+            if activeIndex == index {
+                scale = 1.0
+            } else if activeIndex - 1 == index || activeIndex + 1 == index {
+                scale = 0.75
+            } else {
+                scale = 0.5
+            }
         }
+        return scale!
     }
     
     
