@@ -104,8 +104,9 @@ struct HomeView: View {
                             .opacity(0)
                         
                     }
+                    .scrollTargetLayout()
                 }
-                .scrollTargetLayout()
+                
                 .scrollTargetBehavior(.viewAligned)
                 .scrollPosition(id: $scrollID, anchor: .center)
                 .onAppear{
@@ -116,7 +117,7 @@ struct HomeView: View {
                     }
                 }
                 .onChange(of: scrollID) { oldValue, newValue in
-                    withAnimation {
+                    withAnimation(.easeInOut(duration: 0.1)) {
                         DispatchQueue.main.async{
                             proxy.scrollTo(newValue)
                         }
@@ -221,7 +222,7 @@ struct HomeView: View {
     func calculateScale(index: Int) -> CGFloat {
         let activeIndex = Int(scrollID ?? 0)
         var scale:CGFloat?
-        withAnimation(.linear(duration: 0.1)){
+        withAnimation(.easeInOut(duration: 0.1)){
             if activeIndex == index {
                 scale = 1.0
             } else if activeIndex - 1 == index || activeIndex + 1 == index {
