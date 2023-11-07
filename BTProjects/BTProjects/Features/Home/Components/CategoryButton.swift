@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct CategoryButton: View {
+    @State var category: Category?
+    @State var item: Category = Category(colors: .red)
+    @State var action: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Button(action: action){
+                Circle()
+                    .fill(item.colors)
+                    .frame(height: 90)
+                    .overlay(
+                        Circle()
+                            .inset(by: 1)
+                            .stroke(Color.PB300, lineWidth: 3)
+                    )
+                
+                    
+            }
+        }
     }
 }
 
 #Preview {
-    CategoryButton()
+    CategoryButton(action: {})
 }

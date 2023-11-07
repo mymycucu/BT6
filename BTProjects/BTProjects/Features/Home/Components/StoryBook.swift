@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct StoryBook: View {
-    @State var storyTitle: String = "mencari-kumbang"
+    @State var storyThumbnail: String = "mencari-kumbang"
+    @State var storyTitle: String = "Mencari Kumbang di Padang"
     var body: some View {
         ZStack(alignment: .leading){
+            //MARK: Orange Back Cover
             RoundedRectangle(cornerRadius: 0)
                 .fill(Color.Orange3)
                 .frame(width: 420, height: 254)
@@ -20,7 +22,7 @@ struct StoryBook: View {
                         radius: 12,
                         corners: [.topRight, .bottomRight])
                 )
-            
+            //MARK: Book's Pages
             RoundedRectangle(cornerRadius: 0)
                 .fill(Color.Gray5)
                 .frame(width: 415, height: 244)
@@ -43,19 +45,54 @@ struct StoryBook: View {
                 )
                 .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             
-            Image(storyTitle)
+            //MARK: Story Front Cover
+            ZStack {
+                Image(storyThumbnail)
+                
+                
+                VStack{
+                    Spacer()
+                    LinearGradient(
+                        gradient: Gradient(
+                            stops: [
+                                .init(color: .PB500, location: 0.15), // Starting around $0% from the bottom
+                                .init(color: .clear, location: 0.6) // Strating 0.6 - completely clear
+                            ]
+                        ),
+                        startPoint: .bottom,
+                        endPoint: .top
+                    )
+                    .frame(height:200)
+                    
+                    
+                }
                 .frame(width: 405, height: 254)
-                .clipShape(
-                    RoundedCorner(
-                        radius: 12,
-                        corners: [.topRight, .bottomRight])
-                )
-                .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
+                
+                VStack(alignment:.leading) {
+                    Spacer()
+                    HStack(alignment:.bottom){
+                        Text(storyTitle)
+                            .font(.Body_Semibold)
+                            .foregroundStyle(.white)
+                        Spacer()
+                    }
+                    .padding(15)
+                    
+                }.frame(width: 405, height: 254)
+                
+            }
+            .frame(width: 405, height: 254)
+            .clipShape(
+                RoundedCorner(
+                    radius: 12,
+                    corners: [.topRight, .bottomRight])
+            )
+            .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             
             
         }
         .frame(width: 420, height: 254)
-       
+        
     }
 }
 

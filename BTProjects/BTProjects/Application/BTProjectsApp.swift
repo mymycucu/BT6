@@ -11,7 +11,7 @@ import SwiftUI
 struct BTProjectsApp: App {
     var body: some Scene {
         WindowGroup {
-            LearningModuleView()
+            HomeView(activeID: .constant(UUID()))
         }
     }
 }

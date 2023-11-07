@@ -23,6 +23,9 @@
 		ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */; };
 		ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */; };
 		ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */; };
+		D4BED4C82AF890940049DB30 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BED4C72AF890940049DB30 /* CategoryButton.swift */; };
+		D4FE434C2AF89EED00952948 /* CategoryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE434B2AF89EED00952948 /* CategoryMenu.swift */; };
+		D4FE434E2AF8D31800952948 /* StoryBookPerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE434D2AF8D31800952948 /* StoryBookPerCategory.swift */; };
 		D4FE9D872AF358CE000DAFEB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9D862AF358CE000DAFEB /* HomeView.swift */; };
 		D4FE9D8B2AF36B19000DAFEB /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9D8A2AF36B19000DAFEB /* HomeHeader.swift */; };
 		D4FE9D8F2AF36C10000DAFEB /* StoryBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9D8E2AF36C10000DAFEB /* StoryBook.swift */; };
@@ -48,6 +51,9 @@
 		ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		D4BED4C72AF890940049DB30 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
+		D4FE434B2AF89EED00952948 /* CategoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenu.swift; sourceTree = "<group>"; };
+		D4FE434D2AF8D31800952948 /* StoryBookPerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBookPerCategory.swift; sourceTree = "<group>"; };
 		D4FE9D862AF358CE000DAFEB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D4FE9D8A2AF36B19000DAFEB /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
 		D4FE9D8E2AF36C10000DAFEB /* StoryBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBook.swift; sourceTree = "<group>"; };
@@ -314,6 +320,9 @@
 			children = (
 				D4FE9D8A2AF36B19000DAFEB /* HomeHeader.swift */,
 				D4FE9D8E2AF36C10000DAFEB /* StoryBook.swift */,
+				D4FE434D2AF8D31800952948 /* StoryBookPerCategory.swift */,
+				D4BED4C72AF890940049DB30 /* CategoryButton.swift */,
+				D4FE434B2AF89EED00952948 /* CategoryMenu.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -398,8 +407,11 @@
 				D4FE9D8F2AF36C10000DAFEB /* StoryBook.swift in Sources */,
 				ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */,
 				D4FE9D912AF36EC0000DAFEB /* RoundedCorner.swift in Sources */,
+				D4FE434C2AF89EED00952948 /* CategoryMenu.swift in Sources */,
+				D4FE434E2AF8D31800952948 /* StoryBookPerCategory.swift in Sources */,
 				D4FE9D872AF358CE000DAFEB /* HomeView.swift in Sources */,
 				ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */,
+				D4BED4C82AF890940049DB30 /* CategoryButton.swift in Sources */,
 				ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
@@ -539,7 +551,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BTProjects/Preview Content\"";
-				DEVELOPMENT_TEAM = 7UW53Z6Q89;
+				DEVELOPMENT_TEAM = AVMBLQT368;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BTProjects/Info.plist;
@@ -569,7 +581,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BTProjects/Preview Content\"";
-				DEVELOPMENT_TEAM = 7UW53Z6Q89;
+				DEVELOPMENT_TEAM = AVMBLQT368;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BTProjects/Info.plist;
