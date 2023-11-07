@@ -60,8 +60,8 @@ struct HomeView: View {
                             } label: {
                                 Circle()
                                     .fill(categories[index].colors)
-                                    
-               
+                                
+                                
                             }
                             .overlay(
                                 RoundedRectangle(cornerRadius: 100)
@@ -70,7 +70,7 @@ struct HomeView: View {
                             )
                             
                             .scaleEffect(scale, anchor: .center)
-
+                            
                             .onAppear {
                                 if index == 0 {
                                     withAnimation {
@@ -150,39 +150,25 @@ struct HomeView: View {
                     
                     //MARK : Right - Left Button
                     HStack{
-                        Button{
-                            
-                        }label: {
+                        
+                        Button(action: {
+                            // Your action here
+                        }) {
                             Image(systemName: "arrowshape.left.fill")
-                                .background()
-                                .frame(width: 62, height: 62, alignment: .center)
-                                .background(.white)
-                                .cornerRadius(100)
-                                .shadow(color: .white.opacity(0.25), radius: 2, x: 0, y: 4)
-                                .overlay(
-                                    Circle()
-                                        .inset(by: 1)
-                                        .stroke(Color.PB500, lineWidth: 3)
-                                    
-                                )
+                                .font(.Button)
                         }
+                        .buttonStyle(CircularButtonStyle())
+                        .shadow(color: .white.opacity(0.25), radius: 2, x: 0, y: 4)
                         Spacer()
-                        Button{
-                            
-                        } label: {
+                        Button(action: {
+                            // Your action here
+                        }) {
                             Image(systemName: "arrowshape.right.fill")
-                                .background()
-                                .frame(width: 62, height: 62, alignment: .center)
-                                .background(.white)
-                                .cornerRadius(100)
-                                .shadow(color: .white.opacity(0.25), radius: 2, x: 0, y: 4)
-                                .overlay(
-                                    Circle()
-                                        .inset(by: 1)
-                                        .stroke(Color.PB500, lineWidth: 3)
-                                    
-                                )
+                                .font(.Button)
                         }
+                        .buttonStyle(CircularButtonStyle())
+                        .shadow(color: .white.opacity(0.25), radius: 2, x: 0, y: 4)
+                        
                     }
                     .foregroundColor(Color.PB500)
                     .padding(.horizontal,20)
@@ -211,6 +197,7 @@ struct HomeView: View {
                 Image("background")
                     .resizable()
                     .scaledToFit()
+                    .opacity(0.1)
                     .edgesIgnoringSafeArea(.all)
                 
                 

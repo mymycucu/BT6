@@ -9,14 +9,24 @@ import SwiftUI
 
 struct SummaryHeader: View {
     var body: some View {
-        Button(action: {
-            // Your action here
-        }) {
-            Image(systemName: "list.bullet")
-                .font(.Button)
-//                .frame(width: 62, height: 62) // Set the image size
-        }
+        HStack(spacing: 15){
+            Button(action: {
+                // Your action here
+            }) {
+                Image(systemName: "list.bullet")
+                    .font(.Button)
+            }
         .buttonStyle(CircularButtonStyle())
+            ProgressBar()
+            Button(action: {
+                // Your action here
+            }) {
+                Image(systemName: "xmark")
+                    .font(.Button)
+            }
+            .buttonStyle(CircularButtonStyle())
+        }
+        
     }
 }
 

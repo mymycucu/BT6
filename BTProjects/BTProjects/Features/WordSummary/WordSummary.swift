@@ -11,10 +11,12 @@ struct WordSummary: View {
     var body: some View {
         VStack(alignment: .center, spacing: 20){
             //MARK: Header
-            
+//            Spacer()
+            SummaryHeader()
+            Spacer()
             
         }
-        .padding(.vertical, 40)
+        .padding(40)
         .background(
             ZStack{
                 RadialGradient(
@@ -28,10 +30,12 @@ struct WordSummary: View {
                     startRadius: 0,
                     endRadius: 1500
                 )
+//                .ignoresSafeArea(.all)
                 .edgesIgnoringSafeArea(.all)
                 Image("background")
                     .resizable()
                     .scaledToFit()
+                    .opacity(0.1)
                     .edgesIgnoringSafeArea(.all)
                 
                 
