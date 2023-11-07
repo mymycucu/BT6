@@ -221,7 +221,7 @@ struct HomeView: View {
     func calculateScale(index: Int) -> CGFloat {
         let activeIndex = Int(scrollID ?? 0)
         var scale:CGFloat?
-        withAnimation{
+        withAnimation(.linear(duration: 0.1)){
             if activeIndex == index {
                 scale = 1.0
             } else if activeIndex - 1 == index || activeIndex + 1 == index {
