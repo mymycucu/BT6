@@ -11,7 +11,8 @@ import SwiftUI
 struct BTProjectsApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView(activeID: .constant(UUID()))
+//            HomeView(activeID: .constant(UUID()))
+            WordSummary()
         }
     }
 }

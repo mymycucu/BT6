@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProgressBar: View {
     
-    @State var totalWords: Int = 10
+    @State var totalWords: Int = 4
     @State var step: Int =  2
     @State var containerWidth: CGFloat = 0
     
@@ -23,6 +23,7 @@ struct ProgressBar: View {
     
     var body: some View {
         ZStack{
+            //MARK: Progress Capsule
             GeometryReader { proxy in
                 ZStack(alignment: .leading){
                     Capsule()
@@ -41,8 +42,8 @@ struct ProgressBar: View {
                 .onAppear {
                     containerWidth = proxy.size.width
                 }
-                
-                
+
+                //MARK: Stars Progress
                 HStack(spacing: 0){
                     ForEach(1...totalWords, id: \.self){ index in
                         ///  min 38 -> width of image
