@@ -21,6 +21,28 @@ struct WordSummary: View {
                 .padding(26)
             SummaryVideo()
             Spacer()
+            HStack{
+                
+                Button(action: {
+                    // Your action here
+                }) {
+                    Image(systemName: "arrowshape.left.fill")
+                        .font(.Button)
+                }
+                .buttonStyle(CircularButtonStyle())
+                
+                Spacer()
+                Button(action: {
+                    // Your action here
+                }) {
+                    Image(systemName: "arrowshape.right.fill")
+                        .font(.Button)
+                }
+                .buttonStyle(CircularButtonStyle())
+                
+                
+            }
+
             
         }
         .padding(40)
