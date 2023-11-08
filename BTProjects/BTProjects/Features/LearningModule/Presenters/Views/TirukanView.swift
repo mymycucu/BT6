@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct TirukanView: View {
+    @State private var isOverlayVisible = false
+
     var body: some View {
-        
         ZStack {
-            
             TirukanBackground()
 
             VStack {
@@ -21,7 +21,6 @@ struct TirukanView: View {
                 TirukanText()
                 
                 HStack {
-                    
                     // MARK: Sign language video
                     TirukanVideo()
                         .padding()
@@ -30,13 +29,30 @@ struct TirukanView: View {
                     TirukanCamera()
                 }
                 
-                
-                TirukanBottomBar()
+                TirukanBottomBar(isOverlayVisible: $isOverlayVisible)
                     .padding(.horizontal, 30)
+                
             }
         }
+        .overlay(
+                isOverlayVisible ?
+                    VStack {
+                        TirukanCorrect()
+                            .onTapGesture {
+                                withAnimation {
+                                    isOverlayVisible = false
+                                }
+                            }
+                    }
+                    .background(Color.clear)
+                    .opacity(isOverlayVisible ? 1.0 : 0.0) // Fade-in animation
+                    .scaleEffect(isOverlayVisible ? 1.0 : 0.5) // Scale animation
+                    .animation(.spring()) // You can customize the animation type
+                    : nil
+            )
     }
 }
+
 
 #Preview {
     TirukanView()

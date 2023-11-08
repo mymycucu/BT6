@@ -14,6 +14,10 @@
 		05025D512AE77FD100178653 /* Fredoka-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05025D4C2AE77FD100178653 /* Fredoka-Bold.ttf */; };
 		05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D532AE7817E00178653 /* ExtensionColors.swift */; };
 		05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D552AE78AE200178653 /* ExtensionFonts.swift */; };
+		057EDDDC2AFB939000A85B51 /* TirukanCorrect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDDB2AFB939000A85B51 /* TirukanCorrect.swift */; };
+		057EDDDF2AFB9CC600A85B51 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 057EDDDE2AFB9CC600A85B51 /* Lottie */; };
+		057EDDE22AFB9D2500A85B51 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDE12AFB9D2500A85B51 /* LottieView.swift */; };
+		057EDDE72AFB9E2A00A85B51 /* correct.json in Resources */ = {isa = PBXBuildFile; fileRef = 057EDDE62AFB9E2A00A85B51 /* correct.json */; };
 		0596F83C2AFB728500328297 /* ARSCNCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83B2AFB728500328297 /* ARSCNCameraView.swift */; };
 		0596F83E2AFB72C900328297 /* ARSCNCameraContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */; };
 		0596F8402AFB74EC00328297 /* TirukanProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83F2AFB74EC00328297 /* TirukanProgress.swift */; };
@@ -53,6 +57,9 @@
 		05025D522AE77FDE00178653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05025D532AE7817E00178653 /* ExtensionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
 		05025D552AE78AE200178653 /* ExtensionFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFonts.swift; sourceTree = "<group>"; };
+		057EDDDB2AFB939000A85B51 /* TirukanCorrect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirukanCorrect.swift; sourceTree = "<group>"; };
+		057EDDE12AFB9D2500A85B51 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		057EDDE62AFB9E2A00A85B51 /* correct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = correct.json; sourceTree = "<group>"; };
 		0596F83B2AFB728500328297 /* ARSCNCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraView.swift; sourceTree = "<group>"; };
 		0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraContainer.swift; sourceTree = "<group>"; };
 		0596F83F2AFB74EC00328297 /* TirukanProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirukanProgress.swift; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057EDDDF2AFB9CC600A85B51 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +121,22 @@
 			);
 			name = Extensions;
 			path = Components/Extensions;
+			sourceTree = "<group>";
+		};
+		057EDDE02AFB9D1A00A85B51 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				057EDDE12AFB9D2500A85B51 /* LottieView.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		057EDDE32AFB9D4E00A85B51 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				057EDDE62AFB9E2A00A85B51 /* correct.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		0596F83A2AFB724400328297 /* Camera */ = {
@@ -164,6 +188,7 @@
 				059ED8512AFA186200AB7630 /* TirukanBottomBar.swift */,
 				059ED8532AFA1A4B00AB7630 /* TirukanCamera.swift */,
 				0596F83F2AFB74EC00328297 /* TirukanProgress.swift */,
+				057EDDDB2AFB939000A85B51 /* TirukanCorrect.swift */,
 			);
 			path = Tirukan;
 			sourceTree = "<group>";
@@ -244,6 +269,7 @@
 		ADE3CFB52AE3AE3800CED0DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				057EDDE32AFB9D4E00A85B51 /* Animations */,
 				059ED8432AFA133B00AB7630 /* Video */,
 				05025D472AE77FB200178653 /* Fonts */,
 				ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */,
@@ -254,6 +280,7 @@
 		ADE3CFB62AE3AE4000CED0DD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				057EDDE02AFB9D1A00A85B51 /* Lottie */,
 				0596F83A2AFB724400328297 /* Camera */,
 				05D0460D2AF8F2540029D747 /* VideoPlayer */,
 				ADE3CFC02AE3AF4C00CED0DD /* CoreData */,
@@ -395,6 +422,9 @@
 			dependencies = (
 			);
 			name = BTProjects;
+			packageProductDependencies = (
+				057EDDDE2AFB9CC600A85B51 /* Lottie */,
+			);
 			productName = BTProjects;
 			productReference = ADE3CFA12AE3ADA000CED0DD /* BTProjects.app */;
 			productType = "com.apple.product-type.application";
@@ -423,6 +453,9 @@
 				Base,
 			);
 			mainGroup = ADE3CF982AE3ADA000CED0DD;
+			packageReferences = (
+				057EDDDD2AFB9CC600A85B51 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = ADE3CFA22AE3ADA000CED0DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -440,6 +473,7 @@
 				059ED8462AFA133B00AB7630 /* E_Bisindo.mp4 in Resources */,
 				ADE3CFAC2AE3ADA200CED0DD /* Preview Assets.xcassets in Resources */,
 				05025D4F2AE77FD100178653 /* Fredoka-SemiBold.ttf in Resources */,
+				057EDDE72AFB9E2A00A85B51 /* correct.json in Resources */,
 				05025D4D2AE77FD100178653 /* Fredoka-Light.ttf in Resources */,
 				05025D4E2AE77FD100178653 /* Fredoka-Regular.ttf in Resources */,
 				05025D512AE77FD100178653 /* Fredoka-Bold.ttf in Resources */,
@@ -467,12 +501,14 @@
 				ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */,
 				059ED84A2AFA15FE00AB7630 /* TirukanTopBar.swift in Sources */,
 				ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */,
+				057EDDE22AFB9D2500A85B51 /* LottieView.swift in Sources */,
 				059ED8502AFA180500AB7630 /* TirukanVideo.swift in Sources */,
 				0596F83C2AFB728500328297 /* ARSCNCameraView.swift in Sources */,
 				059ED83E2AFA129C00AB7630 /* StoryTopBar.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
 				059ED8342AFA126B00AB7630 /* TirukanView.swift in Sources */,
+				057EDDDC2AFB939000A85B51 /* TirukanCorrect.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
 				059ED83D2AFA129C00AB7630 /* StoryBottomBar.swift in Sources */,
 				059ED84E2AFA173400AB7630 /* TirukanText.swift in Sources */,
@@ -691,6 +727,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		057EDDDD2AFB9CC600A85B51 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		057EDDDE2AFB9CC600A85B51 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 057EDDDD2AFB9CC600A85B51 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADE3CF992AE3ADA000CED0DD /* Project object */;
 }

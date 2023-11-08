@@ -7,12 +7,28 @@
 
 import SwiftUI
 
-struct CorrectSLView: View {
+struct TirukanCorrect: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Rectangle()
+              .foregroundColor(.clear)
+              .frame(width: 1194, height: 834)
+              .background(Color(red: 0.04, green: 0.16, blue: 0.07).opacity(0.5))
+            
+            VStack {
+                
+                LottieView(name: "correct", loopMode: .loop)
+                                    .frame(width: 365, height: 240)
+                
+                Image("correct-state")
+                
+            }
+            
+            
+        }
     }
 }
 
 #Preview {
-    CorrectSLView()
+    TirukanCorrect()
 }
