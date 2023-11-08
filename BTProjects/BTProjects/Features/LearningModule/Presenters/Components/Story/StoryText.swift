@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextStory: View {
+struct StoryText: View {
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
             
@@ -33,5 +33,5 @@ struct TextStory: View {
 }
 
 #Preview {
-    TextStory()
+    StoryText()
 }

@@ -9,7 +9,7 @@ import SwiftUI
 import AVKit
 import SwiftUI
 
-struct VideoContainer: View {
+struct StoryVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
 
@@ -78,6 +78,6 @@ struct VideoContainer: View {
 
 
 #Preview {
-    VideoContainer()
+    StoryVideo()
 }
 
