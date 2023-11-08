@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WordSummary: View {
     @State var word: String = "Bahaya"
+    @State var disableNext: Bool = true
     var body: some View {
         VStack(alignment: .center, spacing: 20){
             //MARK: Header
@@ -38,7 +39,7 @@ struct WordSummary: View {
                     Image(systemName: "arrowshape.right.fill")
                         .font(.Button)
                 }
-                .buttonStyle(CircularButtonStyle())
+                .buttonStyle(CircularButtonStyle(disabled: disableNext))
                 
                 
             }
@@ -46,7 +47,6 @@ struct WordSummary: View {
             
         }
         .padding(40)
-       
         .background(
             ZStack{
                 RadialGradient(

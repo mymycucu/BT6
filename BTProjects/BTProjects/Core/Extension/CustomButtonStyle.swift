@@ -9,20 +9,24 @@ import Foundation
 import SwiftUI
 
 struct CircularButtonStyle: ButtonStyle {
+    
+    public var disabled: Bool = false
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(width: 62, height: 62) // Adjust size as needed
-            .foregroundColor(Color.PB500)
+            .foregroundColor(disabled ? Color.PB200 : Color.PB500)
             .background(Color.white)
             .clipShape(Circle()) // Clips the button label into a circular shape
             .overlay(
                 Circle()
                     .inset(by: 1)
-                    .stroke(Color.PB500, lineWidth: 3)
+                    .stroke(disabled ? Color.PB300 : Color.PB500, lineWidth: 3)
             )
         
     }
 }
+
 
 struct ReplayButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {

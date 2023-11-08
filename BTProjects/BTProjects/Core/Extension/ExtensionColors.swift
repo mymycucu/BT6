@@ -56,12 +56,12 @@ extension Color {
     static var Red3 = Color("Red-3")
     
     // MARK: Gray
-    static var Gray1 = Color("Gray-1")
-    static var Gray2 = Color("Gray-2")
-    static var Gray3 = Color("Gray-3")
-    static var Gray4 = Color("Gray-4")
-    static var Gray5 = Color("Gray-5")
-    static var Gray6 = Color("Gray-6")
+    static var Gray1 = Color(.systemGray)
+    static var Gray2 = Color(.systemGray2)
+    static var Gray3 = Color(.systemGray3)
+    static var Gray4 = Color(.systemGray4)
+    static var Gray5 = Color(.systemGray5)
+    static var Gray6 = Color(.systemGray6)
     
     
     

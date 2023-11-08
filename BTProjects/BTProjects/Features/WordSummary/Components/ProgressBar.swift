@@ -17,9 +17,6 @@ struct ProgressBar: View {
         return min(containerWidth / CGFloat(totalWords) * CGFloat(step), containerWidth)
     }
     
-    var orangeRightPoint: CGFloat {
-        return CGFloat(maxWidth)
-    }
     
     var body: some View {
         ZStack{
@@ -63,9 +60,7 @@ struct ProgressBar: View {
                                     .offset(x: starPosition )
                                 
                             }
-                        }
-                        
-                        
+                        }    
                         
                     }
                     
