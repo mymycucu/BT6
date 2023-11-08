@@ -35,7 +35,7 @@ struct TirukanTopBar: View {
 
                     }
             
-            Spacer()
+            TirukanProgressBar()
             
             //MARK: X Button
             Button(action: {

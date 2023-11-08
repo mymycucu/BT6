@@ -27,7 +27,6 @@ struct TirukanBackground: View {
                 .scaledToFit()
                 .edgesIgnoringSafeArea(.all)
             
-            
         }
     }
 }

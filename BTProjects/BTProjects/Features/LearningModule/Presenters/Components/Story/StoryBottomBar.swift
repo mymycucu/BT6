@@ -33,7 +33,7 @@ struct StoryBottomBar: View {
                         
                     }
                         
-            TextStory()
+            StoryText()
             
             // MARK: Next Button
             Button(action: {

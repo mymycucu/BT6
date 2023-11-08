@@ -11,6 +11,7 @@ struct TirukanView: View {
     var body: some View {
         
         ZStack {
+            
             TirukanBackground()
 
             VStack {
@@ -20,8 +21,15 @@ struct TirukanView: View {
                 TirukanText()
                 
                 HStack {
+                    
+                    // MARK: Sign language video
                     TirukanVideo()
+                        .padding()
+                    
+                    // MARK: Sign language video capture
+                    TirukanCamera()
                 }
+                
                 
                 TirukanBottomBar()
                     .padding(.horizontal, 30)

@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import ARKit
 
 struct LearningModuleView: View {
     var body: some View {
-        CameraView()
+        TirukanView()
     }
 }
 

@@ -20,13 +20,12 @@ struct TirukanVideo: View {
             
             if let player = player {
                 VideoPlayerController(player: player)
-                    .frame(width: 310, height: 400)
+                    .frame(width: 330, height: 436)
                     .cornerRadius(22)
                     .overlay(
                         RoundedRectangle(cornerRadius: 22)
-                            .stroke(Color.PB500, lineWidth: 8) // Use your desired stroke color
+                            .stroke(Color.PB400, lineWidth: 6) // Use your desired stroke color
                     )
-                    .shadow(color: Color.white.opacity(0.3), radius: 5, x: 0, y: 5)
             }
 
             //MARK: Replay Button

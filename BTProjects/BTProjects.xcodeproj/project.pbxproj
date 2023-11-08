@@ -14,12 +14,14 @@
 		05025D512AE77FD100178653 /* Fredoka-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05025D4C2AE77FD100178653 /* Fredoka-Bold.ttf */; };
 		05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D532AE7817E00178653 /* ExtensionColors.swift */; };
 		05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D552AE78AE200178653 /* ExtensionFonts.swift */; };
+		0596F83C2AFB728500328297 /* ARSCNCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83B2AFB728500328297 /* ARSCNCameraView.swift */; };
+		0596F83E2AFB72C900328297 /* ARSCNCameraContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */; };
+		0596F8402AFB74EC00328297 /* TirukanProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83F2AFB74EC00328297 /* TirukanProgress.swift */; };
 		059ED8342AFA126B00AB7630 /* TirukanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED8332AFA126B00AB7630 /* TirukanView.swift */; };
 		059ED83D2AFA129C00AB7630 /* StoryBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED8372AFA129C00AB7630 /* StoryBottomBar.swift */; };
 		059ED83E2AFA129C00AB7630 /* StoryTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED8382AFA129C00AB7630 /* StoryTopBar.swift */; };
-		059ED83F2AFA129C00AB7630 /* VideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED8392AFA129C00AB7630 /* VideoContainer.swift */; };
-		059ED8402AFA129C00AB7630 /* TextStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED83A2AFA129C00AB7630 /* TextStory.swift */; };
-		059ED8412AFA129C00AB7630 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED83B2AFA129C00AB7630 /* ProgressBar.swift */; };
+		059ED83F2AFA129C00AB7630 /* StoryVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED8392AFA129C00AB7630 /* StoryVideo.swift */; };
+		059ED8402AFA129C00AB7630 /* StoryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED83A2AFA129C00AB7630 /* StoryText.swift */; };
 		059ED8422AFA129C00AB7630 /* StoryBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED83C2AFA129C00AB7630 /* StoryBackground.swift */; };
 		059ED8462AFA133B00AB7630 /* E_Bisindo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 059ED8442AFA133B00AB7630 /* E_Bisindo.mp4 */; };
 		059ED8472AFA133B00AB7630 /* dummy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 059ED8452AFA133B00AB7630 /* dummy.mp4 */; };
@@ -51,12 +53,14 @@
 		05025D522AE77FDE00178653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05025D532AE7817E00178653 /* ExtensionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
 		05025D552AE78AE200178653 /* ExtensionFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFonts.swift; sourceTree = "<group>"; };
+		0596F83B2AFB728500328297 /* ARSCNCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraView.swift; sourceTree = "<group>"; };
+		0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraContainer.swift; sourceTree = "<group>"; };
+		0596F83F2AFB74EC00328297 /* TirukanProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirukanProgress.swift; sourceTree = "<group>"; };
 		059ED8332AFA126B00AB7630 /* TirukanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirukanView.swift; sourceTree = "<group>"; };
 		059ED8372AFA129C00AB7630 /* StoryBottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBottomBar.swift; sourceTree = "<group>"; };
 		059ED8382AFA129C00AB7630 /* StoryTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTopBar.swift; sourceTree = "<group>"; };
-		059ED8392AFA129C00AB7630 /* VideoContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContainer.swift; sourceTree = "<group>"; };
-		059ED83A2AFA129C00AB7630 /* TextStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStory.swift; sourceTree = "<group>"; };
-		059ED83B2AFA129C00AB7630 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		059ED8392AFA129C00AB7630 /* StoryVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryVideo.swift; sourceTree = "<group>"; };
+		059ED83A2AFA129C00AB7630 /* StoryText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryText.swift; sourceTree = "<group>"; };
 		059ED83C2AFA129C00AB7630 /* StoryBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBackground.swift; sourceTree = "<group>"; };
 		059ED8442AFA133B00AB7630 /* E_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = E_Bisindo.mp4; sourceTree = "<group>"; };
 		059ED8452AFA133B00AB7630 /* dummy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummy.mp4; sourceTree = "<group>"; };
@@ -111,6 +115,15 @@
 			path = Components/Extensions;
 			sourceTree = "<group>";
 		};
+		0596F83A2AFB724400328297 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				0596F83B2AFB728500328297 /* ARSCNCameraView.swift */,
+				0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		059ED8352AFA129C00AB7630 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,9 +138,8 @@
 			children = (
 				059ED8372AFA129C00AB7630 /* StoryBottomBar.swift */,
 				059ED8382AFA129C00AB7630 /* StoryTopBar.swift */,
-				059ED8392AFA129C00AB7630 /* VideoContainer.swift */,
-				059ED83A2AFA129C00AB7630 /* TextStory.swift */,
-				059ED83B2AFA129C00AB7630 /* ProgressBar.swift */,
+				059ED8392AFA129C00AB7630 /* StoryVideo.swift */,
+				059ED83A2AFA129C00AB7630 /* StoryText.swift */,
 				059ED83C2AFA129C00AB7630 /* StoryBackground.swift */,
 			);
 			path = Story;
@@ -151,6 +163,7 @@
 				059ED84F2AFA180500AB7630 /* TirukanVideo.swift */,
 				059ED8512AFA186200AB7630 /* TirukanBottomBar.swift */,
 				059ED8532AFA1A4B00AB7630 /* TirukanCamera.swift */,
+				0596F83F2AFB74EC00328297 /* TirukanProgress.swift */,
 			);
 			path = Tirukan;
 			sourceTree = "<group>";
@@ -241,6 +254,7 @@
 		ADE3CFB62AE3AE4000CED0DD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0596F83A2AFB724400328297 /* Camera */,
 				05D0460D2AF8F2540029D747 /* VideoPlayer */,
 				ADE3CFC02AE3AF4C00CED0DD /* CoreData */,
 				ADE3CFBD2AE3AEFC00CED0DD /* Realm */,
@@ -442,37 +456,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05AE4CEA2AFB687A0057DE92 /* TextStory.swift in Sources */,
 				ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */,
 				059ED8422AFA129C00AB7630 /* StoryBackground.swift in Sources */,
 				ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */,
-				05AE4CE52AFB687A0057DE92 /* TirukanVideo.swift in Sources */,
-				05AE4CE42AFB687A0057DE92 /* TirukanCamera.swift in Sources */,
-				05AE4CE92AFB687A0057DE92 /* VideoContainer.swift in Sources */,
 				05D046112AF8F26B0029D747 /* StoryView.swift in Sources */,
-				059ED8402AFA129C00AB7630 /* TextStory.swift in Sources */,
+				059ED8402AFA129C00AB7630 /* StoryText.swift in Sources */,
 				059ED8542AFA1A4B00AB7630 /* TirukanCamera.swift in Sources */,
+				0596F83E2AFB72C900328297 /* ARSCNCameraContainer.swift in Sources */,
 				ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */,
-				05AE4CE12AFB687A0057DE92 /* TirukanBackground.swift in Sources */,
-				05AE4CE22AFB687A0057DE92 /* TirukanTopBar.swift in Sources */,
 				ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */,
 				059ED84A2AFA15FE00AB7630 /* TirukanTopBar.swift in Sources */,
 				ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */,
-				059ED8412AFA129C00AB7630 /* ProgressBar.swift in Sources */,
 				059ED8502AFA180500AB7630 /* TirukanVideo.swift in Sources */,
+				0596F83C2AFB728500328297 /* ARSCNCameraView.swift in Sources */,
 				059ED83E2AFA129C00AB7630 /* StoryTopBar.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
-				05AE4CE32AFB687A0057DE92 /* TirukanText.swift in Sources */,
-				05AE4CE62AFB687A0057DE92 /* TirukanBottomBar.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
 				059ED8342AFA126B00AB7630 /* TirukanView.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
 				059ED83D2AFA129C00AB7630 /* StoryBottomBar.swift in Sources */,
 				059ED84E2AFA173400AB7630 /* TirukanText.swift in Sources */,
 				059ED84C2AFA168300AB7630 /* TirukanBackground.swift in Sources */,
+				0596F8402AFB74EC00328297 /* TirukanProgress.swift in Sources */,
 				059ED8522AFA186200AB7630 /* TirukanBottomBar.swift in Sources */,
 				05D0460F2AF8F2540029D747 /* VideoPlayerController.swift in Sources */,
-				059ED83F2AFA129C00AB7630 /* VideoContainer.swift in Sources */,
+				059ED83F2AFA129C00AB7630 /* StoryVideo.swift in Sources */,
 				05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,7 +619,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BTProjects/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "App uses camera to detect sign language.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Ensuring your privacy, the app uses the camera for sign language detection";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -642,7 +650,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BTProjects/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "App uses camera to detect sign language.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Ensuring your privacy, the app uses the camera for sign language detection";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
