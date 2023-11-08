@@ -14,14 +14,14 @@
 		05025D512AE77FD100178653 /* Fredoka-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05025D4C2AE77FD100178653 /* Fredoka-Bold.ttf */; };
 		05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D532AE7817E00178653 /* ExtensionColors.swift */; };
 		05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D552AE78AE200178653 /* ExtensionFonts.swift */; };
-		05D046022AF8F2120029D747 /* StoryBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D045FC2AF8F2120029D747 /* StoryBottomBar.swift */; };
-		05D046032AF8F2120029D747 /* StoryTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D045FD2AF8F2120029D747 /* StoryTopBar.swift */; };
-		05D046042AF8F2120029D747 /* VideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D045FE2AF8F2120029D747 /* VideoContainer.swift */; };
-		05D046052AF8F2120029D747 /* TextStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D045FF2AF8F2120029D747 /* TextStory.swift */; };
-		05D046062AF8F2120029D747 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D046002AF8F2120029D747 /* ProgressBar.swift */; };
-		05D046072AF8F2120029D747 /* StoryBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D046012AF8F2120029D747 /* StoryBackground.swift */; };
-		05D0460B2AF8F2270029D747 /* E_Bisindo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 05D046092AF8F2270029D747 /* E_Bisindo.mp4 */; };
-		05D0460C2AF8F2270029D747 /* dummy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 05D0460A2AF8F2270029D747 /* dummy.mp4 */; };
+		05AE4C9F2AFB4E880057DE92 /* E_Bisindo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 05AE4C9D2AFB4E880057DE92 /* E_Bisindo.mp4 */; };
+		05AE4CA02AFB4E880057DE92 /* dummy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 05AE4C9E2AFB4E880057DE92 /* dummy.mp4 */; };
+		05AE4CA92AFB4EA20057DE92 /* StoryBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE4CA32AFB4EA20057DE92 /* StoryBottomBar.swift */; };
+		05AE4CAA2AFB4EA20057DE92 /* StoryTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE4CA42AFB4EA20057DE92 /* StoryTopBar.swift */; };
+		05AE4CAB2AFB4EA20057DE92 /* VideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE4CA52AFB4EA20057DE92 /* VideoContainer.swift */; };
+		05AE4CAC2AFB4EA20057DE92 /* TextStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE4CA62AFB4EA20057DE92 /* TextStory.swift */; };
+		05AE4CAD2AFB4EA20057DE92 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE4CA72AFB4EA20057DE92 /* ProgressBar.swift */; };
+		05AE4CAE2AFB4EA20057DE92 /* StoryBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE4CA82AFB4EA20057DE92 /* StoryBackground.swift */; };
 		05D0460F2AF8F2540029D747 /* VideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D0460E2AF8F2540029D747 /* VideoPlayerController.swift */; };
 		05D046112AF8F26B0029D747 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D046102AF8F26B0029D747 /* StoryView.swift */; };
 		ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */; };
@@ -44,14 +44,14 @@
 		05025D522AE77FDE00178653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05025D532AE7817E00178653 /* ExtensionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
 		05025D552AE78AE200178653 /* ExtensionFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFonts.swift; sourceTree = "<group>"; };
-		05D045FC2AF8F2120029D747 /* StoryBottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBottomBar.swift; sourceTree = "<group>"; };
-		05D045FD2AF8F2120029D747 /* StoryTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTopBar.swift; sourceTree = "<group>"; };
-		05D045FE2AF8F2120029D747 /* VideoContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContainer.swift; sourceTree = "<group>"; };
-		05D045FF2AF8F2120029D747 /* TextStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStory.swift; sourceTree = "<group>"; };
-		05D046002AF8F2120029D747 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
-		05D046012AF8F2120029D747 /* StoryBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBackground.swift; sourceTree = "<group>"; };
-		05D046092AF8F2270029D747 /* E_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = E_Bisindo.mp4; sourceTree = "<group>"; };
-		05D0460A2AF8F2270029D747 /* dummy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummy.mp4; sourceTree = "<group>"; };
+		05AE4C9D2AFB4E880057DE92 /* E_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = E_Bisindo.mp4; sourceTree = "<group>"; };
+		05AE4C9E2AFB4E880057DE92 /* dummy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummy.mp4; sourceTree = "<group>"; };
+		05AE4CA32AFB4EA20057DE92 /* StoryBottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBottomBar.swift; sourceTree = "<group>"; };
+		05AE4CA42AFB4EA20057DE92 /* StoryTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTopBar.swift; sourceTree = "<group>"; };
+		05AE4CA52AFB4EA20057DE92 /* VideoContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContainer.swift; sourceTree = "<group>"; };
+		05AE4CA62AFB4EA20057DE92 /* TextStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStory.swift; sourceTree = "<group>"; };
+		05AE4CA72AFB4EA20057DE92 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		05AE4CA82AFB4EA20057DE92 /* StoryBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBackground.swift; sourceTree = "<group>"; };
 		05D0460E2AF8F2540029D747 /* VideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
 		05D046102AF8F26B0029D747 /* StoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		ADE3CFA12AE3ADA000CED0DD /* BTProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,36 +97,34 @@
 			path = Components/Extensions;
 			sourceTree = "<group>";
 		};
-		05D045FA2AF8F2120029D747 /* Components */ = {
+		05AE4C9C2AFB4E880057DE92 /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				05D045FB2AF8F2120029D747 /* Story */,
+				05AE4C9D2AFB4E880057DE92 /* E_Bisindo.mp4 */,
+				05AE4C9E2AFB4E880057DE92 /* dummy.mp4 */,
 			);
-			name = Components;
-			path = ../../../../../../../repo/BT6/BTProjects/BTProjects/Features/LearningModule/Presenters/Components;
+			path = Video;
 			sourceTree = "<group>";
 		};
-		05D045FB2AF8F2120029D747 /* Story */ = {
+		05AE4CA12AFB4EA20057DE92 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				05D045FC2AF8F2120029D747 /* StoryBottomBar.swift */,
-				05D045FD2AF8F2120029D747 /* StoryTopBar.swift */,
-				05D045FE2AF8F2120029D747 /* VideoContainer.swift */,
-				05D045FF2AF8F2120029D747 /* TextStory.swift */,
-				05D046002AF8F2120029D747 /* ProgressBar.swift */,
-				05D046012AF8F2120029D747 /* StoryBackground.swift */,
+				05AE4CA22AFB4EA20057DE92 /* Story */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		05AE4CA22AFB4EA20057DE92 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				05AE4CA32AFB4EA20057DE92 /* StoryBottomBar.swift */,
+				05AE4CA42AFB4EA20057DE92 /* StoryTopBar.swift */,
+				05AE4CA52AFB4EA20057DE92 /* VideoContainer.swift */,
+				05AE4CA62AFB4EA20057DE92 /* TextStory.swift */,
+				05AE4CA72AFB4EA20057DE92 /* ProgressBar.swift */,
+				05AE4CA82AFB4EA20057DE92 /* StoryBackground.swift */,
 			);
 			path = Story;
-			sourceTree = "<group>";
-		};
-		05D046082AF8F2270029D747 /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				05D046092AF8F2270029D747 /* E_Bisindo.mp4 */,
-				05D0460A2AF8F2270029D747 /* dummy.mp4 */,
-			);
-			name = Video;
-			path = ../../../../../../repo/BT6/BTProjects/BTProjects/Core/Resources/Video;
 			sourceTree = "<group>";
 		};
 		05D0460D2AF8F2540029D747 /* VideoPlayer */ = {
@@ -205,7 +203,7 @@
 		ADE3CFB52AE3AE3800CED0DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				05D046082AF8F2270029D747 /* Video */,
+				05AE4C9C2AFB4E880057DE92 /* Video */,
 				05025D472AE77FB200178653 /* Fonts */,
 				ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */,
 			);
@@ -308,7 +306,7 @@
 		ADE3CFCB2AE3B07400CED0DD /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				05D045FA2AF8F2120029D747 /* Components */,
+				05AE4CA12AFB4EA20057DE92 /* Components */,
 				ADE3CFCE2AE3B0A500CED0DD /* Views */,
 				05025D572AE791EA00178653 /* Extensions */,
 			);
@@ -396,14 +394,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05D0460B2AF8F2270029D747 /* E_Bisindo.mp4 in Resources */,
 				ADE3CFAC2AE3ADA200CED0DD /* Preview Assets.xcassets in Resources */,
 				05025D4F2AE77FD100178653 /* Fredoka-SemiBold.ttf in Resources */,
+				05AE4CA02AFB4E880057DE92 /* dummy.mp4 in Resources */,
 				05025D4D2AE77FD100178653 /* Fredoka-Light.ttf in Resources */,
 				05025D4E2AE77FD100178653 /* Fredoka-Regular.ttf in Resources */,
 				05025D512AE77FD100178653 /* Fredoka-Bold.ttf in Resources */,
 				05025D502AE77FD100178653 /* Fredoka-Medium.ttf in Resources */,
-				05D0460C2AF8F2270029D747 /* dummy.mp4 in Resources */,
+				05AE4C9F2AFB4E880057DE92 /* E_Bisindo.mp4 in Resources */,
 				ADE3CFA92AE3ADA200CED0DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,22 +413,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05AE4CAE2AFB4EA20057DE92 /* StoryBackground.swift in Sources */,
 				ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */,
-				05D046042AF8F2120029D747 /* VideoContainer.swift in Sources */,
 				ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */,
 				05D046112AF8F26B0029D747 /* StoryView.swift in Sources */,
+				05AE4CAC2AFB4EA20057DE92 /* TextStory.swift in Sources */,
 				ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */,
+				05AE4CAA2AFB4EA20057DE92 /* StoryTopBar.swift in Sources */,
+				05AE4CAD2AFB4EA20057DE92 /* ProgressBar.swift in Sources */,
+				05AE4CAB2AFB4EA20057DE92 /* VideoContainer.swift in Sources */,
 				ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */,
 				ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */,
-				05D046062AF8F2120029D747 /* ProgressBar.swift in Sources */,
-				05D046072AF8F2120029D747 /* StoryBackground.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
-				05D046052AF8F2120029D747 /* TextStory.swift in Sources */,
-				05D046032AF8F2120029D747 /* StoryTopBar.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
-				05D046022AF8F2120029D747 /* StoryBottomBar.swift in Sources */,
 				05D0460F2AF8F2540029D747 /* VideoPlayerController.swift in Sources */,
+				05AE4CA92AFB4EA20057DE92 /* StoryBottomBar.swift in Sources */,
 				05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
