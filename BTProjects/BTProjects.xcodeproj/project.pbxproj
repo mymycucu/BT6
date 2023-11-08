@@ -23,13 +23,15 @@
 		ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */; };
 		ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */; };
 		ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */; };
+		D46180C42AFB60DD00370DD3 /* VideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46180C32AFB60DD00370DD3 /* VideoPlayerController.swift */; };
+		D46180C92AFB629F00370DD3 /* dummy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D46180C82AFB629F00370DD3 /* dummy.mp4 */; };
+		D46180CB2AFB64F300370DD3 /* E_Bisindo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D46180CA2AFB64F300370DD3 /* E_Bisindo.mp4 */; };
+		D46180CE2AFB695700370DD3 /* SummaryVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46180CD2AFB695700370DD3 /* SummaryVideo.swift */; };
+		D46180D02AFB6D6400370DD3 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46180CF2AFB6D6400370DD3 /* CustomButtonStyle.swift */; };
 		D4BED4C82AF890940049DB30 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BED4C72AF890940049DB30 /* CategoryButton.swift */; };
 		D4C515FC2AFA17F5001A97E5 /* WordSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C515FB2AFA17F5001A97E5 /* WordSummary.swift */; };
 		D4C515FE2AFA182B001A97E5 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C515FD2AFA182B001A97E5 /* ProgressBar.swift */; };
 		D4C516032AFA7D80001A97E5 /* SummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C516022AFA7D80001A97E5 /* SummaryHeader.swift */; };
-		D4C516052AFA8834001A97E5 /* CircularButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C516042AFA8834001A97E5 /* CircularButtonStyle.swift */; };
-		D4CF4AFA2AFAA2E00046A5D7 /* VideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF4AF92AFAA2E00046A5D7 /* VideoPlayerController.swift */; };
-		D4CF4AFC2AFAA3170046A5D7 /* VideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF4AFB2AFAA3170046A5D7 /* VideoContainer.swift */; };
 		D4FE434C2AF89EED00952948 /* CategoryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE434B2AF89EED00952948 /* CategoryMenu.swift */; };
 		D4FE434E2AF8D31800952948 /* StoryBookPerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE434D2AF8D31800952948 /* StoryBookPerCategory.swift */; };
 		D4FE9D872AF358CE000DAFEB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9D862AF358CE000DAFEB /* HomeView.swift */; };
@@ -57,15 +59,15 @@
 		ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		D46180C32AFB60DD00370DD3 /* VideoPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
+		D46180C82AFB629F00370DD3 /* dummy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummy.mp4; sourceTree = "<group>"; };
+		D46180CA2AFB64F300370DD3 /* E_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = E_Bisindo.mp4; sourceTree = "<group>"; };
+		D46180CD2AFB695700370DD3 /* SummaryVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryVideo.swift; sourceTree = "<group>"; };
+		D46180CF2AFB6D6400370DD3 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		D4BED4C72AF890940049DB30 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 		D4C515FB2AFA17F5001A97E5 /* WordSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSummary.swift; sourceTree = "<group>"; };
 		D4C515FD2AFA182B001A97E5 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		D4C516022AFA7D80001A97E5 /* SummaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeader.swift; sourceTree = "<group>"; };
-		D4C516042AFA8834001A97E5 /* CircularButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButtonStyle.swift; sourceTree = "<group>"; };
-		D4CF4AF92AFAA2E00046A5D7 /* VideoPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
-		D4CF4AFB2AFAA3170046A5D7 /* VideoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContainer.swift; sourceTree = "<group>"; };
-		D4CF4AFE2AFAA3C60046A5D7 /* dummy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummy.mp4; sourceTree = "<group>"; };
-		D4CF4AFF2AFAA3C60046A5D7 /* E_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = E_Bisindo.mp4; sourceTree = "<group>"; };
 		D4FE434B2AF89EED00952948 /* CategoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenu.swift; sourceTree = "<group>"; };
 		D4FE434D2AF8D31800952948 /* StoryBookPerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBookPerCategory.swift; sourceTree = "<group>"; };
 		D4FE9D862AF358CE000DAFEB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -173,7 +175,7 @@
 		ADE3CFB52AE3AE3800CED0DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D4CF4AFD2AFAA3840046A5D7 /* Video */,
+				D46180CC2AFB64FB00370DD3 /* Video */,
 				05025D472AE77FB200178653 /* Fonts */,
 				ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */,
 			);
@@ -205,7 +207,7 @@
 				05025D532AE7817E00178653 /* ExtensionColors.swift */,
 				D4FE9D902AF36EC0000DAFEB /* RoundedCorner.swift */,
 				05025D552AE78AE200178653 /* ExtensionFonts.swift */,
-				D4C516042AFA8834001A97E5 /* CircularButtonStyle.swift */,
+				D46180CF2AFB6D6400370DD3 /* CustomButtonStyle.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -316,6 +318,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		D46180CC2AFB64FB00370DD3 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				D46180CA2AFB64F300370DD3 /* E_Bisindo.mp4 */,
+				D46180C82AFB629F00370DD3 /* dummy.mp4 */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		D4C515FA2AFA17D5001A97E5 /* WordSummary */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,7 +341,7 @@
 			children = (
 				D4C515FD2AFA182B001A97E5 /* ProgressBar.swift */,
 				D4C516022AFA7D80001A97E5 /* SummaryHeader.swift */,
-				D4CF4AFB2AFAA3170046A5D7 /* VideoContainer.swift */,
+				D46180CD2AFB695700370DD3 /* SummaryVideo.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -338,18 +349,9 @@
 		D4CF4AF82AFAA2BF0046A5D7 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				D4CF4AF92AFAA2E00046A5D7 /* VideoPlayerController.swift */,
+				D46180C32AFB60DD00370DD3 /* VideoPlayerController.swift */,
 			);
 			path = VideoPlayer;
-			sourceTree = "<group>";
-		};
-		D4CF4AFD2AFAA3840046A5D7 /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				D4CF4AFE2AFAA3C60046A5D7 /* dummy.mp4 */,
-				D4CF4AFF2AFAA3C60046A5D7 /* E_Bisindo.mp4 */,
-			);
-			path = Video;
 			sourceTree = "<group>";
 		};
 		D4FE9D882AF36ACA000DAFEB /* Home */ = {
@@ -443,6 +445,8 @@
 				05025D4F2AE77FD100178653 /* Fredoka-SemiBold.ttf in Resources */,
 				05025D4D2AE77FD100178653 /* Fredoka-Light.ttf in Resources */,
 				05025D4E2AE77FD100178653 /* Fredoka-Regular.ttf in Resources */,
+				D46180CB2AFB64F300370DD3 /* E_Bisindo.mp4 in Resources */,
+				D46180C92AFB629F00370DD3 /* dummy.mp4 in Resources */,
 				05025D512AE77FD100178653 /* Fredoka-Bold.ttf in Resources */,
 				05025D502AE77FD100178653 /* Fredoka-Medium.ttf in Resources */,
 				ADE3CFA92AE3ADA200CED0DD /* Assets.xcassets in Resources */,
@@ -456,25 +460,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4CF4AFA2AFAA2E00046A5D7 /* VideoPlayerController.swift in Sources */,
-				D4CF4AFC2AFAA3170046A5D7 /* VideoContainer.swift in Sources */,
 				ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */,
 				ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */,
 				D4FE9D8F2AF36C10000DAFEB /* StoryBook.swift in Sources */,
+				D46180CE2AFB695700370DD3 /* SummaryVideo.swift in Sources */,
 				ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */,
 				D4C515FE2AFA182B001A97E5 /* ProgressBar.swift in Sources */,
 				D4FE9D912AF36EC0000DAFEB /* RoundedCorner.swift in Sources */,
 				D4FE434C2AF89EED00952948 /* CategoryMenu.swift in Sources */,
 				D4FE434E2AF8D31800952948 /* StoryBookPerCategory.swift in Sources */,
 				D4FE9D872AF358CE000DAFEB /* HomeView.swift in Sources */,
+				D46180D02AFB6D6400370DD3 /* CustomButtonStyle.swift in Sources */,
 				ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */,
-				D4C516052AFA8834001A97E5 /* CircularButtonStyle.swift in Sources */,
 				D4BED4C82AF890940049DB30 /* CategoryButton.swift in Sources */,
 				ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
 				D4C516032AFA7D80001A97E5 /* SummaryHeader.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
+				D46180C42AFB60DD00370DD3 /* VideoPlayerController.swift in Sources */,
 				D4FE9D8B2AF36B19000DAFEB /* HomeHeader.swift in Sources */,
 				D4C515FC2AFA17F5001A97E5 /* WordSummary.swift in Sources */,
 				05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */,

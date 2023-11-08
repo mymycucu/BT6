@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct WordSummary: View {
+    @State var word: String = "Bahaya"
     var body: some View {
         VStack(alignment: .center, spacing: 20){
             //MARK: Header
             
             SummaryHeader()
+            Text(word)
+                .foregroundStyle(.white)
+                .font(.Heading1_Semibold)
+                .underline()
+                .padding(26)
+            SummaryVideo()
             Spacer()
-
             
         }
         .padding(40)

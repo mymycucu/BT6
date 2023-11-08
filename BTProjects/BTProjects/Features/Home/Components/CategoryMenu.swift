@@ -13,80 +13,119 @@ struct CategoryMenu: View {
                       Category(colors: .green),]
     @Binding var category: Category?
     @State private var selectedCategoryIndex = 0 // Index of the initially selected category'
+    @State var scrollID: Int?
     
     var body: some View {
-//        ScrollViewReader { scrollView in
-//            ScrollView(.horizontal, showsIndicators: false) {
-//                HStack(spacing: 20) {
-//                    Spacer(minLength: UIScreen.main.bounds.width / 2)
-//                    ForEach(categories.indices, id: \.self) { index in
-//                        CategoryButton(item: categories[index])
-//                            .id(index) // Set an ID for the button
-//                    }
-//                    .scrollTransition(.interactive, axis: .horizontal) { content, phase in
-//                        content
-//                            .scaleEffect (
-//                                x: phase.isIdentity ? 1.0 : 0,
-//                                y: phase.isIdentity ? 1.0 : 0)
-//                    }
-//                }
-//                .scrollTargetLayout()
-//            }
-//            .onAppear {
-//                scrollToMiddle(scrollView: scrollView)
-//            }
-//            .frame(width: 480, height: 90)
-//            .scrollPosition(id: $category)
-//            .contentMargins(.horizontal, 2, for: .scrollContent)
-//            //            .scrollClipDisabled()
-//            .scrollTargetBehavior(.viewAligned)
-//        }
-                VStack{
-                    GeometryReader {geometry in
-                        let size = geometry.size.width
-                        let padding = (size - 85) / 2
         
-                        ScrollView(.horizontal, showsIndicators: false){
-                            HStack(alignment:.center){
-                                ForEach(categories, id: \.id) { item in
-                                    CategoryButton(item: item, action: {
-                                                        category = item
-                                                    })
-        
-        
+        ScrollViewReader { proxy in
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 10) {
+                    Circle()
+                        .frame(height: 90)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .inset(by: 1.5)
+                                .stroke(Color(red: 0.19, green: 0.24, blue: 0.35), lineWidth: 3)
+                        )
+                        .opacity(0)
+                    Circle()
+                        .frame(height: 90)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .inset(by: 1.5)
+                                .stroke(Color(red: 0.19, green: 0.24, blue: 0.35), lineWidth: 3)
+                        )
+                        .opacity(0)
+                    ForEach(0..<min(categories.count, 9), id: \.self) { index in
+                        
+                        let scale = calculateScale(index: index)
+                        Button {
+                            scrollID = index
+                        } label: {
+                            Circle()
+                                .fill(categories[index].colors)
+                            
+                            
+                        }
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .inset(by: 1)
+                                .stroke(Color.PB300, lineWidth: 3)
+                        )
+                        
+                        .scaleEffect(scale, anchor: .center)
+                        
+                        .onAppear {
+                            if index == 0 {
+                                withAnimation {
+                                    proxy.scrollTo(index)
                                 }
-                                .scrollTransition(.interactive, axis: .horizontal) { content, phase in
-                                    content
-                                        .scaleEffect (
-                                            x: phase.isIdentity ? 1.0 : 0.6,
-                                            y: phase.isIdentity ? 1.0 : 0.6)
-                                }
-        
                             }
-                            .scrollTargetLayout()
                         }
-                        .scrollPosition(id: $category)
-                        .contentMargins(.horizontal, 2, for: .scrollContent)
-                        .safeAreaPadding(.horizontal,padding)
-                        .scrollTargetBehavior(.viewAligned)
-        
+                        .scrollTransition { content, phase in
+                            content
+                                .scaleEffect (
+                                    x: phase.isIdentity ? 1.0 : 0,
+                                    y: phase.isIdentity ? 1.0 : 0)
+                        }
+                        .frame(maxWidth: 90)
                     }
-                    .frame(width: 460, height: 90)
-                    .onTapGesture {
-                            // To end editing or dismiss keyboard if needed
-                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                        }
+                    Circle()
+                        .frame(height: 90)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .inset(by: 1.5)
+                                .stroke(Color(red: 0.19, green: 0.24, blue: 0.35), lineWidth: 3)
+                        )
+                        .opacity(0)
+                    Circle()
+                        .frame(height: 90)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .inset(by: 1.5)
+                                .stroke(Color(red: 0.19, green: 0.24, blue: 0.35), lineWidth: 3)
+                        )
+                        .opacity(0)
+                    
                 }
+                .scrollTargetLayout()
+            }
+            
+            .scrollTargetBehavior(.viewAligned)
+            .scrollPosition(id: $scrollID, anchor: .center)
+            .onAppear{
+                withAnimation {
+                    DispatchQueue.main.async{
+                        scrollID = 0
+                    }
+                }
+            }
+            .onChange(of: scrollID) { oldValue, newValue in
+                withAnimation(.easeInOut(duration: 0.1)) {
+                    DispatchQueue.main.async{
+                        proxy.scrollTo(newValue)
+                    }
+                }
+            }
+            .frame(width: 500, height: 100)
+        }
         
+    }
+    func calculateScale(index: Int) -> CGFloat {
+        let activeIndex = Int(scrollID ?? 0)
+        var scale:CGFloat?
+        withAnimation(.easeInOut(duration: 0.1)){
+            if activeIndex == index {
+                scale = 1.0
+            } else if activeIndex - 1 == index || activeIndex + 1 == index {
+                scale = 0.75
+            } else {
+                scale = 0.5
+            }
+        }
+        return scale!
     }
     
-    func scrollToMiddle(scrollView: ScrollViewProxy) {
-        // Scroll to the middle of the ScrollView
-        let middleIndex = selectedCategoryIndex
-        withAnimation {
-            scrollView.scrollTo(middleIndex, anchor: .center)
-        }
-    }
 }
 
 #Preview {
