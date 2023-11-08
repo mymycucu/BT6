@@ -9,7 +9,26 @@ import SwiftUI
 
 struct TirukanBackground: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            RadialGradient(
+                gradient: Gradient(
+                    stops: [
+                        .init(color: .PB600.opacity(0.8), location: 0), // Starting around $0% from the center
+                        .init(color: .PB600, location: 0.8) // Strating 0.8
+                    ]
+                ),
+                center: UnitPoint(x: 0.5, y: 1.5),
+                startRadius: 0,
+                endRadius: 1500
+            )
+            .edgesIgnoringSafeArea(.all)
+            Image("stars_background")
+                .resizable()
+                .scaledToFit()
+                .edgesIgnoringSafeArea(.all)
+            
+            
+        }
     }
 }
 

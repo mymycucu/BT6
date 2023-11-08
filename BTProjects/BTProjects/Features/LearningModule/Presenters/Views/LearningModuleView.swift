@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LearningModuleView: View {
     var body: some View {
-        StoryView()
+        CameraView()
     }
 }
 

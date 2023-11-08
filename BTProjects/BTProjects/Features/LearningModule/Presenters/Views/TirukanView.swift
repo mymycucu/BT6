@@ -9,10 +9,29 @@ import SwiftUI
 
 struct TirukanView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            TirukanBackground()
+
+            VStack {
+                TirukanTopBar()
+                    .padding(.horizontal, 30)
+
+                TirukanText()
+                
+                HStack {
+                    TirukanVideo()
+                }
+                
+                TirukanBottomBar()
+                    .padding(.horizontal, 30)
+            }
+        }
     }
 }
 
 #Preview {
     TirukanView()
 }
+
+
