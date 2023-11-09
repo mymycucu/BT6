@@ -15,10 +15,14 @@ struct TirukanView: View {
             TirukanBackground()
 
             VStack {
+                
                 TirukanTopBar()
                     .padding(.horizontal, 30)
+                    .padding(.top, 50)
 
                 TirukanText()
+                
+                Spacer()
                 
                 HStack {
                     // MARK: Sign language video
@@ -29,8 +33,11 @@ struct TirukanView: View {
                     TirukanCamera()
                 }
                 
+                Spacer()
+                
                 TirukanBottomBar(isOverlayVisible: $isOverlayVisible)
                     .padding(.horizontal, 30)
+                    .padding(.bottom, 30)
                 
             }
         }

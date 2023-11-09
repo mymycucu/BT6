@@ -18,6 +18,8 @@
 		057EDDDF2AFB9CC600A85B51 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 057EDDDE2AFB9CC600A85B51 /* Lottie */; };
 		057EDDE22AFB9D2500A85B51 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDE12AFB9D2500A85B51 /* LottieView.swift */; };
 		057EDDE72AFB9E2A00A85B51 /* correct.json in Resources */ = {isa = PBXBuildFile; fileRef = 057EDDE62AFB9E2A00A85B51 /* correct.json */; };
+		057EDDEA2AFC7B7400A85B51 /* ExitState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDE92AFC7B7400A85B51 /* ExitState.swift */; };
+		057EDDEC2AFC831200A85B51 /* CorrectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDEB2AFC831200A85B51 /* CorrectState.swift */; };
 		0596F83C2AFB728500328297 /* ARSCNCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83B2AFB728500328297 /* ARSCNCameraView.swift */; };
 		0596F83E2AFB72C900328297 /* ARSCNCameraContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */; };
 		0596F8402AFB74EC00328297 /* TirukanProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83F2AFB74EC00328297 /* TirukanProgress.swift */; };
@@ -60,6 +62,8 @@
 		057EDDDB2AFB939000A85B51 /* TirukanCorrect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirukanCorrect.swift; sourceTree = "<group>"; };
 		057EDDE12AFB9D2500A85B51 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		057EDDE62AFB9E2A00A85B51 /* correct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = correct.json; sourceTree = "<group>"; };
+		057EDDE92AFC7B7400A85B51 /* ExitState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitState.swift; sourceTree = "<group>"; };
+		057EDDEB2AFC831200A85B51 /* CorrectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectState.swift; sourceTree = "<group>"; };
 		0596F83B2AFB728500328297 /* ARSCNCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraView.swift; sourceTree = "<group>"; };
 		0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraContainer.swift; sourceTree = "<group>"; };
 		0596F83F2AFB74EC00328297 /* TirukanProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirukanProgress.swift; sourceTree = "<group>"; };
@@ -139,6 +143,15 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		057EDDE82AFC7B2A00A85B51 /* CaseFlow */ = {
+			isa = PBXGroup;
+			children = (
+				057EDDE92AFC7B7400A85B51 /* ExitState.swift */,
+				057EDDEB2AFC831200A85B51 /* CorrectState.swift */,
+			);
+			path = CaseFlow;
+			sourceTree = "<group>";
+		};
 		0596F83A2AFB724400328297 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +164,7 @@
 		059ED8352AFA129C00AB7630 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				057EDDE82AFC7B2A00A85B51 /* CaseFlow */,
 				059ED8482AFA15EA00AB7630 /* Tirukan */,
 				059ED8362AFA129C00AB7630 /* Story */,
 			);
@@ -507,8 +521,10 @@
 				059ED83E2AFA129C00AB7630 /* StoryTopBar.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
+				057EDDEA2AFC7B7400A85B51 /* ExitState.swift in Sources */,
 				059ED8342AFA126B00AB7630 /* TirukanView.swift in Sources */,
 				057EDDDC2AFB939000A85B51 /* TirukanCorrect.swift in Sources */,
+				057EDDEC2AFC831200A85B51 /* CorrectState.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
 				059ED83D2AFA129C00AB7630 /* StoryBottomBar.swift in Sources */,
 				059ED84E2AFA173400AB7630 /* TirukanText.swift in Sources */,

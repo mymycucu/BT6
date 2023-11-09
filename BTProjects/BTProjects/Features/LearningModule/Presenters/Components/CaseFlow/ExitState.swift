@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CorrectState: View {
+struct ExitState: View {
     var body: some View {
         
         ZStack {
@@ -93,5 +93,5 @@ struct CorrectState: View {
 }
 
 #Preview {
-    CorrectState()
+    ExitState()
 }
