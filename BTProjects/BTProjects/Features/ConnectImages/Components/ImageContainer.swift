@@ -59,13 +59,7 @@ struct ImageContainer: View {
             
         }
         .frame(width:276, height: 196)
-        .onTapGesture {
-            if isSelected == false {
-                isSelected = true
-            }else{
-                isSelected = false
-            }
-        }
+
     }
 }
 

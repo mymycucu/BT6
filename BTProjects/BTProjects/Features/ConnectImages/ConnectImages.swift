@@ -37,14 +37,14 @@ struct ConnectImages: View {
                                     }
                                 }
                             ), position: .left)
-//                                .onTapGesture {
-//                                    if leftSelected == index {
-//                                        leftSelected = nil
-//                                    } else {
-//                                        leftSelected = index
-//                                        rightSelected = nil
-//                                    }
-//                                }
+                                .onTapGesture {
+                                    if leftSelected == index {
+                                        leftSelected = nil
+                                    } else {
+                                        leftSelected = index
+                                        rightSelected = nil
+                                    }
+                                }
                             
                         }
                         
@@ -68,12 +68,12 @@ struct ConnectImages: View {
                                 }
                             ),
                             position: .right)
-//                                .onTapGesture {
-//                                    if rightSelected != index {
-//                                        rightSelected = index
-//                                        isRightSelected = true
-//                                    }
-//                                }
+                                .onTapGesture {
+                                    if rightSelected != index {
+                                        rightSelected = index
+                                        isRightSelected = true
+                                    }
+                                }
                         }
                     }
                 }
