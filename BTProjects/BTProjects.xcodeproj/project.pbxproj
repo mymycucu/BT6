@@ -336,9 +336,9 @@
 		D41801D62AFC89D60009AFE0 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				D42466022AFB7B5E0029D229 /* ConnectImages */,
 				D41801D32AFC898E0009AFE0 /* QuizHeader.swift */,
 				D4C515FD2AFA182B001A97E5 /* ProgressBar.swift */,
-				D42466022AFB7B5E0029D229 /* ConnectImages */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";

@@ -71,16 +71,20 @@ struct ConnectImages: View {
                             ),
                             position: .right)
                                 .onTapGesture {
-                                    if rightSelected != index {
+                                    if rightSelected == index {
+                                        rightSelected = nil
+                                    } else {
                                         rightSelected = index
                                         isRightSelected = true
                                     }
+                                   
                                 }
                         }
                     }
                 }
                 .padding(.horizontal, 122)
                 .padding(.vertical, 37)
+               
                 
                 //MARK: Navigation Previous-Next Button
                 VStack {
@@ -106,6 +110,7 @@ struct ConnectImages: View {
                         
                     }
                 }
+                
             }
             Spacer()
             
