@@ -112,10 +112,12 @@ struct ConnectImages: View {
                 }
                 
             }
-            Spacer()
+//            Spacer()
             
         }
-        .padding(40)
+        .padding(.horizontal, 40)
+        .padding(.bottom, 40)
+        .padding(.top, 20)
         .background(
             ZStack{
                 RadialGradient(
@@ -132,7 +134,7 @@ struct ConnectImages: View {
                 .edgesIgnoringSafeArea(.all)
                 Image("background")
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .opacity(0.1)
                     .edgesIgnoringSafeArea(.all)
                 

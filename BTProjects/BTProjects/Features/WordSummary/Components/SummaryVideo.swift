@@ -18,18 +18,18 @@ struct SummaryVideo: View {
             
             //MARK: Video Container
             
+            
             if let player = player {
                 VideoPlayerController(player: player)
-                    .frame(width: 467, height: 310)
-                    .cornerRadius(22)
-                    .padding(6)
+                    .frame(width: 646, height: 436)
+                    .cornerRadius(32)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 22)
+                        RoundedRectangle(cornerRadius: 32)
                             .inset(by: 1)
-                            .stroke(Color(red: 0.95, green: 0.95, blue: 0.97), style: StrokeStyle(lineWidth: 2, dash: [7.5907368659973145, 7.5907368659973145]))
+                            .stroke(Color.PB500, lineWidth: 12)
                         
                     )
-                    .shadow(color: Color.white.opacity(0.3), radius: 5, x: 0, y: 5)
+                    
                 
             }
             
@@ -55,7 +55,7 @@ struct SummaryVideo: View {
                 }
                 Spacer()
             }
-            .frame(width: 467, height: 310)
+            .frame(width: 646, height: 436)
         }
         .onAppear {
             

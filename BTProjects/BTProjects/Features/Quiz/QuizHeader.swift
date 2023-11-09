@@ -16,7 +16,7 @@ struct QuizHeader: View {
                 Image(systemName: "list.bullet")
                     .font(.Button)
             }
-        .buttonStyle(CircularButtonStyle())
+            .buttonStyle(CircularButtonStyle())
             ProgressBar()
             Button(action: {
                 

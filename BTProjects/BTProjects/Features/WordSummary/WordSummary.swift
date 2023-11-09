@@ -8,70 +8,74 @@
 import SwiftUI
 
 struct WordSummary: View {
-    @State var word: String = "Bahaya"
-    @State var disableNext: Bool = true
+    @State var word: String = "bahaya"
+    @State var disableNext: Bool = false
     var body: some View {
-        VStack(alignment: .center, spacing: 20){
+        ZStack(alignment: .center){
             //MARK: Header
             
-            SummaryHeader()
-            Text(word)
-                .foregroundStyle(.white)
-                .font(.Heading1_Semibold)
-                .underline()
-                .padding(26)
-            SummaryVideo()
-            Spacer()
-            HStack{
-                
-                Button(action: {
-                    // Your action here
-                }) {
-                    Image(systemName: "arrowshape.left.fill")
-                        .font(.Button)
-                }
-                .buttonStyle(CircularButtonStyle())
-                
+            VStack(spacing: 0){
+                SummaryHeader()
+                    
+                    
+                Text(word)
+                    .foregroundStyle(.white)
+                    .font(.Heading1_Semibold)
+                    .underline()
+                    .padding(.bottom, 50)
+                SummaryVideo()
+                    
                 Spacer()
-                Button(action: {
-                    // Your action here
-                }) {
-                    Image(systemName: "arrowshape.right.fill")
-                        .font(.Button)
-                }
-                .buttonStyle(CircularButtonStyle(disabled: disableNext))
                 
+            }
+            
+            
+            VStack(spacing: 0){
+                Spacer()
+                
+                HStack{
+                    Button(action: {
+                        // Your action here
+                    }) {
+                        Image(systemName: "arrowshape.left.fill")
+                            .font(.Button)
+                    }
+                    .buttonStyle(CircularButtonStyle())
+                    
+                    Spacer()
+                    Button(action: {
+                        // Your action here
+                    }) {
+                        HStack(alignment: .center){
+                            Text("Lanjut Latihan")
+                                .font(.Caption_Medium)
+                            Image(systemName: "arrowshape.right.fill")
+                                .font(.Button)
+                        }
+                    }
+                    .buttonStyle(RoundedButtonStyle(disabled: disableNext))
+                }
+                .padding(.top, 55)
                 
             }
 
             
         }
-        .padding(40)
+        .padding(.horizontal, 40)
+        .padding(.bottom, 40)
+        .padding(.top, 20)
         .background(
             ZStack{
-                RadialGradient(
-                    gradient: Gradient(
-                        stops: [
-                            .init(color: .PB600.opacity(0.8), location: 0), // Starting around $0% from the center
-                            .init(color: .PB600, location: 0.8) // Strating 0.8
-                        ]
-                    ),
-                    center: UnitPoint(x: 0.5, y: 1.5),
-                    startRadius: 0,
-                    endRadius: 1500
-                )
-                .edgesIgnoringSafeArea(.all)
-                Image("background")
+                Image("background-word-summary")
                     .resizable()
-                    .scaledToFit()
-                    .opacity(0.1)
+                    .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                
                 
             }
         
             
         )
+        
     }
 }
 

@@ -17,9 +17,10 @@ struct SummaryHeader: View {
                 Image(systemName: "list.bullet")
                     .font(.Button)
             }
-        .buttonStyle(CircularButtonStyle())
+            .buttonStyle(CircularButtonStyle())
             
             Spacer()
+            
             //MARK: Exit
             Button(action: {
                 
@@ -29,6 +30,7 @@ struct SummaryHeader: View {
             }
             .buttonStyle(CircularButtonStyle())
         }
+        //        .padding(.top,20)
         
     }
 }
