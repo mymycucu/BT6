@@ -15,6 +15,20 @@
 		05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D532AE7817E00178653 /* ExtensionColors.swift */; };
 		05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D552AE78AE200178653 /* ExtensionFonts.swift */; };
 		ADBE94192AEB5383008A1390 /* BTModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94172AEB5383008A1390 /* BTModel.xcdatamodeld */; };
+		ADBE941B2AF3744F008A1390 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE941A2AF3744F008A1390 /* Constant.swift */; };
+		ADBE941D2AFB42DF008A1390 /* DataFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE941C2AFB42DF008A1390 /* DataFeedManager.swift */; };
+		ADBE941F2AFB47C7008A1390 /* BookData.json in Resources */ = {isa = PBXBuildFile; fileRef = ADBE941E2AFB47C7008A1390 /* BookData.json */; };
+		ADBE94252AFB51DE008A1390 /* CategoryData.json in Resources */ = {isa = PBXBuildFile; fileRef = ADBE94242AFB51DE008A1390 /* CategoryData.json */; };
+		ADBE94272AFB62F2008A1390 /* CodingUserInfoKeyExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94262AFB62F2008A1390 /* CodingUserInfoKeyExtention.swift */; };
+		ADBE94292AFB6360008A1390 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94282AFB6360008A1390 /* Category.swift */; };
+		ADBE942B2AFB64DC008A1390 /* coreDataTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE942A2AFB64DC008A1390 /* coreDataTestView.swift */; };
+		ADBE942F2AFB8BB0008A1390 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE942E2AFB8BB0008A1390 /* AppState.swift */; };
+		ADBE94502AFB8E35008A1390 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE944F2AFB8E35008A1390 /* ContentView.swift */; };
+		ADBE94562AFC88A7008A1390 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94552AFC88A7008A1390 /* Book.swift */; };
+		ADBE94582AFCB6F7008A1390 /* StoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94572AFCB6F7008A1390 /* StoryPage.swift */; };
+		ADBE945A2AFCB732008A1390 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94592AFCB732008A1390 /* Question.swift */; };
+		ADBE945C2AFCB752008A1390 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE945B2AFCB752008A1390 /* Answer.swift */; };
+		ADBE945E2AFCB781008A1390 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE945D2AFCB781008A1390 /* Word.swift */; };
 		ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */; };
 		ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFA62AE3ADA000CED0DD /* LearningModuleView.swift */; };
 		ADE3CFA92AE3ADA200CED0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */; };
@@ -22,7 +36,7 @@
 		ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFB92AE3AE9D00CED0DD /* Prompt.swift */; };
 		ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFBB2AE3AEBE00CED0DD /* Error.swift */; };
 		ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */; };
-		ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */; };
+		ADE3CFC22AE3AF5B00CED0DD /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC12AE3AF5B00CED0DD /* PersistenceController.swift */; };
 		ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +50,20 @@
 		05025D532AE7817E00178653 /* ExtensionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
 		05025D552AE78AE200178653 /* ExtensionFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFonts.swift; sourceTree = "<group>"; };
 		ADBE94182AEB5383008A1390 /* BTModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BTModel.xcdatamodel; sourceTree = "<group>"; };
+		ADBE941A2AF3744F008A1390 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		ADBE941C2AFB42DF008A1390 /* DataFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFeedManager.swift; sourceTree = "<group>"; };
+		ADBE941E2AFB47C7008A1390 /* BookData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BookData.json; sourceTree = "<group>"; };
+		ADBE94242AFB51DE008A1390 /* CategoryData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoryData.json; sourceTree = "<group>"; };
+		ADBE94262AFB62F2008A1390 /* CodingUserInfoKeyExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKeyExtention.swift; sourceTree = "<group>"; };
+		ADBE94282AFB6360008A1390 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		ADBE942A2AFB64DC008A1390 /* coreDataTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataTestView.swift; sourceTree = "<group>"; };
+		ADBE942E2AFB8BB0008A1390 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		ADBE944F2AFB8E35008A1390 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ADBE94552AFC88A7008A1390 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		ADBE94572AFCB6F7008A1390 /* StoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPage.swift; sourceTree = "<group>"; };
+		ADBE94592AFCB732008A1390 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		ADBE945B2AFCB752008A1390 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		ADBE945D2AFCB781008A1390 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		ADE3CFA12AE3ADA000CED0DD /* BTProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTProjectsApp.swift; sourceTree = "<group>"; };
 		ADE3CFA62AE3ADA000CED0DD /* LearningModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningModuleView.swift; sourceTree = "<group>"; };
@@ -44,7 +72,7 @@
 		ADE3CFB92AE3AE9D00CED0DD /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		ADE3CFBB2AE3AEBE00CED0DD /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		ADE3CFC12AE3AF5B00CED0DD /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +105,28 @@
 			);
 			name = Extensions;
 			path = Components/Extensions;
+			sourceTree = "<group>";
+		};
+		ADBE94202AFB47CB008A1390 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				ADBE94242AFB51DE008A1390 /* CategoryData.json */,
+				ADBE941E2AFB47C7008A1390 /* BookData.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		ADBE94212AFB4E1E008A1390 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ADBE94282AFB6360008A1390 /* Category.swift */,
+				ADBE94552AFC88A7008A1390 /* Book.swift */,
+				ADBE94572AFCB6F7008A1390 /* StoryPage.swift */,
+				ADBE94592AFCB732008A1390 /* Question.swift */,
+				ADBE945B2AFCB752008A1390 /* Answer.swift */,
+				ADBE945D2AFCB781008A1390 /* Word.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ADE3CF982AE3ADA000CED0DD = {
@@ -119,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */,
+				ADBE944F2AFB8E35008A1390 /* ContentView.swift */,
+				ADBE942E2AFB8BB0008A1390 /* AppState.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -140,6 +192,7 @@
 			children = (
 				ADE3CFB92AE3AE9D00CED0DD /* Prompt.swift */,
 				ADE3CFBB2AE3AEBE00CED0DD /* Error.swift */,
+				ADBE941A2AF3744F008A1390 /* Constant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -147,6 +200,7 @@
 		ADE3CFB52AE3AE3800CED0DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ADBE94202AFB47CB008A1390 /* Json */,
 				05025D472AE77FB200178653 /* Fonts */,
 				ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */,
 			);
@@ -176,6 +230,7 @@
 			children = (
 				05025D532AE7817E00178653 /* ExtensionColors.swift */,
 				05025D552AE78AE200178653 /* ExtensionFonts.swift */,
+				ADBE94262AFB62F2008A1390 /* CodingUserInfoKeyExtention.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -191,8 +246,10 @@
 		ADE3CFC02AE3AF4C00CED0DD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */,
 				ADBE94172AEB5383008A1390 /* BTModel.xcdatamodeld */,
+				ADE3CFC12AE3AF5B00CED0DD /* PersistenceController.swift */,
+				ADBE941C2AFB42DF008A1390 /* DataFeedManager.swift */,
+				ADBE94212AFB4E1E008A1390 /* Models */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -217,6 +274,7 @@
 		ADE3CFC72AE3AFC800CED0DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ADBE942A2AFB64DC008A1390 /* coreDataTestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,6 +402,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADE3CFAC2AE3ADA200CED0DD /* Preview Assets.xcassets in Resources */,
+				ADBE94252AFB51DE008A1390 /* CategoryData.json in Resources */,
+				ADBE941F2AFB47C7008A1390 /* BookData.json in Resources */,
 				05025D4F2AE77FD100178653 /* Fredoka-SemiBold.ttf in Resources */,
 				05025D4D2AE77FD100178653 /* Fredoka-Light.ttf in Resources */,
 				05025D4E2AE77FD100178653 /* Fredoka-Regular.ttf in Resources */,
@@ -360,16 +420,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */,
+				ADBE942B2AFB64DC008A1390 /* coreDataTestView.swift in Sources */,
+				ADE3CFC22AE3AF5B00CED0DD /* PersistenceController.swift in Sources */,
+				ADBE941D2AFB42DF008A1390 /* DataFeedManager.swift in Sources */,
+				ADBE945C2AFCB752008A1390 /* Answer.swift in Sources */,
 				ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */,
 				ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */,
+				ADBE945A2AFCB732008A1390 /* Question.swift in Sources */,
 				ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */,
+				ADBE942F2AFB8BB0008A1390 /* AppState.swift in Sources */,
 				ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
+				ADBE94272AFB62F2008A1390 /* CodingUserInfoKeyExtention.swift in Sources */,
+				ADBE94582AFCB6F7008A1390 /* StoryPage.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
+				ADBE941B2AF3744F008A1390 /* Constant.swift in Sources */,
+				ADBE94502AFB8E35008A1390 /* ContentView.swift in Sources */,
+				ADBE945E2AFCB781008A1390 /* Word.swift in Sources */,
+				ADBE94562AFC88A7008A1390 /* Book.swift in Sources */,
 				05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */,
 				ADBE94192AEB5383008A1390 /* BTModel.xcdatamodeld in Sources */,
+				ADBE94292AFB6360008A1390 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

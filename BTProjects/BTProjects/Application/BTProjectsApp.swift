@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct BTProjectsApp: App {
+    @StateObject var appState = AppState()
+        
     var body: some Scene {
         WindowGroup {
-            LearningModuleView()
+            ContentView()
+                .environmentObject(appState)
+            
         }
     }
 }
+
