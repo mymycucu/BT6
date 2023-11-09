@@ -10,16 +10,19 @@ import SwiftUI
 struct SummaryHeader: View {
     var body: some View {
         HStack(spacing: 15){
+            //MARK: Menu
             Button(action: {
-                // Your action here
+                
             }) {
                 Image(systemName: "list.bullet")
                     .font(.Button)
             }
         .buttonStyle(CircularButtonStyle())
-            ProgressBar()
+            
+            Spacer()
+            //MARK: Exit
             Button(action: {
-                // Your action here
+                
             }) {
                 Image(systemName: "xmark")
                     .font(.Button)

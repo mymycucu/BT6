@@ -23,6 +23,7 @@
 		ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */; };
 		ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */; };
 		ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */; };
+		D41801D42AFC898E0009AFE0 /* QuizHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41801D32AFC898E0009AFE0 /* QuizHeader.swift */; };
 		D42466042AFB7B7B0029D229 /* ConnectImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42466032AFB7B7B0029D229 /* ConnectImages.swift */; };
 		D42466062AFB7C530029D229 /* ImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42466052AFB7C530029D229 /* ImageContainer.swift */; };
 		D46180C42AFB60DD00370DD3 /* VideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46180C32AFB60DD00370DD3 /* VideoPlayerController.swift */; };
@@ -61,6 +62,7 @@
 		ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		D41801D32AFC898E0009AFE0 /* QuizHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHeader.swift; sourceTree = "<group>"; };
 		D42466032AFB7B7B0029D229 /* ConnectImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectImages.swift; sourceTree = "<group>"; };
 		D42466052AFB7C530029D229 /* ImageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContainer.swift; sourceTree = "<group>"; };
 		D46180C32AFB60DD00370DD3 /* VideoPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
@@ -266,7 +268,7 @@
 		ADE3CFC92AE3B02F00CED0DD /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				D42466022AFB7B5E0029D229 /* ConnectImages */,
+				D41801D62AFC89D60009AFE0 /* Quiz */,
 				ADE3CFCA2AE3B05B00CED0DD /* LearningModule */,
 				D4FE9D882AF36ACA000DAFEB /* Home */,
 				D4C515FA2AFA17D5001A97E5 /* WordSummary */,
@@ -323,10 +325,28 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		D42466022AFB7B5E0029D229 /* ConnectImages */ = {
+		D41801D52AFC89A90009AFE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				D42466032AFB7B7B0029D229 /* ConnectImages.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D41801D62AFC89D60009AFE0 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				D41801D32AFC898E0009AFE0 /* QuizHeader.swift */,
+				D4C515FD2AFA182B001A97E5 /* ProgressBar.swift */,
+				D42466022AFB7B5E0029D229 /* ConnectImages */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		D42466022AFB7B5E0029D229 /* ConnectImages */ = {
+			isa = PBXGroup;
+			children = (
+				D41801D52AFC89A90009AFE0 /* View */,
 				D42466092AFB7C850029D229 /* Components */,
 			);
 			path = ConnectImages;
@@ -361,7 +381,6 @@
 		D4C516012AFA751B001A97E5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D4C515FD2AFA182B001A97E5 /* ProgressBar.swift */,
 				D4C516022AFA7D80001A97E5 /* SummaryHeader.swift */,
 				D46180CD2AFB695700370DD3 /* SummaryVideo.swift */,
 			);
@@ -484,6 +503,7 @@
 			files = (
 				ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */,
 				ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */,
+				D41801D42AFC898E0009AFE0 /* QuizHeader.swift in Sources */,
 				D42466042AFB7B7B0029D229 /* ConnectImages.swift in Sources */,
 				D4FE9D8F2AF36C10000DAFEB /* StoryBook.swift in Sources */,
 				D46180CE2AFB695700370DD3 /* SummaryVideo.swift in Sources */,

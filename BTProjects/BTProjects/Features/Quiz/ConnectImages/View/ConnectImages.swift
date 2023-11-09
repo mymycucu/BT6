@@ -16,12 +16,13 @@ struct ConnectImages: View {
     var body: some View {
         
         VStack(alignment: .center, spacing: 0){
-            SummaryHeader()
+            //MARK: Quiz Header
+            QuizHeader()
             
             ZStack {
                 HStack{
+                    //MARK: Left Images
                     VStack{
-                        
                         ForEach(0..<3) { index in
                             
                             ImageContainer(isSelected: Binding(
@@ -52,6 +53,7 @@ struct ConnectImages: View {
                     }
                     
                     Spacer()
+                    //MARK: Right Images
                     VStack{
                         ForEach(0..<3) { index in
                             ImageContainer(isSelected: Binding(
@@ -80,11 +82,12 @@ struct ConnectImages: View {
                 .padding(.horizontal, 122)
                 .padding(.vertical, 37)
                 
+                //MARK: Navigation Previous-Next Button
                 VStack {
                     Spacer()
                     HStack{
                         Button(action: {
-                            // Your action here
+                            //action
                         }) {
                             Image(systemName: "arrowshape.left.fill")
                                 .font(.Button)
@@ -93,7 +96,7 @@ struct ConnectImages: View {
                         
                         Spacer()
                         Button(action: {
-                            // Your action here
+                            //action
                         }) {
                             Image(systemName: "arrowshape.right.fill")
                                 .font(.Button)

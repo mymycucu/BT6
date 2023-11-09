@@ -9,7 +9,23 @@ import SwiftUI
 
 struct QuizHeader: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(spacing: 15){
+            Button(action: {
+                
+            }) {
+                Image(systemName: "list.bullet")
+                    .font(.Button)
+            }
+        .buttonStyle(CircularButtonStyle())
+            ProgressBar()
+            Button(action: {
+                
+            }) {
+                Image(systemName: "xmark")
+                    .font(.Button)
+            }
+            .buttonStyle(CircularButtonStyle())
+        }
     }
 }
 
