@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProgressBar: View {
     
-    @State var totalWords: Int = 4
-    @State var step: Int =  2
+    @State var totalWords: Int = 10
+    @State var step: Int =  4
     @State var containerWidth: CGFloat = 0
     
     var maxWidth: Double {
@@ -42,30 +42,13 @@ struct ProgressBar: View {
 
                 //MARK: Stars Progress
                 HStack(spacing: 0){
-                    ForEach(1...totalWords, id: \.self){ index in
-                        ///  min 38 -> width of image
-                        let starPosition = (containerWidth / CGFloat(totalWords)) * CGFloat(index) - (38 * CGFloat(index))
-                        HStack {
-                            ZStack{
-                                Image("star-journey-disabled")
-                                    .resizable()
-                                    .frame(width: 22, height: 22)
-                                    .offset(x: (containerWidth / CGFloat(totalWords)) * CGFloat(index) - (37 * CGFloat(index)) )
-                                
-                                Image("star-journey")
-                                    .resizable()
-                                    .frame(width: 38, height: 38)
-                                    .shadow(color: Color.Orange3.opacity(0.5), radius: 20, x: 0, y: 4)
-                                    .opacity(step >= index ? 1 : 0)
-                                    .offset(x: starPosition )
-                                
-                            }
-                        }    
-                        
-                    }
+                    Image("star-journey")
+                        .resizable()
+                        .frame(width: 38, height: 38)
+                        .shadow(color: Color.Orange3.opacity(0.5), radius: 20, x: 0, y: 4)
+                        .offset(x: maxWidth - 38)
                     
                 }
-                .frame(height: 38)
                 
             }
             .frame(height: 38)
