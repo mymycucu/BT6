@@ -14,7 +14,7 @@ enum positionImageContainer {
 
 struct ImageContainer: View {
     @State var imageTitle: String = "mencari-kumbang"
-    @State var isSelected: Bool = false
+    @Binding var isSelected: Bool
     @State var position: positionImageContainer = .right
     
     var body: some View {
@@ -59,9 +59,16 @@ struct ImageContainer: View {
             
         }
         .frame(width:276, height: 196)
+        .onTapGesture {
+            if isSelected == false {
+                isSelected = true
+            }else{
+                isSelected = false
+            }
+        }
     }
 }
 
 #Preview {
-    ImageContainer()
+    ImageContainer( isSelected: .constant(false))
 }
