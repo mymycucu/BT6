@@ -1,0 +1,121 @@
+[
+    {
+        "name": "Sarah dan Bahaya Tersembunyi",
+        "word": "Bahaya",
+        "category": ["Rumah","Lingkungan"],
+        "storyPages":[
+            {
+                "name": "Di pagi yang cerah, Sarah sedang sarapan bersama ibu",
+                "order": 0,
+                "signLanguage": "sl-s-1-0",
+                "illustration": "",
+                "desc": ""
+            },
+            {
+                "name": "Tidak sengaja, Sarah menumpahkan air dalam gelas. “Byur”",
+                "order": 1,
+                "signLanguage": "sl-s-1-1",
+                "illustration": "",
+                "desc": ""
+            },
+            {
+                "name": "Ibu berkata “Airnya tumpah ya, yuk kita bersihkan bersama, bahaya tergelincir”",
+                "order": 2,
+                "signLanguage": "sl-s-1-2",
+                "illustration": "",
+                "desc": ""
+            },
+            {
+                "name": "Air yang tumpah di lantai harus segera dibersihkan karena dapat menyebabkan Sarah dan Ibu tergelincir",
+                "order": 3,
+                "signLanguage": "sl-s-1-3",
+                "illustration": "",
+                "desc": ""
+            },
+            {
+                "name": "Di jalan menuju sekolah, mereka melihat lampu lalu lintas berwarna merah",
+                "order": 4,
+                "signLanguage": "sl-s-1-4",
+                "illustration": "",
+                "desc": ""
+            },
+            {
+                "name": "“Merah berarti berhenti, kita menunggu ya” kata Ibu",
+                "order": 5,
+                "signLanguage": "sl-s-1-5",
+                "illustration": "",
+                "desc": ""
+            },
+            {
+                "name": "Ketika lampu berubah menjadi hijau, mereka berjalan dengan aman ke sekolah",
+                "order": 6,
+                "signLanguage": "sl-s-1-6",
+                "illustration": "",
+                "desc": ""
+            },
+            {
+                "name": "Sesampainya di sekolah, Sarah melihat ada gunting di atas meja",
+                "order": 7,
+                "signLanguage": "sl-s-1-7",
+                "illustration": "",
+                "desc": ""
+            },
+            {
+                "name": "“Sarah tidak bermain dengan gunting di sekolah ya, itu berbahaya dan bisa menyakiti kita” kata Ibu guru",
+                "order": 8,
+                "signLanguage": "sl-s-1-8",
+                "illustration": "",
+                "desc": ""
+            },
+            {
+                "name": "Sarah mengangguk tanda mengerti untuk berhati-hati dengan gunting",
+                "order": 9,
+                "signLanguage": "sl-s-1-9",
+                "illustration": "",
+                "desc": ""
+            }
+        ],
+        "question":[
+            {
+                "name": "Bahaya",
+                "type": 0,
+                "order": 0,
+                "signLanguage": "sl-q-1-0",
+                "illustration": "",
+                "isDone": false,
+                "answer": []
+            },
+            {
+                "name": "Pilih gambar yang termasuk kegiatan bahaya",
+                "type": 1,
+                "order": 1,
+                "signLanguage": "sl-q-1-1",
+                "illustration": "",
+                "isDone": false,
+                "answer": [
+                    {
+                        "name": "Menyeberang jalan saat lampu merah",
+                        "type": 1,
+                        "signLanguage": "sl-a-1-1-0",
+                        "illustration": "",
+                        "isCorrect": true
+                    },
+                    {
+                        "name": "Bermain dengan mainan",
+                        "type": 1,
+                        "signLanguage": "sl-a-1-1-1",
+                        "illustration": "",
+                        "isCorrect": false
+                    },
+                    {
+                        "name": "Membersihkan air",
+                        "type": 1,
+                        "signLanguage": "sl-a-1-1-2",
+                        "illustration": "",
+                        "isCorrect": false
+                    }
+                ]
+            }
+        ]
+    }
+]
