@@ -43,6 +43,7 @@ extension Color {
     static var Orange1 = Color("Orange-1")
     static var Orange2 = Color("Orange-2")
     static var Orange3 = Color("Orange-3")
+    static var Orange4 = Color("Orange-4")
     
     // MARK: Pink
     static var Pink1 = Color("Pink-1")
@@ -53,6 +54,14 @@ extension Color {
     static var Red1 = Color("Red-1")
     static var Red2 = Color("Red-2")
     static var Red3 = Color("Red-3")
+    
+    // MARK: Gray
+    static var Gray1 = Color(.systemGray)
+    static var Gray2 = Color(.systemGray2)
+    static var Gray3 = Color(.systemGray3)
+    static var Gray4 = Color(.systemGray4)
+    static var Gray5 = Color(.systemGray5)
+    static var Gray6 = Color(.systemGray6)
     
     
     

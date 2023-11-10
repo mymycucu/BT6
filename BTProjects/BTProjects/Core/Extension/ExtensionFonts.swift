@@ -33,4 +33,7 @@ extension Font {
     static var Caption_Medium = Font.custom("Fredoka-Medium", size: 20)
     static var Caption_Regular = Font.custom("Fredoka-Regular", size: 20)
     
+    // MARK: Button
+    static var Button = Font.system(size: 20, weight: .bold)
+    
 }
