@@ -1,8 +1,8 @@
 //
-//  VideoPlayerManager.swift
+//  VideoPlayerController.swift
 //  BTProjects
 //
-//  Created by Ario Syahputra on 25/10/23.
+//  Created by Hilmy Noerfatih on 10/11/23.
 //
 
 import AVKit
@@ -37,15 +37,3 @@ struct VideoPlayerController: UIViewControllerRepresentable {
         // Update the view controller if needed
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
