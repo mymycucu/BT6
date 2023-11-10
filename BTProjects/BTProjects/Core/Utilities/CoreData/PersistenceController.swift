@@ -20,15 +20,7 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
         
-        let appVersion = UserDefaults.standard.bool(forKey: Constant.appVersion)
-        if appVersion == false {
-            var category = DataFeedManager().bulkCreateCategory()
-            do{
-                try controller.viewContext.save()
-            }catch(let error){
-                print(error)
-            }
-        }
+        
         return controller
     }()
     

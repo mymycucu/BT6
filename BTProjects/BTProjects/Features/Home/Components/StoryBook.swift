@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct StoryBook: View {
-    @State var storyThumbnail: String = "mencari-kumbang"
-    @State var storyTitle: String = "Mencari Kumbang di Padang"
+    var storyThumbnail: String
+    var storyTitle: String
     var body: some View {
         ZStack(alignment: .leading){
             //MARK: Orange Back Cover
@@ -97,5 +97,5 @@ struct StoryBook: View {
 }
 
 #Preview {
-    StoryBook()
+    StoryBook(storyThumbnail: "sl_b_default", storyTitle: "hallooo")
 }
