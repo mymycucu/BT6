@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct BTProjectsApp: App {
+    @StateObject var appState = AppState()
+        
     var body: some Scene {
         WindowGroup {
-//            HomeView(activeID: .constant(UUID()))
-            Image3DContainer()
+            ContentView()
+                .environmentObject(appState)
+            
         }
     }
 }
+
