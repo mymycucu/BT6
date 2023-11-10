@@ -13,6 +13,8 @@ struct ConnectImages: View {
     @State var rightSelected: Int?
     @State var isLeftSelected:Bool = false
     @State var isRightSelected:Bool = false
+    
+    @State var path: Path = Path()
     var body: some View {
         
         VStack(alignment: .center, spacing: 0){
@@ -33,19 +35,22 @@ struct ConnectImages: View {
                                     if newValue {
                                         leftSelected = index
                                         rightSelected = nil
+                                        updatePath()
                                     } else {
                                         leftSelected = nil
+                                        updatePath()
                                     }
                                 }
                             ), position: .left)
-                                .onTapGesture {
-                                    if leftSelected == index {
-                                        leftSelected = nil
-                                    } else {
-                                        leftSelected = index
-                                        rightSelected = nil
-                                    }
+                            .onTapGesture {
+                                if leftSelected == index {
+                                    leftSelected = nil
+                                } else {
+                                    leftSelected = index
+                                    rightSelected = nil
                                 }
+                                updatePath()
+                            }
                             
                         }
                         
@@ -64,27 +69,30 @@ struct ConnectImages: View {
                                     if newValue {
                                         rightSelected = index
                                         leftSelected = nil
+                                        updatePath()
                                     } else {
                                         rightSelected = nil
+                                        updatePath()
                                     }
                                 }
                             ),
-                            position: .right)
-                                .onTapGesture {
-                                    if rightSelected == index {
-                                        rightSelected = nil
-                                    } else {
-                                        rightSelected = index
-                                        isRightSelected = true
-                                    }
-                                   
+                                           position: .right)
+                            .onTapGesture {
+                                if rightSelected == index {
+                                    rightSelected = nil
+                                } else {
+                                    rightSelected = index
+                                    isRightSelected = true
                                 }
+                                updatePath()
+                                
+                            }
                         }
                     }
                 }
                 .padding(.horizontal, 122)
                 .padding(.vertical, 37)
-               
+                
                 
                 //MARK: Navigation Previous-Next Button
                 VStack {
@@ -111,8 +119,18 @@ struct ConnectImages: View {
                     }
                 }
                 
+                //MARK: Draw Connecting Line
+                if let leftSelected = leftSelected, let rightSelected = rightSelected {
+                    Path { path in
+                        path.move(to: CGPoint(x: 50, y: 50 + CGFloat(leftSelected) * 60))
+                        path.addLine(to: CGPoint(x: 250, y: 50 + CGFloat(rightSelected) * 60))
+                    }
+                    .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, dash: [12,12]))
+                    .cornerRadius(10)
+                }
+                
             }
-//            Spacer()
+            //            Spacer()
             
         }
         .padding(.horizontal, 40)
@@ -144,6 +162,16 @@ struct ConnectImages: View {
             
         )
     }
+    
+    func updatePath() {
+        path = Path { path in
+            if let leftSelected = leftSelected, let rightSelected = rightSelected {
+                path.move(to: CGPoint(x: 50, y: 150 + CGFloat(leftSelected) * 60))
+                path.addLine(to: CGPoint(x: 250, y: 50 + CGFloat(rightSelected) * 60))
+            }
+        }
+    }
+    
 }
 
 #Preview {

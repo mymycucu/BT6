@@ -11,7 +11,7 @@ struct WordSummary: View {
     @State var word: String = "bahaya"
     @State var disableNext: Bool = false
     var body: some View {
-        ZStack(alignment: .center){
+        ZStack(){
             //MARK: Header
             
             VStack(spacing: 0){
@@ -26,8 +26,10 @@ struct WordSummary: View {
                 SummaryVideo()
                     
                 Spacer()
+                    
                 
             }
+        
             
             
             VStack(spacing: 0){
@@ -58,8 +60,8 @@ struct WordSummary: View {
                 .padding(.top, 55)
                 
             }
-
             
+
         }
         .padding(.horizontal, 40)
         .padding(.bottom, 40)
@@ -70,7 +72,8 @@ struct WordSummary: View {
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                
+//                    .padding(.top,20)
+                    
             }
         
             

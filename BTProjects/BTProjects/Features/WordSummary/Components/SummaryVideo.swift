@@ -17,8 +17,6 @@ struct SummaryVideo: View {
         ZStack {
             
             //MARK: Video Container
-            
-            
             if let player = player {
                 VideoPlayerController(player: player)
                     .frame(width: 646, height: 436)
@@ -31,6 +29,9 @@ struct SummaryVideo: View {
                     )
                     
                 
+            } else {
+                Spacer()
+                    .frame(width: 646, height: 436)
             }
             
             //MARK: Replay Button
@@ -57,6 +58,7 @@ struct SummaryVideo: View {
             }
             .frame(width: 646, height: 436)
         }
+        .frame(width: 646, height: 436)
         .onAppear {
             
             //MARK: Video Path
