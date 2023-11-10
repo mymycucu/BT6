@@ -10,7 +10,7 @@ import ARKit
 
 struct LearningModuleView: View {
     var body: some View {
-        TirukanView()
+        MultipleChoiceView()
     }
 }
 

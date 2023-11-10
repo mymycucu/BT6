@@ -20,6 +20,7 @@ struct StoryView: View {
                 StoryTopBar()
                     .padding(.horizontal, 30)
                 
+                
                 StoryVideo()
                         .offset(x: 330, y: 0)
                         .padding(.vertical, 80)

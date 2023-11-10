@@ -18,7 +18,7 @@ struct TirukanView: View {
                 
                 TirukanTopBar()
                     .padding(.horizontal, 30)
-                    .padding(.top, 50)
+                    .padding(.top, 40)
 
                 TirukanText()
                 

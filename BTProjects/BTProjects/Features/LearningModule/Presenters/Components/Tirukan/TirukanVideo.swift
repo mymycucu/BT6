@@ -7,7 +7,6 @@
 
 import SwiftUI
 import AVKit
-import SwiftUI
 
 struct TirukanVideo: View {
     @State private var isVideoFinished = false
