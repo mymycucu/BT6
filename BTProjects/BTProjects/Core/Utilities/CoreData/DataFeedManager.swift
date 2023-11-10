@@ -142,7 +142,7 @@ struct DataFeedManager {
         
         let book1Question2 = PersistenceController.shared.create(Question.self)
         book1Question2?.name = "Pilih gambar yang termasuk kegiatan bahaya"
-        book1Question2?.type = 0
+        book1Question2?.type = 1
         book1Question2?.order = 1
         book1Question2?.signLanguage = "sl_b1_q2"
         book1Question2?.illustration = "il_b1_q2"
@@ -173,6 +173,203 @@ struct DataFeedManager {
         book1Question1Answer3?.illustration = "il_b1_q2_a3"
         book1Question1Answer3?.isCorrect = false
         book1Question1Answer3?.question = book1Question2
+        
+        // MARK: Create Book2 Bu, tolong sarah
+        let book2 = PersistenceController.shared.create(Book.self)
+        book2?.name = "Bu, tolong Sarah"
+        book2?.word = wordTolong
+        book2?.categories = [categoryRumah! as Category, categoryLingkungan! as Category, categorySekolah! as Category]
+        
+        // MARK: Create StoryPage Sarah dan Bahaya Tersembunyi
+        let book2StoryPage1 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage1?.name = "Sarah bermain bola di halaman rumahnya lalu bolanya tersangkut di atas pohon."
+        book2StoryPage1?.order = 1
+        book2StoryPage1?.signLanguage = "sl_b2_sp1"
+        book2StoryPage1?.illustration = "il_b2_sp1"
+        book2StoryPage1?.desc = ""
+        book2StoryPage1?.book = book2
+        
+        let book2StoryPage2 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage2?.name = "Sarah berusaha menggapainya namun tidak bisa. Kemudian Sarah memanggil Ibunya"
+        book2StoryPage2?.order = 2
+        book2StoryPage2?.signLanguage = "sl_b2_sp2"
+        book2StoryPage2?.illustration = "il_b2_sp2"
+        book2StoryPage2?.desc = ""
+        book2StoryPage2?.book = book2
+        
+        let book2StoryPage3 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage3?.name = "“Bu, bola Sarah tersangkut. Tolong ambilkan, bu” Ucap Sarah kepada Ibu"
+        book2StoryPage3?.order = 3
+        book2StoryPage3?.signLanguage = "sl_b2_sp3"
+        book2StoryPage3?.illustration = "il_b2_sp3"
+        book2StoryPage3?.desc = ""
+        book2StoryPage3?.book = book2
+        
+        let book2StoryPage4 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage4?.name = "bu segera membantu. Ibu meraih bola dari atas pohon dan memberikannya kepada Sarah"
+        book2StoryPage4?.order = 4
+        book2StoryPage4?.signLanguage = "sl_b2_sp4"
+        book2StoryPage4?.illustration = "il_b2_sp4"
+        book2StoryPage4?.desc = ""
+        book2StoryPage4?.book = book2
+        
+        let book2StoryPage5 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage5?.name = "Keesokan harinya, Di perpustakaan, Sarah ingin mengambil buku dari rak"
+        book2StoryPage5?.order = 5
+        book2StoryPage5?.signLanguage = "sl_b2_sp5"
+        book2StoryPage5?.illustration = "il_b2_sp5"
+        book2StoryPage5?.desc = ""
+        book2StoryPage5?.book = book2
+        
+        let book2StoryPage6 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage6?.name = "Tapi, Sarah tidak bisa mengambil buku itu karena rak yang tinggi"
+        book2StoryPage6?.order = 6
+        book2StoryPage6?.signLanguage = "sl_b2_sp6"
+        book2StoryPage6?.illustration = "il_b2_sp6"
+        book2StoryPage6?.desc = ""
+        book2StoryPage6?.book = book2
+        
+        let book2StoryPage7 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage7?.name = "Sarah melihat bu Guru. Lalu Sarah berkata “Bu guru, Tolong ambilkan aku buku itu” "
+        book2StoryPage7?.order = 7
+        book2StoryPage7?.signLanguage = "sl_b2_sp7"
+        book2StoryPage7?.illustration = "il_b2_sp7"
+        book2StoryPage7?.desc = ""
+        book2StoryPage7?.book = book2
+        
+        let book2StoryPage8 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage8?.name = "Ibu guru membantu Sarah mengambil buku"
+        book2StoryPage8?.order = 8
+        book2StoryPage8?.signLanguage = "sl_b2_sp8"
+        book2StoryPage8?.illustration = "il_b2_sp8"
+        book2StoryPage8?.desc = ""
+        book2StoryPage8?.book = book2
+        
+        let book2StoryPage9 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage9?.name = "Sarah tidak lupa mengucapkan terimakasih kepada Bu guru yang sudah membantu Sarah"
+        book2StoryPage9?.order = 9
+        book2StoryPage9?.signLanguage = "sl_b2_sp9"
+        book2StoryPage9?.illustration = "il_b2_sp9"
+        book2StoryPage9?.desc = ""
+        book2StoryPage9?.book = book2
+        
+        let book2StoryPage10 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage10?.name = "Sepulang sekolah, Sarah dan Ario bermain di taman"
+        book2StoryPage10?.order = 10
+        book2StoryPage10?.signLanguage = "sl_b2_sp10"
+        book2StoryPage10?.illustration = "il_b2_sp10"
+        book2StoryPage10?.desc = ""
+        book2StoryPage10?.book = book2
+        
+        let book2StoryPage11 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage11?.name = "Saat asik bermain, Ario tersandung batu dan menangis"
+        book2StoryPage11?.order = 11
+        book2StoryPage11?.signLanguage = "sl_b2_sp11"
+        book2StoryPage11?.illustration = "il_b2_sp11"
+        book2StoryPage11?.desc = ""
+        book2StoryPage11?.book = book2
+        
+        let book2StoryPage12 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage12?.name = "“Tolong.. tolong, kak Sarah tolong aku” Ucap Ario kesakitan"
+        book2StoryPage12?.order = 12
+        book2StoryPage12?.signLanguage = "sl_b2_sp12"
+        book2StoryPage12?.illustration = "il_b2_sp12"
+        book2StoryPage12?.desc = ""
+        book2StoryPage12?.book = book2
+        
+        // MARK: Create Q&A DoDont 1 Bu, tolong Sarah
+        let book2Question1 = PersistenceController.shared.create(Question.self)
+        book2Question1?.name = "Bola tersangkut di pohon"
+        book2Question1?.type = 0
+        book2Question1?.order = 1
+        book2Question1?.signLanguage = "sl_b2_q1"
+        book2Question1?.illustration = "il_b2_q1"
+        book2Question1?.isDone = false
+        book2Question1?.book = book2
+        
+        let book2Question1Answer1 = PersistenceController.shared.create(Answer.self)
+        book2Question1Answer1?.name = "Meminta bantuan ibu"
+        book2Question1Answer1?.type = 1
+        book2Question1Answer1?.signLanguage = "sl_b2_q1_a1"
+        book2Question1Answer1?.illustration = "il_b2_q1_a1"
+        book2Question1Answer1?.isCorrect = true
+        book2Question1Answer1?.question = book2Question1
+        
+        let book2Question1Answer2 = PersistenceController.shared.create(Answer.self)
+        book2Question1Answer2?.name = "Menangis"
+        book2Question1Answer2?.type = 1
+        book2Question1Answer2?.signLanguage = "sl_b2_q1_a2"
+        book2Question1Answer2?.illustration = "il_b2_q1_a2"
+        book2Question1Answer2?.isCorrect = false
+        book2Question1Answer2?.question = book2Question1
+        
+        // MARK: Create Q&A DoDont 2 Bu, tolong Sarah
+        let book2Question2 = PersistenceController.shared.create(Question.self)
+        book2Question2?.name = "Bola tersangkut di pohon"
+        book2Question2?.type = 0
+        book2Question2?.order = 1
+        book2Question2?.signLanguage = "sl_b2_q2"
+        book2Question2?.illustration = "il_b2_q2"
+        book2Question2?.isDone = false
+        book2Question2?.book = book2
+        
+        let book2Question2Answer1 = PersistenceController.shared.create(Answer.self)
+        book2Question2Answer1?.name = "marah"
+        book2Question2Answer1?.type = 1
+        book2Question2Answer1?.signLanguage = "sl_b2_q2_a1"
+        book2Question2Answer1?.illustration = "il_b2_q2_a1"
+        book2Question2Answer1?.isCorrect = true
+        book2Question2Answer1?.question = book2Question2
+        
+        let book2Question2Answer2 = PersistenceController.shared.create(Answer.self)
+        book2Question2Answer2?.name = "meminta bantuan bu guru"
+        book2Question2Answer2?.type = 1
+        book2Question2Answer2?.signLanguage = "sl_b2_q2_a2"
+        book2Question2Answer2?.illustration = "il_b2_q2_a2"
+        book2Question2Answer2?.isCorrect = false
+        book2Question2Answer2?.question = book2Question2
+        
+        // MARK: Create Q&A PG 1 Bu, tolong Sarah
+        let book2Question3 = PersistenceController.shared.create(Question.self)
+        book2Question3?.name = "Kapan kamu menggunakan kata tolong?"
+        book2Question3?.type = 3
+        book2Question3?.order = 2
+        book2Question3?.signLanguage = "sl_b2_q3"
+        book2Question3?.illustration = "il_b2_q3"
+        book2Question3?.isDone = false
+        book2Question3?.book = book2
+        
+        let book2Question3Answer1 = PersistenceController.shared.create(Answer.self)
+        book2Question3Answer1?.name = "Bola tersangkut di pohon"
+        book2Question3Answer1?.type = 1
+        book2Question3Answer1?.signLanguage = "sl_b1_q3_a1"
+        book2Question3Answer1?.illustration = "il_b1_q3_a1"
+        book2Question3Answer1?.isCorrect = true
+        book2Question3Answer1?.question = book2Question3
+        
+        let book2Question3Answer2 = PersistenceController.shared.create(Answer.self)
+        book2Question3Answer2?.name = "Mengambil buku di rak yang tinggi"
+        book2Question3Answer2?.type = 1
+        book2Question3Answer2?.signLanguage = "sl_b1_q3_a2"
+        book2Question3Answer2?.illustration = "il_b1_q3_a2"
+        book2Question3Answer2?.isCorrect = false
+        book2Question3Answer2?.question = book2Question3
+        
+        let book2Question3Answer3 = PersistenceController.shared.create(Answer.self)
+        book2Question3Answer3?.name = "Membaca buku di meja"
+        book2Question3Answer3?.type = 1
+        book2Question3Answer3?.signLanguage = "sl_b1_q3_a3"
+        book2Question3Answer3?.illustration = "il_b1_q3_a3"
+        book2Question3Answer3?.isCorrect = false
+        book2Question3Answer3?.question = book2Question3
+        
+        let book2Question3Answer4 = PersistenceController.shared.create(Answer.self)
+        book2Question3Answer4?.name = "Menonton televisi"
+        book2Question3Answer4?.type = 1
+        book2Question3Answer4?.signLanguage = "sl_b1_q3_a4"
+        book2Question3Answer4?.illustration = "il_b1_q3_a4"
+        book2Question3Answer4?.isCorrect = false
+        book2Question3Answer4?.question = book2Question3
         
         do{
             try PersistenceController.shared.viewContext.save()
