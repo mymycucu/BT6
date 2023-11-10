@@ -28,6 +28,16 @@
 		057EDDFB2AFC8D6300A85B51 /* MultipleChoiceText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDFA2AFC8D6300A85B51 /* MultipleChoiceText.swift */; };
 		057EDDFD2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDFC2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift */; };
 		057EDDFF2AFC8DFA00A85B51 /* MultipleChoiceBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDFE2AFC8DFA00A85B51 /* MultipleChoiceBottomBar.swift */; };
+		057EDE032AFE30A600A85B51 /* MultipleCardChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE022AFE30A600A85B51 /* MultipleCardChoice.swift */; };
+		057EDE082AFE323E00A85B51 /* TripleChoiceBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE072AFE323E00A85B51 /* TripleChoiceBackground.swift */; };
+		057EDE0A2AFE325E00A85B51 /* TripleChoiceProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE092AFE325E00A85B51 /* TripleChoiceProgressBar.swift */; };
+		057EDE0C2AFE327E00A85B51 /* TripleChoiceVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE0B2AFE327E00A85B51 /* TripleChoiceVideo.swift */; };
+		057EDE0E2AFE32FE00A85B51 /* TripleChoiceText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE0D2AFE32FE00A85B51 /* TripleChoiceText.swift */; };
+		057EDE102AFE332900A85B51 /* TripleChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE0F2AFE332900A85B51 /* TripleChoiceView.swift */; };
+		057EDE122AFE336200A85B51 /* TripleChoiceTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE112AFE336200A85B51 /* TripleChoiceTopBar.swift */; };
+		057EDE142AFE33FC00A85B51 /* TripleChoiceAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE132AFE33FC00A85B51 /* TripleChoiceAnswers.swift */; };
+		057EDE162AFE346F00A85B51 /* TripleChoiceBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE152AFE346F00A85B51 /* TripleChoiceBottomBar.swift */; };
+		057EDE182AFE37A200A85B51 /* TripleCardChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE172AFE37A200A85B51 /* TripleCardChoice.swift */; };
 		0596F83C2AFB728500328297 /* ARSCNCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83B2AFB728500328297 /* ARSCNCameraView.swift */; };
 		0596F83E2AFB72C900328297 /* ARSCNCameraContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */; };
 		0596F8402AFB74EC00328297 /* TirukanProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83F2AFB74EC00328297 /* TirukanProgress.swift */; };
@@ -116,6 +126,16 @@
 		057EDDFA2AFC8D6300A85B51 /* MultipleChoiceText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceText.swift; sourceTree = "<group>"; };
 		057EDDFC2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceAnswers.swift; sourceTree = "<group>"; };
 		057EDDFE2AFC8DFA00A85B51 /* MultipleChoiceBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceBottomBar.swift; sourceTree = "<group>"; };
+		057EDE022AFE30A600A85B51 /* MultipleCardChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCardChoice.swift; sourceTree = "<group>"; };
+		057EDE072AFE323E00A85B51 /* TripleChoiceBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceBackground.swift; sourceTree = "<group>"; };
+		057EDE092AFE325E00A85B51 /* TripleChoiceProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceProgressBar.swift; sourceTree = "<group>"; };
+		057EDE0B2AFE327E00A85B51 /* TripleChoiceVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceVideo.swift; sourceTree = "<group>"; };
+		057EDE0D2AFE32FE00A85B51 /* TripleChoiceText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceText.swift; sourceTree = "<group>"; };
+		057EDE0F2AFE332900A85B51 /* TripleChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceView.swift; sourceTree = "<group>"; };
+		057EDE112AFE336200A85B51 /* TripleChoiceTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceTopBar.swift; sourceTree = "<group>"; };
+		057EDE132AFE33FC00A85B51 /* TripleChoiceAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceAnswers.swift; sourceTree = "<group>"; };
+		057EDE152AFE346F00A85B51 /* TripleChoiceBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceBottomBar.swift; sourceTree = "<group>"; };
+		057EDE172AFE37A200A85B51 /* TripleCardChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleCardChoice.swift; sourceTree = "<group>"; };
 		0596F83B2AFB728500328297 /* ARSCNCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraView.swift; sourceTree = "<group>"; };
 		0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraContainer.swift; sourceTree = "<group>"; };
 		0596F83F2AFB74EC00328297 /* TirukanProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirukanProgress.swift; sourceTree = "<group>"; };
@@ -244,8 +264,24 @@
 				057EDDFA2AFC8D6300A85B51 /* MultipleChoiceText.swift */,
 				057EDDFE2AFC8DFA00A85B51 /* MultipleChoiceBottomBar.swift */,
 				057EDDFC2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift */,
+				057EDE022AFE30A600A85B51 /* MultipleCardChoice.swift */,
 			);
 			path = MultipleChoice;
+			sourceTree = "<group>";
+		};
+		057EDE042AFE322000A85B51 /* TripleChoice */ = {
+			isa = PBXGroup;
+			children = (
+				057EDE072AFE323E00A85B51 /* TripleChoiceBackground.swift */,
+				057EDE092AFE325E00A85B51 /* TripleChoiceProgressBar.swift */,
+				057EDE0B2AFE327E00A85B51 /* TripleChoiceVideo.swift */,
+				057EDE0D2AFE32FE00A85B51 /* TripleChoiceText.swift */,
+				057EDE112AFE336200A85B51 /* TripleChoiceTopBar.swift */,
+				057EDE132AFE33FC00A85B51 /* TripleChoiceAnswers.swift */,
+				057EDE152AFE346F00A85B51 /* TripleChoiceBottomBar.swift */,
+				057EDE172AFE37A200A85B51 /* TripleCardChoice.swift */,
+			);
+			path = TripleChoice;
 			sourceTree = "<group>";
 		};
 		0596F83A2AFB724400328297 /* Camera */ = {
@@ -260,6 +296,7 @@
 		059ED8352AFA129C00AB7630 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				057EDE042AFE322000A85B51 /* TripleChoice */,
 				057EDDED2AFC8A4000A85B51 /* MultipleChoice */,
 				057EDDE82AFC7B2A00A85B51 /* CaseFlow */,
 				059ED8482AFA15EA00AB7630 /* Tirukan */,
@@ -568,6 +605,7 @@
 				ADE3CFA62AE3ADA000CED0DD /* LearningModuleView.swift */,
 				059ED8332AFA126B00AB7630 /* TirukanView.swift */,
 				057EDDF42AFC8C4600A85B51 /* MultipleChoiceView.swift */,
+				057EDE0F2AFE332900A85B51 /* TripleChoiceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -756,8 +794,11 @@
 			files = (
 				ADE3CFC22AE3AF5B00CED0DD /* PersistenceController.swift in Sources */,
 				059ED8422AFA129C00AB7630 /* StoryBackground.swift in Sources */,
+				057EDE142AFE33FC00A85B51 /* TripleChoiceAnswers.swift in Sources */,
+				057EDE0E2AFE32FE00A85B51 /* TripleChoiceText.swift in Sources */,
 				057EDDFD2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift in Sources */,
 				057EDDF32AFC8BB900A85B51 /* MultipleChoiceImage.swift in Sources */,
+				057EDE122AFE336200A85B51 /* TripleChoiceTopBar.swift in Sources */,
 				ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */,
 				05D046112AF8F26B0029D747 /* StoryView.swift in Sources */,
 				059ED8402AFA129C00AB7630 /* StoryText.swift in Sources */,
@@ -795,16 +836,23 @@
 				AD4D95742AFE45AA0035E006 /* HomeViewModel.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
 				057EDDF52AFC8C4600A85B51 /* MultipleChoiceView.swift in Sources */,
+				057EDE162AFE346F00A85B51 /* TripleChoiceBottomBar.swift in Sources */,
 				057EDDF12AFC8B7500A85B51 /* MultipleChoiceBackground.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
+				057EDE082AFE323E00A85B51 /* TripleChoiceBackground.swift in Sources */,
 				057EDDF72AFC8C8F00A85B51 /* MultipleChoiceTopBar.swift in Sources */,
+				057EDE102AFE332900A85B51 /* TripleChoiceView.swift in Sources */,
 				057EDDEA2AFC7B7400A85B51 /* ExitState.swift in Sources */,
 				059ED8342AFA126B00AB7630 /* TirukanView.swift in Sources */,
 				057EDDDC2AFB939000A85B51 /* TirukanCorrect.swift in Sources */,
 				057EDDEC2AFC831200A85B51 /* CorrectState.swift in Sources */,
+				057EDE032AFE30A600A85B51 /* MultipleCardChoice.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
 				059ED83D2AFA129C00AB7630 /* StoryBottomBar.swift in Sources */,
+				057EDE182AFE37A200A85B51 /* TripleCardChoice.swift in Sources */,
 				057EDDEF2AFC8A5000A85B51 /* MultipleChoiceVideo.swift in Sources */,
+				057EDE0C2AFE327E00A85B51 /* TripleChoiceVideo.swift in Sources */,
+				057EDE0A2AFE325E00A85B51 /* TripleChoiceProgressBar.swift in Sources */,
 				059ED84E2AFA173400AB7630 /* TirukanText.swift in Sources */,
 				059ED84C2AFA168300AB7630 /* TirukanBackground.swift in Sources */,
 				0596F8402AFB74EC00328297 /* TirukanProgress.swift in Sources */,

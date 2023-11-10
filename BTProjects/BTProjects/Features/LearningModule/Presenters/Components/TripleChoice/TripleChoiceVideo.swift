@@ -1,14 +1,14 @@
 //
-//  MultipleChoiceVideo.swift
+//  TripleChoiceVideo.swift
 //  BTProjects
 //
-//  Created by Ario Syahputra on 09/11/23.
+//  Created by Ario Syahputra on 10/11/23.
 //
 
 import SwiftUI
 import AVKit
 
-struct MultipleChoiceVideo: View {
+struct TripleChoiceVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
 
@@ -21,7 +21,7 @@ struct MultipleChoiceVideo: View {
             
             if let player = player {
                 VideoPlayerController(player: player)
-                    .frame(width: 467, height: 310)
+                    .frame(width: 479, height: 322)
                     .cornerRadius(16)
                     .padding(8)
                     .overlay(
@@ -86,5 +86,5 @@ struct MultipleChoiceVideo: View {
 }
 
 #Preview {
-    MultipleChoiceVideo()
+    TripleChoiceVideo()
 }

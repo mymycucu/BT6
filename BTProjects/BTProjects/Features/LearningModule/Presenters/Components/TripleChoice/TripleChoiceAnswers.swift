@@ -1,16 +1,17 @@
 //
-//  MultipleChoiceAnswers.swift
+//  TripleChoiceAnswers.swift
 //  BTProjects
 //
-//  Created by Ario Syahputra on 09/11/23.
+//  Created by Ario Syahputra on 10/11/23.
 //
 
 import SwiftUI
 
-struct MultipleChoiceAnswers: View {
+struct TripleChoiceAnswers: View {
     var body: some View {
+        
         HStack (spacing: 35) {
-            // MARK: Left Answer
+            // MARK: First Answer
             Button(action: {
                 // Add your action code here
             }) {
@@ -18,9 +19,15 @@ struct MultipleChoiceAnswers: View {
 
             }
 
-
-
-            // MARK: Right Answer
+            // MARK: Second Answer
+            Button(action: {
+                // Add your action code here
+            }) {
+                MultipleCardChoice()
+                
+            }
+            
+            // MARK: Third Answer
             Button(action: {
                 // Add your action code here
             }) {
@@ -32,5 +39,5 @@ struct MultipleChoiceAnswers: View {
 }
 
 #Preview {
-    MultipleChoiceAnswers()
+    TripleChoiceAnswers()
 }
