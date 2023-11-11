@@ -55,6 +55,8 @@ struct ConnectImages: View {
     @State var leftImagesPoint: [imagePosition] = []
     @State var rightImagesPoint: [imagePosition] = []
     
+    @State var isCorrect: Bool = false
+    
     
     
     let questions: Quest = Quest(name: "hubungkan", type: 3, order: 1, answers: answers)
@@ -81,13 +83,15 @@ struct ConnectImages: View {
                                         updatePath()
                                     }
                                 ),
-                                position: .left
+                                position: .left,
+                                isCorrect: $isCorrect
                             )
                             .onTapGesture {
                                 leftSelected = leftSelected == index ? nil : index
                                 updatePath()
                             }
                             .disabled(leftSelected != nil)
+                            
                             .background(GeometryReader { proxy in
                                 Color.clear.onAppear {
                                     leftImagePosition = proxy.frame(in: .global).origin
@@ -118,7 +122,8 @@ struct ConnectImages: View {
                                         updatePath()
                                     }
                                 ),
-                                position: .right
+                                position: .right,
+                                isCorrect: $isCorrect
                             )
                             .onTapGesture {
                                 rightSelected = rightSelected == index ? nil : index
@@ -231,7 +236,7 @@ struct ConnectImages: View {
             }
         }
         .onChange(of: (leftSelected != nil) && (rightSelected != nil)) { oldValue, newValue in
-            checkedAnswers(leftImage: leftImages[leftSelected!], rightImage: rightImages[rightSelected!], question: questions)
+            isCorrect = checkedAnswers(leftImage: leftImages[leftSelected!], rightImage: rightImages[rightSelected!], question: questions)
         }
     }
     
@@ -262,17 +267,18 @@ struct ConnectImages: View {
     
     
     func checkedAnswers(leftImage: String, rightImage: String, question: Quest) -> Bool {
-        var checked: Bool = false
+        var checked: Bool?
         
         for item in question.answers {
             if item.illustration == leftImage && item.illustration2 == rightImage {
                 checked = true
+                break
+                
             } else{
                 checked = false
             }
         }
-        
-        return checked
+        return checked!
         
     }
 }
