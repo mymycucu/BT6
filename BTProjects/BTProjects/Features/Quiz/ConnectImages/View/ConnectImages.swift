@@ -1,10 +1,3 @@
-//
-//  ConnectImages.swift
-//  BTProjects
-//
-//  Created by Sarah Uli Octavia on 08/11/23.
-//
-
 import SwiftUI
 
 struct Ans: Identifiable, Hashable, Equatable {
@@ -87,17 +80,12 @@ struct ConnectImages: View {
                                 isCorrect: $isCorrect
                             )
                             .onTapGesture {
-                                leftSelected = leftSelected == index ? nil : index
-                                updatePath()
+                                leftSelected =  index
                             }
-                            .disabled(leftSelected != nil)
-                            
                             .background(GeometryReader { proxy in
                                 Color.clear.onAppear {
                                     leftImagePosition = proxy.frame(in: .global).origin
                                     leftImagesPoint.append(imagePosition(id: index, position: leftImagePosition))
-                                    print("Left ImageContainer  \(index) at \(leftImagePosition)")
-                                    print(leftImagesPoint)
                                 }
                             })
                             
@@ -119,25 +107,20 @@ struct ConnectImages: View {
                                     set: { newValue in
                                         rightSelected = newValue ? index : nil
                                         leftSelected = nil
-                                        updatePath()
                                     }
                                 ),
                                 position: .right,
                                 isCorrect: $isCorrect
                             )
                             .onTapGesture {
-                                rightSelected = rightSelected == index ? nil : index
-                                
-                                updatePath()
+                                rightSelected =  index
                             }
-                            .disabled(rightSelected != nil)
+//                            .disabled(rightSelected != nil)
                             .background(GeometryReader { proxy in
                                 Color.clear.onAppear {
                                     // Access the CGPoint of the ImageContainer
                                     rightImagePosition = proxy.frame(in: .global).origin
                                     rightImagesPoint.append(imagePosition(id: index, position: rightImagePosition))
-                                    print("Right ImageContainer  \(index) at \(rightImagePosition)")
-                                    print(rightImagesPoint)
                                 }
                             })
                         }
@@ -180,14 +163,15 @@ struct ConnectImages: View {
                         if leftSelected == left.id && rightSelected == right.id {
                             VStack{
                                 Path { path in
-                                    path.move(to: CGPoint(x: left.position.x + 235, y: left.position.y - 3))
-                                    path.addLine(to: CGPoint(x: right.position.x - 40, y: right.position.y - 3))
+                                    path.move(to: CGPoint(x: left.position.x + 240, y: left.position.y - 3))
+                                    path.addLine(to: CGPoint(x: right.position.x - 44, y: right.position.y - 3))
                                 }
-                                .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,12]))
+                                .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,10]))
                                 .cornerRadius(10)
                                 
                             }
                         }
+                        
                         
                     }
                     
@@ -195,9 +179,7 @@ struct ConnectImages: View {
                 
                 
             }
-            
-            
-            
+        
             
         }
         .padding(.horizontal, 40)
@@ -235,9 +217,13 @@ struct ConnectImages: View {
                 
             }
         }
-        .onChange(of: (leftSelected != nil) && (rightSelected != nil)) { oldValue, newValue in
-            isCorrect = checkedAnswers(leftImage: leftImages[leftSelected!], rightImage: rightImages[rightSelected!], question: questions)
+        .onChange(of: leftSelected) { oldValue, newValue in
+            updateIsCorrect()
         }
+        .onChange(of: rightSelected) { oldValue, newValue in
+            updateIsCorrect()
+        }
+        
     }
     
     func updatePath() {
@@ -267,23 +253,25 @@ struct ConnectImages: View {
     
     
     func checkedAnswers(leftImage: String, rightImage: String, question: Quest) -> Bool {
-        var checked: Bool?
         
         for item in question.answers {
             if item.illustration == leftImage && item.illustration2 == rightImage {
-                checked = true
-                break
+                return true
                 
-            } else{
-                checked = false
             }
         }
-        return checked!
+        return false
         
+    }
+    func updateIsCorrect() {
+        if let leftIndex = leftSelected, let rightIndex = rightSelected {
+            isCorrect = checkedAnswers(leftImage: leftImages[leftIndex], rightImage: rightImages[rightIndex], question: questions)
+        } else {
+            isCorrect = false
+        }
     }
 }
 
 #Preview {
     ConnectImages()
 }
-
