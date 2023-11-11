@@ -75,6 +75,7 @@
 		AD4D95902AFE46DF0035E006 /* QuizHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D958E2AFE46DF0035E006 /* QuizHeader.swift */; };
 		AD4D95912AFE46DF0035E006 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D958F2AFE46DF0035E006 /* ProgressBar.swift */; };
 		AD7551312AFE50F0006842B5 /* VideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7551302AFE50F0006842B5 /* VideoPlayerController.swift */; };
+		AD75513C2AFFFA16006842B5 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = AD75513B2AFFFA16006842B5 /* Lottie */; };
 		ADBE94192AEB5383008A1390 /* BTModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94172AEB5383008A1390 /* BTModel.xcdatamodeld */; };
 		ADBE941B2AF3744F008A1390 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE941A2AF3744F008A1390 /* Constant.swift */; };
 		ADBE941D2AFB42DF008A1390 /* DataFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE941C2AFB42DF008A1390 /* DataFeedManager.swift */; };
@@ -166,10 +167,8 @@
 		AD4D95752AFE45B40035E006 /* WordSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSummary.swift; sourceTree = "<group>"; };
 		AD4D95772AFE45C10035E006 /* SummaryHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryHeader.swift; sourceTree = "<group>"; };
 		AD4D95782AFE45C10035E006 /* SummaryVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryVideo.swift; sourceTree = "<group>"; };
-		AD4D957B2AFE45CC0035E006 /* VideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
 		AD4D957D2AFE45D80035E006 /* E_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = E_Bisindo.mp4; sourceTree = "<group>"; };
 		AD4D957E2AFE45D80035E006 /* dummy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummy.mp4; sourceTree = "<group>"; };
-		AD4D95862AFE465B0035E006 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AD4D95882AFE46C80035E006 /* ConnectImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectImages.swift; sourceTree = "<group>"; };
 		AD4D958A2AFE46D10035E006 /* Image3DContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image3DContainer.swift; sourceTree = "<group>"; };
 		AD4D958B2AFE46D10035E006 /* ImageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContainer.swift; sourceTree = "<group>"; };
@@ -210,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD75513C2AFFFA16006842B5 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,15 +357,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		AD4D95922AFE4A570035E006 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				AD4D95862AFE465B0035E006 /* Extension.swift */,
-				AD4D957B2AFE45CC0035E006 /* VideoPlayerController.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		ADBE94202AFB47CB008A1390 /* Json */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,7 +384,6 @@
 			children = (
 				ADE3CFA32AE3ADA000CED0DD /* BTProjects */,
 				ADE3CFA22AE3ADA000CED0DD /* Products */,
-				AD4D95922AFE4A570035E006 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -719,10 +709,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				AD75512F2AFE508A006842B5 /* PBXTargetDependency */,
 			);
 			name = BTProjects;
 			packageProductDependencies = (
+				AD75513B2AFFFA16006842B5 /* Lottie */,
 			);
 			productName = BTProjects;
 			productReference = ADE3CFA12AE3ADA000CED0DD /* BTProjects.app */;
@@ -753,7 +743,7 @@
 			);
 			mainGroup = ADE3CF982AE3ADA000CED0DD;
 			packageReferences = (
-				057EDDDD2AFB9CC600A85B51 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				AD75513A2AFFFA16006842B5 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = ADE3CFA22AE3ADA000CED0DD /* Products */;
 			projectDirPath = "";
@@ -882,13 +872,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AD75512F2AFE508A006842B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = AD75512E2AFE508A006842B5 /* Lottie */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		ADE3CFAD2AE3ADA200CED0DD /* Debug */ = {
@@ -1096,7 +1079,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		057EDDDD2AFB9CC600A85B51 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+		AD75513A2AFFFA16006842B5 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
 			requirement = {
@@ -1107,9 +1090,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AD75512E2AFE508A006842B5 /* Lottie */ = {
+		AD75513B2AFFFA16006842B5 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 057EDDDD2AFB9CC600A85B51 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			package = AD75513A2AFFFA16006842B5 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
