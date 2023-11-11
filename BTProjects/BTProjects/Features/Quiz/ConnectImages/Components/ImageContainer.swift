@@ -16,6 +16,7 @@ struct ImageContainer: View {
     @State var imageTitle: String = "mencari-kumbang"
     @Binding var isSelected: Bool
     @State var position: positionImageContainer = .right
+    @State var isCorrect: Bool = true
     
     var body: some View {
         /// selection position
@@ -33,7 +34,7 @@ struct ImageContainer: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 22)
                     .inset(by: 2.5)
-                    .stroke(isSelected ? Color.PB100 : Color.Gray6,  style: isSelected ? StrokeStyle(lineWidth: 5) : StrokeStyle(lineWidth: 2.8, dash: [6, 6]))
+                    .stroke(isSelected ? (isCorrect ? Color.Green3 : Color.PB100) : Color.Gray6,  style: isSelected ? StrokeStyle(lineWidth: 5) : StrokeStyle(lineWidth: 2.8, dash: [6, 6]))
             )
             
             //MARK: Circle
@@ -43,7 +44,7 @@ struct ImageContainer: View {
                 }
                 ZStack{
                     Circle()
-                        .fill(isSelected ? Color.PB100 : Color.PB300)
+                        .fill(isSelected ? (isCorrect ? Color.Green3 : Color.PB100) : Color.PB300)
                         .frame(width: 25)
                         
                     Circle()

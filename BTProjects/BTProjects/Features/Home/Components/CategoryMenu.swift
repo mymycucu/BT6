@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CategoryMenu: View {
-    let categories = [Category(colors: .red),Category(colors: .cyan),Category(colors: .yellow),
-                      Category(colors: .orange),Category(colors: .blue),Category(colors: .purple),
-                      Category(colors: .green),]
-    @Binding var category: Category?
+    let categories = [Cat(colors: .red),Cat(colors: .cyan),Cat(colors: .yellow),
+                      Cat(colors: .orange),Cat(colors: .blue),Cat(colors: .purple),
+                      Cat(colors: .green)]
+    @Binding var category: Cat?
     @State private var selectedCategoryIndex = 0 // Index of the initially selected category'
     @State var scrollID: Int?
     

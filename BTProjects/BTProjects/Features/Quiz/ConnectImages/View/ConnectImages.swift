@@ -7,14 +7,56 @@
 
 import SwiftUI
 
+struct Ans: Identifiable, Hashable, Equatable {
+    var id = UUID().uuidString
+    var name: String?
+    var type: Int?
+    var illustration: String
+    var illustration2: String
+    var isCorrect: Bool?
+    var signLanguage: String?
+}
+let answers: [Ans] = [
+    Ans(name: "budi", type: 4, illustration: "mencari-kumbang", illustration2: "background-word-summary", isCorrect: true),
+    Ans(name: "sarah", type: 4, illustration: "background", illustration2: "mencari-kumbang", isCorrect: true),
+    Ans(name: "fany", type: 4, illustration: "background-word-summary", illustration2: "background", isCorrect: true)
+]
+
+struct Quest: Identifiable, Hashable, Equatable  {
+    var id = UUID().uuidString
+    var name: String?
+    var type: Int?
+    var order: Int?
+    var illustration: String?
+    var isDone: Bool?
+    var signLanguage: String?
+    var answers: [Ans]
+}
+
+struct imagePosition: Identifiable, Equatable  {
+    var id: Int
+    var position: CGPoint
+}
+
+
 struct ConnectImages: View {
     @State var disableNext: Bool = true
     @State var leftSelected: Int?
     @State var rightSelected: Int?
-    @State var isLeftSelected:Bool = false
-    @State var isRightSelected:Bool = false
     
     @State var path: Path = Path()
+    
+    @State var leftImages: [String] = []
+    @State var rightImages: [String] = []
+    
+    @State private var leftImagePosition: CGPoint = .zero
+    @State private var rightImagePosition: CGPoint = .zero
+    
+    @State var leftImagesPoint: [imagePosition] = []
+    @State var rightImagesPoint: [imagePosition] = []
+    
+    let questions: Quest = Quest(name: "hubungkan", type: 3, order: 1, answers: answers)
+    
     var body: some View {
         
         VStack(alignment: .center, spacing: 0){
@@ -25,32 +67,34 @@ struct ConnectImages: View {
                 HStack{
                     //MARK: Left Images
                     VStack{
-                        ForEach(0..<3) { index in
+                        ForEach(leftImages.indices, id: \.self) { index in
                             
-                            ImageContainer(isSelected: Binding(
-                                get: {
-                                    leftSelected == index
-                                },
-                                set: { newValue in
-                                    if newValue {
-                                        leftSelected = index
+                            ImageContainer(
+                                imageTitle: leftImages[index],
+                                isSelected: Binding(
+                                    get: { leftSelected == index },
+                                    set: { newValue in
+                                        leftSelected = newValue ? index : nil
                                         rightSelected = nil
                                         updatePath()
-                                    } else {
-                                        leftSelected = nil
-                                        updatePath()
                                     }
-                                }
-                            ), position: .left)
+                                ),
+                                position: .left
+                            )
                             .onTapGesture {
-                                if leftSelected == index {
-                                    leftSelected = nil
-                                } else {
-                                    leftSelected = index
-                                    rightSelected = nil
-                                }
+                                leftSelected = leftSelected == index ? nil : index
                                 updatePath()
                             }
+                            .background(GeometryReader { proxy in
+                                Color.clear.onAppear {
+                                    leftImagePosition = proxy.frame(in: .global).origin
+                                    leftImagesPoint.append(imagePosition(id: index, position: leftImagePosition))
+                                    print("Left ImageContainer  \(index) at \(leftImagePosition)")
+                                    print(leftImagesPoint)
+                                }
+                            })
+
+                            
                             
                         }
                         
@@ -60,33 +104,33 @@ struct ConnectImages: View {
                     Spacer()
                     //MARK: Right Images
                     VStack{
-                        ForEach(0..<3) { index in
-                            ImageContainer(isSelected: Binding(
-                                get: {
-                                    rightSelected == index
-                                },
-                                set: { newValue in
-                                    if newValue {
-                                        rightSelected = index
+                        ForEach(rightImages.indices, id:\.self) { index in
+                            ImageContainer(
+                                imageTitle: rightImages[index],
+                                isSelected: Binding(
+                                    get: { rightSelected == index },
+                                    set: { newValue in
+                                        rightSelected = newValue ? index : nil
                                         leftSelected = nil
                                         updatePath()
-                                    } else {
-                                        rightSelected = nil
-                                        updatePath()
                                     }
-                                }
-                            ),
-                                           position: .right)
+                                ),
+                                position: .right
+                            )
                             .onTapGesture {
-                                if rightSelected == index {
-                                    rightSelected = nil
-                                } else {
-                                    rightSelected = index
-                                    isRightSelected = true
-                                }
+                                rightSelected = rightSelected == index ? nil : index
                                 updatePath()
-                                
                             }
+
+                            .background(GeometryReader { proxy in
+                                Color.clear.onAppear {
+                                    // Access the CGPoint of the ImageContainer
+                                    rightImagePosition = proxy.frame(in: .global).origin
+                                    rightImagesPoint.append(imagePosition(id: index, position: rightImagePosition))
+                                    print("Right ImageContainer  \(index) at \(rightImagePosition)")
+                                    print(rightImagesPoint)
+                                }
+                            })
                         }
                     }
                 }
@@ -120,17 +164,30 @@ struct ConnectImages: View {
                 }
                 
                 //MARK: Draw Connecting Line
-                if let leftSelected = leftSelected, let rightSelected = rightSelected {
-                    Path { path in
-                        path.move(to: CGPoint(x: 50, y: 50 + CGFloat(leftSelected) * 60))
-                        path.addLine(to: CGPoint(x: 250, y: 50 + CGFloat(rightSelected) * 60))
+                ForEach(leftImages.indices, id:\.self){ item in
+                    VStack{
+                        if let leftSelected = leftSelected, let rightSelected = rightSelected {
+                            Path { path in
+                                path.move(to: CGPoint(x: 280, y: 96 + (CGFloat(leftSelected) * 102) * 2))
+                                path.addLine(to: CGPoint(x: 595, y: 96 + (CGFloat(rightSelected) * 102) * 2))
+                            }
+                            .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,12]))
+                            .cornerRadius(10)
+                            
+                        }
+                        
+                        
                     }
-                    .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, dash: [12,12]))
-                    .cornerRadius(10)
+                    .padding(.horizontal, 122)
+                    .padding(.vertical, 37)
+                    
                 }
                 
+                
             }
-            //            Spacer()
+            .padding(.vertical, 37)
+            
+            
             
         }
         .padding(.horizontal, 40)
@@ -161,19 +218,58 @@ struct ConnectImages: View {
             
             
         )
-    }
-    
-    func updatePath() {
-        path = Path { path in
-            if let leftSelected = leftSelected, let rightSelected = rightSelected {
-                path.move(to: CGPoint(x: 50, y: 150 + CGFloat(leftSelected) * 60))
-                path.addLine(to: CGPoint(x: 250, y: 50 + CGFloat(rightSelected) * 60))
+        .onAppear{
+            withAnimation {
+                leftImages = getLeftImages(question: questions).shuffled()
+                rightImages = getRightImages(question: questions).shuffled()
+              
             }
         }
     }
     
+    func updatePath() {
+        path = Path { path in
+            path.move(to: leftImagePosition)
+            path.addLine(to: rightImagePosition)
+        }
+    }
+    
+    func getLeftImages(question: Quest) -> [String]{
+        var allLeftImages: [String] = []
+        for item in question.answers {
+            allLeftImages.append(item.illustration)
+        }
+        print(allLeftImages)
+        return allLeftImages
+    }
+    
+    func getRightImages(question: Quest) -> [String]{
+        var allRightImages: [String] = []
+        for item in question.answers {
+            allRightImages.append(item.illustration2)
+        }
+        print(allRightImages)
+        return allRightImages
+    }
+    
+    
+    func checkedAnswers(leftImage: String, rightImage: String, question: Quest) -> Bool {
+        var checked: Bool = false
+        
+        for item in question.answers {
+            if item.illustration == leftImage && item.illustration2 == rightImage {
+                checked = true
+            } else{
+                checked = false
+            }
+        }
+        
+        return checked
+        
+    }
 }
 
 #Preview {
     ConnectImages()
 }
+
