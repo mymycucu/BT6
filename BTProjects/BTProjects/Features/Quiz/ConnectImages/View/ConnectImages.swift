@@ -55,6 +55,8 @@ struct ConnectImages: View {
     @State var leftImagesPoint: [imagePosition] = []
     @State var rightImagesPoint: [imagePosition] = []
     
+    
+    
     let questions: Quest = Quest(name: "hubungkan", type: 3, order: 1, answers: answers)
     
     var body: some View {
@@ -85,6 +87,7 @@ struct ConnectImages: View {
                                 leftSelected = leftSelected == index ? nil : index
                                 updatePath()
                             }
+                            .disabled(leftSelected != nil)
                             .background(GeometryReader { proxy in
                                 Color.clear.onAppear {
                                     leftImagePosition = proxy.frame(in: .global).origin
@@ -93,7 +96,7 @@ struct ConnectImages: View {
                                     print(leftImagesPoint)
                                 }
                             })
-
+                            
                             
                             
                         }
@@ -119,9 +122,10 @@ struct ConnectImages: View {
                             )
                             .onTapGesture {
                                 rightSelected = rightSelected == index ? nil : index
+                                
                                 updatePath()
                             }
-
+                            .disabled(rightSelected != nil)
                             .background(GeometryReader { proxy in
                                 Color.clear.onAppear {
                                     // Access the CGPoint of the ImageContainer
@@ -136,6 +140,8 @@ struct ConnectImages: View {
                 }
                 .padding(.horizontal, 122)
                 .padding(.vertical, 37)
+                
+                
                 
                 
                 //MARK: Navigation Previous-Next Button
@@ -164,28 +170,27 @@ struct ConnectImages: View {
                 }
                 
                 //MARK: Draw Connecting Line
-                ForEach(leftImages.indices, id:\.self){ item in
-                    VStack{
-                        if let leftSelected = leftSelected, let rightSelected = rightSelected {
-                            Path { path in
-                                path.move(to: CGPoint(x: 280, y: 96 + (CGFloat(leftSelected) * 102) * 2))
-                                path.addLine(to: CGPoint(x: 595, y: 96 + (CGFloat(rightSelected) * 102) * 2))
+                ForEach(leftImagesPoint, id:\.id){ left in
+                    ForEach(rightImagesPoint, id:\.id) { right in
+                        if leftSelected == left.id && rightSelected == right.id {
+                            VStack{
+                                Path { path in
+                                    path.move(to: CGPoint(x: left.position.x + 235, y: left.position.y - 3))
+                                    path.addLine(to: CGPoint(x: right.position.x - 40, y: right.position.y - 3))
+                                }
+                                .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,12]))
+                                .cornerRadius(10)
+                                
                             }
-                            .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,12]))
-                            .cornerRadius(10)
-                            
                         }
                         
-                        
                     }
-                    .padding(.horizontal, 122)
-                    .padding(.vertical, 37)
                     
                 }
                 
                 
             }
-            .padding(.vertical, 37)
+            
             
             
             
@@ -222,15 +227,18 @@ struct ConnectImages: View {
             withAnimation {
                 leftImages = getLeftImages(question: questions).shuffled()
                 rightImages = getRightImages(question: questions).shuffled()
-              
+                
             }
+        }
+        .onChange(of: (leftSelected != nil) && (rightSelected != nil)) { oldValue, newValue in
+            checkedAnswers(leftImage: leftImages[leftSelected!], rightImage: rightImages[rightSelected!], question: questions)
         }
     }
     
     func updatePath() {
         path = Path { path in
-            path.move(to: leftImagePosition)
-            path.addLine(to: rightImagePosition)
+            path.move(to: CGPoint(x: leftImagePosition.x, y: leftImagePosition.y))
+            path.addLine(to: CGPoint(x: rightImagePosition.x, y: rightImagePosition.y))
         }
     }
     
