@@ -68,13 +68,15 @@
 		AD4D95762AFE45B40035E006 /* WordSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D95752AFE45B40035E006 /* WordSummary.swift */; };
 		AD4D95792AFE45C10035E006 /* SummaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D95772AFE45C10035E006 /* SummaryHeader.swift */; };
 		AD4D957A2AFE45C10035E006 /* SummaryVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D95782AFE45C10035E006 /* SummaryVideo.swift */; };
-		AD4D95802AFE45D90035E006 /* dummy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AD4D957E2AFE45D80035E006 /* dummy.mp4 */; };
 		AD4D95892AFE46C80035E006 /* ConnectImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D95882AFE46C80035E006 /* ConnectImages.swift */; };
 		AD4D958C2AFE46D10035E006 /* Image3DContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D958A2AFE46D10035E006 /* Image3DContainer.swift */; };
 		AD4D958D2AFE46D10035E006 /* ImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D958B2AFE46D10035E006 /* ImageContainer.swift */; };
 		AD4D95902AFE46DF0035E006 /* QuizHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D958E2AFE46DF0035E006 /* QuizHeader.swift */; };
 		AD4D95912AFE46DF0035E006 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D958F2AFE46DF0035E006 /* ProgressBar.swift */; };
 		AD7551312AFE50F0006842B5 /* VideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7551302AFE50F0006842B5 /* VideoPlayerController.swift */; };
+		AD75513C2AFFFA16006842B5 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = AD75513B2AFFFA16006842B5 /* Lottie */; };
+		AD75513E2AFFFBDF006842B5 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD75513D2AFFFBDF006842B5 /* PersistenceController.swift */; };
+		AD7551402AFFFC48006842B5 /* BTProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD75513F2AFFFC48006842B5 /* BTProjectsApp.swift */; };
 		ADBE94192AEB5383008A1390 /* BTModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94172AEB5383008A1390 /* BTModel.xcdatamodeld */; };
 		ADBE941B2AF3744F008A1390 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE941A2AF3744F008A1390 /* Constant.swift */; };
 		ADBE941D2AFB42DF008A1390 /* DataFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE941C2AFB42DF008A1390 /* DataFeedManager.swift */; };
@@ -90,15 +92,10 @@
 		ADBE945A2AFCB732008A1390 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94592AFCB732008A1390 /* Question.swift */; };
 		ADBE945C2AFCB752008A1390 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE945B2AFCB752008A1390 /* Answer.swift */; };
 		ADBE945E2AFCB781008A1390 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE945D2AFCB781008A1390 /* Word.swift */; };
-		ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */; };
 		ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFA62AE3ADA000CED0DD /* LearningModuleView.swift */; };
 		ADE3CFA92AE3ADA200CED0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */; };
 		ADE3CFAC2AE3ADA200CED0DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE3CFAB2AE3ADA200CED0DD /* Preview Assets.xcassets */; };
 		ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFB92AE3AE9D00CED0DD /* Prompt.swift */; };
-		ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFBB2AE3AEBE00CED0DD /* Error.swift */; };
-		ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */; };
-		ADE3CFC22AE3AF5B00CED0DD /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC12AE3AF5B00CED0DD /* PersistenceController.swift */; };
-		ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */; };
 		D46180D02AFB6D6400370DD3 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46180CF2AFB6D6400370DD3 /* CustomButtonStyle.swift */; };
 		D4FE9D912AF36EC0000DAFEB /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE9D902AF36EC0000DAFEB /* RoundedCorner.swift */; };
 /* End PBXBuildFile section */
@@ -166,16 +163,16 @@
 		AD4D95752AFE45B40035E006 /* WordSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSummary.swift; sourceTree = "<group>"; };
 		AD4D95772AFE45C10035E006 /* SummaryHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryHeader.swift; sourceTree = "<group>"; };
 		AD4D95782AFE45C10035E006 /* SummaryVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryVideo.swift; sourceTree = "<group>"; };
-		AD4D957B2AFE45CC0035E006 /* VideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
 		AD4D957D2AFE45D80035E006 /* E_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = E_Bisindo.mp4; sourceTree = "<group>"; };
 		AD4D957E2AFE45D80035E006 /* dummy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummy.mp4; sourceTree = "<group>"; };
-		AD4D95862AFE465B0035E006 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AD4D95882AFE46C80035E006 /* ConnectImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectImages.swift; sourceTree = "<group>"; };
 		AD4D958A2AFE46D10035E006 /* Image3DContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image3DContainer.swift; sourceTree = "<group>"; };
 		AD4D958B2AFE46D10035E006 /* ImageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContainer.swift; sourceTree = "<group>"; };
 		AD4D958E2AFE46DF0035E006 /* QuizHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuizHeader.swift; path = BTProjects/Features/Quiz/QuizHeader.swift; sourceTree = SOURCE_ROOT; };
 		AD4D958F2AFE46DF0035E006 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressBar.swift; path = BTProjects/Features/Quiz/ProgressBar.swift; sourceTree = SOURCE_ROOT; };
 		AD7551302AFE50F0006842B5 /* VideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
+		AD75513D2AFFFBDF006842B5 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		AD75513F2AFFFC48006842B5 /* BTProjectsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTProjectsApp.swift; sourceTree = "<group>"; };
 		ADBE94182AEB5383008A1390 /* BTModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BTModel.xcdatamodel; sourceTree = "<group>"; };
 		ADBE941A2AF3744F008A1390 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		ADBE941C2AFB42DF008A1390 /* DataFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFeedManager.swift; sourceTree = "<group>"; };
@@ -192,14 +189,12 @@
 		ADBE945B2AFCB752008A1390 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		ADBE945D2AFCB781008A1390 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		ADE3CFA12AE3ADA000CED0DD /* BTProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTProjectsApp.swift; sourceTree = "<group>"; };
 		ADE3CFA62AE3ADA000CED0DD /* LearningModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningModuleView.swift; sourceTree = "<group>"; };
 		ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADE3CFAB2AE3ADA200CED0DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ADE3CFB92AE3AE9D00CED0DD /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		ADE3CFBB2AE3AEBE00CED0DD /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		ADE3CFC12AE3AF5B00CED0DD /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		D46180CF2AFB6D6400370DD3 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		D4FE9D902AF36EC0000DAFEB /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
@@ -210,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD75513C2AFFFA16006842B5 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,15 +353,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		AD4D95922AFE4A570035E006 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				AD4D95862AFE465B0035E006 /* Extension.swift */,
-				AD4D957B2AFE45CC0035E006 /* VideoPlayerController.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		ADBE94202AFB47CB008A1390 /* Json */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,7 +380,6 @@
 			children = (
 				ADE3CFA32AE3ADA000CED0DD /* BTProjects */,
 				ADE3CFA22AE3ADA000CED0DD /* Products */,
-				AD4D95922AFE4A570035E006 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -428,7 +414,7 @@
 		ADE3CFB22AE3ADEF00CED0DD /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				ADE3CFA42AE3ADA000CED0DD /* BTProjectsApp.swift */,
+				AD75513F2AFFFC48006842B5 /* BTProjectsApp.swift */,
 				ADBE944F2AFB8E35008A1390 /* ContentView.swift */,
 				ADBE942E2AFB8BB0008A1390 /* AppState.swift */,
 			);
@@ -514,8 +500,8 @@
 		ADE3CFC02AE3AF4C00CED0DD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				AD75513D2AFFFBDF006842B5 /* PersistenceController.swift */,
 				ADBE94172AEB5383008A1390 /* BTModel.xcdatamodeld */,
-				ADE3CFC12AE3AF5B00CED0DD /* PersistenceController.swift */,
 				ADBE941C2AFB42DF008A1390 /* DataFeedManager.swift */,
 				ADBE94212AFB4E1E008A1390 /* Models */,
 			);
@@ -719,10 +705,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				AD75512F2AFE508A006842B5 /* PBXTargetDependency */,
 			);
 			name = BTProjects;
 			packageProductDependencies = (
+				AD75513B2AFFFA16006842B5 /* Lottie */,
 			);
 			productName = BTProjects;
 			productReference = ADE3CFA12AE3ADA000CED0DD /* BTProjects.app */;
@@ -753,7 +739,7 @@
 			);
 			mainGroup = ADE3CF982AE3ADA000CED0DD;
 			packageReferences = (
-				057EDDDD2AFB9CC600A85B51 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				AD75513A2AFFFA16006842B5 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = ADE3CFA22AE3ADA000CED0DD /* Products */;
 			projectDirPath = "";
@@ -773,7 +759,6 @@
 				ADE3CFAC2AE3ADA200CED0DD /* Preview Assets.xcassets in Resources */,
 				ADBE94252AFB51DE008A1390 /* CategoryData.json in Resources */,
 				ADBE941F2AFB47C7008A1390 /* BookData.json in Resources */,
-				AD4D95802AFE45D90035E006 /* dummy.mp4 in Resources */,
 				05025D4F2AE77FD100178653 /* Fredoka-SemiBold.ttf in Resources */,
 				057EDDE72AFB9E2A00A85B51 /* correct.json in Resources */,
 				05025D4D2AE77FD100178653 /* Fredoka-Light.ttf in Resources */,
@@ -792,25 +777,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE3CFC22AE3AF5B00CED0DD /* PersistenceController.swift in Sources */,
 				059ED8422AFA129C00AB7630 /* StoryBackground.swift in Sources */,
 				057EDE142AFE33FC00A85B51 /* TripleChoiceAnswers.swift in Sources */,
 				057EDE0E2AFE32FE00A85B51 /* TripleChoiceText.swift in Sources */,
 				057EDDFD2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift in Sources */,
 				057EDDF32AFC8BB900A85B51 /* MultipleChoiceImage.swift in Sources */,
 				057EDE122AFE336200A85B51 /* TripleChoiceTopBar.swift in Sources */,
-				ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */,
 				05D046112AF8F26B0029D747 /* StoryView.swift in Sources */,
 				059ED8402AFA129C00AB7630 /* StoryText.swift in Sources */,
 				AD7551312AFE50F0006842B5 /* VideoPlayerController.swift in Sources */,
 				059ED8542AFA1A4B00AB7630 /* TirukanCamera.swift in Sources */,
 				0596F83E2AFB72C900328297 /* ARSCNCameraContainer.swift in Sources */,
+				AD7551402AFFFC48006842B5 /* BTProjectsApp.swift in Sources */,
 				ADBE942B2AFB64DC008A1390 /* coreDataTestView.swift in Sources */,
-				ADE3CFC22AE3AF5B00CED0DD /* PersistenceController.swift in Sources */,
 				ADBE941D2AFB42DF008A1390 /* DataFeedManager.swift in Sources */,
 				ADBE945C2AFCB752008A1390 /* Answer.swift in Sources */,
 				AD4D956F2AFE456B0035E006 /* HomeView.swift in Sources */,
-				ADE3CFBC2AE3AEBE00CED0DD /* Error.swift in Sources */,
 				AD4D95672AFE45420035E006 /* HomeHeader.swift in Sources */,
 				AD4D95912AFE46DF0035E006 /* ProgressBar.swift in Sources */,
 				ADE3CFA72AE3ADA000CED0DD /* LearningModuleView.swift in Sources */,
@@ -818,9 +800,7 @@
 				AD4D957A2AFE45C10035E006 /* SummaryVideo.swift in Sources */,
 				D4FE9D912AF36EC0000DAFEB /* RoundedCorner.swift in Sources */,
 				D46180D02AFB6D6400370DD3 /* CustomButtonStyle.swift in Sources */,
-				ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */,
 				059ED84A2AFA15FE00AB7630 /* TirukanTopBar.swift in Sources */,
-				ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */,
 				057EDDE22AFB9D2500A85B51 /* LottieView.swift in Sources */,
 				059ED8502AFA180500AB7630 /* TirukanVideo.swift in Sources */,
 				0596F83C2AFB728500328297 /* ARSCNCameraView.swift in Sources */,
@@ -829,15 +809,14 @@
 				AD4D95692AFE45420035E006 /* StoryBook.swift in Sources */,
 				AD4D95762AFE45B40035E006 /* WordSummary.swift in Sources */,
 				ADBE945A2AFCB732008A1390 /* Question.swift in Sources */,
-				ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */,
 				AD4D95792AFE45C10035E006 /* SummaryHeader.swift in Sources */,
 				ADBE942F2AFB8BB0008A1390 /* AppState.swift in Sources */,
-				ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */,
 				AD4D95742AFE45AA0035E006 /* HomeViewModel.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
 				057EDDF52AFC8C4600A85B51 /* MultipleChoiceView.swift in Sources */,
 				057EDE162AFE346F00A85B51 /* TripleChoiceBottomBar.swift in Sources */,
 				057EDDF12AFC8B7500A85B51 /* MultipleChoiceBackground.swift in Sources */,
+				AD75513E2AFFFBDF006842B5 /* PersistenceController.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
 				057EDE082AFE323E00A85B51 /* TripleChoiceBackground.swift in Sources */,
 				057EDDF72AFC8C8F00A85B51 /* MultipleChoiceTopBar.swift in Sources */,
@@ -847,7 +826,6 @@
 				057EDDDC2AFB939000A85B51 /* TirukanCorrect.swift in Sources */,
 				057EDDEC2AFC831200A85B51 /* CorrectState.swift in Sources */,
 				057EDE032AFE30A600A85B51 /* MultipleCardChoice.swift in Sources */,
-				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
 				059ED83D2AFA129C00AB7630 /* StoryBottomBar.swift in Sources */,
 				057EDE182AFE37A200A85B51 /* TripleCardChoice.swift in Sources */,
 				057EDDEF2AFC8A5000A85B51 /* MultipleChoiceVideo.swift in Sources */,
@@ -863,7 +841,6 @@
 				AD4D956B2AFE45420035E006 /* CategoryMenu.swift in Sources */,
 				ADBE94272AFB62F2008A1390 /* CodingUserInfoKeyExtention.swift in Sources */,
 				ADBE94582AFCB6F7008A1390 /* StoryPage.swift in Sources */,
-				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
 				AD4D956C2AFE45420035E006 /* CategorySelection.swift in Sources */,
 				AD4D95902AFE46DF0035E006 /* QuizHeader.swift in Sources */,
 				AD4D95682AFE45420035E006 /* StoryBookPerCategory.swift in Sources */,
@@ -882,13 +859,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AD75512F2AFE508A006842B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = AD75512E2AFE508A006842B5 /* Lottie */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		ADE3CFAD2AE3ADA200CED0DD /* Debug */ = {
@@ -1096,7 +1066,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		057EDDDD2AFB9CC600A85B51 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+		AD75513A2AFFFA16006842B5 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
 			requirement = {
@@ -1107,9 +1077,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AD75512E2AFE508A006842B5 /* Lottie */ = {
+		AD75513B2AFFFA16006842B5 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 057EDDDD2AFB9CC600A85B51 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			package = AD75513A2AFFFA16006842B5 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
