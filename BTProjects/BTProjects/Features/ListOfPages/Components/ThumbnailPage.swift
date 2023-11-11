@@ -10,17 +10,18 @@ import SwiftUI
 struct ThumbnailPage: View {
     
     @Binding var isSelect: Int
-    var order: Int
+    @State var order: Int
+    var imageTitle: String = "story-1"
     
     var isActive: Bool = false
     
     var body: some View {
         ZStack {
-            Image("story-1")
+            Image(imageTitle)
                 .frame(width: 316, height: 230)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .zIndex(1)
-            RibbonPage()
+            RibbonPage(order: $order)
                 .offset(x: -100, y:-73)
                 .zIndex(3)
             
@@ -37,6 +38,6 @@ struct ThumbnailPage: View {
     }
 }
 
-//#Preview {
-//    ThumbnailPage()
-//}
+#Preview {
+    ThumbnailPage(isSelect: .constant(1), order: 1)
+}

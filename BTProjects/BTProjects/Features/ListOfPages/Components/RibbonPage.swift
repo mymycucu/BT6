@@ -7,17 +7,8 @@
 
 import SwiftUI
 
-//struct RibbonPage: View {
-//    var body: some View {
-//        ZStack {
-//            Rectangle()
-//                .frame(width: 46, height: 68)
-//        }
-//    }
-//
-//}
-
 struct RibbonPage: View {
+    @Binding var order: Int
     var body: some View {
         ZStack {
             //Shadow Shape
@@ -41,7 +32,7 @@ struct RibbonPage: View {
                 .offset(x: 17.5, y: 25)
             
             //Text
-            Text("11")
+            Text("\(order)")
                 .foregroundColor(.white)
                 .zIndex(4)
                 .padding(.bottom, 20)
@@ -97,5 +88,5 @@ struct Triangle: Shape {
 }
 
 #Preview {
-    RibbonPage()
+    RibbonPage(order: .constant(1))
 }
