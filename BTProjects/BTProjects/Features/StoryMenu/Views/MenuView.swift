@@ -10,8 +10,6 @@ import SwiftUI
 struct MenuView: View {
     private let data = (1...5)
     @Binding var show : Bool
-    @State var story1 = "story-1"
-    @State var story2 = "story-2"
     
     @State var isSelect = 1
     private let columns: [GridItem] = [
@@ -64,21 +62,17 @@ struct MenuView: View {
                 .padding(.horizontal, 30)
                 .cornerRadius(25)
             }
-            //Main Content
             
             
             Button(action: {
-                
-                withAnimation{
-                    show.toggle()
-                }
-                
-            }, label: {
+                show.toggle()
+            }) {
                 Image(systemName: "xmark.circle")
-                    .font(.system(size: 40, weight: .bold))
-                    .foregroundColor(.white)
-            })
+                    .font(.Button)
+            }
+            .buttonStyle(CircularButtonStyle())
             .padding()
+            
         })
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)

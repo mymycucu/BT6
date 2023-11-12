@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CategoryButton: View {
-    @State var category: Category?
-    @State var item: Category = Category(colors: .red)
+    @State var category: Cat?
+    @State var item: Cat = Cat(colors: .red)
     @State var action: () -> Void
     
     var body: some View {

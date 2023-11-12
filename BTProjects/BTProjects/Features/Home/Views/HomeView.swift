@@ -12,13 +12,13 @@ import SwiftUI
 struct HomeView: View {
     private let items = (1...3).map {"Item \($0)"}
     @State private var scale: CGFloat?
-    @State var category: Category = Category(colors: .red)
+    @State var category: Cat = Cat(colors: .red)
     @State var scrollID: Int?
     
     @Binding var activeID: UUID?
-    let categories = [Category(colors: .red),Category(colors: .cyan),Category(colors: .yellow),
-                      Category(colors: .orange),Category(colors: .blue),Category(colors: .purple),
-                      Category(colors: .green),]
+    let categories = [Cat(colors: .red),Cat(colors: .cyan),Cat(colors: .yellow),
+                      Cat(colors: .orange),Cat(colors: .blue),Cat(colors: .purple),
+                      Cat(colors: .green),]
     
     
     private let columns: [GridItem] = [
@@ -225,7 +225,7 @@ struct HomeView: View {
 }
 
 
-struct Category: Identifiable, Hashable, Equatable {
+struct Cat: Identifiable, Hashable, Equatable {
     let id = UUID()
     let colors: Color
     

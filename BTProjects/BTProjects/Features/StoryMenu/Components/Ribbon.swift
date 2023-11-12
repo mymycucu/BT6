@@ -11,53 +11,34 @@ struct Ribbon: View {
     @Binding var order: Int
     var body: some View {
         ZStack {
-            //Shadow Shape
+            //MARK: Ribbon
             RibbonRectangle()
-                .fill(Color.PB200)
-                .frame(width: 64, height: 46)
-                .rotationEffect(.degrees(90))
-                .offset(x:6, y: -10)
-
-            Triangle()
-                .fill(Color.PB200)
-                .frame(width: 10, height: 23)
-                .rotationEffect(.degrees(90))
-                .offset(x: -1.5, y: 25)
-            
-            Triangle()
-                .fill(Color.PB200)
-                .frame(width: 23, height: 10
-                )
-                .rotationEffect(.degrees(-180))
-                .offset(x: 17.5, y: 25)
-            
-            //Text
-            Text("\(order)")
-                .foregroundColor(.white)
-                .zIndex(4)
-                .padding(.bottom, 20)
-                .font(.Heading2_Medium)
-            
-            
-            //Main Shape (Orange)
-            RibbonRectangle()
-                .fill(Color.orange3)
+                .fill(Color.Orange4)
                 .frame(width: 60, height: 46)
                 .rotationEffect(.degrees(90))
                 .offset(y: -12)
+                .shadow(color: .white.opacity(0.7), radius: 0, x: 3, y: 3)
             
             Triangle()
-                .fill(Color.orange3)
+                .fill(Color.Orange4)
                 .frame(width: 10, height: 23)
                 .rotationEffect(.degrees(90))
                 .offset(x: -11.5, y: 23)
+                .shadow(color: .white.opacity(0.7), radius: 0, x: 3, y: 3)
             
             Triangle()
-                .fill(Color.orange3)
+                .fill(Color.Orange4)
                 .frame(width: 23, height: 10
                 )
                 .rotationEffect(.degrees(-180))
                 .offset(x: 11.5, y: 23)
+                .shadow(color: .white.opacity(0.7), radius: 0, x: 3, y: 3)
+            
+            //MARK: Numbering
+            Text("\(order)")
+                .foregroundColor(.white)
+                .padding(.bottom, 20)
+                .font(.Heading2_Medium)
             
             
         }
