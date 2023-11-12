@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MultipleChoiceText: View {
+struct MultipleChoiceQuestion: View {
     var body: some View {
         VStack {
             
@@ -19,5 +19,5 @@ struct MultipleChoiceText: View {
 }
 
 #Preview {
-    MultipleChoiceText()
+    MultipleChoiceQuestion()
 }
