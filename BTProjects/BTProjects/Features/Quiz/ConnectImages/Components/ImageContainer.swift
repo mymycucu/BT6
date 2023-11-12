@@ -16,8 +16,8 @@ struct ImageContainer: View {
     @State var imageTitle: String = "mencari-kumbang"
     @Binding var isSelected: Bool
     @State var position: positionImageContainer = .right
-    @Binding var isCorrect: Bool 
-    @State var isFalse: Bool = false
+    @Binding var isCorrect: Bool
+    @Binding var isFalse: Bool
     
     var body: some View {
         /// selection position
@@ -35,7 +35,7 @@ struct ImageContainer: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 22)
                     .inset(by: 2.5)
-                    .stroke(isSelected ? (isCorrect ? Color.Green3 : (isFalse ? Color.Red3 : Color.PB100)) : Color.Gray6,  style: isSelected ? StrokeStyle(lineWidth: 5) : StrokeStyle(lineWidth: 2.8, dash: [6, 6]))
+                    .stroke(isCorrect ? Color.Green3 : isFalse ? Color.Red3 : isSelected ? Color.PB100  : Color.Gray6,  style: isCorrect ? StrokeStyle(lineWidth: 5) : isFalse ? StrokeStyle(lineWidth: 5) : isSelected ? StrokeStyle(lineWidth: 5) : StrokeStyle(lineWidth: 2.8, dash: [6, 6]))
             )
             
             //MARK: Circle
@@ -45,26 +45,26 @@ struct ImageContainer: View {
                 }
                 ZStack{
                     Circle()
-                        .fill(isSelected ? (isCorrect ? Color.Green3 : (isFalse ? Color.Red3 : Color.PB100)) : Color.PB300)
+                        .fill(isCorrect ? Color.Green3 : isFalse ? Color.Red3 : isSelected ? Color.PB100 :  Color.PB300)
                         .frame(width: 25)
-                        
+                    
                     Circle()
-                        .fill(isSelected ? Color.black : Color.white)
+                        .fill(isCorrect ? Color.black : isFalse ? Color.black : isSelected ? Color.black : Color.white)
                         .frame(width: 15)
                 }
                 if position == .right {
                     Spacer()
                 }
-                 
+                
             }
-    
+            
             
         }
         .frame(width:276, height: 196)
-
+        
     }
 }
 
 #Preview {
-    ImageContainer( isSelected: .constant(false), isCorrect: .constant(false))
+    ImageContainer( isSelected: .constant(false), isCorrect: .constant(false), isFalse: .constant(false))
 }
