@@ -12,6 +12,8 @@ struct MultipleChoiceAnswers: View {
     var correctAnswer: String
     var multipleChoiceIllustration: String
     @Binding var selectedAnswer: Int?
+    
+    @State var isCorrect: Bool = false
 
     var body: some View {
         HStack {
@@ -29,7 +31,11 @@ struct MultipleChoiceAnswers: View {
                 .padding(.horizontal, 5)
                 .onTapGesture {
                     selectedAnswer = index
+                    isCorrect = answers[index] == correctAnswer
+                    
+                    
                 }
+                .disabled(isCorrect)
             }
         }
     }
