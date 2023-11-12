@@ -6,30 +6,29 @@
 //
 
 import SwiftUI
-import AVKit
+import AVFoundation
 
 struct MultipleChoiceVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
+    
+    var videoURL: String
 
     var body: some View {
-        
-        
         ZStack {
             
             //MARK: Video Container
             
             if let player = player {
                 VideoPlayerController(player: player)
-                    .frame(width: 467, height: 310)
-                    .cornerRadius(16)
-                    .padding(8)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                        .inset(by: 1.35)
-                        .stroke(Color.white, style: StrokeStyle(lineWidth: 2.71, dash: [10.3, 10.3]))
-                    )
-
+                .frame(width: 467, height: 310)
+                .cornerRadius(16)
+                .padding(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                    .inset(by: 1.35)
+                    .stroke(Color.white, style: StrokeStyle(lineWidth: 2.71, dash: [10.3, 10.3]))
+                )
             }
 
             //MARK: Replay Button
@@ -44,16 +43,9 @@ struct MultipleChoiceVideo: View {
                     ZStack {
                         Circle()
                             .foregroundColor(.white)
-                            .frame(width: 44, height: 44)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 100)
-                                .inset(by: 1)
-                                .stroke(Color.PB500, lineWidth: 2)
-
-                            )
+                            .frame(width: 50, height: 50)
                         Image("replay")
                     }
-//                    .offset(x: 200, y: -110) // Adjust replay position
                 }
             }
         }
@@ -61,7 +53,7 @@ struct MultipleChoiceVideo: View {
             
             //MARK: Video Path
             
-            let url = URL(fileURLWithPath: Bundle.main.path(forResource: "dummy", ofType: "mp4")!)
+            let url = URL(fileURLWithPath: Bundle.main.path(forResource: videoURL, ofType: "mp4")!)
             player = AVPlayer(url: url)
         
             player?.isMuted = true // Video condition is muted
@@ -85,6 +77,9 @@ struct MultipleChoiceVideo: View {
     }
 }
 
-#Preview {
-    MultipleChoiceVideo()
-}
+
+
+//#Preview {
+//    MultipleChoiceVideo()
+//}
+

@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct MultipleCardChoice: View {
-    @State var imageTitle: String = "story_dummy"
+    @State var imageTitle: String
     @State var containerColor: Color = .white
     @State var containerOpacity: Bool = true
     @State var containerShadowColor: Color = Color.PB300
     @State var isSelected: Bool = false
     @State var isAnimate: Bool = false
+    
+    var onTap: () -> Void
+    var correctAnswer: Bool
+
 
     var body: some View {
         ZStack(alignment: .topLeading){
@@ -33,7 +37,7 @@ struct MultipleCardChoice: View {
                 .padding(.bottom, 6.7)
             
             //MARK: Image
-            Image("story_dummy")
+            Image(imageTitle)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 285, height: 190)
@@ -43,6 +47,7 @@ struct MultipleCardChoice: View {
         }
         .onTapGesture {
             withAnimation(Animation.spring(duration: 0.1)) {
+                onTap()
                 isSelected.toggle()
                 isAnimate.toggle()
                 containerOpacity.toggle()
@@ -58,10 +63,10 @@ struct MultipleCardChoice: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 withAnimation (Animation.spring(duration: 0.2))  {
                     isAnimate.toggle()
-                    if isSelected == true  {
+                    if isSelected {
                         containerOpacity.toggle()
-                        containerColor = .Green2
-                        containerShadowColor = .Green3
+                        containerColor = correctAnswer ? .Green2 : .Red2
+                        containerShadowColor = correctAnswer ? .Green3 : .Red3
                     } else {
                         containerOpacity.toggle()
                         containerColor = .white
@@ -72,9 +77,10 @@ struct MultipleCardChoice: View {
             }
         }
         .frame(width: 308, height: 212)
+        
     }
 }
 
-#Preview {
-    MultipleCardChoice()
-}
+//#Preview {
+//    MultipleCardChoice()
+//}

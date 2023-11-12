@@ -15,7 +15,7 @@ struct TripleChoiceAnswers: View {
             Button(action: {
                 // Add your action code here
             }) {
-                MultipleCardChoice()
+//                MultipleCardChoice()
 
             }
 
@@ -23,7 +23,7 @@ struct TripleChoiceAnswers: View {
             Button(action: {
                 // Add your action code here
             }) {
-                MultipleCardChoice()
+//                MultipleCardChoice()
                 
             }
             
@@ -31,7 +31,7 @@ struct TripleChoiceAnswers: View {
             Button(action: {
                 // Add your action code here
             }) {
-                MultipleCardChoice()
+//                MultipleCardChoice()
                 
             }
         }

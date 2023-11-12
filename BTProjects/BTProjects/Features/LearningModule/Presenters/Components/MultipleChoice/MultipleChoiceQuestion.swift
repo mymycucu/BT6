@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MultipleChoiceQuestion: View {
+    var question: String
     var body: some View {
         VStack {
             
-            Text("Apa yang harus kamu lakukan?")
+            Text(question)
                 .font(.Subhead1_Medium)
                 .foregroundColor(.white)
         }
@@ -19,5 +20,5 @@ struct MultipleChoiceQuestion: View {
 }
 
 #Preview {
-    MultipleChoiceQuestion()
+    MultipleChoiceQuestion(question: "test")
 }

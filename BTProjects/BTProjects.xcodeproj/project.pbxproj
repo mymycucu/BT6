@@ -28,7 +28,7 @@
 		057EDDF52AFC8C4600A85B51 /* MultipleChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDF42AFC8C4600A85B51 /* MultipleChoiceView.swift */; };
 		057EDDF72AFC8C8F00A85B51 /* MultipleChoiceTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDF62AFC8C8F00A85B51 /* MultipleChoiceTopBar.swift */; };
 		057EDDF92AFC8CA300A85B51 /* MultipleChoiceProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDF82AFC8CA300A85B51 /* MultipleChoiceProgressBar.swift */; };
-		057EDDFB2AFC8D6300A85B51 /* MultipleChoiceText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDFA2AFC8D6300A85B51 /* MultipleChoiceText.swift */; };
+		057EDDFB2AFC8D6300A85B51 /* MultipleChoiceQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDFA2AFC8D6300A85B51 /* MultipleChoiceQuestion.swift */; };
 		057EDDFD2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDFC2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift */; };
 		057EDDFF2AFC8DFA00A85B51 /* MultipleChoiceBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDDFE2AFC8DFA00A85B51 /* MultipleChoiceBottomBar.swift */; };
 		057EDE032AFE30A600A85B51 /* MultipleCardChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE022AFE30A600A85B51 /* MultipleCardChoice.swift */; };
@@ -127,7 +127,7 @@
 		057EDDF42AFC8C4600A85B51 /* MultipleChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceView.swift; sourceTree = "<group>"; };
 		057EDDF62AFC8C8F00A85B51 /* MultipleChoiceTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceTopBar.swift; sourceTree = "<group>"; };
 		057EDDF82AFC8CA300A85B51 /* MultipleChoiceProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceProgressBar.swift; sourceTree = "<group>"; };
-		057EDDFA2AFC8D6300A85B51 /* MultipleChoiceText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceText.swift; sourceTree = "<group>"; };
+		057EDDFA2AFC8D6300A85B51 /* MultipleChoiceQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceQuestion.swift; sourceTree = "<group>"; };
 		057EDDFC2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceAnswers.swift; sourceTree = "<group>"; };
 		057EDDFE2AFC8DFA00A85B51 /* MultipleChoiceBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceBottomBar.swift; sourceTree = "<group>"; };
 		057EDE022AFE30A600A85B51 /* MultipleCardChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCardChoice.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 				057EDDF22AFC8BB900A85B51 /* MultipleChoiceImage.swift */,
 				057EDDF62AFC8C8F00A85B51 /* MultipleChoiceTopBar.swift */,
 				057EDDF82AFC8CA300A85B51 /* MultipleChoiceProgressBar.swift */,
-				057EDDFA2AFC8D6300A85B51 /* MultipleChoiceText.swift */,
+				057EDDFA2AFC8D6300A85B51 /* MultipleChoiceQuestion.swift */,
 				057EDDFE2AFC8DFA00A85B51 /* MultipleChoiceBottomBar.swift */,
 				057EDDFC2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift */,
 				057EDE022AFE30A600A85B51 /* MultipleCardChoice.swift */,
@@ -859,7 +859,7 @@
 				059ED84C2AFA168300AB7630 /* TirukanBackground.swift in Sources */,
 				0596F8402AFB74EC00328297 /* TirukanProgress.swift in Sources */,
 				059ED8522AFA186200AB7630 /* TirukanBottomBar.swift in Sources */,
-				057EDDFB2AFC8D6300A85B51 /* MultipleChoiceText.swift in Sources */,
+				057EDDFB2AFC8D6300A85B51 /* MultipleChoiceQuestion.swift in Sources */,
 				059ED83F2AFA129C00AB7630 /* StoryVideo.swift in Sources */,
 				057EDDFF2AFC8DFA00A85B51 /* MultipleChoiceBottomBar.swift in Sources */,
 				AD4D956B2AFE45420035E006 /* CategoryMenu.swift in Sources */,
