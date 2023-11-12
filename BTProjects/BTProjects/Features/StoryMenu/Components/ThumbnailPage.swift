@@ -9,15 +9,17 @@ import SwiftUI
 
 struct ThumbnailPage: View {
     
-    @Binding var isSelect: Int
+    @Binding var isSelect: Int?
     @State var order: Int
-    var imageTitle: String = "mencari-kumbang"
+    @State var imageTitle: String
     
     var isActive: Bool = false
     
     var body: some View {
         ZStack {
             Image(imageTitle)
+                .resizable()
+                .scaledToFill()
                 .frame(width: 316, height: 230)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .zIndex(1)
@@ -25,11 +27,11 @@ struct ThumbnailPage: View {
                 .offset(x: -100, y:-73)
                 .zIndex(3)
             
-            if isSelect == order {
+            if isSelect == (order - 1){
                 Rectangle()
                     .frame(width: 316, height: 230)
                     .opacity(0)
-                    .border(Color.Orange3, width: 7)
+                    .border(Color.Orange4, width: 7)
                     .cornerRadius(12)
                     .zIndex(4)
             }
@@ -39,5 +41,5 @@ struct ThumbnailPage: View {
 }
 
 #Preview {
-    ThumbnailPage(isSelect: .constant(1), order: 1)
+    ThumbnailPage(isSelect: .constant(1), order: 1 , imageTitle: "mencari-kumbang")
 }

@@ -7,15 +7,44 @@
 
 import SwiftUI
 
+struct StoryCover: Identifiable {
+      let id = UUID()
+    var storyThumbnail: String
+  }
+
+struct QuestionCover: Identifiable {
+      let id = UUID()
+      let storyThumbnail: String
+  }
+
+   // Sample data array with 5 items
+          
+
 struct MenuView: View {
     private let data = (1...5)
+    private let data2 = (6...10)
     @Binding var show : Bool
     
-    @State var isSelect = 1
+    @State var isSelectStory: Int?
+    @State var isSelectQuestion: Int?
     private let columns: [GridItem] = [
         GridItem(.fixed(316), spacing: 24, alignment: .center),
         GridItem(.fixed(316), spacing: 24, alignment: .center)
     ]
+    
+    @State var dataStory: [StoryCover] = [
+     StoryCover(storyThumbnail: "mencari-kumbang"),
+     StoryCover(storyThumbnail: "background-word-summary"),
+     StoryCover(storyThumbnail: "mencari-kumbang"),
+    ]
+    @State var dataQuestion: [QuestionCover] = [
+     QuestionCover(storyThumbnail: "mencari-kumbang"),
+     QuestionCover(storyThumbnail: "background-word-summary"),
+     QuestionCover(storyThumbnail: "mencari-kumbang"),
+     QuestionCover(storyThumbnail: "background-word-summary")
+    ]
+    
+    
     var body: some View {
         ZStack (alignment: Alignment(horizontal: .trailing, vertical: .top), content: {
             
@@ -27,11 +56,14 @@ struct MenuView: View {
                                 .font(.Heading2_Semibold)
                                 .foregroundColor(.white))
                             {
-                                ForEach(data, id: \.self) { item in
+                
+                                ForEach(0..<dataStory.count, id: \.self) { item in
+                                    let imageTitle = dataStory[item].storyThumbnail
                                     Button(action: {
-                                        isSelect = item
+                                        isSelectStory = item
+                                        isSelectQuestion = nil
                                     }, label: {
-                                        ThumbnailPage(isSelect: $isSelect, order: item)
+                                        ThumbnailPage(isSelect: $isSelectStory, order: item + 1, imageTitle: imageTitle )
                                     })
                                 }
                             }
@@ -40,22 +72,19 @@ struct MenuView: View {
                                 .font(.Heading2_Semibold)
                                 .foregroundColor(.white))
                             {
-                                ForEach(data, id: \.self) { item in
+                                ForEach(0..<dataQuestion.count, id: \.self) { item in
+                                    let imageTitle = dataQuestion[item].storyThumbnail
                                     Button(action: {
-                                        isSelect = item
+                                        isSelectQuestion = item
+                                        isSelectStory = nil
                                     }, label: {
-                                        ThumbnailPage(isSelect: $isSelect, order: item)
+                                        ThumbnailPage(isSelect: $isSelectQuestion, order: item + 1, imageTitle: imageTitle )
                                     })
                                 }
+                                
                             }
                         })
-                        
-                        
-                        
                     }
-                    
-                    
-                    
                     
                 }
                 .padding(.vertical, 25)
