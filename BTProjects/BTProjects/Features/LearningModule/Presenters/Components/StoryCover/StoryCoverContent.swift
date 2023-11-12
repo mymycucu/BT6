@@ -11,6 +11,8 @@ struct StoryCoverContent: View {
     
     var storyPages: Int
     var storyTitle: String
+    @State var canStartQuiz: Bool
+    
     var body: some View {
         VStack (alignment: .leading) {
             // MARK: Back Button
@@ -49,27 +51,30 @@ struct StoryCoverContent: View {
                 
                 
                 Button(action: {
-                            // Add your action code here
-                        }) {
-                            
-                            HStack(alignment: .center, spacing: 0) {
-                                Text("Latihan Kuis")
-                                    .font(.Caption_Medium)
-                                .foregroundColor(Color.PB500)
-
-                            }
-                            .frame(width: 174, height: 52)
-                            .background(Color.white)
-                            .cornerRadius(12)
-                            
-                            
-                        }
+                    // Add your action code here
+                }) {
+                    HStack(alignment: .center, spacing: 0) {
+                        Text("Mulai Kuis")
+                            .font(.Caption_Medium)
+                            .foregroundColor(canStartQuiz ? Color.PB500 : Color.PB200)
+                    }
+                    .frame(width: 174, height: 52)
+                    .background(Color.white)
+                    .cornerRadius(12)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .inset(by: 1.5)
+                            .stroke(canStartQuiz ? Color.PB500 : Color.PB200, lineWidth: 3)
+                    )
+                }
+                // Set the button's disabled state based on the canStartQuiz variable using a ternary operator
+                .disabled(!canStartQuiz)
             }
             .padding(.bottom, 55)
         }
     }
 }
 
-//#Preview {
-//    StoryCoverContent()
-//}
+#Preview {
+    StoryCoverContent(storyPages: 3, storyTitle: "Test", canStartQuiz: false)
+}

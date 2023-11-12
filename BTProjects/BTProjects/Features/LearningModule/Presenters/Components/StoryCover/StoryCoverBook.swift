@@ -10,8 +10,6 @@ import SwiftUI
 struct StoryCoverBook: View {
     var storyThumbnail: String
     var storyTitle: String
-    var isFinished: Bool
-    var isFinishedThumbnail: String
     
     var body: some View {
         ZStack(alignment: .leading){
@@ -55,7 +53,7 @@ struct StoryCoverBook: View {
                 VStack{
                     Spacer()
                     
-                    Image(isFinishedThumbnail)
+                    Image("Play")
                         .frame(width: 171, height: 171)
                         .padding(.bottom, 50)
                     
@@ -94,6 +92,6 @@ struct StoryCoverBook: View {
 }
 
 #Preview {
-    StoryCoverBook(storyThumbnail: "story_cover", storyTitle: "hallooo", isFinished: true, isFinishedThumbnail: "StoryCoverFinish")
+    StoryCoverBook(storyThumbnail: "story_cover", storyTitle: "hallooo")
 }
 
