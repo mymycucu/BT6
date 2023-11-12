@@ -9,22 +9,37 @@ import SwiftUI
 
 struct ListOfPageView: View {
     
-    @State var customAlert = false
+    @State var menu = false
     
     var body: some View {
-       
+        
         ZStack {
-            VStack(spacing: 25) {
-                Button(action: {
-                    withAnimation{
-                        customAlert.toggle()
+            VStack{
+                HStack(spacing: 15){
+                    Button(action: {
+                        withAnimation{
+                            menu.toggle()
+                        }
+                    }) {
+                        Image(systemName: "list.bullet")
+                            .font(.Button)
                     }
-                }, label: {
-                    Text("Munculkan Overlay")
-                })
+                    .buttonStyle(CircularButtonStyle())
+                    Spacer()
+                    Button(action: {
+                        
+                    }) {
+                        Image(systemName: "xmark")
+                            .font(.Button)
+                    }
+                    .buttonStyle(CircularButtonStyle())
+                }
+                Spacer()
             }
-            if customAlert {
-                CustomListView(show: $customAlert)
+            .padding(40)
+            
+            if menu {
+                MenuView(show: $menu)
             }
         }
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
@@ -32,57 +47,57 @@ struct ListOfPageView: View {
     }
 }
 
-struct CustomListView: View {
+struct MenuView: View {
     private let data = (1...5)
     @Binding var show : Bool
     @State var story1 = "story-1"
     @State var story2 = "story-2"
     
     @State var isSelect = 1
-        private let columns: [GridItem] = [
-                GridItem(.fixed(316), spacing: 24, alignment: .center),
-                GridItem(.fixed(316), spacing: 24, alignment: .center)
-            ]
+    private let columns: [GridItem] = [
+        GridItem(.fixed(316), spacing: 24, alignment: .center),
+        GridItem(.fixed(316), spacing: 24, alignment: .center)
+    ]
     var body: some View {
         ZStack (alignment: Alignment(horizontal: .trailing, vertical: .top), content: {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
-                    Text("Stories")
-                        .font(.Heading2_Semibold)
-                        .foregroundColor(.white)
-                    
                     VStack(spacing: 32) {
-                        LazyVGrid (columns: columns, spacing: 32) {
-                            ForEach(data, id: \.self) { item in
-                                Button(action: {
-                                    isSelect = item
-                                }, label: {
-                                    ThumbnailPage(isSelect: $isSelect, order: item)
-                            })
+                        LazyVGrid (columns: columns, spacing: 32, content: {
+                            Section(header: Text("Stories")
+                                .font(.Heading2_Semibold)
+                                .foregroundColor(.white))
+                            {
+                                ForEach(data, id: \.self) { item in
+                                    Button(action: {
+                                        isSelect = item
+                                    }, label: {
+                                        ThumbnailPage(isSelect: $isSelect, order: item)
+                                    })
+                                }
                             }
-                            
-
-                        }
-                        Text("Question")
-                            .font(.Heading2_Semibold)
-                            .foregroundColor(.white)
+                            Section(header:
+                                        Text("Question")
+                                .font(.Heading2_Semibold)
+                                .foregroundColor(.white))
+                            {
+                                ForEach(data, id: \.self) { item in
+                                    Button(action: {
+                                        isSelect = item
+                                    }, label: {
+                                        ThumbnailPage(isSelect: $isSelect, order: item)
+                                    })
+                                }
+                            }
+                        })
                         
-                        LazyVGrid (columns: columns, spacing: 32) {
-                            ForEach(data, id: \.self) { item in
-                                Button(action: {
-                                    isSelect = item
-                                }, label: {
-                                    ThumbnailPage(isSelect: $isSelect, order: item)
-                            })
-                            }
-                            
-
-                        }
+                        
+                        
                     }
                     
-
-        
+                    
+                    
                     
                 }
                 .padding(.vertical, 25)

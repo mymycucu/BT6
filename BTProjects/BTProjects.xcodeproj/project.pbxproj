@@ -26,6 +26,8 @@
 		ADE3CFBF2AE3AF4400CED0DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */; };
 		ADE3CFC22AE3AF5B00CED0DD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */; };
 		ADE3CFC62AE3AF9600CED0DD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */; };
+		D4DBECFC2B005E7600551FA4 /* StoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DBECFB2B005E7600551FA4 /* StoryHeader.swift */; };
+		D4DBECFE2B005EB500551FA4 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DBECFD2B005EB500551FA4 /* CustomButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		ADE3CFC12AE3AF5B00CED0DD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		D4DBECFB2B005E7600551FA4 /* StoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHeader.swift; sourceTree = "<group>"; };
+		D4DBECFD2B005EB500551FA4 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				3C7F2AF52AF89ED1007A7E8C /* ThumbnailPage.swift */,
+				D4DBECFB2B005E7600551FA4 /* StoryHeader.swift */,
 				3C7F2AF72AF8A759007A7E8C /* RibbonPage.swift */,
 			);
 			path = Components;
@@ -205,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				05025D532AE7817E00178653 /* ExtensionColors.swift */,
+				D4DBECFD2B005EB500551FA4 /* CustomButtonStyle.swift */,
 				05025D552AE78AE200178653 /* ExtensionFonts.swift */,
 			);
 			path = Extension;
@@ -400,7 +406,9 @@
 				3C7F2AF62AF89ED1007A7E8C /* ThumbnailPage.swift in Sources */,
 				05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */,
 				ADE3CFA52AE3ADA000CED0DD /* BTProjectsApp.swift in Sources */,
+				D4DBECFC2B005E7600551FA4 /* StoryHeader.swift in Sources */,
 				3C7F2AF22AF88AEA007A7E8C /* ListOfPagesView.swift in Sources */,
+				D4DBECFE2B005EB500551FA4 /* CustomButtonStyle.swift in Sources */,
 				05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
