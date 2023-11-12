@@ -1,3 +1,10 @@
+//
+//  ConnectImages.swift
+//  BTProjects
+//
+//  Created by Sarah Uli Octavia on 08/11/23.
+//
+
 import SwiftUI
 
 struct Ans: Identifiable, Hashable, Equatable {
@@ -10,9 +17,9 @@ struct Ans: Identifiable, Hashable, Equatable {
     var signLanguage: String?
 }
 let answers: [Ans] = [
-    Ans(name: "budi", type: 4, illustration: "mencari-kumbang", illustration2: "background-word-summary", isCorrect: true),
-    Ans(name: "sarah", type: 4, illustration: "background", illustration2: "mencari-kumbang", isCorrect: true),
-    Ans(name: "fany", type: 4, illustration: "background-word-summary", illustration2: "background", isCorrect: true)
+    Ans(name: "budi", type: 4, illustration: "mencari-kumbang", illustration2: "mencari-kumbang", isCorrect: true),
+    Ans(name: "sarah", type: 4, illustration: "background", illustration2: "background", isCorrect: true),
+    Ans(name: "fany", type: 4, illustration: "background-word-summary", illustration2: "background-word-summary", isCorrect: true)
 ]
 
 struct Quest: Identifiable, Hashable, Equatable  {
@@ -48,8 +55,16 @@ struct ConnectImages: View {
     @State var leftImagesPoint: [imagePosition] = []
     @State var rightImagesPoint: [imagePosition] = []
     
-    @State var isCorrect: Bool = false
+    @State var correctLeftPosition: [imagePosition] = []
+    @State var correctRightPosition: [imagePosition] = []
     
+    @State var isCorrect: Bool = false
+    @State var isFalse: Bool = false
+    
+    @State var allImagesCorrect: Bool = false
+    
+    @State var isMatchingLeft: Bool = false
+    @State var isMatchingRight: Bool = false
     
     
     let questions: Quest = Quest(name: "hubungkan", type: 3, order: 1, answers: answers)
@@ -80,8 +95,20 @@ struct ConnectImages: View {
                                 isCorrect: $isCorrect
                             )
                             .onTapGesture {
-                                leftSelected =  index
+                                if allImagesCorrect == false && isMatchingLeft == false {
+                                    leftSelected =  index
+                                    isMatchingLeft = true
+                                    
+                                }
+                                for item in correctLeftPosition {
+                                    if item.id == index{
+                                        leftSelected = nil
+                                        isMatchingLeft = false
+                                    }
+                                }
+                                
                             }
+                            //                            .disabled(leftSelected != nil)
                             .background(GeometryReader { proxy in
                                 Color.clear.onAppear {
                                     leftImagePosition = proxy.frame(in: .global).origin
@@ -113,9 +140,18 @@ struct ConnectImages: View {
                                 isCorrect: $isCorrect
                             )
                             .onTapGesture {
-                                rightSelected =  index
+                                if allImagesCorrect == false && isMatchingRight == false {
+                                    rightSelected =  index
+                                    isMatchingRight = true
+                                }
+                                for item in correctRightPosition {
+                                    if item.id == index{
+                                        rightSelected = nil
+                                        isMatchingRight = false
+                                    }
+                                }
                             }
-//                            .disabled(rightSelected != nil)
+                            //                            .disabled(rightSelected != nil)
                             .background(GeometryReader { proxy in
                                 Color.clear.onAppear {
                                     // Access the CGPoint of the ImageContainer
@@ -177,9 +213,23 @@ struct ConnectImages: View {
                     
                 }
                 
+                //MARK: Draw Correct Line
+                ForEach(0..<correctLeftPosition.count, id:\.self){ index in
+                    VStack{
+                        Path { path in
+                            path.move(to: CGPoint(x: correctLeftPosition[index].position.x + 240, y: correctLeftPosition[index].position.y - 3))
+                            path.addLine(to: CGPoint(x: correctRightPosition[index].position.x - 44, y: correctRightPosition[index].position.y - 3))
+                        }
+                        .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,10]))
+                        .cornerRadius(10)
+                        
+                    }
+                    
+                }
+                
                 
             }
-        
+            
             
         }
         .padding(.horizontal, 40)
@@ -219,9 +269,12 @@ struct ConnectImages: View {
         }
         .onChange(of: leftSelected) { oldValue, newValue in
             updateIsCorrect()
+            
         }
         .onChange(of: rightSelected) { oldValue, newValue in
             updateIsCorrect()
+            print(correctLeftPosition)
+            print(correctRightPosition)
         }
         
     }
@@ -256,6 +309,7 @@ struct ConnectImages: View {
         
         for item in question.answers {
             if item.illustration == leftImage && item.illustration2 == rightImage {
+                
                 return true
                 
             }
@@ -266,6 +320,43 @@ struct ConnectImages: View {
     func updateIsCorrect() {
         if let leftIndex = leftSelected, let rightIndex = rightSelected {
             isCorrect = checkedAnswers(leftImage: leftImages[leftIndex], rightImage: rightImages[rightIndex], question: questions)
+            if isCorrect == true{
+                for item in leftImagesPoint{
+                    if item.id == leftIndex{
+                        correctLeftPosition.append(imagePosition(id: item.id, position: item.position))
+                       
+                    }
+                }
+                for item in rightImagesPoint{
+                    if item.id == rightIndex{
+                        correctRightPosition.append(imagePosition(id: item.id, position: item.position)
+                        )
+                    }
+                }
+                leftSelected = nil
+                rightSelected = nil
+                
+                if correctLeftPosition.count == leftImagesPoint.count{
+                    allImagesCorrect = true
+                    
+                }
+                
+                isMatchingRight = false
+                isMatchingLeft = false
+                
+            } else {
+                //MARK: False Connect
+                withAnimation(Animation.easeInOut(duration: 0.5)){
+                    leftSelected = nil
+                    rightSelected = nil
+                    isMatchingRight = false
+                    isMatchingLeft = false
+                }
+            }
+            
+            
+            
+            
         } else {
             isCorrect = false
         }

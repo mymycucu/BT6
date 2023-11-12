@@ -16,7 +16,7 @@ struct ImageContainer: View {
     @State var imageTitle: String = "mencari-kumbang"
     @Binding var isSelected: Bool
     @State var position: positionImageContainer = .right
-    @Binding var isCorrect: Bool
+    @Binding var isCorrect: Bool 
     @State var isFalse: Bool = false
     
     var body: some View {
