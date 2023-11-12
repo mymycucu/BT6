@@ -18,23 +18,18 @@ struct MultipleChoiceAnswers: View {
             ForEach(0..<answers.count) { index in
                 MultipleCardChoice(
                     imageTitle: multipleChoiceIllustration,
-                    isSelected: selectedAnswer == index,
-                    onTap: {
-                        // Handle button tap, set selected answer
-                        selectedAnswer = selectedAnswer == index ? nil : index
-                        
-                        // Print feedback
-                        if let selectedAnswer = selectedAnswer {
-                            if answers[selectedAnswer] == correctAnswer {
-                                print("Correct!")
-                            } else {
-                                print("Wrong! The correct answer is \(correctAnswer)")
-                            }
+                    isSelected: Binding(
+                        get: { selectedAnswer == index },
+                        set: { newValue in
+                            selectedAnswer = newValue ? index : nil
                         }
-                    },
+                    ),
                     correctAnswer: answers[index] == correctAnswer
                 )
                 .padding(.horizontal, 5)
+                .onTapGesture {
+                    selectedAnswer = index
+                }
             }
         }
     }

@@ -57,6 +57,7 @@ struct MultipleChoiceView: View {
                         MultipleChoiceQuestion(question: data.question)
                         
                         MultipleChoiceAnswers(answers: data.answers, correctAnswer: data.correctAnswer, multipleChoiceIllustration: data.multipleChoiceIllustration, selectedAnswer: $selectedAnswer)
+                            
 
 
                     }

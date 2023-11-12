@@ -12,10 +12,10 @@ struct MultipleCardChoice: View {
     @State var containerColor: Color = .white
     @State var containerOpacity: Bool = true
     @State var containerShadowColor: Color = Color.PB300
-    @State var isSelected: Bool = false
+    @Binding var isSelected: Bool
     @State var isAnimate: Bool = false
     
-    var onTap: () -> Void
+//    var onTap: () -> Void
     var correctAnswer: Bool
 
 
@@ -45,13 +45,13 @@ struct MultipleCardChoice: View {
                 .padding(.top, isAnimate ? 14.7 : 8)
                 .padding(.leading, isAnimate ? 14.7 : 8)
         }
-        .onTapGesture {
+        .onChange(of: isSelected){
             withAnimation(Animation.spring(duration: 0.1)) {
-                onTap()
-                isSelected.toggle()
+//                onTap()
+//                isSelected.toggle()
                 isAnimate.toggle()
                 containerOpacity.toggle()
-                if isSelected == true {
+                if isSelected {
                     containerShadowColor = .white
                 } else {
                     containerShadowColor = .white
@@ -61,12 +61,19 @@ struct MultipleCardChoice: View {
             }
             // Additional delayed animations
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                withAnimation (Animation.spring(duration: 0.2))  {
+                withAnimation (Animation.bouncy(duration: 0.2))  {
                     isAnimate.toggle()
                     if isSelected {
                         containerOpacity.toggle()
                         containerColor = correctAnswer ? .Green2 : .Red2
                         containerShadowColor = correctAnswer ? .Green3 : .Red3
+                        if !correctAnswer{
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                                withAnimation(Animation.bouncy(duration: 0.3)){
+                                    isSelected = false
+                                }
+                            }
+                        }
                     } else {
                         containerOpacity.toggle()
                         containerColor = .white
