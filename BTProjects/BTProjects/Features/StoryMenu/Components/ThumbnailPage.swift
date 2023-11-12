@@ -27,6 +27,7 @@ struct ThumbnailPage: View {
                 .offset(x: -100, y:-73)
                 .zIndex(3)
             
+            /// order - 1 because data from menu  order + 1
             if isSelect == (order - 1){
                 Rectangle()
                     .frame(width: 316, height: 230)

@@ -17,12 +17,7 @@ struct QuestionCover: Identifiable {
       let storyThumbnail: String
   }
 
-   // Sample data array with 5 items
-          
-
 struct MenuView: View {
-    private let data = (1...5)
-    private let data2 = (6...10)
     @Binding var show : Bool
     
     @State var isSelectStory: Int?
@@ -52,6 +47,8 @@ struct MenuView: View {
                 VStack(spacing: 20) {
                     VStack(spacing: 32) {
                         LazyVGrid (columns: columns, spacing: 32, content: {
+                            
+                            //MARK: StoryPage
                             Section(header: Text("Stories")
                                 .font(.Heading2_Semibold)
                                 .foregroundColor(.white))
@@ -67,6 +64,8 @@ struct MenuView: View {
                                     })
                                 }
                             }
+                            
+                            //MARK: Question
                             Section(header:
                                         Text("Question")
                                 .font(.Heading2_Semibold)
