@@ -12,7 +12,6 @@ struct HomeView: View {
     @FetchRequest(entity: Category.entity(), sortDescriptors: [])
     private var categories: FetchedResults<Category>
     @State private var indexCategory = 0
-    @Binding var mainScene: Int
     
     var body: some View {
         
@@ -23,7 +22,7 @@ struct HomeView: View {
             ZStack {
                 TabView(selection: $indexCategory) {
                     ForEach(0..<categories.count, id: \.self) { index in
-                        StoryBookPerCategory(mainScene: $mainScene, category: categories[index])
+                        StoryBookPerCategory(category: categories[index])
                             .environmentObject(appState)
                     }
                 }
@@ -105,5 +104,6 @@ struct CardView: View{
 }
 
 #Preview {
-    HomeView(mainScene: .constant(0))
+    HomeView()
+        .environmentObject(AppState())
 }

@@ -207,7 +207,6 @@
 		ADE3CFAB2AE3ADA200CED0DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ADE3CFB92AE3AE9D00CED0DD /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		ADE3CFBB2AE3AEBE00CED0DD /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		D444C2CF2B00A2A50001E36A /* Ribbon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ribbon.swift; sourceTree = "<group>"; };
 		D46180C32AFB60DD00370DD3 /* VideoPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
@@ -512,7 +511,6 @@
 				0596F83A2AFB724400328297 /* Camera */,
 				05D0460D2AF8F2540029D747 /* VideoPlayer */,
 				ADE3CFC02AE3AF4C00CED0DD /* CoreData */,
-				ADE3CFBD2AE3AEFC00CED0DD /* Realm */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -536,14 +534,6 @@
 				ADBE94262AFB62F2008A1390 /* CodingUserInfoKeyExtention.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		ADE3CFBD2AE3AEFC00CED0DD /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-				ADE3CFBE2AE3AF4400CED0DD /* RealmManager.swift */,
-			);
-			path = Realm;
 			sourceTree = "<group>";
 		};
 		ADE3CFC02AE3AF4C00CED0DD /* CoreData */ = {

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct StoryBookPerCategory: View {
     @EnvironmentObject var appState: AppState
-    @Binding var mainScene: Int
     
     var category : Category
     private let columns: [GridItem] = [

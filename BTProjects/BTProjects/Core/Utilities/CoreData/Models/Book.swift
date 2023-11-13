@@ -49,6 +49,10 @@ public class Book: NSManagedObject, Decodable {
     var story: [StoryPage] {
         ((storyPages?.allObjects as? [StoryPage]) ?? [StoryPage]()).sorted { $0.order < $1.order }
     }
+    
+    var lstQuestions: [Question] {
+        ((questions?.allObjects as? [Question]) ?? [Question]()).sorted { $0.order < $1.order }
+    }
 }
 
 
