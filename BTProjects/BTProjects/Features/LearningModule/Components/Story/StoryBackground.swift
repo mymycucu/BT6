@@ -17,6 +17,7 @@ struct StoryBackground: View {
             
             //MARK: Illustration
             Image(illustration)
+                .resizable()
                 
             
             VStack {

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProgressBar: View {
     
-    @State var totalWords: Int = 10
-    @State var step: Int =  4
+    @Binding var totalWords: Int
+    @Binding var step: Int
     @State var containerWidth: CGFloat = 0
     
     var maxWidth: Double {
@@ -61,5 +61,5 @@ struct ProgressBar: View {
 }
 
 #Preview {
-    ProgressBar()
+    ProgressBar(totalWords: .constant(1), step: .constant(8))
 }
