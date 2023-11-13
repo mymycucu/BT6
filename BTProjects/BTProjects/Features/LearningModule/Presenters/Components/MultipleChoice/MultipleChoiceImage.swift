@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct MultipleChoiceImage: View {
+    
+    var illustration: String
+    
     var body: some View {
         ZStack {
-            Image("story_dummy")
+            Image(illustration)
             .frame(width: 467, height: 310)
             .cornerRadius(16)
             .padding(8)
@@ -25,5 +28,5 @@ struct MultipleChoiceImage: View {
 }
 
 #Preview {
-    MultipleChoiceImage()
+    MultipleChoiceImage(illustration: "story_dummy")
 }

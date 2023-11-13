@@ -8,29 +8,39 @@
 import SwiftUI
 
 struct MultipleChoiceAnswers: View {
+    var answers: [String]
+    var correctAnswer: String
+    var multipleChoiceIllustration: String
+    @Binding var selectedAnswer: Int?
+    
+    @State var isCorrect: Bool = false
+
     var body: some View {
-        HStack (spacing: 35) {
-            // MARK: Left Answer
-            Button(action: {
-                // Add your action code here
-            }) {
-                MultipleCardChoice()
-
-            }
-
-
-
-            // MARK: Right Answer
-            Button(action: {
-                // Add your action code here
-            }) {
-                MultipleCardChoice()
-                
+        HStack {
+            ForEach(0..<answers.count) { index in
+                MultipleCardChoice(
+                    imageTitle: multipleChoiceIllustration,
+                    isSelected: Binding(
+                        get: { selectedAnswer == index },
+                        set: { newValue in
+                            selectedAnswer = newValue ? index : nil
+                        }
+                    ),
+                    correctAnswer: answers[index] == correctAnswer
+                )
+                .padding(.horizontal, 5)
+                .onTapGesture {
+                    selectedAnswer = index
+                    isCorrect = answers[index] == correctAnswer
+                    
+                    
+                }
+                .disabled(isCorrect)
             }
         }
     }
 }
 
-#Preview {
-    MultipleChoiceAnswers()
-}
+//#Preview {
+//    MultipleChoiceAnswers()
+//}
