@@ -25,6 +25,9 @@ struct BookCoverView: View {
 //    ]
     @State var viewState: ViewState = .normal
     
+    let isQuizFinished: Bool
+    
+    
     var body: some View {
         ZStack {
             
@@ -33,7 +36,7 @@ struct BookCoverView: View {
             HStack {
                 
                     
-                StoryCoverContent(storyPages: book.storyPages?.count ?? 0, storyTitle: book.name ?? "book", canStartQuiz: false)
+                StoryCoverContent(storyPages: book.storyPages?.count ?? 0, storyTitle: book.name ?? "book", canStartQuiz: false, isQuizFinished: true)
                         .padding(.leading, 40)
                     
                     Spacer()

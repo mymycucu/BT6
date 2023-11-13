@@ -12,6 +12,7 @@ struct StoryCoverContent: View {
     var storyPages: Int
     var storyTitle: String
     @State var canStartQuiz: Bool
+    @State var isQuizFinished: Bool
     
     var body: some View {
         VStack (alignment: .leading) {
@@ -54,18 +55,13 @@ struct StoryCoverContent: View {
                     // Add your action code here
                 }) {
                     HStack(alignment: .center, spacing: 0) {
-                        Text("Mulai Kuis")
+                        Text(isQuizFinished ? "Ulangi Kuis" : "Mulai Kuis")
                             .font(.Caption_Medium)
-                            .foregroundColor(canStartQuiz ? Color.PB500 : Color.PB200)
+                            .foregroundColor(Color.white)
                     }
-                    .frame(width: 174, height: 52)
-                    .background(Color.white)
+                    .frame(width: 200, height: 62)
+                    .background(canStartQuiz ? Color.Orange4 : Color.Orange3)
                     .cornerRadius(12)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .inset(by: 1.5)
-                            .stroke(canStartQuiz ? Color.PB500 : Color.PB200, lineWidth: 3)
-                    )
                 }
                 // Set the button's disabled state based on the canStartQuiz variable using a ternary operator
                 .disabled(!canStartQuiz)
@@ -76,5 +72,5 @@ struct StoryCoverContent: View {
 }
 
 #Preview {
-    StoryCoverContent(storyPages: 3, storyTitle: "Test", canStartQuiz: false)
+    StoryCoverContent(storyPages: 3, storyTitle: "Test", canStartQuiz: true, isQuizFinished: false)
 }
