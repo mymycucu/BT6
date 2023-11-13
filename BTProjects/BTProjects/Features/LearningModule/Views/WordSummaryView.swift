@@ -9,10 +9,14 @@ import SwiftUI
 
 struct WordSummaryView: View {
     @Binding var isMenu: Bool
+    @Binding var bookScene: Int
+    var maxBookScene: Int
+    var word: String
+    
     @State var viewState: ViewState = .summary
     @State var background: String = "background-word-summary"
-    @State var word: String = "bahaya"
     @State var isDisabled: Bool = false
+    
     var body: some View {
         VStack {
             ZStack{
@@ -39,7 +43,7 @@ struct WordSummaryView: View {
                 VStack(spacing: 0){
                     Spacer()
                     
-                    Footer(footerState: $viewState, isDisabled: $isDisabled)
+                    Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
                     
                 }
                 .padding(38)
@@ -47,12 +51,5 @@ struct WordSummaryView: View {
 
             }
         }
-        
-        
-        
     }
-}
-
-#Preview {
-    WordSummaryView(isMenu: .constant(false))
 }

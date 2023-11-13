@@ -9,51 +9,41 @@ import SwiftUI
 
 struct StoryView: View {
     @Binding var isMenu: Bool
+    @Binding var bookScene: Int
+    var maxBookScene:Int
+    var storyPage: StoryPage
     @State var isDisabled: Bool = false
     @State var viewState: ViewState = .story
-    
-    // Custom Identifiable struct for your data
-    struct StoryData: Identifiable {
-        let id = UUID()
-        let illustration: String
-        let signLanguage: String
-        let words: String
-        let highlightWord: String
-    }
-    
-    // Sample data array with 5 items
-    let dataArray: [StoryData] = [
-        StoryData(illustration: "illust_dummy", signLanguage: "dummy", words: "Dino membaca buku", highlightWord: ""),
-    ]
     
     var body: some View {
         VStack {
             // Use ForEach to loop through the data array
-            ForEach(dataArray) { data in
+//            ForEach(dataArray) { data in
                 ZStack {
-                    Background(viewState: $viewState, illustration: data.illustration)
+                    // StoryBackground(illustration: storyPage.illustration ?? "illust_dummy")
+                    //     .padding(.top, 20)
+                    Background(viewState: $viewState, illustration: storyPage.illustration ?? "illust_dummy")
                     
                     VStack(spacing:0){
                         
                         Header(isMenu: $isMenu, headerState: $viewState)
                         
                         Spacer()
-                        StoryVideo(videoURL: data.signLanguage)
+
+                        StoryVideo(videoURL: storyPage.signLanguage ?? "dummy")
                             .offset(x: 330, y: 0)
                             .padding(.vertical, 80)
-              
+                        
                         Spacer()
-                        Footer(footerState: $viewState, isDisabled: $isDisabled, words: data.words, highlightWord: data.highlightWord)
+                        Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, words: storyPage.name ?? "", highlightWord: storyPage.desc ?? "", maxBookScene: maxBookScene)
                     }
                     .padding(38)
-                    
-                }
-                .id(data.id) // Explicitly specify a unique identifier
+                }// Explicitly specify a unique identifier
             }
-        }
+//        }
     }
 }
 
-#Preview {
-    StoryView(isMenu: .constant(false))
-}
+//#Preview {
+//    StoryView(isMenu: .constant(false))
+//}

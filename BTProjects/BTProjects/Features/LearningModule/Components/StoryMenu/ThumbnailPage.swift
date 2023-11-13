@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ThumbnailPage: View {
     
-    @Binding var isSelect: Int?
-    @State var order: Int
-    @State var imageTitle: String
+    var isSelect: Bool
+    var order: Int
+    var imageTitle: String
     
     var isActive: Bool = false
     
@@ -23,12 +23,12 @@ struct ThumbnailPage: View {
                 .frame(width: 316, height: 230)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .zIndex(1)
-            Ribbon(order: $order)
+            Ribbon(order: order)
                 .offset(x: -100, y:-73)
                 .zIndex(3)
             
             /// order - 1 because data from menu  order + 1
-            if isSelect == (order - 1){
+            if isSelect{
                 Rectangle()
                     .frame(width: 316, height: 230)
                     .opacity(0)
@@ -42,5 +42,5 @@ struct ThumbnailPage: View {
 }
 
 #Preview {
-    ThumbnailPage(isSelect: .constant(1), order: 1 , imageTitle: "mencari-kumbang")
+    ThumbnailPage(isSelect: true, order: 1 , imageTitle: "mencari-kumbang")
 }

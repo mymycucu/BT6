@@ -27,11 +27,13 @@ struct TripleChoiceView: View {
     
     //MARK: Header Binding
     @Binding var isMenu: Bool
+    @Binding var bookScene: Int
+    var maxBookScene: Int
     @State var isDisabled: Bool = false
     
     @State var viewState: ViewState = .quiz
-    @State var currentQuiz: Int = 8
-    @State var totalQuiz: Int = 8
+    var currentQuiz: Int
+    var totalQuiz: Int
 
     
     var body: some View {
@@ -42,7 +44,7 @@ struct TripleChoiceView: View {
             // Use ForEach to loop through the data array
             VStack {
                 
-                Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: $currentQuiz, totalQuiz: $totalQuiz)
+                Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
 
                 ForEach(dataArray) { data in
                     
@@ -79,14 +81,13 @@ struct TripleChoiceView: View {
             VStack{
                 
                 Spacer()
-                Footer(footerState: $viewState, isDisabled: $isDisabled)
+                Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
             .padding(38)
         }
     }
 }
 
-#Preview {
-    TripleChoiceView(isMenu: .constant(false))
-}
+
+
 

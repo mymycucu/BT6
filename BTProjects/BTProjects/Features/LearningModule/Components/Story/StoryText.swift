@@ -14,16 +14,17 @@ struct StoryText: View {
     
     var body: some View {
         
-        HStack(alignment: .center, spacing: 10) {
+        HStack(alignment: .center) {
+            Text(words)
+                .font(.Subhead1_Medium)
         
             //MARK: Story Words
-            ForEach(words.components(separatedBy: " "), id: \.self) { word in
-                Text(word)
-                    .font(.Subhead1_Medium)
-                    .foregroundColor(word == highlightWord ? Color.Purple5 : .PB500)
-            }
-            
-            
+//            ForEach(words.components(separatedBy: " "), id: \.self) { word in
+//                Text(word)
+//                    .font(.Subhead1_Medium)
+//                    .foregroundColor(word == highlightWord ? Color.Purple5 : .PB500)
+//            }
+
         }
         .padding(.horizontal, 10)
         .padding(.vertical, 18)

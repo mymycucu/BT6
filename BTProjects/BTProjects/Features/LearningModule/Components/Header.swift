@@ -12,21 +12,21 @@ struct Header: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var isMenu: Bool
     @Binding var headerState: ViewState
-    @Binding var currentQuiz: Int
-    @Binding var totalQuiz: Int
+    var currentQuiz: Int
+    var totalQuiz: Int
     
     init(isMenu: Binding<Bool>, headerState: Binding<ViewState>) {
         _isMenu = isMenu
         _headerState = headerState
-        _currentQuiz =  Binding.constant(0)
-        _totalQuiz = Binding.constant(0)
+        self.currentQuiz =  0
+        self.totalQuiz = 0
     }
     
-    init(isMenu: Binding<Bool>, headerState: Binding<ViewState>, currentQuiz: Binding<Int>, totalQuiz: Binding<Int>) {
+    init(isMenu: Binding<Bool>, headerState: Binding<ViewState>, currentQuiz: Int, totalQuiz: Int) {
             _isMenu = isMenu
             _headerState = headerState
-            _currentQuiz = currentQuiz
-            _totalQuiz = totalQuiz
+            self.currentQuiz = currentQuiz
+            self.totalQuiz = totalQuiz
         }
     
     
@@ -41,7 +41,7 @@ struct Header: View {
             .buttonStyle(CircularButtonStyle())
             
             if headerState == .quiz{
-                ProgressBar(totalWords: $totalQuiz, step: $currentQuiz)
+                ProgressBar(totalWords: totalQuiz, step: currentQuiz)
             } else {
                Spacer()
             }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TirukanText: View {
+    var kata: String
     var body: some View {
         
         VStack {
@@ -16,7 +17,7 @@ struct TirukanText: View {
                 .foregroundColor(.white)
             
             //MARK: Tirukan Text Target
-            Text("bahaya")
+            Text(kata)
                 .font(.Heading1_Semibold)
                 .underline()
                 .foregroundColor(.white)
@@ -26,5 +27,5 @@ struct TirukanText: View {
 }
 
 #Preview {
-    TirukanText()
+    TirukanText(kata: "bahaya ta")
 }

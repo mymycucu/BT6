@@ -46,6 +46,9 @@ struct ConnectImagesView: View {
     
     //MARK: Header Binding
     @Binding var isMenu: Bool
+    @Binding var bookScene: Int
+    var maxBookScene: Int
+    
     @State var isDisabled: Bool = false
     
     @State var viewState: ViewState = .quiz
@@ -96,7 +99,7 @@ struct ConnectImagesView: View {
         
         VStack(alignment: .center, spacing: 0){
             //MARK: Quiz Header
-            Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: $currentQuiz, totalQuiz: $totalQuiz)
+            Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
             
             ZStack {
                 HStack (spacing: 0){
@@ -251,7 +254,7 @@ struct ConnectImagesView: View {
                 
                 VStack(spacing: 0){
                     Spacer()
-                    Footer(footerState: $viewState, isDisabled: $isDisabled)
+                    Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
                 }
             }
         }
@@ -395,6 +398,4 @@ struct ConnectImagesView: View {
     
 }
 
-//#Preview {
-//    ConnectImagesView(isMenu: .constant(false))
-//}
+

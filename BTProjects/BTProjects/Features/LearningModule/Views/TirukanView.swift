@@ -9,11 +9,14 @@ import SwiftUI
 
 struct TirukanView: View {
     @State private var isOverlayVisible = false
-    
+    var kata: String
+
     @Binding var isMenu: Bool
+    @Binding var bookScene: Int
+    var maxBookScene: Int
     @State var viewState: ViewState = .quiz
-    @State var currentQuiz: Int = 1
-    @State var totalQuiz: Int = 8
+    var currentQuiz: Int
+    var totalQuiz: Int
     @State var isDisabled: Bool = false
     
     var body: some View {
@@ -22,9 +25,9 @@ struct TirukanView: View {
 
             VStack {
                 
-                Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: $currentQuiz, totalQuiz: $totalQuiz)
+                Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
 
-                TirukanText()
+                TirukanText(kata: kata)
                 
                 Spacer()
                 
@@ -40,7 +43,7 @@ struct TirukanView: View {
                 Spacer()
                 
 //                TirukanBottomBar(isOverlayVisible: $isOverlayVisible)
-                Footer(footerState: $viewState, isDisabled: $isDisabled)
+                Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
                 
             }
             .padding(38)
@@ -65,8 +68,8 @@ struct TirukanView: View {
 }
 
 
-#Preview {
-    TirukanView(isMenu: .constant(false))
-}
+// #Preview {
+//     TirukanView(isMenu: .constant(false))
+// }
 
 
