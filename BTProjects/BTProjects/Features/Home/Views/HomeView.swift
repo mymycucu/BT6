@@ -12,12 +12,12 @@ struct HomeView: View {
     @FetchRequest(entity: Category.entity(), sortDescriptors: [])
     private var categories: FetchedResults<Category>
     @State private var indexCategory = 0
+    @State var viewState: ViewState = .normal
     
     var body: some View {
         
         VStack{
             HomeHeader()
-                .padding(.horizontal,40)
             CategorySelection(index: $indexCategory, categories: Array(categories))
             ZStack {
                 TabView(selection: $indexCategory) {
@@ -63,31 +63,13 @@ struct HomeView: View {
                     }
                 }
                 .foregroundColor(Color.PB500)
-                .padding(.horizontal,20)
                 
             }
             
         }
+        .padding(38)
         .background(
-            ZStack{
-                RadialGradient(
-                    gradient: Gradient(
-                        stops: [
-                            .init(color: .PB600.opacity(0.8), location: 0), // Starting around $0% from the center
-                            .init(color: .PB600, location: 0.8) // Strating 0.8
-                        ]
-                    ),
-                    center: UnitPoint(x: 0.5, y: 1.5),
-                    startRadius: 0,
-                    endRadius: 1500
-                )
-                .edgesIgnoringSafeArea(.all)
-                Image("background")
-                    .resizable()
-                    .scaledToFit()
-                    .opacity(0.1)
-                    .edgesIgnoringSafeArea(.all)
-            }
+            Background(viewState: $viewState)
         )
     }
 }

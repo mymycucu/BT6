@@ -11,15 +11,21 @@ struct TirukanView: View {
     @State private var isOverlayVisible = false
     var kata: String
 
+    @Binding var isMenu: Bool
+    @Binding var bookScene: Int
+    var maxBookScene: Int
+    @State var viewState: ViewState = .quiz
+    var currentQuiz: Int
+    var totalQuiz: Int
+    @State var isDisabled: Bool = false
+    
     var body: some View {
         ZStack {
-            TirukanBackground()
+            Background(viewState: $viewState)
 
             VStack {
                 
-                TirukanTopBar()
-                    .padding(.horizontal, 30)
-                    .padding(.top, 40)
+                Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
 
                 TirukanText(kata: kata)
                 
@@ -36,11 +42,11 @@ struct TirukanView: View {
                 
                 Spacer()
                 
-                TirukanBottomBar(isOverlayVisible: $isOverlayVisible)
-                    .padding(.horizontal, 30)
-                    .padding(.bottom, 30)
+//                TirukanBottomBar(isOverlayVisible: $isOverlayVisible)
+                Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
                 
             }
+            .padding(38)
         }
         .overlay(
                 isOverlayVisible ?
@@ -62,8 +68,8 @@ struct TirukanView: View {
 }
 
 
-//#Preview {
-//    TirukanView()
-//}
+// #Preview {
+//     TirukanView(isMenu: .constant(false))
+// }
 
 

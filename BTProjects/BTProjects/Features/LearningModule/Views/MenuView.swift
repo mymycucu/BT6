@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct StoryCover: Identifiable {
-      let id = UUID()
+    let id = UUID()
     var storyThumbnail: String
-  }
+}
 
 struct QuestionCover: Identifiable {
-      let id = UUID()
-      let storyThumbnail: String
-  }
+    let id = UUID()
+    let storyThumbnail: String
+}
 
 struct MenuView: View {
     @Binding var isMenu : Bool
@@ -77,7 +77,7 @@ struct MenuView: View {
                     }
                     
                 }
-                .padding(.vertical, 25)
+                .padding(.vertical, 60)
                 .padding(.horizontal, 30)
                 .cornerRadius(25)
             }
@@ -90,12 +90,13 @@ struct MenuView: View {
                     .font(.Button)
             }
             .buttonStyle(CircularButtonStyle())
-            .padding()
+            .padding(.horizontal,38)
+            .padding(.vertical,28)
             
         })
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.top, 43)
+//        .padding(.top, 43)
         .background(
             Color.primary.opacity(0.7)
         )

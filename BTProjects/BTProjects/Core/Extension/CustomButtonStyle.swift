@@ -14,15 +14,12 @@ struct RoundedButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(width: 223, height: 52) // Adjust size as needed
-            .foregroundColor(disabled ? Color.PB200 : Color.PB500)
-            .background(Color.white)
-            .cornerRadius(12)
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .inset(by: 1)
-                    .stroke(disabled ? Color.PB300 : Color.PB500, lineWidth: 3)
-            )
+            .frame(height: 62)
+            .padding(.horizontal,30)
+            .frame(minWidth: 200)
+            .foregroundColor(Color.white)
+            .background(Color.Orange4)
+            .cornerRadius(12) // Adjust size as needed
         
     }
 }

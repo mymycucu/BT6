@@ -25,16 +25,33 @@ struct MultipleChoiceView: View {
 //    let dataArray: [MultipleChoiceData] = [ MultipleChoiceData(multipleChoiceIllustration: "story_dummy", multipleChoiceSL: "dummy", question: "Apa yang harus kamu lakukan?", answers: ["bermain", "belajar"], correctAnswer: "belajar")]
 //    
     
+
+    
+    // let dataArray: [MultipleChoiceData] = [ MultipleChoiceData(multipleChoiceIllustration: "story_dummy", multipleChoiceSL: "dummy", question: "Apa yang harus kamu lakukan?", answers: ["bermain", "belajar"], correctAnswer: "belajar")]
+    
+
+    // @State private var selectedAnswer: Int?
+
+    // //MARK: Header Binding
+    @Binding var isMenu: Bool
+    @Binding var bookScene: Int
+    var maxBookScene: Int
+    
+    @State var isDisabled: Bool = false
+    
+    @State var viewState: ViewState = .quiz
+    var currentQuiz: Int
+    var totalQuiz: Int
     
     var body: some View {
         ZStack {
             
-            MultipleChoiceBackground()
+            Background(viewState: $viewState)
             
             VStack {
-                MultipleChoiceTopBar()
-                    .padding(.horizontal, 30)
-                    .padding(.top, 50)
+                Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
+
+                Spacer()
                 VStack {
                     HStack {
                         MultipleChoiceVideo(videoURL: question.signLanguage ?? Constant.defaultSignLanguage)
@@ -47,15 +64,19 @@ struct MultipleChoiceView: View {
                     
                     MultipleChoiceAnswers(question: question)
                 }
-                
-                
-                
-                
-                MultipleChoiceBottomBar()
-                    .padding(.horizontal, 30)
-                    .padding(.bottom, 30)
+
+                Spacer()
+
                 
             }
+            .padding(38)
+            
+            VStack{
+                
+                Spacer()
+                Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+            }
+            .padding(38)
         }
     }
 }

@@ -40,9 +40,20 @@ struct imagePosition: Identifiable, Equatable  {
 }
 
 
-struct ConnectImages: View {
+struct ConnectImagesView: View {
     /// orientation
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    //MARK: Header Binding
+    @Binding var isMenu: Bool
+    @Binding var bookScene: Int
+    var maxBookScene: Int
+    
+    @State var isDisabled: Bool = false
+    
+    @State var viewState: ViewState = .quiz
+    @State var currentQuiz: Int = 8
+    @State var totalQuiz: Int = 8
     
     /// disable next button
     @State var disableNext: Bool = true
@@ -88,7 +99,7 @@ struct ConnectImages: View {
         
         VStack(alignment: .center, spacing: 0){
             //MARK: Quiz Header
-            QuizHeader()
+            Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
             
             ZStack {
                 HStack (spacing: 0){
@@ -206,30 +217,7 @@ struct ConnectImages: View {
                 .padding(.vertical, 20)
                 .padding(.bottom, 60)
                 
-                //MARK: Navigation Previous-Next Button
-                VStack {
-                    Spacer()
-                    HStack{
-                        Button(action: {
-                            //action
-                        }) {
-                            Image(systemName: "arrowshape.left.fill")
-                                .font(.Button)
-                        }
-                        .buttonStyle(CircularButtonStyle())
-                        
-                        Spacer()
-                        Button(action: {
-                            //action
-                        }) {
-                            Image(systemName: "arrowshape.right.fill")
-                                .font(.Button)
-                        }
-                        .buttonStyle(CircularButtonStyle(disabled: disableNext))
-                        
-                        
-                    }
-                }
+                
                 
                 //MARK: Draw Connecting Line
                 ForEach(leftImagesPoint, id:\.id){ left in
@@ -262,34 +250,18 @@ struct ConnectImages: View {
                         
                     }
                 }
+                
+                
+                VStack(spacing: 0){
+                    Spacer()
+                    Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+                }
             }
         }
-        .padding(.horizontal, 40)
-        .padding(.vertical, 20)
+        .padding(38)
         //MARK: Background
         .background(
-            ZStack{
-                RadialGradient(
-                    gradient: Gradient(
-                        stops: [
-                            .init(color: .PB600.opacity(0.8), location: 0), // Starting around $0% from the center
-                            .init(color: .PB600, location: 0.8) // Strating 0.8
-                        ]
-                    ),
-                    center: UnitPoint(x: 0.5, y: 1.5),
-                    startRadius: 0,
-                    endRadius: 1500
-                )
-                .edgesIgnoringSafeArea(.all)
-                Image("background")
-                    .resizable()
-                    .scaledToFill()
-                    .opacity(0.1)
-                    .edgesIgnoringSafeArea(.all)
-                
-                
-            }
-            
+            Background(viewState: $viewState)
             
         )
         //MARK: OnAppear
@@ -426,6 +398,4 @@ struct ConnectImages: View {
     
 }
 
-#Preview {
-    ConnectImages()
-}
+

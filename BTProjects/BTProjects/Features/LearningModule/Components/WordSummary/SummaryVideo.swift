@@ -27,11 +27,6 @@ struct SummaryVideo: View {
                             .stroke(Color.PB500, lineWidth: 12)
                         
                     )
-                    
-                
-            } else {
-                Spacer()
-                    .frame(width: 646, height: 436)
             }
             
             //MARK: Replay Button
