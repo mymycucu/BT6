@@ -324,6 +324,7 @@
 			children = (
 				AD6470932B02249700B275D4 /* QuizHeader.swift */,
 				AD6470912B02247E00B275D4 /* ProgressBar.swift */,
+				D4C515FA2AFA17D5001A97E5 /* WordSummary */,
 				AD6470902B02241B00B275D4 /* StoryMenu */,
 				D42466022AFB7B5E0029D229 /* ConnectImages */,
 				055ED2452B007225000896E7 /* StoryCover */,
@@ -595,7 +596,6 @@
 			children = (
 				ADE3CFCA2AE3B05B00CED0DD /* LearningModule */,
 				D4FE9D882AF36ACA000DAFEB /* Home */,
-				D4C515FA2AFA17D5001A97E5 /* WordSummary */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -620,6 +620,7 @@
 		ADE3CFCE2AE3B0A500CED0DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD4D95752AFE45B40035E006 /* WordSummary.swift */,
 				D4B3F3792B00A1CD008F105F /* MenuView.swift */,
 				AD4D95882AFE46C80035E006 /* ConnectImages.swift */,
 				05D046102AF8F26B0029D747 /* StoryView.swift */,
@@ -654,19 +655,10 @@
 		D4C515FA2AFA17D5001A97E5 /* WordSummary */ = {
 			isa = PBXGroup;
 			children = (
-				AD4D95752AFE45B40035E006 /* WordSummary.swift */,
-				D4C516012AFA751B001A97E5 /* Components */,
-			);
-			path = WordSummary;
-			sourceTree = "<group>";
-		};
-		D4C516012AFA751B001A97E5 /* Components */ = {
-			isa = PBXGroup;
-			children = (
 				AD4D95772AFE45C10035E006 /* SummaryHeader.swift */,
 				AD4D95782AFE45C10035E006 /* SummaryVideo.swift */,
 			);
-			path = Components;
+			path = WordSummary;
 			sourceTree = "<group>";
 		};
 		D4FE9D882AF36ACA000DAFEB /* Home */ = {

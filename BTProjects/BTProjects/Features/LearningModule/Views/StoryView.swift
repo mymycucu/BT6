@@ -21,7 +21,7 @@ struct StoryView: View {
     
     // Sample data array with 5 items
     let dataArray: [StoryData] = [
-        StoryData(illustration: "illust_dummy", signLanguage: "dummy", words: "Dino membaca buku", highlightWord: "membaca"),
+        StoryData(illustration: "illust_dummy", signLanguage: "dummy", words: "Dino membaca buku", highlightWord: ""),
     ]
     
     var body: some View {
