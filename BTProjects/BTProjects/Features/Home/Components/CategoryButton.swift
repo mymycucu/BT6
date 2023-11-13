@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryButton: View {
     @State var category: Category?
-    @State var item: Cat = Cat(colors: .red)
+    @State var item: Cat = Cat(id: 1, colors: .red)
     @State var action: () -> Void
     
     var body: some View {

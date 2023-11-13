@@ -34,6 +34,9 @@ struct DataFeedManager {
         let categorySekolah = PersistenceController.shared.create(Category.self)
         categorySekolah?.name = "Sekolah"
         
+        let categoryZoo = PersistenceController.shared.create(Category.self)
+        categoryZoo?.name = "Zoo"
+        
         // MARK: Create word
         let wordBahaya = PersistenceController.shared.create(Word.self)
         wordBahaya?.name = "Bahaya"
