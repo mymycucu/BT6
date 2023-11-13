@@ -32,8 +32,6 @@ struct TripleChoiceBottomBar: View {
                         
                     }
             
-//            MultipleChoiceAnswers()
-//                .padding(.bottom, 50)
             
             Spacer()
             

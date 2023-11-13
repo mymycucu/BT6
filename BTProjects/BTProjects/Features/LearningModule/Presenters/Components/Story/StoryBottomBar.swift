@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct StoryBottomBar: View {
+    
+    var words: String
+    var highlightWord: String
+    
     var body: some View {
         
         HStack {
@@ -33,7 +37,7 @@ struct StoryBottomBar: View {
                         
                     }
                         
-            StoryText()
+            StoryText(words: words, highlightWord: highlightWord)
             
             // MARK: Next Button
             Button(action: {
@@ -60,6 +64,6 @@ struct StoryBottomBar: View {
     }
 }
 
-#Preview {
-    StoryBottomBar()
-}
+//#Preview {
+//    StoryBottomBar()
+//}

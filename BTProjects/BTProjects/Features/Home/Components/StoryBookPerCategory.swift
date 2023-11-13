@@ -9,8 +9,8 @@ import SwiftUI
 
 struct StoryBookPerCategory: View {
     @EnvironmentObject var appState: AppState
-    
     var category : Category
+    
     private let columns: [GridItem] = [
         GridItem(.fixed(254), spacing: 24, alignment: .center),
         GridItem(.fixed(254), spacing: 24, alignment: .center)

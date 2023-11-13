@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct StoryBackground: View {
+    
+    var illustration: String
+    
     var body: some View {
         
         ZStack {
             
             //MARK: Illustration
-            Image("illust_dummy")
+            Image(illustration)
                 
             
             VStack {
@@ -41,6 +44,6 @@ struct StoryBackground: View {
     
 }
 
-#Preview {
-    StoryBackground()
-}
+//#Preview {
+//    StoryBackground()
+//}

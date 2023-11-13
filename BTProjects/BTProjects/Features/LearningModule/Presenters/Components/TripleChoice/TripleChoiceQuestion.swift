@@ -7,11 +7,13 @@
 
 import SwiftUI
 
-struct TripleChoiceText: View {
+struct TripleChoiceQuestion: View {
+    
+    var question: String
     var body: some View {
         VStack {
             
-            Text("Pilih gambar di bawah yang menunjukkan hal berbahaya?")
+            Text(question)
                 .font(.Subhead1_Medium)
                 .foregroundColor(.white)
         }
@@ -19,5 +21,5 @@ struct TripleChoiceText: View {
 }
 
 #Preview {
-    TripleChoiceText()
+    TripleChoiceQuestion(question: "Test")
 }

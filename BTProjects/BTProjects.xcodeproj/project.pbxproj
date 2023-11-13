@@ -35,7 +35,7 @@
 		057EDE082AFE323E00A85B51 /* TripleChoiceBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE072AFE323E00A85B51 /* TripleChoiceBackground.swift */; };
 		057EDE0A2AFE325E00A85B51 /* TripleChoiceProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE092AFE325E00A85B51 /* TripleChoiceProgressBar.swift */; };
 		057EDE0C2AFE327E00A85B51 /* TripleChoiceVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE0B2AFE327E00A85B51 /* TripleChoiceVideo.swift */; };
-		057EDE0E2AFE32FE00A85B51 /* TripleChoiceText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE0D2AFE32FE00A85B51 /* TripleChoiceText.swift */; };
+		057EDE0E2AFE32FE00A85B51 /* TripleChoiceQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE0D2AFE32FE00A85B51 /* TripleChoiceQuestion.swift */; };
 		057EDE102AFE332900A85B51 /* TripleChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE0F2AFE332900A85B51 /* TripleChoiceView.swift */; };
 		057EDE122AFE336200A85B51 /* TripleChoiceTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE112AFE336200A85B51 /* TripleChoiceTopBar.swift */; };
 		057EDE142AFE33FC00A85B51 /* TripleChoiceAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE132AFE33FC00A85B51 /* TripleChoiceAnswers.swift */; };
@@ -138,7 +138,7 @@
 		057EDE072AFE323E00A85B51 /* TripleChoiceBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceBackground.swift; sourceTree = "<group>"; };
 		057EDE092AFE325E00A85B51 /* TripleChoiceProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceProgressBar.swift; sourceTree = "<group>"; };
 		057EDE0B2AFE327E00A85B51 /* TripleChoiceVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceVideo.swift; sourceTree = "<group>"; };
-		057EDE0D2AFE32FE00A85B51 /* TripleChoiceText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceText.swift; sourceTree = "<group>"; };
+		057EDE0D2AFE32FE00A85B51 /* TripleChoiceQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceQuestion.swift; sourceTree = "<group>"; };
 		057EDE0F2AFE332900A85B51 /* TripleChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceView.swift; sourceTree = "<group>"; };
 		057EDE112AFE336200A85B51 /* TripleChoiceTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceTopBar.swift; sourceTree = "<group>"; };
 		057EDE132AFE33FC00A85B51 /* TripleChoiceAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceAnswers.swift; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 				057EDE072AFE323E00A85B51 /* TripleChoiceBackground.swift */,
 				057EDE092AFE325E00A85B51 /* TripleChoiceProgressBar.swift */,
 				057EDE0B2AFE327E00A85B51 /* TripleChoiceVideo.swift */,
-				057EDE0D2AFE32FE00A85B51 /* TripleChoiceText.swift */,
+				057EDE0D2AFE32FE00A85B51 /* TripleChoiceQuestion.swift */,
 				057EDE112AFE336200A85B51 /* TripleChoiceTopBar.swift */,
 				057EDE132AFE33FC00A85B51 /* TripleChoiceAnswers.swift */,
 				057EDE152AFE346F00A85B51 /* TripleChoiceBottomBar.swift */,
@@ -847,7 +847,7 @@
 			files = (
 				059ED8422AFA129C00AB7630 /* StoryBackground.swift in Sources */,
 				057EDE142AFE33FC00A85B51 /* TripleChoiceAnswers.swift in Sources */,
-				057EDE0E2AFE32FE00A85B51 /* TripleChoiceText.swift in Sources */,
+				057EDE0E2AFE32FE00A85B51 /* TripleChoiceQuestion.swift in Sources */,
 				057EDDFD2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift in Sources */,
 				057EDDF32AFC8BB900A85B51 /* MultipleChoiceImage.swift in Sources */,
 				057EDE122AFE336200A85B51 /* TripleChoiceTopBar.swift in Sources */,

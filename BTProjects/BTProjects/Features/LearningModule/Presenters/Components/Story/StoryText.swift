@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct StoryText: View {
+    
+    var words: String
+    var highlightWord: String
+    
     var body: some View {
+        
         HStack(alignment: .center, spacing: 10) {
-            
+        
             //MARK: Story Words
+            ForEach(words.components(separatedBy: " "), id: \.self) { word in
+                Text(word)
+                    .font(.Subhead1_Medium)
+                    .foregroundColor(word == highlightWord ? Color.Purple5 : .PB500)
+            }
             
-            Text("Dino ")
-                .font(.Subhead1_Medium)
-                .foregroundColor(.PB500) +
-            Text("membaca")
-                .font(.Subhead1_Medium)
-                .foregroundColor(.Purple5) +
-            Text(" buku di taman.")
-                .font(.Subhead1_Medium)
-                .foregroundColor(.PB500)
             
         }
         .padding(.horizontal, 10)
@@ -30,8 +31,10 @@ struct StoryText: View {
         .background(Color(.systemGray6))
         .cornerRadius(12)
     }
+
 }
 
-#Preview {
-    StoryText()
-}
+
+//#Preview {
+//    StoryText()
+//}
