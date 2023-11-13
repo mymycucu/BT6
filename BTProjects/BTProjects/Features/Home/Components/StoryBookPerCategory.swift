@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct StoryBookPerCategory: View {
-    private let items = (1...3).map {"Item \($0)"}
+    @EnvironmentObject var appState: AppState
+    @Binding var mainScene: Int
+    
+    var category : Category
     private let columns: [GridItem] = [
         GridItem(.fixed(254), spacing: 24, alignment: .center),
         GridItem(.fixed(254), spacing: 24, alignment: .center)
@@ -23,8 +26,20 @@ struct StoryBookPerCategory: View {
             LazyHGrid(
                 rows: columns, spacing: 24
             ){
-                ForEach(items, id: \.self){ item in
-                    StoryBook()
+                ForEach(category.book, id: \.self){ book in
+                    NavigationLink(destination: {
+                        StoryView().navigationBarBackButtonHidden(true)
+                    }, label:{
+                        StoryBook(storyThumbnail: "il_b_default", storyTitle: book.name ?? "bookname")
+                        
+                    })
+                    
+//                    Button {
+//                        appState.book = book
+//                        NavigationLink(destination: StoryView())
+//                    } label: {
+//                        
+//                    }
                 }
             }
         }
@@ -33,6 +48,6 @@ struct StoryBookPerCategory: View {
     }
 }
 
-#Preview {
-    StoryBookPerCategory()
-}
+//#Preview {
+//    StoryBookPerCategory()
+//}
