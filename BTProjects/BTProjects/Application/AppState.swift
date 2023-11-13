@@ -9,6 +9,8 @@ import Foundation
 import CoreData
 
 class AppState: ObservableObject {
+    @Published var book : Book
+    
     let persistenceController = PersistenceController.shared
     
     var firstRun = UserDefaults.standard.bool(forKey: "firstRun")
@@ -16,6 +18,7 @@ class AppState: ObservableObject {
     
     init(preview: Bool = false) {
         self.preview = preview
+        self.book = Book()
         if !firstRun {
             appDataInit()
             firstRun = true
