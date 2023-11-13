@@ -8,33 +8,36 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var appState: AppState
     @FetchRequest(entity: Category.entity(), sortDescriptors: [])
     private var categories: FetchedResults<Category>
-    @State private var index = 0
+    @State private var indexCategory = 0
+    @Binding var mainScene: Int
     
     var body: some View {
         
         VStack{
             HomeHeader()
                 .padding(.horizontal,40)
-            CategorySelection(index: $index, categories: Array(categories))
+            CategorySelection(index: $indexCategory, categories: Array(categories))
             ZStack {
-                TabView(selection: $index) {
+                TabView(selection: $indexCategory) {
                     ForEach(0..<categories.count, id: \.self) { index in
-                        StoryBookPerCategory(category: categories[index])
+                        StoryBookPerCategory(mainScene: $mainScene, category: categories[index])
+                            .environmentObject(appState)
                     }
                 }
-                .animation(.easeInOut, value: index)
+                .animation(.easeInOut, value: indexCategory)
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 
                 
                 HStack{
-                    if (index > categories.startIndex){
+                    if (indexCategory > categories.startIndex){
                         Button(action: {
-                            if index - 1 <= 0 {
-                                index = 0
+                            if indexCategory - 1 <= 0 {
+                                indexCategory = 0
                             }else{
-                                index -= 1
+                                indexCategory -= 1
                             }
                         }) {
                             Image(systemName: "arrowshape.left.fill")
@@ -45,12 +48,12 @@ struct HomeView: View {
                     }
                     Spacer()
                     
-                    if (index < categories.count-1){
+                    if (indexCategory < categories.count-1){
                         Button(action: {
-                            if index + 1 >= categories.count-1 {
-                                index = categories.count-1
+                            if indexCategory + 1 >= categories.count-1 {
+                                indexCategory = categories.count-1
                             }else{
-                                index += 1
+                                indexCategory += 1
                             }
                         }) {
                             Image(systemName: "arrowshape.right.fill")
@@ -101,5 +104,5 @@ struct CardView: View{
 }
 
 #Preview {
-    HomeView()
+    HomeView(mainScene: .constant(0))
 }
