@@ -89,7 +89,7 @@ struct ConnectImages: View {
             ZStack {
                 HStack{
                     //MARK: Left Images
-                    VStack{
+                    VStack (spacing: 12){
                         ForEach(leftImages.indices, id: \.self) { index in
                             
                             ImageContainer(
@@ -145,7 +145,7 @@ struct ConnectImages: View {
                     Spacer()
                     
                     //MARK: Right Images
-                    VStack{
+                    VStack (spacing: 12){
                         ForEach(rightImages.indices, id:\.self) { index in
                             ImageContainer(
                                 imageTitle: rightImages[index],
@@ -197,7 +197,8 @@ struct ConnectImages: View {
                     }
                 }
                 .padding(.horizontal, 122)
-                .padding(.vertical, 37)
+                .padding(.vertical, 20)
+                .padding(.bottom, 60)
                 
                 //MARK: Navigation Previous-Next Button
                 VStack {
@@ -256,8 +257,7 @@ struct ConnectImages: View {
             }
         }
         .padding(.horizontal, 40)
-        .padding(.bottom, 40)
-        .padding(.top, 20)
+        .padding(.vertical, 20)
         //MARK: Background
         .background(
             ZStack{
