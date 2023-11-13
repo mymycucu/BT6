@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct StoryCover: Identifiable {
-      let id = UUID()
+    let id = UUID()
     var storyThumbnail: String
-  }
+}
 
 struct QuestionCover: Identifiable {
-      let id = UUID()
-      let storyThumbnail: String
-  }
+    let id = UUID()
+    let storyThumbnail: String
+}
 
 struct MenuView: View {
     @Binding var isMenu : Bool
@@ -28,15 +28,15 @@ struct MenuView: View {
     ]
     
     @State var dataStory: [StoryCover] = [
-     StoryCover(storyThumbnail: "mencari-kumbang"),
-     StoryCover(storyThumbnail: "background-word-summary"),
-     StoryCover(storyThumbnail: "mencari-kumbang"),
+        StoryCover(storyThumbnail: "mencari-kumbang"),
+        StoryCover(storyThumbnail: "background-word-summary"),
+        StoryCover(storyThumbnail: "mencari-kumbang"),
     ]
     @State var dataQuestion: [QuestionCover] = [
-     QuestionCover(storyThumbnail: "mencari-kumbang"),
-     QuestionCover(storyThumbnail: "background-word-summary"),
-     QuestionCover(storyThumbnail: "mencari-kumbang"),
-     QuestionCover(storyThumbnail: "background-word-summary")
+        QuestionCover(storyThumbnail: "mencari-kumbang"),
+        QuestionCover(storyThumbnail: "background-word-summary"),
+        QuestionCover(storyThumbnail: "mencari-kumbang"),
+        QuestionCover(storyThumbnail: "background-word-summary")
     ]
     
     
@@ -53,7 +53,7 @@ struct MenuView: View {
                                 .font(.Heading2_Semibold)
                                 .foregroundColor(.white))
                             {
-                
+                                
                                 ForEach(0..<dataStory.count, id: \.self) { item in
                                     let imageTitle = dataStory[item].storyThumbnail
                                     Button(action: {
@@ -86,7 +86,7 @@ struct MenuView: View {
                     }
                     
                 }
-                .padding(.vertical, 25)
+                .padding(.vertical, 60)
                 .padding(.horizontal, 30)
                 .cornerRadius(25)
             }
@@ -99,12 +99,13 @@ struct MenuView: View {
                     .font(.Button)
             }
             .buttonStyle(CircularButtonStyle())
-            .padding()
+            .padding(.horizontal,38)
+            .padding(.vertical,28)
             
         })
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.top, 43)
+//        .padding(.top, 43)
         .background(
             Color.primary.opacity(0.7)
         )

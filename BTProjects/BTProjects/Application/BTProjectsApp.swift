@@ -14,6 +14,8 @@ struct BTProjectsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            WordSummaryView(isMenu: Binding.constant(false))
+//            MultipleChoiceView(isMenu: Binding.constant(false))
                 .environmentObject(appState)
             
         }
