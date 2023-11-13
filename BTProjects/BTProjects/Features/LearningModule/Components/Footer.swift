@@ -1,0 +1,106 @@
+//
+//  Footer.swift
+//  BTProjects
+//
+//  Created by Sarah Uli Octavia on 13/11/23.
+//
+
+import SwiftUI
+
+struct Footer: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Binding var footerState: ViewState
+    @Binding var isDisabled: Bool
+    @Binding var bookScene: Int
+    var maxBookScene: Int
+    var words: String
+    var highlightWord: String
+    
+    init(footerState: Binding<ViewState>, isDisabled:Binding<Bool>, bookScene:Binding<Int>, words: String, highlightWord: String, maxBookScene: Int) {
+        _footerState = footerState
+        _isDisabled = isDisabled
+        _bookScene = bookScene
+        self.words =  words
+        self.highlightWord = highlightWord
+        self.maxBookScene = maxBookScene
+    }
+    
+    init(footerState: Binding<ViewState>, isDisabled:Binding<Bool>, bookScene:Binding<Int>, maxBookScene: Int) {
+        _footerState = footerState
+        _isDisabled = isDisabled
+        _bookScene = bookScene
+        self.maxBookScene = maxBookScene
+        words =  " "
+        highlightWord = " "
+        
+    }
+    
+    var body: some View {
+        
+        HStack (spacing: 15 ){
+            // MARK: Back Button
+            Button(action: {
+                if(bookScene <= 1){
+                    bookScene = 1
+                }else{
+                    bookScene -= 1
+                }
+            }) {
+                Image(systemName: "arrowshape.left.fill")
+                    .font(.Button)
+                    .opacity(bookScene <= 1 ? 0 : 1)
+            }
+            .buttonStyle(CircularButtonStyle())
+            
+            if footerState == .story{
+                StoryText(words: words, highlightWord: highlightWord)
+            } else {
+                Spacer()
+            }
+            
+            
+            // MARK: Next Button
+            if footerState != .summary{
+                Button(action: {
+                    if(bookScene >= maxBookScene-1){
+                        presentationMode.wrappedValue.dismiss()
+                    }else{
+                        bookScene += 1
+                    }
+                }) {
+                    Image(systemName: "arrowshape.right.fill")
+                        .font(.Button)
+                        .opacity(bookScene >= maxBookScene ? 0 : 1)
+                }
+                .buttonStyle(CircularButtonStyle(disabled: isDisabled))
+                
+            } else {
+                
+                Button(action: {
+                    if(bookScene >= maxBookScene){
+                        bookScene = maxBookScene
+                    }else{
+                        bookScene += 1
+                    }
+                }) {
+                    HStack(alignment: .center){
+                        Text("Lanjut Latihan")
+                            .font(.Caption_Medium)
+                        Image(systemName: "arrowshape.right.fill")
+                            .font(.Button)
+                    }
+                }
+                .buttonStyle(RoundedButtonStyle())
+            }
+            
+            
+        }
+        .frame(height: 105)
+        
+        
+    }
+}
+
+//#Preview {
+//    Footer()
+//}
