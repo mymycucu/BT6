@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StoryTopBar: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         HStack {
             
@@ -39,7 +40,7 @@ struct StoryTopBar: View {
             
             //MARK: X Button
             Button(action: {
-                        // Add your action code here
+                presentationMode.wrappedValue.dismiss()
                     }) {
                         
                         HStack(alignment: .center, spacing: 0) {

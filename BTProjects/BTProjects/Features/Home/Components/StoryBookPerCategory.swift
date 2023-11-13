@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct StoryBookPerCategory: View {
+    @EnvironmentObject var appState: AppState
+    @Binding var mainScene: Int
+    
     var category : Category
     private let columns: [GridItem] = [
         GridItem(.fixed(254), spacing: 24, alignment: .center),
@@ -24,7 +27,19 @@ struct StoryBookPerCategory: View {
                 rows: columns, spacing: 24
             ){
                 ForEach(category.book, id: \.self){ book in
-                    StoryBook(storyThumbnail: "il_b_default", storyTitle: book.name ?? "bookname")
+                    NavigationLink(destination: {
+                        StoryView().navigationBarBackButtonHidden(true)
+                    }, label:{
+                        StoryBook(storyThumbnail: "il_b_default", storyTitle: book.name ?? "bookname")
+                        
+                    })
+                    
+//                    Button {
+//                        appState.book = book
+//                        NavigationLink(destination: StoryView())
+//                    } label: {
+//                        
+//                    }
                 }
             }
         }
