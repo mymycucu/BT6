@@ -41,6 +41,10 @@ struct imagePosition: Identifiable, Equatable  {
 
 
 struct ConnectImages: View {
+    /// orientation
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    /// disable next button
     @State var disableNext: Bool = true
     
     //MARK: which one that is selected
@@ -87,7 +91,7 @@ struct ConnectImages: View {
             QuizHeader()
             
             ZStack {
-                HStack{
+                HStack (spacing: 0){
                     //MARK: Left Images
                     VStack (spacing: 12){
                         ForEach(leftImages.indices, id: \.self) { index in
@@ -133,10 +137,11 @@ struct ConnectImages: View {
                             //MARK: GeoReder Left
                             .background(GeometryReader { proxy in
                                 Color.clear.onAppear {
-                                    leftImagePosition = proxy.frame(in: .global).origin
+                                    leftImagePosition = CGPoint(x: proxy.frame(in: .global).maxX, y: proxy.frame(in: .global).minY)
                                     leftImagesPoint.append(imagePosition(id: index, position: leftImagePosition))
                                 }
                             })
+                            
                             
                         }
                     }
@@ -189,13 +194,14 @@ struct ConnectImages: View {
                             //MARK: GeoReder Right
                             .background(GeometryReader { proxy in
                                 Color.clear.onAppear {
-                                    rightImagePosition = proxy.frame(in: .global).origin
+                                    rightImagePosition = CGPoint(x: proxy.frame(in: .global).minX, y: proxy.frame(in: .global).minY)
                                     rightImagesPoint.append(imagePosition(id: index, position: rightImagePosition))
                                 }
                             })
                         }
                     }
                 }
+                //                .padding(paddingForOrientation())
                 .padding(.horizontal, 122)
                 .padding(.vertical, 20)
                 .padding(.bottom, 60)
@@ -229,25 +235,27 @@ struct ConnectImages: View {
                 ForEach(leftImagesPoint, id:\.id){ left in
                     ForEach(rightImagesPoint, id:\.id) { right in
                         if leftSelected == left.id && rightSelected == right.id {
-                            VStack{
+                            VStack (spacing: 0){
                                 Path { path in
-                                    path.move(to: CGPoint(x: left.position.x + 240, y: left.position.y - 3))
-                                    path.addLine(to: CGPoint(x: right.position.x - 44, y: right.position.y - 3))
+                                    path.move(to: CGPoint(x: left.position.x - 35, y: left.position.y + 5))
+                                    path.addLine(to: CGPoint(x: right.position.x - 45, y: right.position.y + 5))
                                 }
                                 .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,10]))
                                 .cornerRadius(10)
                                 
                             }
                         }
+                        
                     }
                 }
+                
                 
                 //MARK: Draw Correct Line
                 ForEach(0..<correctLeftPosition.count, id:\.self){ index in
                     VStack{
                         Path { path in
-                            path.move(to: CGPoint(x: correctLeftPosition[index].position.x + 240, y: correctLeftPosition[index].position.y - 3))
-                            path.addLine(to: CGPoint(x: correctRightPosition[index].position.x - 44, y: correctRightPosition[index].position.y - 3))
+                            path.move(to: CGPoint(x: correctLeftPosition[index].position.x - 35 , y: correctLeftPosition[index].position.y + 5))
+                            path.addLine(to: CGPoint(x: correctRightPosition[index].position.x - 45, y: correctRightPosition[index].position.y + 5))
                         }
                         .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,10]))
                         .cornerRadius(10)
@@ -308,7 +316,6 @@ struct ConnectImages: View {
         for item in question.answers {
             allLeftImages.append(item.illustration)
         }
-        print(allLeftImages)
         return allLeftImages
     }
     
@@ -317,7 +324,6 @@ struct ConnectImages: View {
         for item in question.answers {
             allRightImages.append(item.illustration2)
         }
-        print(allRightImages)
         return allRightImages
     }
     
@@ -405,6 +411,17 @@ struct ConnectImages: View {
             }
         }
         return false
+    }
+    
+    //MARK: different padding when orientation changed
+    func paddingForOrientation() -> EdgeInsets {
+        if horizontalSizeClass == .compact {
+            // Landscape orientation
+            return EdgeInsets(top: 20, leading: 122, bottom: 60, trailing: 122)
+        } else {
+            // Portrait orientation
+            return EdgeInsets(top: 20, leading: 20, bottom: 60, trailing: 20)
+        }
     }
     
 }
