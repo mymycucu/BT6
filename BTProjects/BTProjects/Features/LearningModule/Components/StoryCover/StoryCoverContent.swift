@@ -12,6 +12,7 @@ struct StoryCoverContent: View {
     var storyPages: Int
     var storyTitle: String
     @State var canStartQuiz: Bool
+    @State var isQuizFinished: Bool
     
     var body: some View {
         VStack (alignment: .leading) {
@@ -54,7 +55,7 @@ struct StoryCoverContent: View {
                     // Add your action code here
                 }) {
                     HStack(alignment: .center, spacing: 0) {
-                        Text("Mulai Kuis")
+                        Text(isQuizFinished ? "Ulangi Kuis" : "Mulai Kuis")
                             .font(.Caption_Medium)
                             .foregroundColor(Color.white)
                     }
@@ -71,5 +72,5 @@ struct StoryCoverContent: View {
 }
 
 #Preview {
-    StoryCoverContent(storyPages: 3, storyTitle: "Test", canStartQuiz: false)
+    StoryCoverContent(storyPages: 3, storyTitle: "Test", canStartQuiz: true, isQuizFinished: false)
 }

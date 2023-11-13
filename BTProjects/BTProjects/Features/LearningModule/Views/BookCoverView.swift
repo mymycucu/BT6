@@ -24,6 +24,9 @@ struct BookCoverView: View {
 //        StoryCover(storyThumbnail: "story_cover", storyPages: 13, storyTitle: "Tolong Sarah, Bu!", canStartQuiz: false)
 //    ]
     
+    let isQuizFinished: Bool
+    
+    
     var body: some View {
         ZStack {
             
@@ -32,7 +35,7 @@ struct BookCoverView: View {
             HStack {
                 
                     
-                StoryCoverContent(storyPages: book.storyPages?.count ?? 0, storyTitle: book.name ?? "book", canStartQuiz: false)
+                StoryCoverContent(storyPages: book.storyPages?.count ?? 0, storyTitle: book.name ?? "book", canStartQuiz: false, isQuizFinished: true)
                         .padding(.leading, 40)
                     
                     Spacer()
