@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Ribbon: View {
-    @Binding var order: Int
+    var order: Int
     var body: some View {
         ZStack {
             //MARK: Ribbon
@@ -66,8 +66,4 @@ struct Triangle: Shape {
         path.closeSubpath()
         return path
     }
-}
-
-#Preview {
-    Ribbon(order: .constant(1))
 }

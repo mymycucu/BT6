@@ -8,32 +8,27 @@
 import SwiftUI
 
 struct MultipleChoiceAnswers: View {
-    var answers: [String]
-    var correctAnswer: String
-    var multipleChoiceIllustration: String
-    @Binding var selectedAnswer: Int?
-    
+    var question: Question
+    @State var selectedAnswer: Int? = nil
     @State var isCorrect: Bool = false
 
     var body: some View {
         HStack {
-            ForEach(0..<answers.count) { index in
+            ForEach(0..<question.lstAnswers.count) { index in
                 MultipleCardChoice(
-                    imageTitle: multipleChoiceIllustration,
+                    imageTitle: question.lstAnswers[index].illustration ?? Constant.defaultIllustration,
                     isSelected: Binding(
                         get: { selectedAnswer == index },
                         set: { newValue in
                             selectedAnswer = newValue ? index : nil
                         }
                     ),
-                    correctAnswer: answers[index] == correctAnswer
+                    correctAnswer: question.lstAnswers[index].isCorrect
                 )
                 .padding(.horizontal, 8)
                 .onTapGesture {
                     selectedAnswer = index
-                    isCorrect = answers[index] == correctAnswer
-                    
-                    
+                    isCorrect = question.lstAnswers[index].isCorrect
                 }
                 .disabled(isCorrect)
             }

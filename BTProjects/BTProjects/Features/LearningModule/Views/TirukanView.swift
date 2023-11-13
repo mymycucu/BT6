@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TirukanView: View {
     @State private var isOverlayVisible = false
+    var kata: String
 
     var body: some View {
         ZStack {
@@ -20,7 +21,7 @@ struct TirukanView: View {
                     .padding(.horizontal, 30)
                     .padding(.top, 40)
 
-                TirukanText()
+                TirukanText(kata: kata)
                 
                 Spacer()
                 
@@ -61,8 +62,8 @@ struct TirukanView: View {
 }
 
 
-#Preview {
-    TirukanView()
-}
+//#Preview {
+//    TirukanView()
+//}
 
 

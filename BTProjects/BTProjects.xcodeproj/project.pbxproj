@@ -551,8 +551,8 @@
 		ADE3CFC02AE3AF4C00CED0DD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				AD75513D2AFFFBDF006842B5 /* PersistenceController.swift */,
 				ADBE94172AEB5383008A1390 /* BTModel.xcdatamodeld */,
+				AD75513D2AFFFBDF006842B5 /* PersistenceController.swift */,
 				ADBE941C2AFB42DF008A1390 /* DataFeedManager.swift */,
 				ADBE94212AFB4E1E008A1390 /* Models */,
 			);

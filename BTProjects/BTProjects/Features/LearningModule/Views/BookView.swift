@@ -17,15 +17,35 @@ struct BookView: View {
             if (bookScene == 0){
                 BookCoverView(bookScene: $bookScene, book: book)
             }
-            ForEach(1..<book.story.count, id: \.self){ idx in
-                if(bookScene == idx){
-                    StoryView(isMenu: $isMenu)
+            ForEach(0..<book.story.count, id: \.self){ idx in
+                if(bookScene == idx+1){
+                    StoryView(isMenu: $isMenu, bookScene: $bookScene, storyPage: book.story[idx])
                         .ignoresSafeArea()
+                }
+            }
+            if (bookScene == book.story.count+1){
+                WordSummary()
+            }
+            
+            ForEach(0..<book.lstQuestions.count, id: \.self){ idx in
+                if(bookScene == idx+book.story.count+2){
+                    switch book.lstQuestions[idx].type {
+                    case 0:
+                        TirukanView(kata: book.word?.name ?? Constant.defaultTirukanString)
+                    case 1:
+                        MultipleChoiceView(question: book.lstQuestions[idx])
+                    case 2:
+                        TripleChoiceView()
+                    case 3:
+                        ConnectImages()
+                    default:
+                        TirukanView(kata: book.word?.name ?? Constant.defaultTirukanString)
+                    }
                 }
             }
             
             if isMenu{
-                MenuView(isMenu: $isMenu)
+                MenuView(isMenu: $isMenu, bookScene: $bookScene, book: book)
             }
         }
         
