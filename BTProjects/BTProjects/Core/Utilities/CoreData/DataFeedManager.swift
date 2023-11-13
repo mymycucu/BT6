@@ -405,7 +405,7 @@ struct DataFeedManager {
         // MARK: Create Q&A PG 2 Bu, tolong Sarah
         let book2Question5 = PersistenceController.shared.create(Question.self)
         book2Question5?.name = "Pilih gambar di bawah yang menunjukkan hal yang tepat untuk menggunakan kata tolong?"
-        book2Question5?.type = 3
+        book2Question5?.type = 2
         book2Question5?.order = 5
 //        book2Question3?.signLanguage = "sl_b2_q3"
 //        book2Question3?.illustration = "il_b2_q3"
@@ -439,7 +439,7 @@ struct DataFeedManager {
         // MARK: Create Q&A PG 2 Bu, tolong Sarah
         let book2Question6 = PersistenceController.shared.create(Question.self)
         book2Question6?.name = "Pilih gambar di bawah yang menunjukkan hal yang tepat untuk menggunakan kata tolong?"
-        book2Question6?.type = 3
+        book2Question6?.type = 2
         book2Question6?.order = 6
 //        book2Question3?.signLanguage = "sl_b2_q3"
 //        book2Question3?.illustration = "il_b2_q3"
