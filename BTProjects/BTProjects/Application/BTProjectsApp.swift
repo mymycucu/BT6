@@ -13,7 +13,7 @@ struct BTProjectsApp: App {
         
     var body: some Scene {
         WindowGroup {
-            ConnectImages()
+            ContentView()
                 .environmentObject(appState)
             
         }

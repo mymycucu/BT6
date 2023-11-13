@@ -13,6 +13,7 @@ struct LearningModuleView: View {
     var book: Book
     @State var isSearching = false
     @State var bookScene = 2
+    
     var body: some View {
         ZStack{
             
@@ -20,7 +21,7 @@ struct LearningModuleView: View {
 //                Text(appState.book.name ?? "null")
                 TabView(selection: $bookScene){
                     ForEach(0..<book.story.count-1, id: \.self){ idx in
-                        StoryView()
+                        StoryView(isMenu: .constant(false))
                             .ignoresSafeArea()
                             .highPriorityGesture(DragGesture())
                             .tag(idx)
