@@ -25,21 +25,24 @@ struct TripleChoiceView: View {
 
     @State private var selectedAnswer: Int?
     
-
+    //MARK: Header Binding
+    @Binding var isMenu: Bool
+    @State var isDisabled: Bool = false
+    
+    @State var viewState: ViewState = .quiz
+    @State var currentQuiz: Int = 8
+    @State var totalQuiz: Int = 8
 
     
     var body: some View {
         ZStack {
             
-            TripleChoiceBackground()
+            Background(viewState: $viewState)
             
             // Use ForEach to loop through the data array
-            
             VStack {
                 
-                TripleChoiceTopBar()
-                    .padding(.horizontal, 30)
-                    .padding(.top, 50)
+                Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: $currentQuiz, totalQuiz: $totalQuiz)
 
                 ForEach(dataArray) { data in
                     
@@ -68,19 +71,22 @@ struct TripleChoiceView: View {
                     }
                     .id(data.id) // Explicitly specify a unique identifier
                 }
-
-                
-                
-                TripleChoiceBottomBar()
-                    .padding(.horizontal, 30)
-                    .padding(.bottom, 30)
+                Spacer()
                 
             }
+            .padding(38)
+            
+            VStack{
+                
+                Spacer()
+                Footer(footerState: $viewState, isDisabled: $isDisabled)
+            }
+            .padding(38)
         }
     }
 }
 
 #Preview {
-    TripleChoiceView()
+    TripleChoiceView(isMenu: .constant(false))
 }
 

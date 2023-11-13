@@ -7,26 +7,22 @@
 
 import SwiftUI
 
-enum HeaderState {
-    case story
-    case quiz
-}
 
 struct Header: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var isMenu: Bool
-    @Binding var headerState: HeaderState
+    @Binding var headerState: ViewState
     @Binding var currentQuiz: Int
     @Binding var totalQuiz: Int
     
-    init(isMenu: Binding<Bool>, headerState: Binding<HeaderState>) {
+    init(isMenu: Binding<Bool>, headerState: Binding<ViewState>) {
         _isMenu = isMenu
         _headerState = headerState
         _currentQuiz =  Binding.constant(0)
         _totalQuiz = Binding.constant(0)
     }
     
-    init(isMenu: Binding<Bool>, headerState: Binding<HeaderState>, currentQuiz: Binding<Int>, totalQuiz: Binding<Int>) {
+    init(isMenu: Binding<Bool>, headerState: Binding<ViewState>, currentQuiz: Binding<Int>, totalQuiz: Binding<Int>) {
             _isMenu = isMenu
             _headerState = headerState
             _currentQuiz = currentQuiz
@@ -44,10 +40,10 @@ struct Header: View {
             }
             .buttonStyle(CircularButtonStyle())
             
-            if headerState == .story{
-                Spacer()
-            } else {
+            if headerState == .quiz{
                 ProgressBar(totalWords: $totalQuiz, step: $currentQuiz)
+            } else {
+               Spacer()
             }
             
             Button(action: {

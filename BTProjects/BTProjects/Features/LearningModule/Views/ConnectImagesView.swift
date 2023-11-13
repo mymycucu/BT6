@@ -46,7 +46,9 @@ struct ConnectImagesView: View {
     
     //MARK: Header Binding
     @Binding var isMenu: Bool
-    @State var headerState: HeaderState = .quiz
+    @State var isDisabled: Bool = false
+    
+    @State var viewState: ViewState = .quiz
     @State var currentQuiz: Int = 8
     @State var totalQuiz: Int = 8
     
@@ -94,7 +96,7 @@ struct ConnectImagesView: View {
         
         VStack(alignment: .center, spacing: 0){
             //MARK: Quiz Header
-            Header(isMenu: $isMenu, headerState: $headerState, currentQuiz: $currentQuiz, totalQuiz: $totalQuiz)
+            Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: $currentQuiz, totalQuiz: $totalQuiz)
             
             ZStack {
                 HStack (spacing: 0){
@@ -212,30 +214,7 @@ struct ConnectImagesView: View {
                 .padding(.vertical, 20)
                 .padding(.bottom, 60)
                 
-                //MARK: Navigation Previous-Next Button
-                VStack {
-                    Spacer()
-                    HStack{
-                        Button(action: {
-                            //action
-                        }) {
-                            Image(systemName: "arrowshape.left.fill")
-                                .font(.Button)
-                        }
-                        .buttonStyle(CircularButtonStyle())
-                        
-                        Spacer()
-                        Button(action: {
-                            //action
-                        }) {
-                            Image(systemName: "arrowshape.right.fill")
-                                .font(.Button)
-                        }
-                        .buttonStyle(CircularButtonStyle(disabled: disableNext))
-                        
-                        
-                    }
-                }
+                
                 
                 //MARK: Draw Connecting Line
                 ForEach(leftImagesPoint, id:\.id){ left in
@@ -268,34 +247,18 @@ struct ConnectImagesView: View {
                         
                     }
                 }
+                
+                
+                VStack(spacing: 0){
+                    Spacer()
+                    Footer(footerState: $viewState, isDisabled: $isDisabled)
+                }
             }
         }
-        .padding(.horizontal, 40)
-        .padding(.vertical, 20)
+        .padding(38)
         //MARK: Background
         .background(
-            ZStack{
-                RadialGradient(
-                    gradient: Gradient(
-                        stops: [
-                            .init(color: .PB600.opacity(0.8), location: 0), // Starting around $0% from the center
-                            .init(color: .PB600, location: 0.8) // Strating 0.8
-                        ]
-                    ),
-                    center: UnitPoint(x: 0.5, y: 1.5),
-                    startRadius: 0,
-                    endRadius: 1500
-                )
-                .edgesIgnoringSafeArea(.all)
-                Image("background")
-                    .resizable()
-                    .scaledToFill()
-                    .opacity(0.1)
-                    .edgesIgnoringSafeArea(.all)
-                
-                
-            }
-            
+            Background(viewState: $viewState)
             
         )
         //MARK: OnAppear
@@ -432,6 +395,6 @@ struct ConnectImagesView: View {
     
 }
 
-#Preview {
-    ConnectImagesView(isMenu: .constant(false))
-}
+//#Preview {
+//    ConnectImagesView(isMenu: .constant(false))
+//}

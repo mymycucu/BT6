@@ -8,15 +8,29 @@
 import SwiftUI
 
 struct Footer: View {
-    @Binding var headerState: HeaderState
+    @Binding var footerState: ViewState
+    @Binding var isDisabled: Bool
     var words: String
     var highlightWord: String
+    
+    init(footerState: Binding<ViewState>, isDisabled:Binding<Bool>, words: String, highlightWord: String) {
+        _footerState = footerState
+        _isDisabled = isDisabled
+        self.words =  words
+        self.highlightWord = highlightWord
+    }
+    
+    init(footerState: Binding<ViewState>, isDisabled:Binding<Bool>) {
+        _footerState = footerState
+        _isDisabled = isDisabled
+        words =  " "
+        highlightWord = " "
+    }
     
     var body: some View {
         
         HStack (spacing: 15 ){
             // MARK: Back Button
-            
             Button(action: {
                 
             }) {
@@ -25,7 +39,7 @@ struct Footer: View {
             }
             .buttonStyle(CircularButtonStyle())
             
-            if headerState == .story{
+            if footerState == .story{
                 StoryText(words: words, highlightWord: highlightWord)
             } else {
                 Spacer()
@@ -33,14 +47,30 @@ struct Footer: View {
             
             
             // MARK: Next Button
-            
-            Button(action: {
+            if footerState != .summary{
+                Button(action: {
+                    
+                }) {
+                    Image(systemName: "arrowshape.right.fill")
+                        .font(.Button)
+                }
+                .buttonStyle(CircularButtonStyle(disabled: isDisabled))
                 
-            }) {
-                Image(systemName: "arrowshape.right.fill")
-                    .font(.Button)
+            } else {
+                
+                Button(action: {
+                    // Your action here
+                }) {
+                    HStack(alignment: .center){
+                        Text("Lanjut Latihan")
+                            .font(.Caption_Medium)
+                        Image(systemName: "arrowshape.right.fill")
+                            .font(.Button)
+                    }
+                }
+                .buttonStyle(RoundedButtonStyle())
             }
-            .buttonStyle(CircularButtonStyle())
+            
             
         }
         .frame(height: 105)

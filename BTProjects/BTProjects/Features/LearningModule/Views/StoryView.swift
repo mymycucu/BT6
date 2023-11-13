@@ -9,7 +9,8 @@ import SwiftUI
 
 struct StoryView: View {
     @Binding var isMenu: Bool
-    @State var headerState: HeaderState = .story
+    @State var isDisabled: Bool = false
+    @State var viewState: ViewState = .story
     
     // Custom Identifiable struct for your data
     struct StoryData: Identifiable {
@@ -30,11 +31,11 @@ struct StoryView: View {
             // Use ForEach to loop through the data array
             ForEach(dataArray) { data in
                 ZStack {
-                    StoryBackground(illustration: data.illustration)
+                    Background(viewState: $viewState, illustration: data.illustration)
                     
                     VStack(spacing:0){
                         
-                        Header(isMenu: $isMenu, headerState: $headerState)
+                        Header(isMenu: $isMenu, headerState: $viewState)
                         
                         Spacer()
                         StoryVideo(videoURL: data.signLanguage)
@@ -42,7 +43,7 @@ struct StoryView: View {
                             .padding(.vertical, 80)
               
                         Spacer()
-                        Footer(headerState: $headerState, words: data.words, highlightWord: data.highlightWord)
+                        Footer(footerState: $viewState, isDisabled: $isDisabled, words: data.words, highlightWord: data.highlightWord)
                     }
                     .padding(38)
                     

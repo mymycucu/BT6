@@ -23,11 +23,12 @@ struct BookCoverView: View {
 //    let dataArray: [StoryCover] = [
 //        StoryCover(storyThumbnail: "story_cover", storyPages: 13, storyTitle: "Tolong Sarah, Bu!", canStartQuiz: false)
 //    ]
+    @State var viewState: ViewState = .normal
     
     var body: some View {
         ZStack {
             
-            StoryCoverBackground()
+            Background(viewState: $viewState)
             
             HStack {
                 

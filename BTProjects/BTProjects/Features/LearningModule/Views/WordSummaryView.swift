@@ -8,11 +8,51 @@
 import SwiftUI
 
 struct WordSummaryView: View {
+    @Binding var isMenu: Bool
+    @State var viewState: ViewState = .summary
+    @State var background: String = "background-word-summary"
+    @State var word: String = "bahaya"
+    @State var isDisabled: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ZStack{
+                //MARK: Background
+                Background(viewState: $viewState, illustration: background)
+                
+                VStack(spacing: 0){
+                    Header(isMenu: $isMenu, headerState: $viewState)
+                        
+                        
+                    Text(word)
+                        .foregroundStyle(.white)
+                        .font(.Heading1_Semibold)
+                        .underline()
+                        .padding(.bottom, 50)
+                    SummaryVideo()
+                        
+                    Spacer()
+                        
+                    
+                }
+                .padding( 38)
+                
+                VStack(spacing: 0){
+                    Spacer()
+                    
+                    Footer(footerState: $viewState, isDisabled: $isDisabled)
+                    
+                }
+                .padding(38)
+                
+
+            }
+        }
+        
+        
+        
     }
 }
 
 #Preview {
-    WordSummaryView()
+    WordSummaryView(isMenu: .constant(false))
 }
