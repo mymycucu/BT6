@@ -7,12 +7,23 @@
 
 import SwiftUI
 
-struct QuizDone: View {
+struct QuizDoneView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            
+            QuizDoneBackground()
+            
+            VStack {
+                QuizDoneContent()
+                
+                QuizDoneButtons()
+                    .padding(.top, 50)
+            }
+            
+        }
     }
 }
 
 #Preview {
-    QuizDone()
+    QuizDoneView()
 }

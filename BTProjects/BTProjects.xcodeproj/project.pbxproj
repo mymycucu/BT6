@@ -14,6 +14,10 @@
 		05025D512AE77FD100178653 /* Fredoka-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05025D4C2AE77FD100178653 /* Fredoka-Bold.ttf */; };
 		05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D532AE7817E00178653 /* ExtensionColors.swift */; };
 		05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D552AE78AE200178653 /* ExtensionFonts.swift */; };
+		053029E62B02462E007D4D97 /* QuizDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053029E52B02462E007D4D97 /* QuizDoneView.swift */; };
+		053029E92B024640007D4D97 /* QuizDoneBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053029E82B024640007D4D97 /* QuizDoneBackground.swift */; };
+		053029EB2B024672007D4D97 /* QuizDoneButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053029EA2B024672007D4D97 /* QuizDoneButtons.swift */; };
+		053029ED2B02468C007D4D97 /* QuizDoneContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053029EC2B02468C007D4D97 /* QuizDoneContent.swift */; };
 		055ED2432B00711C000896E7 /* BookCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055ED2422B00711C000896E7 /* BookCoverView.swift */; };
 		055ED2472B007241000896E7 /* StoryCoverBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055ED2462B007241000896E7 /* StoryCoverBackground.swift */; };
 		055ED2492B0072AB000896E7 /* StoryCoverBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055ED2482B0072AB000896E7 /* StoryCoverBook.swift */; };
@@ -116,6 +120,10 @@
 		05025D522AE77FDE00178653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		05025D532AE7817E00178653 /* ExtensionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
 		05025D552AE78AE200178653 /* ExtensionFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFonts.swift; sourceTree = "<group>"; };
+		053029E52B02462E007D4D97 /* QuizDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDoneView.swift; sourceTree = "<group>"; };
+		053029E82B024640007D4D97 /* QuizDoneBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDoneBackground.swift; sourceTree = "<group>"; };
+		053029EA2B024672007D4D97 /* QuizDoneButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDoneButtons.swift; sourceTree = "<group>"; };
+		053029EC2B02468C007D4D97 /* QuizDoneContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDoneContent.swift; sourceTree = "<group>"; };
 		055ED2422B00711C000896E7 /* BookCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverView.swift; sourceTree = "<group>"; };
 		055ED2462B007241000896E7 /* StoryCoverBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCoverBackground.swift; sourceTree = "<group>"; };
 		055ED2482B0072AB000896E7 /* StoryCoverBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCoverBook.swift; sourceTree = "<group>"; };
@@ -244,6 +252,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		053029E72B024633007D4D97 /* QuizDone */ = {
+			isa = PBXGroup;
+			children = (
+				053029E82B024640007D4D97 /* QuizDoneBackground.swift */,
+				053029EA2B024672007D4D97 /* QuizDoneButtons.swift */,
+				053029EC2B02468C007D4D97 /* QuizDoneContent.swift */,
+			);
+			path = QuizDone;
+			sourceTree = "<group>";
+		};
 		055ED2452B007225000896E7 /* StoryCover */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +340,7 @@
 		059ED8352AFA129C00AB7630 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				053029E72B024633007D4D97 /* QuizDone */,
 				AD6470932B02249700B275D4 /* QuizHeader.swift */,
 				AD6470912B02247E00B275D4 /* ProgressBar.swift */,
 				D4C515FA2AFA17D5001A97E5 /* WordSummary */,
@@ -630,6 +649,7 @@
 				057EDE0F2AFE332900A85B51 /* TripleChoiceView.swift */,
 				055ED2422B00711C000896E7 /* BookCoverView.swift */,
 				AD751D282B01E852002B3033 /* BookView.swift */,
+				053029E52B02462E007D4D97 /* QuizDoneView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -788,6 +808,7 @@
 				059ED8402AFA129C00AB7630 /* StoryText.swift in Sources */,
 				AD7551312AFE50F0006842B5 /* VideoPlayerController.swift in Sources */,
 				059ED8542AFA1A4B00AB7630 /* TirukanCamera.swift in Sources */,
+				053029E62B02462E007D4D97 /* QuizDoneView.swift in Sources */,
 				0596F83E2AFB72C900328297 /* ARSCNCameraContainer.swift in Sources */,
 				AD7551402AFFFC48006842B5 /* BTProjectsApp.swift in Sources */,
 				ADBE942B2AFB64DC008A1390 /* coreDataTestView.swift in Sources */,
@@ -807,6 +828,7 @@
 				059ED84A2AFA15FE00AB7630 /* TirukanTopBar.swift in Sources */,
 				057EDDE22AFB9D2500A85B51 /* LottieView.swift in Sources */,
 				059ED8502AFA180500AB7630 /* TirukanVideo.swift in Sources */,
+				053029EB2B024672007D4D97 /* QuizDoneButtons.swift in Sources */,
 				0596F83C2AFB728500328297 /* ARSCNCameraView.swift in Sources */,
 				057EDDF92AFC8CA300A85B51 /* MultipleChoiceProgressBar.swift in Sources */,
 				059ED83E2AFA129C00AB7630 /* StoryTopBar.swift in Sources */,
@@ -816,6 +838,7 @@
 				AD4D95792AFE45C10035E006 /* SummaryHeader.swift in Sources */,
 				ADBE942F2AFB8BB0008A1390 /* AppState.swift in Sources */,
 				AD4D95742AFE45AA0035E006 /* HomeViewModel.swift in Sources */,
+				053029ED2B02468C007D4D97 /* QuizDoneContent.swift in Sources */,
 				ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */,
 				057EDDF52AFC8C4600A85B51 /* MultipleChoiceView.swift in Sources */,
 				057EDE162AFE346F00A85B51 /* TripleChoiceBottomBar.swift in Sources */,
@@ -847,6 +870,7 @@
 				AD751D292B01E852002B3033 /* BookView.swift in Sources */,
 				057EDDFF2AFC8DFA00A85B51 /* MultipleChoiceBottomBar.swift in Sources */,
 				AD4D956B2AFE45420035E006 /* CategoryMenu.swift in Sources */,
+				053029E92B024640007D4D97 /* QuizDoneBackground.swift in Sources */,
 				ADBE94272AFB62F2008A1390 /* CodingUserInfoKeyExtention.swift in Sources */,
 				ADBE94582AFCB6F7008A1390 /* StoryPage.swift in Sources */,
 				D4B3F37C2B00A264008F105F /* ThumbnailPage.swift in Sources */,
