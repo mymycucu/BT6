@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StoryCoverContent: View {
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var storyPages: Int
     var storyTitle: String
     @State var canStartQuiz: Bool
@@ -17,7 +17,7 @@ struct StoryCoverContent: View {
         VStack (alignment: .leading) {
             // MARK: Back Button
             Button(action: {
-                        // Add your action code here
+                presentationMode.wrappedValue.dismiss()
                     }) {
                         
                         HStack(alignment: .center, spacing: 0) {

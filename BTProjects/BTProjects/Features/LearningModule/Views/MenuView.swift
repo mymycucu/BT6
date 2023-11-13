@@ -18,7 +18,7 @@ struct QuestionCover: Identifiable {
   }
 
 struct MenuView: View {
-    @Binding var show : Bool
+    @Binding var isMenu : Bool
     
     @State var isSelectStory: Int?
     @State var isSelectQuestion: Int?
@@ -93,9 +93,9 @@ struct MenuView: View {
             
             
             Button(action: {
-                show.toggle()
+                isMenu.toggle()
             }) {
-                Image(systemName: "xmark.circle")
+                Image(systemName: "xmark")
                     .font(.Button)
             }
             .buttonStyle(CircularButtonStyle())
@@ -108,10 +108,10 @@ struct MenuView: View {
         .background(
             Color.primary.opacity(0.7)
         )
-        
+        .animation(.easeInOut, value: isMenu)
     }
 }
 
-//#Preview {
-//    MenuView()
-//}
+#Preview {
+    MenuView(isMenu: .constant(true))
+}

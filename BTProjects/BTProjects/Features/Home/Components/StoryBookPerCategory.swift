@@ -27,7 +27,7 @@ struct StoryBookPerCategory: View {
             ){
                 ForEach(category.book, id: \.self){ book in
                     NavigationLink(destination: {
-                        StoryView().navigationBarBackButtonHidden(true)
+                        BookView(book: book).navigationBarBackButtonHidden(true)
                     }, label:{
                         StoryBook(storyThumbnail: "il_b_default", storyTitle: book.name ?? "bookname")
                         
