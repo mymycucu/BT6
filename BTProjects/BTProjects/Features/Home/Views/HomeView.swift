@@ -93,6 +93,14 @@ struct HomeView: View {
     }
 }
 
+<<<<<<< HEAD
+
+struct Cat: Identifiable, Hashable, Equatable {
+    let id = UUID()
+    let colors: Color
+    
+    
+=======
 struct CardView: View{
     var body: some View{
         Rectangle()
@@ -101,6 +109,7 @@ struct CardView: View{
             .border(Color.black)
             .padding()
     }
+>>>>>>> a5a0b0139b5300b23f77bb52897ff529bd94ae60
 }
 
 #Preview {
