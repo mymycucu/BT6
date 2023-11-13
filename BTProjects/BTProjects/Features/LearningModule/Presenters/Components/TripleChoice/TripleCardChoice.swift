@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct TripleCardChoice: View {
-    @State var imageTitle: String = "story_dummy"
+    @State var imageTitle: String
     @State var containerColor: Color = .white
     @State var containerOpacity: Bool = true
     @State var containerShadowColor: Color = Color.PB300
     @State var isSelected: Bool = false
     @State var isAnimate: Bool = false
-
+    
+    @Binding var correctAnswer: Bool
+    
+    @State var isCorrect: Bool = false
+    
     var body: some View {
         ZStack(alignment: .topLeading){
             //MARK: Container Shadow
@@ -33,7 +37,7 @@ struct TripleCardChoice: View {
                 .padding(.bottom, 6.7)
             
             //MARK: Image
-            Image("story_dummy")
+            Image(imageTitle)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 285, height: 190)
@@ -42,26 +46,43 @@ struct TripleCardChoice: View {
                 .padding(.leading, isAnimate ? 14.7 : 8)
         }
         .onTapGesture {
+            isSelected.toggle()
+            
+        }
+        
+        
+        .onChange(of: isSelected) {
             withAnimation(Animation.spring(duration: 0.1)) {
-                isSelected.toggle()
                 isAnimate.toggle()
                 containerOpacity.toggle()
-                if isSelected == true {
-                    containerShadowColor = .white
-                } else {
-                    containerShadowColor = .white
-                }
-
+                containerShadowColor = .white
+//                if isCorrect && isSelected {
+//                    containerShadowColor = .white
+//                } else {
+//                    containerShadowColor = .white
+//                }
+                
                 
             }
             // Additional delayed animations
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                withAnimation (Animation.spring(duration: 0.2))  {
+                withAnimation (Animation.bouncy(duration: 0.2))  {
                     isAnimate.toggle()
-                    if isSelected == true  {
+                    if isSelected {
                         containerOpacity.toggle()
-                        containerColor = .Green2
-                        containerShadowColor = .Green3
+                        containerColor = correctAnswer ? .Green2 : .Red2
+                        containerShadowColor = correctAnswer ? .Green3 : .Red3
+                        if !correctAnswer{
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                                withAnimation(Animation.bouncy(duration: 0.2)){
+                                    isSelected = false
+                                    
+                                }
+                            }
+                        }else{
+                            isCorrect = correctAnswer
+                        }
+                        
                     } else {
                         containerOpacity.toggle()
                         containerColor = .white
@@ -70,11 +91,26 @@ struct TripleCardChoice: View {
                     
                 }
             }
+            
+//            if !correctAnswer {
+//                withAnimation(Animation.bouncy(duration: 0.1)) {
+//                    isAnimate.toggle()
+//                    containerOpacity.toggle()
+//                    containerColor = .white
+//                    containerShadowColor = .PB300
+////
+//                }
+//
+//
+//            }
+ 
         }
+        .disabled(isCorrect)
         .frame(width: 308, height: 212)
+        
     }
 }
 
-#Preview {
-    TripleCardChoice()
-}
+//#Preview {
+//    TripleCardChoice()
+//}

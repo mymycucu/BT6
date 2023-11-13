@@ -46,16 +46,12 @@ struct MultipleCardChoice: View {
                 .padding(.leading, isAnimate ? 14.7 : 8)
         }
         .onChange(of: isSelected){
-            withAnimation(Animation.spring(duration: 0.1)) {
+            withAnimation(Animation.bouncy(duration: 0.1)) {
 //                onTap()
 //                isSelected.toggle()
                 isAnimate.toggle()
                 containerOpacity.toggle()
-                if isSelected {
-                    containerShadowColor = .white
-                } else {
-                    containerShadowColor = .white
-                }
+                containerShadowColor = .white
 
                 
             }

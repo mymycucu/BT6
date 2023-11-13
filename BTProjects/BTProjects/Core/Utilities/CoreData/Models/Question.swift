@@ -28,4 +28,8 @@ public class Question: NSManagedObject, Decodable {
         self.isDone = try container.decode(Bool.self, forKey: .isDone)
         self.answers = try container.decode(Set<Answer>.self, forKey:.answers) as NSSet
     }
+    
+    var lstAnswers: [Answer] {
+        ((answers?.allObjects as? [Answer]) ?? [Answer]())
+    }
 }

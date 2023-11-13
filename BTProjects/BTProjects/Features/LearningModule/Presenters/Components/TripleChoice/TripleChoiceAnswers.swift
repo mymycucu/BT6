@@ -8,36 +8,47 @@
 import SwiftUI
 
 struct TripleChoiceAnswers: View {
+    var answers: [String]
+    var correctAnswer: [String]
+    var tripleChoiceIllustration: String
+    @Binding var selectedAnswer: Int?
+    
+    @State private var isCorrect: Bool = false
+    
+    @State var isSelected: Bool = false
+    
+//    @State var allCorrectIndex: [Int] = []
+    
+
     var body: some View {
-        
-        HStack (spacing: 35) {
-            // MARK: First Answer
-            Button(action: {
-                // Add your action code here
-            }) {
-//                MultipleCardChoice()
+        HStack {
+            ForEach(0..<answers.count) { index in
+                TripleCardChoice(
+                    imageTitle: tripleChoiceIllustration,
+                    correctAnswer: Binding(
+                        get: { correctAnswer.contains(answers[index])},
+                        set: { newValue in
+                            selectedAnswer = newValue ? index : nil
 
-            }
-
-            // MARK: Second Answer
-            Button(action: {
-                // Add your action code here
-            }) {
-//                MultipleCardChoice()
+                        }
+                    )
+                        
+                        
+                )
+                .padding(.horizontal, 8)
+//                .onAppear{
+//                    allCorrectIndex.append(index)
+//                }
                 
-            }
-            
-            // MARK: Third Answer
-            Button(action: {
-                // Add your action code here
-            }) {
-//                MultipleCardChoice()
                 
             }
         }
     }
 }
 
-#Preview {
-    TripleChoiceAnswers()
-}
+
+
+
+//#Preview {
+//    TripleChoiceAnswers()
+//}

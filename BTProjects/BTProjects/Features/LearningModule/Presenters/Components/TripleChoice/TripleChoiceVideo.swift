@@ -11,6 +11,8 @@ import AVKit
 struct TripleChoiceVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
+    
+    var videoURL: String
 
     var body: some View {
         
@@ -21,13 +23,12 @@ struct TripleChoiceVideo: View {
             
             if let player = player {
                 VideoPlayerController(player: player)
-                    .frame(width: 479, height: 322)
-                    .cornerRadius(16)
-                    .padding(8)
+                    .frame(width: 463, height: 306)
+                    .cornerRadius(22)
+//                    .padding(8)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                        .inset(by: 1.35)
-                        .stroke(Color.white, style: StrokeStyle(lineWidth: 2.71, dash: [10.3, 10.3]))
+                        RoundedRectangle(cornerRadius: 28)
+                            .stroke(Color.Blue1, lineWidth: 7) // Use your desired stroke color
                     )
 
             }
@@ -61,7 +62,7 @@ struct TripleChoiceVideo: View {
             
             //MARK: Video Path
             
-            let url = URL(fileURLWithPath: Bundle.main.path(forResource: "dummy", ofType: "mp4")!)
+            let url = URL(fileURLWithPath: Bundle.main.path(forResource: videoURL, ofType: "mp4")!)
             player = AVPlayer(url: url)
         
             player?.isMuted = true // Video condition is muted
@@ -85,6 +86,6 @@ struct TripleChoiceVideo: View {
     }
 }
 
-#Preview {
-    TripleChoiceVideo()
-}
+//#Preview {
+//    TripleChoiceVideo()
+//}

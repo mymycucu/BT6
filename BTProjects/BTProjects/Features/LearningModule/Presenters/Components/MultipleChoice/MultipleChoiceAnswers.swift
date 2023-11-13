@@ -28,7 +28,7 @@ struct MultipleChoiceAnswers: View {
                     ),
                     correctAnswer: answers[index] == correctAnswer
                 )
-                .padding(.horizontal, 5)
+                .padding(.horizontal, 8)
                 .onTapGesture {
                     selectedAnswer = index
                     isCorrect = answers[index] == correctAnswer

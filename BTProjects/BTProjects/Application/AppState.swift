@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 class AppState: ObservableObject {
-    @Published var book : Book
+//    @Published var book : Book
     
     let persistenceController = PersistenceController.shared
     
@@ -18,7 +18,7 @@ class AppState: ObservableObject {
     
     init(preview: Bool = false) {
         self.preview = preview
-        self.book = Book()
+//        self.book = Book()
         if !firstRun {
             appDataInit()
             firstRun = true
