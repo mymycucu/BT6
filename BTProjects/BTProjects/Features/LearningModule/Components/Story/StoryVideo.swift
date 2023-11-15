@@ -19,8 +19,15 @@ struct StoryVideo: View {
         ZStack {
             
             //MARK: Video Container
+            ///3D effect
+            RoundedRectangle(cornerRadius: 22)
+                .fill(Color.PB500)
+                .frame(width: 310, height: 400)
+                .offset(x:4, y:4)
+                .shadow(color: Color.white.opacity(0.3), radius: 2, x: 4, y: 4)
             
             if let player = player {
+                
                 VideoPlayerController(player: player)
                     .frame(width: 310, height: 400)
                     .cornerRadius(22)
@@ -28,11 +35,9 @@ struct StoryVideo: View {
                         RoundedRectangle(cornerRadius: 22)
                             .stroke(Color.PB500, lineWidth: 8) // Use your desired stroke color
                     )
-                    .shadow(color: Color.white.opacity(0.3), radius: 5, x: 0, y: 5)
             }
 
             //MARK: Replay Button
-            
             if isVideoFinished {
                 Button(action: {
                     // Start the video from the beginning

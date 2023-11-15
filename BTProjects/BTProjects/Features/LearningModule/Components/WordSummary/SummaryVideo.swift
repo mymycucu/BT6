@@ -32,7 +32,7 @@ struct SummaryVideo: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 32)
                             .inset(by: 1)
-                            .stroke(Color.PB500, lineWidth: 12)
+                            .stroke(Color.PB500, lineWidth: 6)
                         
                     )
             }

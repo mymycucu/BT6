@@ -14,16 +14,16 @@ struct MultipleChoiceImage: View {
     var body: some View {
         ZStack {
             Image(illustration)
-            .frame(width: 467, height: 310)
-            .cornerRadius(16)
-            .padding(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                .inset(by: 1.35)
-                .stroke(Color.white, style: StrokeStyle(lineWidth: 2.71, dash: [10.3, 10.3]))
-            )
+                .frame(width: 455, height: 298)
+                .cornerRadius(16)
+                .padding(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .inset(by: 1.35)
+                        .stroke(Color.white, style: StrokeStyle(lineWidth: 2.71, lineCap: .round, dash: [10.3, 10.3]))
+                )
         }
-            
+        
     }
 }
 

@@ -76,14 +76,15 @@ struct TripleChoiceView: View {
                 Spacer()
                 
             }
-            .padding(38)
+            .padding(.horizontal,27)
+            .padding(.vertical,36)
             
-            VStack{
-                
+            VStack {
                 Spacer()
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
-            .padding(38)
+            .padding(.horizontal,27)
+            .padding(.vertical,36)
         }
     }
 }

@@ -24,9 +24,8 @@ struct TirukanView: View {
             Background(viewState: viewState)
 
             VStack {
-                
                 Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
-
+                
                 TirukanText(kata: kata)
                 
                 Spacer()
@@ -42,11 +41,11 @@ struct TirukanView: View {
                 
                 Spacer()
                 
-//                TirukanBottomBar(isOverlayVisible: $isOverlayVisible)
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
                 
             }
-            .padding(38)
+            .padding(.horizontal,27)
+            .padding(.vertical,36)
         }
         .overlay(
                 isOverlayVisible ?

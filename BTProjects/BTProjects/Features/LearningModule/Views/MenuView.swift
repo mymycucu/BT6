@@ -96,7 +96,6 @@ struct MenuView: View {
         })
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .padding(.top, 43)
         .background(
             Color.primary.opacity(0.7)
         )

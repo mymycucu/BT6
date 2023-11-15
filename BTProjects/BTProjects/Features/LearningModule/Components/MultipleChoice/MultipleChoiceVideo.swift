@@ -25,7 +25,7 @@ struct MultipleChoiceVideo: View {
                     .cornerRadius(22)
                     .overlay(
                         RoundedRectangle(cornerRadius: 28)
-                            .stroke(Color.Blue1, lineWidth: 7) // Use your desired stroke color
+                            .stroke(Color.Blue1, lineWidth: 6) // Use your desired stroke color
                     )
 
             }
@@ -46,6 +46,7 @@ struct MultipleChoiceVideo: View {
                 .buttonStyle(ReplayButtonStyle())
             }
         }
+        .frame(width: 463, height: 306)
         .onAppear {
             
             //MARK: Video Path

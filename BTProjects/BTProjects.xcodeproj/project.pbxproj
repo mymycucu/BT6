@@ -58,7 +58,6 @@
 		AD4D956F2AFE456B0035E006 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D956D2AFE456B0035E006 /* HomeView.swift */; };
 		AD4D95742AFE45AA0035E006 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D95732AFE45AA0035E006 /* HomeViewModel.swift */; };
 		AD4D957A2AFE45C10035E006 /* SummaryVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D95782AFE45C10035E006 /* SummaryVideo.swift */; };
-		AD4D958C2AFE46D10035E006 /* Image3DContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D958A2AFE46D10035E006 /* Image3DContainer.swift */; };
 		AD4D958D2AFE46D10035E006 /* ImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D958B2AFE46D10035E006 /* ImageContainer.swift */; };
 		AD6470922B02247E00B275D4 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6470912B02247E00B275D4 /* ProgressBar.swift */; };
 		AD751D292B01E852002B3033 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD751D282B01E852002B3033 /* BookView.swift */; };
@@ -152,7 +151,6 @@
 		AD4D95782AFE45C10035E006 /* SummaryVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryVideo.swift; sourceTree = "<group>"; };
 		AD4D957D2AFE45D80035E006 /* E_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = E_Bisindo.mp4; sourceTree = "<group>"; };
 		AD4D957E2AFE45D80035E006 /* dummy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummy.mp4; sourceTree = "<group>"; };
-		AD4D958A2AFE46D10035E006 /* Image3DContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image3DContainer.swift; sourceTree = "<group>"; };
 		AD4D958B2AFE46D10035E006 /* ImageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContainer.swift; sourceTree = "<group>"; };
 		AD6470912B02247E00B275D4 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressBar.swift; path = BTProjects/Features/LearningModule/Components/ProgressBar.swift; sourceTree = SOURCE_ROOT; };
 		AD751D282B01E852002B3033 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
@@ -616,7 +614,6 @@
 		D42466022AFB7B5E0029D229 /* ConnectImages */ = {
 			isa = PBXGroup;
 			children = (
-				AD4D958A2AFE46D10035E006 /* Image3DContainer.swift */,
 				AD4D958B2AFE46D10035E006 /* ImageContainer.swift */,
 			);
 			path = ConnectImages;
@@ -827,7 +824,6 @@
 				ADBE94502AFB8E35008A1390 /* ContentView.swift in Sources */,
 				ADBE945E2AFCB781008A1390 /* Word.swift in Sources */,
 				ADBE94562AFC88A7008A1390 /* Book.swift in Sources */,
-				AD4D958C2AFE46D10035E006 /* Image3DContainer.swift in Sources */,
 				05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */,
 				ADBE94192AEB5383008A1390 /* BTModel.xcdatamodeld in Sources */,
 				ADBE94292AFB6360008A1390 /* Category.swift in Sources */,

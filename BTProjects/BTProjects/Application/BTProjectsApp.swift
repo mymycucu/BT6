@@ -16,6 +16,7 @@ struct BTProjectsApp: App {
             ContentView()
 //            WordSummaryView(isMenu: Binding.constant(false))
 //            MultipleChoiceView(isMenu: Binding.constant(false))
+//            ConnectImagesView(isMenu: .constant(false), bookScene: .constant(3), maxBookScene: 5)
                 .environmentObject(appState)
             
         }

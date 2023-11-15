@@ -42,7 +42,7 @@ struct imagePosition: Identifiable, Equatable  {
 
 struct ConnectImagesView: View {
     /// orientation
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+//    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     //MARK: Header Binding
     @Binding var isMenu: Bool
@@ -97,173 +97,173 @@ struct ConnectImagesView: View {
     
     var body: some View {
         
-        VStack(alignment: .center, spacing: 0){
-            //MARK: Quiz Header
-            Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
-            
-            ZStack {
-                HStack (spacing: 0){
-                    //MARK: Left Images
-                    VStack (spacing: 12){
-                        ForEach(leftImages.indices, id: \.self) { index in
-                            
-                            ImageContainer(
-                                imageTitle: leftImages[index],
-                                isSelected: Binding(
-                                    get: { leftSelected == index },
-                                    set: { newValue in
-                                        leftSelected = newValue ? index : nil
-                                        rightSelected = nil
-                                    }
-                                ),
-                                position: .left,
-                                /// check  if it's correct
-                                isCorrect: Binding(get: {
-                                    getIsCorrectLeftImage(id: index)
-                                }, set: { Value in
-                                    
-                                }),
-                                /// check  if it's false
-                                isFalse: Binding(get: {
-                                    leftSelected == index && isFalse
-                                }, set: { Value in
-                                    
-                                })
-                            )
-                            //MARK: On Tap Left
-                            .onTapGesture {
-                                if allImagesCorrect == false && isMatchingLeft == false {
-                                    leftSelected =  index
-                                    isMatchingLeft = true
-                                    
-                                }
-                                /// if it's already correct then it cannot be tapped
-                                for item in correctLeftPosition {
-                                    if item.id == index{
-                                        leftSelected = nil
-                                        isMatchingLeft = false
-                                    }
-                                }
-                            }
-                            //MARK: GeoReder Left
-                            .background(GeometryReader { proxy in
-                                Color.clear.onAppear {
-                                    leftImagePosition = CGPoint(x: proxy.frame(in: .global).maxX, y: proxy.frame(in: .global).minY)
-                                    leftImagesPoint.append(imagePosition(id: index, position: leftImagePosition))
-                                }
-                            })
-                            
-                            
-                        }
-                    }
-                    
-                    //MARK: Spacer
-                    Spacer()
-                    
-                    //MARK: Right Images
-                    VStack (spacing: 12){
-                        ForEach(rightImages.indices, id:\.self) { index in
-                            ImageContainer(
-                                imageTitle: rightImages[index],
-                                isSelected: Binding(
-                                    get: { rightSelected == index },
-                                    set: { newValue in
-                                        rightSelected = newValue ? index : nil
-                                        leftSelected = nil
-                                    }
-                                ),
-                                position: .right,
-                                /// check  if it's correct
-                                isCorrect: Binding(get: {
-                                    getIsCorrectRightImage(id: index)
-                                }, set: { Value in
-                                    
-                                }),
-                                /// check if it's false
-                                isFalse: Binding(get: {
-                                    rightSelected == index && isFalse
-                                    
-                                }, set: { Value in
-                                    
-                                })
-                            )
-                            //MARK: On Tap Right
-                            .onTapGesture {
-                                if allImagesCorrect == false && isMatchingRight == false {
-                                    rightSelected =  index
-                                    isMatchingRight = true
-                                    
-                                }
-                                /// if it's already correct then it cannot be tapped
-                                for item in correctRightPosition {
-                                    if item.id == index{
-                                        rightSelected = nil
-                                        isMatchingRight = false
-                                    }
-                                }
-                            }
-                            //MARK: GeoReder Right
-                            .background(GeometryReader { proxy in
-                                Color.clear.onAppear {
-                                    rightImagePosition = CGPoint(x: proxy.frame(in: .global).minX, y: proxy.frame(in: .global).minY)
-                                    rightImagesPoint.append(imagePosition(id: index, position: rightImagePosition))
-                                }
-                            })
-                        }
-                    }
-                }
-                //                .padding(paddingForOrientation())
-                .padding(.horizontal, 122)
-                .padding(.vertical, 20)
-                .padding(.bottom, 60)
-                
-                
-                
-                //MARK: Draw Connecting Line
-                ForEach(leftImagesPoint, id:\.id){ left in
-                    ForEach(rightImagesPoint, id:\.id) { right in
-                        if leftSelected == left.id && rightSelected == right.id {
-                            VStack (spacing: 0){
-                                Path { path in
-                                    path.move(to: CGPoint(x: left.position.x - 35, y: left.position.y + 5))
-                                    path.addLine(to: CGPoint(x: right.position.x - 45, y: right.position.y + 5))
-                                }
-                                .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,10]))
-                                .cornerRadius(10)
-                                
-                            }
-                        }
-                        
-                    }
-                }
-                
-                
-                //MARK: Draw Correct Line
-                ForEach(0..<correctLeftPosition.count, id:\.self){ index in
-                    VStack{
-                        Path { path in
-                            path.move(to: CGPoint(x: correctLeftPosition[index].position.x - 35 , y: correctLeftPosition[index].position.y + 5))
-                            path.addLine(to: CGPoint(x: correctRightPosition[index].position.x - 45, y: correctRightPosition[index].position.y + 5))
-                        }
-                        .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,10]))
-                        .cornerRadius(10)
-                        
-                    }
-                }
-                
-                
-                VStack(spacing: 0){
-                    Spacer()
-                    Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
-                }
-            }
-        }
-        .padding(38)
-        //MARK: Background
-        .background(
+        ZStack {
+            //MARK: Background
             Background(viewState: viewState)
             
-        )
+            //MARK: Quiz Header
+            VStack{
+                Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
+                Spacer()
+            }
+            .padding(.horizontal,27)
+            .padding(.vertical,36)
+            
+            //MARK: Draw Connecting Line
+            ForEach(leftImagesPoint, id:\.id){ left in
+                ForEach(rightImagesPoint, id:\.id) { right in
+                    if leftSelected == left.id && rightSelected == right.id {
+                        VStack (spacing: 0){
+                            Path { path in
+                                path.move(to: CGPoint(x: left.position.x , y: left.position.y))
+                                path.addLine(to: CGPoint(x: right.position.x , y: right.position.y))
+                            }
+                            .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,10]))
+                            .cornerRadius(10)
+                            
+                        }
+                    }
+                    
+                }
+            }
+            
+            
+            //MARK: Draw Correct Line
+            ForEach(0..<correctLeftPosition.count, id:\.self){ index in
+                VStack{
+                    Path { path in
+                        path.move(to: CGPoint(x: correctLeftPosition[index].position.x, y: correctLeftPosition[index].position.y))
+                        path.addLine(to: CGPoint(x: correctRightPosition[index].position.x, y: correctRightPosition[index].position.y))
+                    }
+                    .stroke(Color.PB100, style: StrokeStyle(lineWidth: 6, lineCap: .round, dash: [12,10]))
+                    .cornerRadius(10)
+                    
+                }
+            }
+            
+            
+            HStack (spacing: 0){
+                //MARK: Left Images
+                VStack (spacing: 12){
+                    ForEach(leftImages.indices, id: \.self) { index in
+                        
+                        ImageContainer(
+                            imageTitle: leftImages[index],
+                            isSelected: Binding(
+                                get: { leftSelected == index },
+                                set: { newValue in
+                                    leftSelected = newValue ? index : nil
+                                    rightSelected = nil
+                                }
+                            ),
+                            position: .left,
+                            /// check  if it's correct
+                            isCorrect: Binding(get: {
+                                getIsCorrectLeftImage(id: index)
+                            }, set: { Value in
+                                
+                            }),
+                            /// check  if it's false
+                            isFalse: Binding(get: {
+                                leftSelected == index && isFalse
+                            }, set: { Value in
+                                
+                            })
+                        )
+                        //MARK: On Tap Left
+                        .onTapGesture {
+                            if allImagesCorrect == false && isMatchingLeft == false {
+                                leftSelected =  index
+                                isMatchingLeft = true
+                                
+                            }
+                            /// if it's already correct then it cannot be tapped
+                            for item in correctLeftPosition {
+                                if item.id == index{
+                                    leftSelected = nil
+                                    isMatchingLeft = false
+                                }
+                            }
+                        }
+                        //MARK: GeoReder Left
+                        .background(GeometryReader { proxy in
+                            Color.clear.onAppear {
+                                leftImagePosition = CGPoint(x: proxy.frame(in: .global).maxX, y: proxy.frame(in: .global).midY)
+                                leftImagesPoint.append(imagePosition(id: index, position: leftImagePosition))
+                            }
+                        })
+                        
+                        
+                    }
+                }
+                
+                //MARK: Spacer
+                Spacer()
+                
+                //MARK: Right Images
+                VStack (spacing: 12){
+                    ForEach(rightImages.indices, id:\.self) { index in
+                        ImageContainer(
+                            imageTitle: rightImages[index],
+                            isSelected: Binding(
+                                get: { rightSelected == index },
+                                set: { newValue in
+                                    rightSelected = newValue ? index : nil
+                                    leftSelected = nil
+                                }
+                            ),
+                            position: .right,
+                            /// check  if it's correct
+                            isCorrect: Binding(get: {
+                                getIsCorrectRightImage(id: index)
+                            }, set: { Value in
+                                
+                            }),
+                            /// check if it's false
+                            isFalse: Binding(get: {
+                                rightSelected == index && isFalse
+                                
+                            }, set: { Value in
+                                
+                            })
+                        )
+                        //MARK: On Tap Right
+                        .onTapGesture {
+                            if allImagesCorrect == false && isMatchingRight == false {
+                                rightSelected =  index
+                                isMatchingRight = true
+                                
+                            }
+                            /// if it's already correct then it cannot be tapped
+                            for item in correctRightPosition {
+                                if item.id == index{
+                                    rightSelected = nil
+                                    isMatchingRight = false
+                                }
+                            }
+                        }
+                        //MARK: GeoReder Right
+                        .background(GeometryReader { proxy in
+                            Color.clear.onAppear {
+                                rightImagePosition = CGPoint(x: proxy.frame(in: .global).minX, y: proxy.frame(in: .global).midY)
+                                rightImagesPoint.append(imagePosition(id: index, position: rightImagePosition))
+                            }
+                        })
+                    }
+                }
+            }
+            //                .padding(paddingForOrientation())
+            .padding(.horizontal, 122)
+            .padding(.vertical, 60)
+            
+            //MARK: Footer
+            VStack(spacing: 0){
+                Spacer()
+                Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+            }
+            .padding(.horizontal,27)
+            .padding(.vertical,36)
+        }
         //MARK: OnAppear
         .onAppear{
             /// get left and right images shuffled
@@ -383,17 +383,18 @@ struct ConnectImagesView: View {
         return false
     }
     
-    //MARK: different padding when orientation changed
-    func paddingForOrientation() -> EdgeInsets {
-        if horizontalSizeClass == .compact {
-            // Landscape orientation
-            return EdgeInsets(top: 20, leading: 122, bottom: 60, trailing: 122)
-        } else {
-            // Portrait orientation
-            return EdgeInsets(top: 20, leading: 20, bottom: 60, trailing: 20)
-        }
-    }
+//    //MARK: different padding when orientation changed
+//    func paddingForOrientation() -> EdgeInsets {
+//        if horizontalSizeClass == .compact {
+//            // Landscape orientation
+//            return EdgeInsets(top: 20, leading: 122, bottom: 60, trailing: 122)
+//        } else {
+//            // Portrait orientation
+//            return EdgeInsets(top: 20, leading: 20, bottom: 60, trailing: 20)
+//        }
+//    }
     
 }
+
 
 

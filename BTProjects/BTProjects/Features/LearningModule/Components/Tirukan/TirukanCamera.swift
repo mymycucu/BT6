@@ -28,7 +28,7 @@ struct TirukanCamera: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 28)
                 .inset(by: 1.35)
-                .stroke(Color.white, style: StrokeStyle(lineWidth: 2.71, dash: [10.3, 10.3]))
+                .stroke(Color.white, style: StrokeStyle(lineWidth: 2.71, lineCap: .round, dash: [10.3, 10.3]))
             )
             
         }

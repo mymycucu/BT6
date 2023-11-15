@@ -27,7 +27,7 @@ struct TripleChoiceVideo: View {
                     .cornerRadius(22)
                     .overlay(
                         RoundedRectangle(cornerRadius: 28)
-                            .stroke(Color.Blue1, lineWidth: 7) // Use your desired stroke color
+                            .stroke(Color.Blue1, lineWidth: 6) // Use your desired stroke color
                     )
 
             }
