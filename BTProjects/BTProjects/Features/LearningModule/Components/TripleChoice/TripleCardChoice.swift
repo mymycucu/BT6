@@ -12,12 +12,14 @@ struct TripleCardChoice: View {
     @State var containerColor: Color = .white
     @State var containerOpacity: Bool = true
     @State var containerShadowColor: Color = Color.PB300
-    @State var isSelected: Bool = false
+    @Binding var isSelected: Bool 
     @State var isAnimate: Bool = false
     
     @Binding var correctAnswer: Bool
     
     @State var isCorrect: Bool = false
+    
+    @State var count: Int = 0
     
     var body: some View {
         ZStack(alignment: .topLeading){
@@ -45,50 +47,94 @@ struct TripleCardChoice: View {
                 .padding(.top, isAnimate ? 14.7 : 8)
                 .padding(.leading, isAnimate ? 14.7 : 8)
         }
-        .onTapGesture {
-            isSelected.toggle()
-            
-        }
-        
+//        .onTapGesture {
+//            isSelected.toggle()
+//            
+//        }
+//        
         
         .onChange(of: isSelected) {
-            withAnimation(Animation.spring(duration: 0.1)) {
-                isAnimate.toggle()
-                containerOpacity.toggle()
-                containerShadowColor = .white
-//                if isCorrect && isSelected {
-//                    containerShadowColor = .white
-//                } else {
-//                    containerShadowColor = .white
-//                }
-                
-                
-            }
-            // Additional delayed animations
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                withAnimation (Animation.bouncy(duration: 0.2))  {
+            if count < 1 {
+                count+=1
+                withAnimation(Animation.spring(duration: 0.1)) {
                     isAnimate.toggle()
-                    if isSelected {
-                        containerOpacity.toggle()
-                        containerColor = correctAnswer ? .Green2 : .Red2
-                        containerShadowColor = correctAnswer ? .Green3 : .Red3
-                        if !correctAnswer{
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
-                                withAnimation(Animation.bouncy(duration: 0.2)){
-                                    isSelected = false
-                                    
+                    containerOpacity.toggle()
+                    containerShadowColor = .white
+    //                if isCorrect && isSelected {
+    //                    containerShadowColor = .white
+    //                } else {
+    //                    containerShadowColor = .white
+    //                }
+                    
+                    
+                }
+                // Additional delayed animations
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    withAnimation (Animation.bouncy(duration: 0.2))  {
+                        isAnimate.toggle()
+                        if isSelected {
+                            containerOpacity.toggle()
+                            containerColor = correctAnswer ? .Green2 : .Red2
+                            containerShadowColor = correctAnswer ? .Green3 : .Red3
+                            if !correctAnswer{
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                                    withAnimation(Animation.bouncy(duration: 0.2)){
+                                        isSelected = false
+                                        
+                                    }
                                 }
+                            }else{
+                                isCorrect = correctAnswer
                             }
-                        }else{
-                            isCorrect = correctAnswer
+                            
+                        } else {
+                            containerOpacity.toggle()
+                            containerColor = .white
+                            containerShadowColor = .PB300
                         }
                         
-                    } else {
-                        containerOpacity.toggle()
-                        containerColor = .white
-                        containerShadowColor = .PB300
                     }
+                }
+                
+            } else if !correctAnswer {
+                withAnimation(Animation.spring(duration: 0.1)) {
+                    isAnimate.toggle()
+                    containerOpacity.toggle()
+                    containerShadowColor = .white
+    //                if isCorrect && isSelected {
+    //                    containerShadowColor = .white
+    //                } else {
+    //                    containerShadowColor = .white
+    //                }
                     
+                    
+                }
+                // Additional delayed animations
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    withAnimation (Animation.bouncy(duration: 0.2))  {
+                        isAnimate.toggle()
+                        if isSelected {
+                            containerOpacity.toggle()
+                            containerColor = correctAnswer ? .Green2 : .Red2
+                            containerShadowColor = correctAnswer ? .Green3 : .Red3
+                            if !correctAnswer{
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                                    withAnimation(Animation.bouncy(duration: 0.2)){
+                                        isSelected = false
+                                        
+                                    }
+                                }
+                            }else{
+                                isCorrect = correctAnswer
+                            }
+                            
+                        } else {
+                            containerOpacity.toggle()
+                            containerColor = .white
+                            containerShadowColor = .PB300
+                        }
+                        
+                    }
                 }
             }
             
@@ -105,10 +151,16 @@ struct TripleCardChoice: View {
 //            }
  
         }
-        .disabled(isCorrect)
+//        .disabled(isCorrect)
         .frame(width: 308, height: 212)
         
     }
+    
+//    func countIsSelectedCorrect (correctAnswer: Bool, ) {
+//
+//        
+//        
+//    }
 }
 
 //#Preview {

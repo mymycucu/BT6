@@ -17,6 +17,8 @@ struct TripleChoiceAnswers: View {
     
     @State var isSelected: Bool = false
     
+    @State var count: Int = 0
+    
 //    @State var allCorrectIndex: [Int] = []
     
 
@@ -25,30 +27,49 @@ struct TripleChoiceAnswers: View {
             ForEach(0..<answers.count) { index in
                 TripleCardChoice(
                     imageTitle: tripleChoiceIllustration,
-                    correctAnswer: Binding(
-                        get: { correctAnswer.contains(answers[index])},
+                    isSelected: Binding(
+                        get: { selectedAnswer == index },
                         set: { newValue in
                             selectedAnswer = newValue ? index : nil
-
-                        }
-                    )
+                            
+                        }), 
+                    correctAnswer: Binding(
+                            get: { correctAnswer.contains(answers[index])},
+                            set: { newValue in
+                                selectedAnswer = newValue ? index : nil
+                                
+                            }
+                        )
                         
                         
                 )
                 .padding(.horizontal, 8)
-//                .onAppear{
-//                    allCorrectIndex.append(index)
-//                }
+                .onTapGesture{
+                    if count < 2 {
+                        selectedAnswer = index
+                        if correctAnswer.contains(answers[index]){
+                            count += 1
+                        }
+                    }
+                }
+                .onAppear{
+                    print(index)
+                }
                 
                 
             }
         }
     }
+    
+    
+//    func gotAllCorrectAnswers(correctAnswers: [String], answers: [String] ){
+//        
+//    }
 }
 
 
 
 
-//#Preview {
-//    TripleChoiceAnswers()
-//}
+#Preview {
+    TripleChoiceView(isMenu: .constant(false), bookScene: .constant(5), maxBookScene: 3, currentQuiz: 2, totalQuiz: 12)
+}

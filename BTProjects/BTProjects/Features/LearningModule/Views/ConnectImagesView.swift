@@ -41,9 +41,7 @@ struct imagePosition: Identifiable, Equatable  {
 
 
 struct ConnectImagesView: View {
-    /// orientation
-//    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    
+
     //MARK: Header Binding
     @Binding var isMenu: Bool
     @Binding var bookScene: Int
@@ -383,16 +381,7 @@ struct ConnectImagesView: View {
         return false
     }
     
-//    //MARK: different padding when orientation changed
-//    func paddingForOrientation() -> EdgeInsets {
-//        if horizontalSizeClass == .compact {
-//            // Landscape orientation
-//            return EdgeInsets(top: 20, leading: 122, bottom: 60, trailing: 122)
-//        } else {
-//            // Portrait orientation
-//            return EdgeInsets(top: 20, leading: 20, bottom: 60, trailing: 20)
-//        }
-//    }
+   
     
 }
 
