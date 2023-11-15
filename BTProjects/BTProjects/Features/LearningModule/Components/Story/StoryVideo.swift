@@ -40,15 +40,14 @@ struct StoryVideo: View {
                     player?.seek(to: .zero)
                     player?.play()
                 }) {
-                    ZStack {
-                        Circle()
-                            .foregroundColor(.white)
-                            .frame(width: 50, height: 50)
-                        Image("replay")
-                    }
+                    Image("replay")
+                        .resizable()
+                        .frame(width: 23, height: 23)
                 }
+                .buttonStyle(ReplayButtonStyle())
             }
         }
+        .frame(width: 310, height: 400)
         .onAppear {
             
             //MARK: Video Path
@@ -79,7 +78,7 @@ struct StoryVideo: View {
 
 
 
-//#Preview {
-//    StoryVideo()
-//}
+#Preview {
+    StoryVideo(videoURL: "E_Bisindo")
+}
 

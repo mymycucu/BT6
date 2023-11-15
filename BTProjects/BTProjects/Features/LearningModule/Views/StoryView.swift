@@ -18,15 +18,13 @@ struct StoryView: View {
     var body: some View {
         VStack {
             // Use ForEach to loop through the data array
-//            ForEach(dataArray) { data in
                 ZStack {
-                    // StoryBackground(illustration: storyPage.illustration ?? "illust_dummy")
-                    //     .padding(.top, 20)
-                    Background(viewState: $viewState, illustration: storyPage.illustration ?? "illust_dummy")
+                    
+                    Background(viewState: viewState, illustration: storyPage.illustration ?? "illust_dummy")
                     
                     VStack(spacing:0){
                         
-                        Header(isMenu: $isMenu, headerState: $viewState)
+                        Header(isMenu: $isMenu, headerState: viewState)
                         
                         Spacer()
 
@@ -35,15 +33,13 @@ struct StoryView: View {
                             .padding(.vertical, 80)
                         
                         Spacer()
-                        Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, words: storyPage.name ?? "", highlightWord: storyPage.desc ?? "", maxBookScene: maxBookScene)
+                        Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, words: storyPage.name ?? "", highlightWord: storyPage.desc ?? "", maxBookScene: maxBookScene)
                     }
                     .padding(38)
-                }// Explicitly specify a unique identifier
+                } // Explicitly specify a unique identifier
             }
-//        }
     }
 }
 
-//#Preview {
-//    StoryView(isMenu: .constant(false))
-//}
+
+

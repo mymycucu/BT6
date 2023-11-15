@@ -31,7 +31,7 @@ struct BookCoverView: View {
     var body: some View {
         ZStack {
             
-            Background(viewState: $viewState)
+            Background(viewState: viewState)
             
             HStack {
                 

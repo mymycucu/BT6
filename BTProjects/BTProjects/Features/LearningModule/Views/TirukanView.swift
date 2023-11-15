@@ -21,11 +21,11 @@ struct TirukanView: View {
     
     var body: some View {
         ZStack {
-            Background(viewState: $viewState)
+            Background(viewState: viewState)
 
             VStack {
                 
-                Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
+                Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
 
                 TirukanText(kata: kata)
                 
@@ -43,7 +43,7 @@ struct TirukanView: View {
                 Spacer()
                 
 //                TirukanBottomBar(isOverlayVisible: $isOverlayVisible)
-                Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+                Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
                 
             }
             .padding(38)

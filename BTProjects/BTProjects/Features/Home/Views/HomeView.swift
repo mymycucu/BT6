@@ -69,7 +69,7 @@ struct HomeView: View {
         }
         .padding(38)
         .background(
-            Background(viewState: $viewState)
+            Background(viewState: viewState)
         )
     }
 }

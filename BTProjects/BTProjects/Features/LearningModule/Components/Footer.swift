@@ -9,15 +9,15 @@ import SwiftUI
 
 struct Footer: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Binding var footerState: ViewState
+    var footerState: ViewState
     @Binding var isDisabled: Bool
     @Binding var bookScene: Int
     var maxBookScene: Int
     var words: String
     var highlightWord: String
     
-    init(footerState: Binding<ViewState>, isDisabled:Binding<Bool>, bookScene:Binding<Int>, words: String, highlightWord: String, maxBookScene: Int) {
-        _footerState = footerState
+    init(footerState: ViewState, isDisabled:Binding<Bool>, bookScene:Binding<Int>, words: String, highlightWord: String, maxBookScene: Int) {
+        self.footerState = footerState
         _isDisabled = isDisabled
         _bookScene = bookScene
         self.words =  words
@@ -25,8 +25,8 @@ struct Footer: View {
         self.maxBookScene = maxBookScene
     }
     
-    init(footerState: Binding<ViewState>, isDisabled:Binding<Bool>, bookScene:Binding<Int>, maxBookScene: Int) {
-        _footerState = footerState
+    init(footerState: ViewState, isDisabled:Binding<Bool>, bookScene:Binding<Int>, maxBookScene: Int) {
+        self.footerState = footerState
         _isDisabled = isDisabled
         _bookScene = bookScene
         self.maxBookScene = maxBookScene
@@ -39,18 +39,20 @@ struct Footer: View {
         
         HStack (spacing: 15 ){
             // MARK: Back Button
-            Button(action: {
-                if(bookScene <= 1){
-                    bookScene = 1
-                }else{
-                    bookScene -= 1
+            VStack{
+                Button(action: {
+                    if(bookScene <= 1){
+                        bookScene = 1
+                    }else{
+                        bookScene -= 1
+                    }
+                }) {
+                    Image(systemName: "arrowshape.left.fill")
+                        .font(.Button)
+                        .opacity(bookScene <= 1 ? 0 : 1)
                 }
-            }) {
-                Image(systemName: "arrowshape.left.fill")
-                    .font(.Button)
-                    .opacity(bookScene <= 1 ? 0 : 1)
+                .buttonStyle(CircularButtonStyle())
             }
-            .buttonStyle(CircularButtonStyle())
             
             if footerState == .story{
                 StoryText(words: words, highlightWord: highlightWord)
@@ -70,9 +72,10 @@ struct Footer: View {
                 }) {
                     Image(systemName: "arrowshape.right.fill")
                         .font(.Button)
-                        .opacity(bookScene >= maxBookScene ? 0 : 1)
+                        
                 }
                 .buttonStyle(CircularButtonStyle(disabled: isDisabled))
+                .opacity(bookScene >= maxBookScene ? 0 : 1)
                 
             } else {
                 

@@ -17,14 +17,16 @@ struct WordSummaryView: View {
     @State var background: String = "background-word-summary"
     @State var isDisabled: Bool = false
     
+    var videoURL = "dummy"
+    
     var body: some View {
         VStack {
             ZStack{
                 //MARK: Background
-                Background(viewState: $viewState, illustration: background)
+                Background(viewState: viewState, illustration: background)
                 
                 VStack(spacing: 0){
-                    Header(isMenu: $isMenu, headerState: $viewState)
+                    Header(isMenu: $isMenu, headerState: viewState)
                         
                         
                     Text(word)
@@ -32,7 +34,7 @@ struct WordSummaryView: View {
                         .font(.Heading1_Semibold)
                         .underline()
                         .padding(.bottom, 50)
-                    SummaryVideo()
+                    SummaryVideo(videoURL: videoURL)
                         
                     Spacer()
                         
@@ -43,7 +45,7 @@ struct WordSummaryView: View {
                 VStack(spacing: 0){
                     Spacer()
                     
-                    Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+                    Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
                     
                 }
                 .padding(38)

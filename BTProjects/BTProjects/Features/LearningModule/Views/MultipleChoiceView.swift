@@ -46,10 +46,10 @@ struct MultipleChoiceView: View {
     var body: some View {
         ZStack {
             
-            Background(viewState: $viewState)
+            Background(viewState: viewState)
             
             VStack {
-                Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
+                Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
 
                 Spacer()
                 VStack {
@@ -74,7 +74,7 @@ struct MultipleChoiceView: View {
             VStack{
                 
                 Spacer()
-                Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+                Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
             .padding(38)
         }

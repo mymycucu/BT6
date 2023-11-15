@@ -52,11 +52,7 @@ struct ReplayButtonStyle: ButtonStyle {
             .foregroundColor(Color.PB500)
             .background(Color.white)
             .clipShape(Circle()) // Clips the button label into a circular shape
-            .overlay(
-                Circle()
-                    .inset(by: 1)
-                    .stroke(Color.PB500, lineWidth: 2)
-            )
+            
         
     }
 }

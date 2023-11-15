@@ -99,7 +99,7 @@ struct ConnectImagesView: View {
         
         VStack(alignment: .center, spacing: 0){
             //MARK: Quiz Header
-            Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
+            Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
             
             ZStack {
                 HStack (spacing: 0){
@@ -254,23 +254,21 @@ struct ConnectImagesView: View {
                 
                 VStack(spacing: 0){
                     Spacer()
-                    Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+                    Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
                 }
             }
         }
         .padding(38)
         //MARK: Background
         .background(
-            Background(viewState: $viewState)
+            Background(viewState: viewState)
             
         )
         //MARK: OnAppear
         .onAppear{
-            withAnimation {
-                /// get left and right images shuffled
-                leftImages = getLeftImages(question: questions).shuffled()
-                rightImages = getRightImages(question: questions).shuffled()
-            }
+            /// get left and right images shuffled
+            leftImages = getLeftImages(question: questions).shuffled()
+            rightImages = getRightImages(question: questions).shuffled()
         }
         .onChange(of: leftSelected) { oldValue, newValue in
             updateIsCorrect()

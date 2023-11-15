@@ -39,12 +39,12 @@ struct TripleChoiceView: View {
     var body: some View {
         ZStack {
             
-            Background(viewState: $viewState)
+            Background(viewState: viewState)
             
             // Use ForEach to loop through the data array
             VStack {
                 
-                Header(isMenu: $isMenu, headerState: $viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
+                Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
 
                 ForEach(dataArray) { data in
                     
@@ -81,13 +81,13 @@ struct TripleChoiceView: View {
             VStack{
                 
                 Spacer()
-                Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+                Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
             .padding(38)
         }
     }
 }
 
-
-
-
+#Preview {
+    TripleChoiceView(isMenu: .constant(false), bookScene: .constant(5), maxBookScene: 3, currentQuiz: 2, totalQuiz: 12)
+}
