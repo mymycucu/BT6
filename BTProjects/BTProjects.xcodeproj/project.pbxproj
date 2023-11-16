@@ -71,6 +71,7 @@
 		057EDE142AFE33FC00A85B51 /* TripleChoiceAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE132AFE33FC00A85B51 /* TripleChoiceAnswers.swift */; };
 		057EDE182AFE37A200A85B51 /* TripleCardChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE172AFE37A200A85B51 /* TripleCardChoice.swift */; };
 		05803EB72B007F4200F7555A /* StoryCoverContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05803EB62B007F4200F7555A /* StoryCoverContent.swift */; };
+		058F01072B066EAD0048B904 /* sl_b1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 058F01062B066EAD0048B904 /* sl_b1.mp4 */; };
 		0596F83C2AFB728500328297 /* ARSCNCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83B2AFB728500328297 /* ARSCNCameraView.swift */; };
 		0596F83E2AFB72C900328297 /* ARSCNCameraContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */; };
 		059ED8342AFA126B00AB7630 /* TirukanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED8332AFA126B00AB7630 /* TirukanView.swift */; };
@@ -193,6 +194,7 @@
 		057EDE132AFE33FC00A85B51 /* TripleChoiceAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleChoiceAnswers.swift; sourceTree = "<group>"; };
 		057EDE172AFE37A200A85B51 /* TripleCardChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleCardChoice.swift; sourceTree = "<group>"; };
 		05803EB62B007F4200F7555A /* StoryCoverContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCoverContent.swift; sourceTree = "<group>"; };
+		058F01062B066EAD0048B904 /* sl_b1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sl_b1.mp4; sourceTree = "<group>"; };
 		0596F83B2AFB728500328297 /* ARSCNCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraView.swift; sourceTree = "<group>"; };
 		0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraContainer.swift; sourceTree = "<group>"; };
 		059ED8332AFA126B00AB7630 /* TirukanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirukanView.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				05606B7D2B0615E000256303 /* sl_b1_sp9.mp4 */,
 				05606B882B0615E000256303 /* sl_b1_sp10.mp4 */,
 				05606B842B0615E000256303 /* sl_b1_title.mp4 */,
+				058F01062B066EAD0048B904 /* sl_b1.mp4 */,
 				05606B7E2B0615E000256303 /* sl_b1.mp4 */,
 			);
 			path = book1_sarah_dan_bahaya_tersembunyi;
@@ -847,6 +850,7 @@
 				05606BB82B0616C300256303 /* sl_b2_sp7.mp4 in Resources */,
 				05606B8A2B0615E000256303 /* sl_b1_q3.mp4 in Resources */,
 				05606B8E2B0615E000256303 /* sl_b1_sp4.mp4 in Resources */,
+				058F01072B066EAD0048B904 /* sl_b1.mp4 in Resources */,
 				05606B8D2B0615E000256303 /* sl_b1.mp4 in Resources */,
 				05606BB52B0616C300256303 /* sl_b2_sp3.mp4 in Resources */,
 				05606BBC2B0616C300256303 /* sl_b2_sp1.mp4 in Resources */,
