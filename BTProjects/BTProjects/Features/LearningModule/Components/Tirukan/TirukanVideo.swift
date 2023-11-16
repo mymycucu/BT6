@@ -12,6 +12,8 @@ struct TirukanVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
 
+    var videoURL: String = "dummy"
+    
     var body: some View {
         ZStack {
             
@@ -49,7 +51,7 @@ struct TirukanVideo: View {
             
             //MARK: Video Path
             
-            let url = URL(fileURLWithPath: Bundle.main.path(forResource: "dummy", ofType: "mp4")!)
+            let url = URL(fileURLWithPath: Bundle.main.path(forResource: videoURL, ofType: "mp4")!)
             player = AVPlayer(url: url)
         
             player?.isMuted = true // Video condition is muted

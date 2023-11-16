@@ -17,16 +17,16 @@ enum ViewState {
 
 
 struct Background: View {
-    @Binding var viewState: ViewState
+    var viewState: ViewState
     var illustration: String
     
-    init(viewState: Binding<ViewState>) {
-        _viewState = viewState
+    init(viewState: ViewState) {
+        self.viewState = viewState
         self.illustration =  "background"
     }
     
-    init(viewState: Binding<ViewState>, illustration: String) {
-        _viewState = viewState
+    init(viewState: ViewState, illustration: String) {
+        self.viewState = viewState
         self.illustration =  illustration
     }
     
@@ -59,7 +59,7 @@ struct Background: View {
                     .scaledToFill()
                 
                 Rectangle()
-                    .fill(Color.PB900.opacity(0.7))
+                    .fill(Color.Overlay2.opacity(0.6))
                     .edgesIgnoringSafeArea(.all)
                 
             } else {

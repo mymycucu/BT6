@@ -21,14 +21,13 @@ struct MultipleChoiceVideo: View {
             
             if let player = player {
                 VideoPlayerController(player: player)
-                .frame(width: 467, height: 310)
-                .cornerRadius(16)
-                .padding(8)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                    .inset(by: 1.35)
-                    .stroke(Color.white, style: StrokeStyle(lineWidth: 2.71, dash: [10.3, 10.3]))
-                )
+                    .frame(width: 463, height: 306)
+                    .cornerRadius(22)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 28)
+                            .stroke(Color.Blue1, lineWidth: 6) // Use your desired stroke color
+                    )
+
             }
 
             //MARK: Replay Button
@@ -40,15 +39,14 @@ struct MultipleChoiceVideo: View {
                     player?.seek(to: .zero)
                     player?.play()
                 }) {
-                    ZStack {
-                        Circle()
-                            .foregroundColor(.white)
-                            .frame(width: 50, height: 50)
-                        Image("replay")
-                    }
+                    Image("replay")
+                        .resizable()
+                        .frame(width: 23, height: 23)
                 }
+                .buttonStyle(ReplayButtonStyle())
             }
         }
+        .frame(width: 463, height: 306)
         .onAppear {
             
             //MARK: Video Path

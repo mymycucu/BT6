@@ -35,8 +35,9 @@ struct ImageContainer: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 22)
                     .inset(by: 2.5)
-                    .stroke(isCorrect ? Color.Green3 : isFalse ? Color.Red3 : isSelected ? Color.PB100  : Color.Gray6,  style: isCorrect ? StrokeStyle(lineWidth: 5) : isFalse ? StrokeStyle(lineWidth: 5) : isSelected ? StrokeStyle(lineWidth: 5) : StrokeStyle(lineWidth: 2.8, dash: [6, 6]))
+                    .stroke(isCorrect ? Color.Green3 : isFalse ? Color.Red3 : isSelected ? Color.PB100  : Color.PB400,  style: isCorrect ? StrokeStyle(lineWidth: 5) : isFalse ? StrokeStyle(lineWidth: 5) : isSelected ? StrokeStyle(lineWidth: 5) : StrokeStyle(lineWidth: 2.8, lineCap: .round, dash: [6, 6]))
             )
+            
             
             //MARK: Circle
             HStack(spacing: 0){
@@ -45,11 +46,11 @@ struct ImageContainer: View {
                 }
                 ZStack{
                     Circle()
-                        .fill(isCorrect ? Color.Green3 : isFalse ? Color.Red3 : isSelected ? Color.PB100 :  Color.PB300)
+                        .fill(isCorrect ? Color.Green3 : isFalse ? Color.Red3 : isSelected ? Color.PB100 :  Color.PB400)
                         .frame(width: 25)
                     
                     Circle()
-                        .fill(isCorrect ? Color.black : isFalse ? Color.black : isSelected ? Color.black : Color.white)
+                        .fill(isCorrect ? Color.PB400 : isFalse ? Color.PB400 : isSelected ? Color.PB400 : Color.PB100)
                         .frame(width: 15)
                 }
                 if position == .right {

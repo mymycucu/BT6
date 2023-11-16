@@ -13,6 +13,14 @@ struct SummaryVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
     
+    var videoURL: String = "E_Bisindo"
+    
+    init(videoURL: String) {
+        self.isVideoFinished = false
+        self.player = nil
+        self.videoURL = videoURL
+    }
+    
     var body: some View {
         ZStack {
             
@@ -24,32 +32,27 @@ struct SummaryVideo: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 32)
                             .inset(by: 1)
-                            .stroke(Color.PB500, lineWidth: 12)
+                            .stroke(Color.PB500, lineWidth: 6)
                         
                     )
             }
             
             //MARK: Replay Button
             
-            VStack(alignment: .trailing){
-                if !isVideoFinished {
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            // Start the video from the beginning
-                            isVideoFinished = false
-                            player?.seek(to: .zero)
-                            player?.play()
-                        }) {
-                            Image("replay")
-                                .resizable()
-                                .frame(width: 23, height: 23)
-                        }
-                        .buttonStyle(ReplayButtonStyle())
+            VStack {
+                if isVideoFinished {
+                    Button(action: {
+                        // Start the video from the beginning
+                        isVideoFinished = false
+                        player?.seek(to: .zero)
+                        player?.play()
+                    }) {
+                        Image("replay")
+                            .resizable()
+                            .frame(width: 23, height: 23)
                     }
-                    .padding(15)
+                    .buttonStyle(ReplayButtonStyle())
                 }
-                Spacer()
             }
             .frame(width: 646, height: 436)
         }
@@ -58,7 +61,7 @@ struct SummaryVideo: View {
             
             //MARK: Video Path
             
-            let url = URL(fileURLWithPath: Bundle.main.path(forResource: "E_Bisindo", ofType: "mp4")!)
+            let url = URL(fileURLWithPath: Bundle.main.path(forResource: videoURL, ofType: "mp4")!)
             player = AVPlayer(url: url)
             
             player?.isMuted = true // Video condition is muted
@@ -83,5 +86,5 @@ struct SummaryVideo: View {
 }
 
 #Preview {
-    SummaryVideo()
+    SummaryVideo(videoURL: "E_Bisindo")
 }

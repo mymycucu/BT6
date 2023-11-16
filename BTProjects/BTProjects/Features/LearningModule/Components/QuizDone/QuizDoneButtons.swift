@@ -25,7 +25,7 @@ struct QuizDoneButtons: View {
                 .cornerRadius(12)
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.Orange4, lineWidth: 3)
+                        .stroke(Color.Orange5, lineWidth: 3)
                 )
             }
             .padding()
@@ -39,11 +39,11 @@ struct QuizDoneButtons: View {
                         .foregroundColor(.white)
                 }
                 .frame(width: 252, height: 62)
-                .background(Color.Orange4)
+                .background(Color.Orange5)
                 .cornerRadius(12)
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.Orange4, lineWidth: 3)
+                        .stroke(Color.Orange5, lineWidth: 3)
                 )
             }
             .padding()

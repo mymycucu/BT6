@@ -31,13 +31,12 @@ struct BookCoverView: View {
     var body: some View {
         ZStack {
             
-            Background(viewState: $viewState)
+            Background(viewState: viewState)
             
             HStack {
-                
-                    
                 StoryCoverContent(storyPages: book.storyPages?.count ?? 0, storyTitle: book.name ?? "book", canStartQuiz: false, isQuizFinished: true)
-                        .padding(.leading, 40)
+                    .padding(38)
+//                    .padding(.horizontal,27)
                     
                     Spacer()
                     

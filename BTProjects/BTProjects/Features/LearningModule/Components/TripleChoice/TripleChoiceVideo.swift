@@ -25,10 +25,9 @@ struct TripleChoiceVideo: View {
                 VideoPlayerController(player: player)
                     .frame(width: 463, height: 306)
                     .cornerRadius(22)
-//                    .padding(8)
                     .overlay(
                         RoundedRectangle(cornerRadius: 28)
-                            .stroke(Color.Blue1, lineWidth: 7) // Use your desired stroke color
+                            .stroke(Color.Blue1, lineWidth: 6) // Use your desired stroke color
                     )
 
             }
@@ -42,20 +41,11 @@ struct TripleChoiceVideo: View {
                     player?.seek(to: .zero)
                     player?.play()
                 }) {
-                    ZStack {
-                        Circle()
-                            .foregroundColor(.white)
-                            .frame(width: 44, height: 44)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 100)
-                                .inset(by: 1)
-                                .stroke(Color.PB500, lineWidth: 2)
-
-                            )
-                        Image("replay")
-                    }
-//                    .offset(x: 200, y: -110) // Adjust replay position
+                    Image("replay")
+                        .resizable()
+                        .frame(width: 23, height: 23)
                 }
+                .buttonStyle(ReplayButtonStyle())
             }
         }
         .onAppear {

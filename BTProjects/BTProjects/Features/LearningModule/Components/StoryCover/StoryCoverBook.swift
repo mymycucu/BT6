@@ -15,7 +15,7 @@ struct StoryCoverBook: View {
         ZStack(alignment: .leading){
             //MARK: Orange Back Cover
             RoundedRectangle(cornerRadius: 0)
-                .fill(Color.Orange3)
+                .fill(Color.Orange4)
                 .frame(width: 610, height: 715)
             /// to define different corner radius
                 .clipShape(

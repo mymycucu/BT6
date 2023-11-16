@@ -17,38 +17,47 @@ struct WordSummaryView: View {
     @State var background: String = "background-word-summary"
     @State var isDisabled: Bool = false
     
+    var videoURL = "dummy"
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 0){
             ZStack{
                 //MARK: Background
-                Background(viewState: $viewState, illustration: background)
+                Background(viewState: viewState, illustration: background)
                 
                 VStack(spacing: 0){
-                    Header(isMenu: $isMenu, headerState: $viewState)
-                        
-                        
+                    Header(isMenu: $isMenu, headerState: viewState)
+                    
+                    Spacer()
+                    
                     Text(word)
                         .foregroundStyle(.white)
                         .font(.Heading1_Semibold)
                         .underline()
                         .padding(.bottom, 50)
-                    SummaryVideo()
-                        
-                    Spacer()
+                    
+                    SummaryVideo(videoURL: videoURL)
                         
                     
+                    Spacer()
+                        .frame(maxHeight: .infinity)
+                    
                 }
-                .padding( 38)
+                .padding(.horizontal,38)
+                .padding(.vertical,36)
+                
+                
                 
                 VStack(spacing: 0){
                     Spacer()
                     
-                    Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+                    Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
                     
                 }
                 .padding(38)
+//                .padding(.vertical,35)
                 
-
+                
             }
         }
     }

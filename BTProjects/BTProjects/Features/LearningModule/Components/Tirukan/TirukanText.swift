@@ -12,7 +12,7 @@ struct TirukanText: View {
     var body: some View {
         
         VStack {
-            Text("Mari tirukan kata dibawah ini")
+            Text("Mari tirukan kata di bawah ini")
                 .font(.Subhead1_Medium)
                 .foregroundColor(.white)
             

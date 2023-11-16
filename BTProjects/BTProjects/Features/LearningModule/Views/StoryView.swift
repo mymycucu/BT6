@@ -16,34 +16,34 @@ struct StoryView: View {
     @State var viewState: ViewState = .story
     
     var body: some View {
-        VStack {
+        VStack(spacing:0){
             // Use ForEach to loop through the data array
-//            ForEach(dataArray) { data in
-                ZStack {
-                    // StoryBackground(illustration: storyPage.illustration ?? "illust_dummy")
-                    //     .padding(.top, 20)
-                    Background(viewState: $viewState, illustration: storyPage.illustration ?? "illust_dummy")
+            ZStack {
+                Background(viewState: viewState, illustration: storyPage.illustration ?? "illust_dummy")
+                
+                VStack(spacing:0){
                     
-                    VStack(spacing:0){
-                        
-                        Header(isMenu: $isMenu, headerState: $viewState)
-                        
-                        Spacer()
-
-                        StoryVideo(videoURL: storyPage.signLanguage ?? "dummy")
-                            .offset(x: 330, y: 0)
-                            .padding(.vertical, 80)
-                        
-                        Spacer()
-                        Footer(footerState: $viewState, isDisabled: $isDisabled, bookScene: $bookScene, words: storyPage.name ?? "", highlightWord: storyPage.desc ?? "", maxBookScene: maxBookScene)
-                    }
-                    .padding(38)
-                }// Explicitly specify a unique identifier
-            }
-//        }
+                    Header(isMenu: $isMenu, headerState: viewState)
+                        .padding(.bottom, 80)
+                    
+                    StoryVideo(videoURL: storyPage.signLanguage ?? "dummy")
+                        .offset(x: 330, y: 0)
+                    
+                    Spacer()
+                }
+                .padding(38)
+                VStack(spacing:0){
+                    
+                    Spacer()
+                    Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, words: storyPage.name ?? "", highlightWord: storyPage.desc ?? "", maxBookScene: maxBookScene)
+                }
+                .padding(38)
+                //add 10
+//                .padding(.vertical,48)
+            } // Explicitly specify a unique identifier
+        }
     }
 }
 
-//#Preview {
-//    StoryView(isMenu: .constant(false))
-//}
+
+

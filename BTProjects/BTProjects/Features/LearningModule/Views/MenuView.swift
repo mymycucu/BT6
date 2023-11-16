@@ -90,15 +90,14 @@ struct MenuView: View {
                     .font(.Button)
             }
             .buttonStyle(CircularButtonStyle())
-            .padding(.horizontal,38)
-            .padding(.vertical,28)
+            .padding(.horizontal,35)
+            .padding(.vertical,36)
             
         })
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .padding(.top, 43)
         .background(
-            Color.primary.opacity(0.7)
+            Color.Overlay1.opacity(0.7)
         )
         .animation(.easeInOut, value: isMenu)
     }

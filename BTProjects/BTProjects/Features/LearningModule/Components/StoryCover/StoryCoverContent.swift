@@ -19,25 +19,13 @@ struct StoryCoverContent: View {
             // MARK: Back Button
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
-                    }) {
-                        
-                        HStack(alignment: .center, spacing: 0) {
-                            Image(systemName: "arrowshape.left.fill")
-                                .imageScale(.large)
-                                .foregroundColor(Color.PB500)
-
-                        }
-                        .frame(width: 62, height: 62)
-                        .background(Color.white)
-                        .cornerRadius(100)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 100)
-                                .inset(by: 1.5)
-                                .stroke(Color.PB500, lineWidth: 3)
-                        )
-                        
-                    }
-                    .padding(.top, 25)
+            }) {
+                Image(systemName: "arrowshape.left.fill")
+                    .font(.Button)
+                
+            }
+            .buttonStyle(CircularButtonStyle())
+            
             
             Spacer()
             
@@ -48,7 +36,7 @@ struct StoryCoverContent: View {
                 
                 Text(storyTitle)
                     .foregroundColor(.white)
-                    .font(.Heading1_Semibold)
+                    .font(.CoverTittle)
                 
                 
                 Button(action: {
@@ -60,7 +48,7 @@ struct StoryCoverContent: View {
                             .foregroundColor(Color.white)
                     }
                     .frame(width: 200, height: 62)
-                    .background(canStartQuiz ? Color.Orange4 : Color.Orange3)
+                    .background(canStartQuiz ? Color.Orange5 : Color.Orange4)
                     .cornerRadius(12)
                 }
                 // Set the button's disabled state based on the canStartQuiz variable using a ternary operator
