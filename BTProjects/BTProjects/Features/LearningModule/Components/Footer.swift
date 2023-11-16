@@ -37,10 +37,10 @@ struct Footer: View {
     
     var body: some View {
         
-        HStack (spacing: 15 ){
+        HStack (alignment: .bottom, spacing: 15 ){
             // MARK: Back Button
             VStack{
-                Spacer()
+//                Spacer()
                 Button(action: {
                     if(bookScene <= 1){
                         bookScene = 1
@@ -58,14 +58,16 @@ struct Footer: View {
             
             if footerState == .story{
                 VStack(alignment: .leading){
-                    // the database needs to insert \n so it will be more neat
-                    if words.split(separator: " ").count < 11 || words.count < 75 {
-                        Spacer()
-                    }
-//                    if words.split(separator: "\n").count <= 1 {
-//                        Spacer()
-//                    }
-                    StoryText(words: words, highlightWord: highlightWord)
+
+                    Text(words)
+                        .font(.Subhead1_Medium)
+                        .lineLimit(nil)
+                        .multilineTextAlignment(.leading)
+                        .padding(.horizontal, 22)
+                        .padding(.vertical, 18)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(12)
                     
                 }
             } else {

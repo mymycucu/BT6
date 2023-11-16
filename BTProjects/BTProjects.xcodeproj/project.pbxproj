@@ -41,7 +41,6 @@
 		0596F83E2AFB72C900328297 /* ARSCNCameraContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */; };
 		059ED8342AFA126B00AB7630 /* TirukanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED8332AFA126B00AB7630 /* TirukanView.swift */; };
 		059ED83F2AFA129C00AB7630 /* StoryVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED8392AFA129C00AB7630 /* StoryVideo.swift */; };
-		059ED8402AFA129C00AB7630 /* StoryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED83A2AFA129C00AB7630 /* StoryText.swift */; };
 		059ED8462AFA133B00AB7630 /* E_Bisindo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 059ED8442AFA133B00AB7630 /* E_Bisindo.mp4 */; };
 		059ED8472AFA133B00AB7630 /* dummy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 059ED8452AFA133B00AB7630 /* dummy.mp4 */; };
 		059ED84E2AFA173400AB7630 /* TirukanText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059ED84D2AFA173400AB7630 /* TirukanText.swift */; };
@@ -132,7 +131,6 @@
 		0596F83D2AFB72C900328297 /* ARSCNCameraContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNCameraContainer.swift; sourceTree = "<group>"; };
 		059ED8332AFA126B00AB7630 /* TirukanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirukanView.swift; sourceTree = "<group>"; };
 		059ED8392AFA129C00AB7630 /* StoryVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryVideo.swift; sourceTree = "<group>"; };
-		059ED83A2AFA129C00AB7630 /* StoryText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryText.swift; sourceTree = "<group>"; };
 		059ED8442AFA133B00AB7630 /* E_Bisindo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = E_Bisindo.mp4; sourceTree = "<group>"; };
 		059ED8452AFA133B00AB7630 /* dummy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummy.mp4; sourceTree = "<group>"; };
 		059ED84D2AFA173400AB7630 /* TirukanText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirukanText.swift; sourceTree = "<group>"; };
@@ -323,7 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				059ED8392AFA129C00AB7630 /* StoryVideo.swift */,
-				059ED83A2AFA129C00AB7630 /* StoryText.swift */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -760,7 +757,6 @@
 				057EDDFD2AFC8DCF00A85B51 /* MultipleChoiceAnswers.swift in Sources */,
 				057EDDF32AFC8BB900A85B51 /* MultipleChoiceImage.swift in Sources */,
 				05D046112AF8F26B0029D747 /* StoryView.swift in Sources */,
-				059ED8402AFA129C00AB7630 /* StoryText.swift in Sources */,
 				AD7551312AFE50F0006842B5 /* VideoPlayerController.swift in Sources */,
 				059ED8542AFA1A4B00AB7630 /* TirukanCamera.swift in Sources */,
 				053029E62B02462E007D4D97 /* QuizDoneView.swift in Sources */,
