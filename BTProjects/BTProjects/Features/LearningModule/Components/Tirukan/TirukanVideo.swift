@@ -12,7 +12,7 @@ struct TirukanVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
 
-    var videoURL: String = "dummy"
+    var videoURL: String
     
     var body: some View {
         ZStack {
@@ -77,8 +77,8 @@ struct TirukanVideo: View {
 
 
 
-#Preview {
-    TirukanVideo()
-}
+//#Preview {
+//    TirukanVideo()
+//}
 
 

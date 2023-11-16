@@ -26,7 +26,7 @@ struct StoryView: View {
                     Header(isMenu: $isMenu, headerState: viewState)
                         .padding(.bottom, 80)
                     
-                    StoryVideo(videoURL: storyPage.signLanguage ?? "dummy")
+                    StoryVideo(videoURL: storyPage.signLanguage ?? "")
                         .offset(x: 330, y: 0)
                     
                     Spacer()

@@ -31,7 +31,7 @@ struct BookView: View {
                 if(bookScene == idx+book.story.count+2){
                     switch book.lstQuestions[idx].type {
                     case 0:
-                        TirukanView(kata: book.word?.name ?? Constant.defaultTirukanString, isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+2, currentQuiz: idx+1, totalQuiz: book.lstQuestions.count+1)
+                        TirukanView(kata: book.word! , isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+2, currentQuiz: idx+1, totalQuiz: book.lstQuestions.count+1)
                     case 1:
                         MultipleChoiceView(question: book.lstQuestions[idx], isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+2, currentQuiz: idx+1, totalQuiz: book.lstQuestions.count+1)
                     case 2:
@@ -39,7 +39,7 @@ struct BookView: View {
                     case 3:
                         ConnectImagesView(isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+2)
                     default:
-                        TirukanView(kata: book.word?.name ?? Constant.defaultTirukanString, isMenu: $isMenu,bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+2, currentQuiz: idx, totalQuiz: book.lstQuestions.count)
+                        TirukanView(kata: book.word! , isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+2, currentQuiz: idx+1, totalQuiz: book.lstQuestions.count+1)
                     }
                 }
             }
