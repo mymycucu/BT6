@@ -104,7 +104,7 @@ struct ConnectImagesView: View {
                 Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
                 Spacer()
             }
-            .padding(.horizontal,27)
+            .padding(.horizontal,38)
             .padding(.vertical,36)
             
             //MARK: Draw Connecting Line
@@ -259,8 +259,9 @@ struct ConnectImagesView: View {
                 Spacer()
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
-            .padding(.horizontal,27)
-            .padding(.vertical,36)
+            .padding(38)
+//            .padding(.horizontal,27)
+//            .padding(.vertical,36)
         }
         //MARK: OnAppear
         .onAppear{

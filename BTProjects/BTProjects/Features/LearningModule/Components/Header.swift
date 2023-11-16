@@ -31,7 +31,7 @@ struct Header: View {
     
     
     var body: some View {
-        HStack(spacing: 15){
+        HStack(alignment: .center, spacing: 15){
             Button(action: {
                 isMenu.toggle()
             }) {
@@ -42,8 +42,11 @@ struct Header: View {
             
             if headerState == .quiz{
                 ProgressBar(totalWords: totalQuiz, step: currentQuiz)
+                    .frame(maxWidth: .infinity)
             } else {
                 Spacer()
+                    .frame(maxWidth: .infinity)
+                
             }
             
             Button(action: {

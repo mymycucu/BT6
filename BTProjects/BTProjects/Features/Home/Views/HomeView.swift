@@ -67,7 +67,8 @@ struct HomeView: View {
             }
             
         }
-        .padding(38)
+        .padding(.horizontal,38)
+        .padding(.vertical, 15)
         .background(
             Background(viewState: viewState)
         )

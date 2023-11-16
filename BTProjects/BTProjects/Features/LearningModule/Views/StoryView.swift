@@ -37,9 +37,9 @@ struct StoryView: View {
                     Spacer()
                     Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, words: storyPage.name ?? "", highlightWord: storyPage.desc ?? "", maxBookScene: maxBookScene)
                 }
-                .padding(.horizontal,38)
+                .padding(38)
                 //add 10
-                .padding(.vertical,48)
+//                .padding(.vertical,48)
             } // Explicitly specify a unique identifier
         }
     }

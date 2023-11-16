@@ -90,8 +90,8 @@ struct MenuView: View {
                     .font(.Button)
             }
             .buttonStyle(CircularButtonStyle())
-            .padding(.horizontal,38)
-            .padding(.vertical,28)
+            .padding(.horizontal,35)
+            .padding(.vertical,36)
             
         })
         

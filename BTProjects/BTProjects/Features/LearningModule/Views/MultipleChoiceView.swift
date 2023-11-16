@@ -69,7 +69,7 @@ struct MultipleChoiceView: View {
 
                 
             }
-            .padding(.horizontal,27)
+            .padding(.horizontal,38)
             .padding(.vertical,36)
             
             VStack{
@@ -77,8 +77,9 @@ struct MultipleChoiceView: View {
                 Spacer()
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
-            .padding(.horizontal,27)
-            .padding(.vertical,36)
+            .padding(38)
+//            .padding(.horizontal,27)
+//            .padding(.vertical,36)
         }
     }
 }

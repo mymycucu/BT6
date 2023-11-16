@@ -20,7 +20,8 @@ struct StoryVideo: View {
             //MARK: Video Container
             ///3D effect
             RoundedRectangle(cornerRadius: 22)
-                .foregroundColor(.clear)
+//                .foregroundColor(.clear)
+                .fill(Color.PB500)
                 .frame(width: 310, height: 400)
                 .offset(x:4, y:4)
                 .shadow(color: Color.white.opacity(0.3), radius: 2, x: 4, y: 4)

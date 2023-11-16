@@ -27,8 +27,9 @@ struct WordSummaryView: View {
                 
                 VStack(spacing: 0){
                     Header(isMenu: $isMenu, headerState: viewState)
-                        
-                        
+                    
+                    Spacer()
+                    
                     Text(word)
                         .foregroundStyle(.white)
                         .font(.Heading1_Semibold)
@@ -37,12 +38,15 @@ struct WordSummaryView: View {
                     
                     SummaryVideo(videoURL: videoURL)
                         
+                    
                     Spacer()
-                        
+                        .frame(maxHeight: .infinity)
                     
                 }
-                .padding(.horizontal,27)
+                .padding(.horizontal,38)
                 .padding(.vertical,36)
+                
+                
                 
                 VStack(spacing: 0){
                     Spacer()
@@ -50,10 +54,10 @@ struct WordSummaryView: View {
                     Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
                     
                 }
-                .padding(.horizontal,27)
-                .padding(.vertical,35)
+                .padding(38)
+//                .padding(.vertical,35)
                 
-
+                
             }
         }
     }

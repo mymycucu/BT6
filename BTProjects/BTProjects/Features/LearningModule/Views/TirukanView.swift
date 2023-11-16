@@ -40,12 +40,17 @@ struct TirukanView: View {
                 }
                 
                 Spacer()
-                
-                Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
-                
+                    .frame(maxHeight: .infinity)
+
             }
-            .padding(.horizontal,27)
+            .padding(.horizontal,38)
             .padding(.vertical,36)
+            
+            VStack{
+                Spacer()
+                Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+            }
+            .padding(38)
         }
         .overlay(
                 isOverlayVisible ?

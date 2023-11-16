@@ -35,8 +35,8 @@ struct BookCoverView: View {
             
             HStack {
                 StoryCoverContent(storyPages: book.storyPages?.count ?? 0, storyTitle: book.name ?? "book", canStartQuiz: false, isQuizFinished: true)
-                    .padding(.vertical,38)
-                    .padding(.horizontal,27)
+                    .padding(38)
+//                    .padding(.horizontal,27)
                     
                     Spacer()
                     

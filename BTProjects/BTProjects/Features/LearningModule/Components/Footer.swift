@@ -37,10 +37,10 @@ struct Footer: View {
     
     var body: some View {
         
-        HStack (alignment: .bottom, spacing: 15 ){
+        HStack (alignment: .bottom, spacing: 15){
             // MARK: Back Button
             VStack{
-//                Spacer()
+                Spacer()
                 Button(action: {
                     if(bookScene <= 1){
                         bookScene = 1
@@ -72,6 +72,7 @@ struct Footer: View {
                 }
             } else {
                 Spacer()
+                    .frame(maxWidth: .infinity)
             }
             
             
