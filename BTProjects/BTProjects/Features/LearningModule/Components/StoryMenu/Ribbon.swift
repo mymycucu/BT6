@@ -13,21 +13,21 @@ struct Ribbon: View {
         ZStack {
             //MARK: Ribbon
             RibbonRectangle()
-                .fill(Color.Orange4)
+                .fill(Color.Orange5)
                 .frame(width: 60, height: 46)
                 .rotationEffect(.degrees(90))
                 .offset(y: -12)
                 .shadow(color: .white.opacity(0.7), radius: 0, x: 3, y: 3)
             
             Triangle()
-                .fill(Color.Orange4)
+                .fill(Color.Orange5)
                 .frame(width: 10, height: 23)
                 .rotationEffect(.degrees(90))
                 .offset(x: -11.5, y: 23)
                 .shadow(color: .white.opacity(0.7), radius: 0, x: 3, y: 3)
             
             Triangle()
-                .fill(Color.Orange4)
+                .fill(Color.Orange5)
                 .frame(width: 23, height: 10
                 )
                 .rotationEffect(.degrees(-180))

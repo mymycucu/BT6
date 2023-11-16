@@ -28,7 +28,7 @@ struct ProgressBar: View {
                     
                         .frame(height: 22)
                     Capsule()
-                        .fill(Color.Orange4)
+                        .fill(Color.Orange5)
                         .frame(minWidth: maxWidth)
                         .frame(height: 22)
                         .opacity(step == 0 ? 0:1)
@@ -45,7 +45,7 @@ struct ProgressBar: View {
                     Image("star-journey")
                         .resizable()
                         .frame(width: 38, height: 38)
-                        .shadow(color: Color.Orange3.opacity(0.5), radius: 20, x: 0, y: 4)
+                        .shadow(color: Color.Orange4.opacity(0.5), radius: 20, x: 0, y: 4)
                         .offset(x: maxWidth - 38)
                     
                 }

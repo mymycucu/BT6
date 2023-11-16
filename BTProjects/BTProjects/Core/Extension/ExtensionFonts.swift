@@ -8,6 +8,8 @@
 import SwiftUI
 
 extension Font {
+    // MARK: Cover Tittle
+    static var CoverTittle = Font.custom("Fredoka-SemiBold", size: 52)
     
     // MARK: Heading 1
     static var Heading1_Semibold = Font.custom("Fredoka-SemiBold", size: 48)

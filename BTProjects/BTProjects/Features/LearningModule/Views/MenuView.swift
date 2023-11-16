@@ -97,7 +97,7 @@ struct MenuView: View {
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            Color.primary.opacity(0.7)
+            Color.Overlay1.opacity(0.7)
         )
         .animation(.easeInOut, value: isMenu)
     }

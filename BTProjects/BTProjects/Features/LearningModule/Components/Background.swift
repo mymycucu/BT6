@@ -59,7 +59,7 @@ struct Background: View {
                     .scaledToFill()
                 
                 Rectangle()
-                    .fill(Color.PB900.opacity(0.6))
+                    .fill(Color.Overlay2.opacity(0.6))
                     .edgesIgnoringSafeArea(.all)
                 
             } else {

@@ -32,7 +32,7 @@ struct ThumbnailPage: View {
                 Rectangle()
                     .frame(width: 316, height: 230)
                     .opacity(0)
-                    .border(Color.Orange4, width: 7)
+                    .border(Color.Orange5, width: 7)
                     .cornerRadius(12)
                     .zIndex(4)
             }

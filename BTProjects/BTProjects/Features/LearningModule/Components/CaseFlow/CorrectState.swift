@@ -12,8 +12,7 @@ struct CorrectState: View {
         ZStack {
             Rectangle()
               .foregroundColor(.clear)
-//              .frame(width: 1194, height: 834)
-              .background(Color(red: 0.04, green: 0.16, blue: 0.07).opacity(0.5))
+              .background(Color.Overlay3.opacity(0.8))
             
             VStack {
                 
