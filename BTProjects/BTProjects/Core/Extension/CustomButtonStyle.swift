@@ -31,7 +31,7 @@ struct CircularButtonStyle: ButtonStyle {
         configuration.label
             .frame(width: 62, height: 62) // Adjust size as needed
             .foregroundColor(configuration.isPressed ? Color.PB700 : disabled ? Color.PB200 : Color.PB500)
-            .background(Color.white)
+            .background(configuration.isPressed ? Color.Gray4 :Color.white)
             .clipShape(Circle()) // Clips the button label into a circular shape
             .overlay(
                 Circle()
