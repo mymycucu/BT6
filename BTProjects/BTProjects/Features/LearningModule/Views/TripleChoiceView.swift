@@ -20,14 +20,16 @@ struct TripleChoiceView: View {
     var currentQuiz: Int
     var totalQuiz: Int
 
-    
+    /// show correct state
+    @State var isCorrectState: Bool = false
+    @State var isExitState: Bool = false
     var body: some View {
         ZStack {
             
             Background(viewState: viewState)
             VStack {
                 
-                Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
+                Header(isMenu: $isMenu, isExitState: $isExitState , headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
                 
                 HStack(alignment: .top, spacing: 35){
                     TripleChoiceVideo(videoURL: question.signLanguage ?? Constant.defaultSignLanguage)
@@ -40,7 +42,7 @@ struct TripleChoiceView: View {
                 .padding(.horizontal, 58)
                 .padding(.vertical)
                 
-                TripleChoiceAnswers(question: question)
+                TripleChoiceAnswers(question: question, isCorrectState: $isCorrectState)
                     .padding(.top, 50)
                 
                 Spacer()
@@ -56,6 +58,13 @@ struct TripleChoiceView: View {
             .padding(38)
 //            .padding(.horizontal,27)
 //            .padding(.vertical,36)
+            
+            if isCorrectState {
+                CorrectState(isCorrectState: $isCorrectState)
+            }
+            if isExitState{
+                ExitState(isExitState: $isExitState)
+            }
         }
     }
 }

@@ -11,19 +11,22 @@ import SwiftUI
 struct Header: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var isMenu: Bool
+    @Binding var isExitState: Bool
     var headerState: ViewState
     var currentQuiz: Int
     var totalQuiz: Int
     
-    init(isMenu: Binding<Bool>, headerState: ViewState) {
+    init(isMenu: Binding<Bool>, isExitState:Binding<Bool>, headerState: ViewState) {
         _isMenu = isMenu
+        _isExitState = isExitState
         self.headerState = headerState
         self.currentQuiz =  0
         self.totalQuiz = 0
     }
     
-    init(isMenu: Binding<Bool>, headerState: ViewState, currentQuiz: Int, totalQuiz: Int) {
+    init(isMenu: Binding<Bool>, isExitState:Binding<Bool>, headerState: ViewState, currentQuiz: Int, totalQuiz: Int) {
         _isMenu = isMenu
+        _isExitState = isExitState
         self.headerState = headerState
         self.currentQuiz = currentQuiz
         self.totalQuiz = totalQuiz
@@ -49,8 +52,9 @@ struct Header: View {
                 
             }
             
+            
             Button(action: {
-                presentationMode.wrappedValue.dismiss()
+                isExitState.toggle()
             }) {
                 Image(systemName: "xmark")
                     .font(.Button)

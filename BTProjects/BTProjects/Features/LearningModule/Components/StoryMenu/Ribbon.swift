@@ -11,20 +11,37 @@ struct Ribbon: View {
     var order: Int
     var body: some View {
         ZStack {
+            //MARK: Shadow Shape
+            RibbonRectangle()
+                .fill(Color.white.opacity(0.7))
+                .frame(width: 46, height: 64)
+                .offset(x:4, y: -10)
+            
+            Triangle()
+                .fill(Color.white.opacity(0.7))
+                .frame(width: 10, height: 23)
+                .rotationEffect(.degrees(90))
+                .offset(x: -6.5, y: 27)
+            
+            Triangle()
+                .fill(Color.white.opacity(0.7))
+                .frame(width: 23, height: 10
+                )
+                .rotationEffect(.degrees(-180))
+                .offset(x: 15.5, y: 27)
+            
             //MARK: Ribbon
             RibbonRectangle()
                 .fill(Color.Orange5)
                 .frame(width: 60, height: 46)
                 .rotationEffect(.degrees(90))
                 .offset(y: -12)
-                .shadow(color: .white.opacity(0.7), radius: 0, x: 3, y: 3)
             
             Triangle()
                 .fill(Color.Orange5)
                 .frame(width: 10, height: 23)
                 .rotationEffect(.degrees(90))
                 .offset(x: -11.5, y: 23)
-                .shadow(color: .white.opacity(0.7), radius: 0, x: 3, y: 3)
             
             Triangle()
                 .fill(Color.Orange5)
@@ -32,7 +49,6 @@ struct Ribbon: View {
                 )
                 .rotationEffect(.degrees(-180))
                 .offset(x: 11.5, y: 23)
-                .shadow(color: .white.opacity(0.7), radius: 0, x: 3, y: 3)
             
             //MARK: Numbering
             Text("\(order)")
@@ -66,4 +82,8 @@ struct Triangle: Shape {
         path.closeSubpath()
         return path
     }
+}
+
+#Preview {
+    Ribbon(order: 3)
 }

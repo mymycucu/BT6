@@ -49,6 +49,7 @@ struct DataFeedManager {
         // MARK: Create Book1 Sarah dan Bahaya Tersembunyi
         let book1 = PersistenceController.shared.create(Book.self)
         book1?.name = "Sarah dan Bahaya Tersembunyi"
+        book1?.summarySignLanguage = "sl_b1"
         book1?.word = wordBahaya
         book1?.categories = [categoryRumah! as Category, categoryLingkungan! as Category]
         
@@ -180,6 +181,7 @@ struct DataFeedManager {
         // MARK: Create Book2 Bu, tolong sarah
         let book2 = PersistenceController.shared.create(Book.self)
         book2?.name = "Bu, tolong Sarah"
+        book2?.summarySignLanguage = "sl_b2"
         book2?.word = wordTolong
         book2?.categories = [categoryRumah! as Category, categoryLingkungan! as Category, categorySekolah! as Category]
         
@@ -188,7 +190,7 @@ struct DataFeedManager {
         book2StoryPage1?.name = "Sarah bermain bola di halaman rumahnya lalu bolanya tersangkut di atas pohon."
         book2StoryPage1?.order = 1
         book2StoryPage1?.signLanguage = "sl_b2_sp1"
-//        book2StoryPage1?.illustration = "il_b2_sp1"
+        book2StoryPage1?.illustration = "il_b2_sp1"
         book2StoryPage1?.desc = ""
         book2StoryPage1?.book = book2
         
@@ -196,7 +198,7 @@ struct DataFeedManager {
         book2StoryPage2?.name = "Sarah berusaha menggapainya namun tidak bisa. Kemudian Sarah memanggil Ibunya"
         book2StoryPage2?.order = 2
         book2StoryPage2?.signLanguage = "sl_b2_sp2"
-//        book2StoryPage2?.illustration = "il_b2_sp2"
+        book2StoryPage2?.illustration = "il_b2_sp2"
         book2StoryPage2?.desc = ""
         book2StoryPage2?.book = book2
         
@@ -204,7 +206,7 @@ struct DataFeedManager {
         book2StoryPage3?.name = "“Bu, bola Sarah tersangkut. Tolong ambilkan, bu” Ucap Sarah kepada Ibu"
         book2StoryPage3?.order = 3
         book2StoryPage3?.signLanguage = "sl_b2_sp3"
-//        book2StoryPage3?.illustration = "il_b2_sp3"
+        book2StoryPage3?.illustration = "il_b2_sp3"
         book2StoryPage3?.desc = ""
         book2StoryPage3?.book = book2
         
@@ -212,7 +214,7 @@ struct DataFeedManager {
         book2StoryPage4?.name = "bu segera membantu. Ibu meraih bola dari atas pohon dan memberikannya kepada Sarah"
         book2StoryPage4?.order = 4
         book2StoryPage4?.signLanguage = "sl_b2_sp4"
-//        book2StoryPage4?.illustration = "il_b2_sp4"
+        book2StoryPage4?.illustration = "il_b2_sp4"
         book2StoryPage4?.desc = ""
         book2StoryPage4?.book = book2
         
@@ -220,7 +222,7 @@ struct DataFeedManager {
         book2StoryPage5?.name = "Keesokan harinya, Di perpustakaan, Sarah ingin mengambil buku dari rak"
         book2StoryPage5?.order = 5
         book2StoryPage5?.signLanguage = "sl_b2_sp5"
-//        book2StoryPage5?.illustration = "il_b2_sp5"
+        book2StoryPage5?.illustration = "il_b2_sp5"
         book2StoryPage5?.desc = ""
         book2StoryPage5?.book = book2
         
@@ -228,7 +230,7 @@ struct DataFeedManager {
         book2StoryPage6?.name = "Tapi, Sarah tidak bisa mengambil buku itu karena rak yang tinggi"
         book2StoryPage6?.order = 6
         book2StoryPage6?.signLanguage = "sl_b2_sp6"
-//        book2StoryPage6?.illustration = "il_b2_sp6"
+        book2StoryPage6?.illustration = "il_b2_sp6"
         book2StoryPage6?.desc = ""
         book2StoryPage6?.book = book2
         
@@ -236,7 +238,7 @@ struct DataFeedManager {
         book2StoryPage7?.name = "Sarah melihat bu Guru. Lalu Sarah berkata “Bu guru, Tolong ambilkan aku buku itu” "
         book2StoryPage7?.order = 7
         book2StoryPage7?.signLanguage = "sl_b2_sp7"
-//        book2StoryPage7?.illustration = "il_b2_sp7"
+        book2StoryPage7?.illustration = "il_b2_sp7"
         book2StoryPage7?.desc = ""
         book2StoryPage7?.book = book2
         
@@ -244,7 +246,7 @@ struct DataFeedManager {
         book2StoryPage8?.name = "Ibu guru membantu Sarah mengambil buku"
         book2StoryPage8?.order = 8
         book2StoryPage8?.signLanguage = "sl_b2_sp8"
-//        book2StoryPage8?.illustration = "il_b2_sp8"
+        book2StoryPage8?.illustration = "il_b2_sp8"
         book2StoryPage8?.desc = ""
         book2StoryPage8?.book = book2
         
@@ -252,7 +254,7 @@ struct DataFeedManager {
         book2StoryPage9?.name = "Sarah tidak lupa mengucapkan terimakasih kepada Bu guru yang sudah membantu Sarah"
         book2StoryPage9?.order = 9
         book2StoryPage9?.signLanguage = "sl_b2_sp9"
-//        book2StoryPage9?.illustration = "il_b2_sp9"
+        book2StoryPage9?.illustration = "il_b2_sp9"
         book2StoryPage9?.desc = ""
         book2StoryPage9?.book = book2
         
@@ -347,7 +349,7 @@ struct DataFeedManager {
         book2Question3?.name = "Tersandung"
         book2Question3?.type = 1
         book2Question3?.order = 3
-        book2Question2?.signLanguage = "sl_b2_q2"
+        book2Question3?.signLanguage = "sl_b2_q2"
 //        book2Question2?.illustration = "il_b2_q2"
         book2Question3?.isDone = false
         book2Question3?.book = book2
@@ -355,7 +357,6 @@ struct DataFeedManager {
         let book2Question3Answer1 = PersistenceController.shared.create(Answer.self)
         book2Question3Answer1?.name = "Meminta bantuan kakak"
         book2Question3Answer1?.type = 1
-        book2Question3Answer1?.signLanguage = "sl_b2_q2_a1"
 //        book2Question3Answer1?.illustration = "il_b2_q2_a1"
         book2Question3Answer1?.isCorrect = true
         book2Question3Answer1?.question = book2Question3
@@ -363,7 +364,6 @@ struct DataFeedManager {
         let book2Question3Answer2 = PersistenceController.shared.create(Answer.self)
         book2Question3Answer2?.name = "berlari"
         book2Question3Answer2?.type = 1
-        book2Question2Answer2?.signLanguage = "sl_b2_q2_a2"
 //        book2Question2Answer2?.illustration = "il_b2_q2_a2"
         book2Question3Answer2?.isCorrect = false
         book2Question3Answer2?.question = book2Question3
@@ -373,7 +373,7 @@ struct DataFeedManager {
         book2Question4?.name = "Pilih gambar di bawah yang menunjukkan hal yang tepat untuk menggunakan kata tolong?"
         book2Question4?.type = 2
         book2Question4?.order = 4
-        book2Question3?.signLanguage = "sl_b2_q3"
+//        book2Question4?.signLanguage = "sl_b2_q3"
 //        book2Question3?.illustration = "il_b2_q3"
         book2Question4?.isDone = false
         book2Question4?.book = book2
@@ -381,24 +381,21 @@ struct DataFeedManager {
         let book2Question4Answer1 = PersistenceController.shared.create(Answer.self)
         book2Question4Answer1?.name = "Bola tersangkut di pohon"
         book2Question4Answer1?.type = 1
-//        book2Question3Answer1?.signLanguage = "sl_b1_q3_a1"
-//        book2Question3Answer1?.illustration = "il_b1_q3_a1"
+//        book2Question4Answer1?.illustration = "il_b1_q3_a1"
         book2Question4Answer1?.isCorrect = true
         book2Question4Answer1?.question = book2Question4
         
         let book2Question4Answer2 = PersistenceController.shared.create(Answer.self)
         book2Question4Answer2?.name = "Mengambil buku di rak yang tinggi"
         book2Question4Answer2?.type = 1
-//        book2Question3Answer2?.signLanguage = "sl_b1_q3_a2"
-//        book2Question3Answer2?.illustration = "il_b1_q3_a2"
+//        book2Question4Answer2?.illustration = "il_b1_q3_a2"
         book2Question4Answer2?.isCorrect = true
         book2Question4Answer2?.question = book2Question4
         
         let book2Question4Answer3 = PersistenceController.shared.create(Answer.self)
         book2Question4Answer3?.name = "Membaca buku di meja"
         book2Question4Answer3?.type = 1
-//        book2Question3Answer3?.signLanguage = "sl_b1_q3_a3"
-//        book2Question3Answer3?.illustration = "il_b1_q3_a3"
+//        book2Question4Answer3?.illustration = "il_b1_q3_a3"
         book2Question4Answer3?.isCorrect = false
         book2Question4Answer3?.question = book2Question4
         
@@ -407,32 +404,28 @@ struct DataFeedManager {
         book2Question5?.name = "Pilih gambar di bawah yang menunjukkan hal yang tepat untuk menggunakan kata tolong?"
         book2Question5?.type = 2
         book2Question5?.order = 5
-        book2Question3?.signLanguage = "sl_b2_q3"
-//        book2Question3?.illustration = "il_b2_q3"
+//        book2Question5?.signLanguage = "dummy"
         book2Question5?.isDone = false
         book2Question5?.book = book2
         
         let book2Question5Answer1 = PersistenceController.shared.create(Answer.self)
         book2Question5Answer1?.name = "Menonton televisi"
         book2Question5Answer1?.type = 1
-//        book2Question3Answer1?.signLanguage = "sl_b1_q3_a1"
-//        book2Question3Answer1?.illustration = "il_b1_q3_a1"
+//        book2Question5Answer1?.illustration = "il_b1_q3_a1"
         book2Question5Answer1?.isCorrect = false
         book2Question5Answer1?.question = book2Question5
         
         let book2Question5Answer2 = PersistenceController.shared.create(Answer.self)
         book2Question5Answer2?.name = "Mengambil buku di rak yang tinggi"
         book2Question5Answer2?.type = 1
-//        book2Question3Answer2?.signLanguage = "sl_b1_q3_a2"
-//        book2Question3Answer2?.illustration = "il_b1_q3_a2"
+//        book2Question5Answer2?.illustration = "il_b1_q3_a2"
         book2Question5Answer2?.isCorrect = true
         book2Question5Answer2?.question = book2Question5
         
         let book2Question5Answer3 = PersistenceController.shared.create(Answer.self)
         book2Question5Answer3?.name = "Terjatuh dan kesakitan"
         book2Question5Answer3?.type = 1
-//        book2Question3Answer3?.signLanguage = "sl_b1_q3_a3"
-//        book2Question3Answer3?.illustration = "il_b1_q3_a3"
+//        book2Question5Answer3?.illustration = "il_b1_q3_a3"
         book2Question5Answer3?.isCorrect = true
         book2Question5Answer3?.question = book2Question5
         
@@ -441,15 +434,13 @@ struct DataFeedManager {
         book2Question6?.name = "Pilih gambar di bawah yang menunjukkan hal yang tepat untuk menggunakan kata tolong?"
         book2Question6?.type = 2
         book2Question6?.order = 6
-        book2Question3?.signLanguage = "sl_b2_q3"
-//        book2Question3?.illustration = "il_b2_q3"
+//        book2Question6?.signLanguage = "sl_b2_q3"
         book2Question6?.isDone = false
         book2Question6?.book = book2
         
         let book2Question6Answer1 = PersistenceController.shared.create(Answer.self)
         book2Question6Answer1?.name = "Terjatuh dan kesakitan"
         book2Question6Answer1?.type = 1
-//        book2Question3Answer1?.signLanguage = "sl_b1_q3_a1"
 //        book2Question3Answer1?.illustration = "il_b1_q3_a1"
         book2Question6Answer1?.isCorrect = true
         book2Question6Answer1?.question = book2Question6
@@ -457,7 +448,6 @@ struct DataFeedManager {
         let book2Question6Answer2 = PersistenceController.shared.create(Answer.self)
         book2Question6Answer2?.name = "Bola tersangkut di pohon"
         book2Question6Answer2?.type = 1
-//        book2Question3Answer2?.signLanguage = "sl_b1_q3_a2"
 //        book2Question3Answer2?.illustration = "il_b1_q3_a2"
         book2Question6Answer2?.isCorrect = true
         book2Question6Answer2?.question = book2Question6
@@ -465,8 +455,7 @@ struct DataFeedManager {
         let book2Question6Answer3 = PersistenceController.shared.create(Answer.self)
         book2Question6Answer3?.name = "Membaca buku di meja"
         book2Question6Answer3?.type = 1
-//        book2Question3Answer3?.signLanguage = "sl_b1_q3_a3"
-//        book2Question3Answer3?.illustration = "il_b1_q3_a3"
+//        book2Question6Answer3?.illustration = "il_b1_q3_a3"
         book2Question6Answer3?.isCorrect = false
         book2Question6Answer3?.question = book2Question6
         
@@ -475,16 +464,12 @@ struct DataFeedManager {
         book2Question7?.name = "Hubungkan gambar di bawah ini yang sesuai"
         book2Question7?.type = 3
         book2Question7?.order = 7
-        book2Question3?.signLanguage = "sl_b2_q3"
-//        book2Question3?.illustration = "il_b2_q3"
         book2Question7?.isDone = false
         book2Question7?.book = book2
         
         let book2Question7Answer1 = PersistenceController.shared.create(Answer.self)
         book2Question7Answer1?.name = "Mainan tersangkut di pohon -> Minta tolong ibu"
         book2Question7Answer1?.type = 2
-//        book2Question3Answer1?.signLanguage = "sl_b1_q3_a1"
-//        book2Question3Answer1?.illustration = "il_b1_q3_a1"
         book2Question7Answer1?.illustration = "illust_dummy"
         book2Question7Answer1?.illustration1 = "illust_dummy"
         book2Question7Answer1?.isCorrect = true
@@ -493,8 +478,6 @@ struct DataFeedManager {
         let book2Question7Answer2 = PersistenceController.shared.create(Answer.self)
         book2Question7Answer2?.name = "Mainan terjebak di taman -> Minta bantuan teman"
         book2Question7Answer2?.type = 2
-//        book2Question3Answer2?.signLanguage = "sl_b1_q3_a2"
-//        book2Question3Answer2?.illustration = "il_b1_q3_a2"
         book2Question7Answer2?.illustration = "il_b_default"
         book2Question7Answer2?.illustration1 = "il_b_default"
         book2Question7Answer2?.isCorrect = true
@@ -503,9 +486,6 @@ struct DataFeedManager {
         let book2Question7Answer3 = PersistenceController.shared.create(Answer.self)
         book2Question7Answer3?.name = "Buku di rak tinggi -> Minta bantuan bu guru"
         book2Question7Answer3?.type = 2
-//        book2Question3Answer3?.signLanguage = "sl_b1_q3_a3"
-//        book2Question3Answer3?.illustration = "il_b1_q3_a3"
-        
         book2Question7Answer3?.illustration = "background-word-summary"
         book2Question7Answer3?.illustration1 = "background-word-summary"
         book2Question7Answer3?.isCorrect = false

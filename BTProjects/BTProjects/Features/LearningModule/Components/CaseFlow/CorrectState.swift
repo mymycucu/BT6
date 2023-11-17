@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CorrectState: View {
+    @Binding var isCorrectState: Bool
     var body: some View {
         ZStack {
             Rectangle()
@@ -25,10 +26,13 @@ struct CorrectState: View {
             
             
         }
+        .onTapGesture {
+            isCorrectState.toggle()
+        }
     }
 
 }
 
 #Preview {
-    CorrectState()
+    CorrectState(isCorrectState: .constant(false))
 }
