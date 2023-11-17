@@ -13,34 +13,45 @@ class quizViewModel : ObservableObject {
     @Published var rightImages: [String] = []
     
     //MARK: Get All Left & Right Images
-    func getLeftImages(question: Quest) -> [String]{
+    func getLeftImagesShuffled(question: Question) -> [String]{
         var allLeftImages: [String] = []
-        for item in question.answers {
-            allLeftImages.append(item.illustration)
+        if let answers = question.answers {
+            for item in answers {
+                if let illustration = (item as AnyObject).illustration {
+                    allLeftImages.append(illustration ?? Constant.defaultIllustration)
+                }
+            }
         }
+        allLeftImages = allLeftImages.shuffled()
         return allLeftImages
     }
     
-    func getRightImages(question: Quest) -> [String]{
+    func getRightImagesShuffled(question: Question) -> [String]{
         var allRightImages: [String] = []
-        for item in question.answers {
-            allRightImages.append(item.illustration2)
+        if let answers = question.answers {
+            for item in answers {
+                if let illustration = (item as AnyObject).illustration1 {
+                    allRightImages.append(illustration ?? Constant.defaultIllustration)
+                }
+            }
         }
+        allRightImages = allRightImages.shuffled()
         return allRightImages
     }
     
     
     //MARK: Check Answers -> Bool
-    func checkedAnswers(leftImage: String, rightImage: String, question: Quest) -> Bool {
+    func checkedAnswers(leftImage: String, rightImage: String, question: Question) -> Bool {
         
-        for item in question.answers {
-            if item.illustration == leftImage && item.illustration2 == rightImage {
-                
-                return true
-                
+        if let answers = question.answers {
+            for item in answers {
+                if (item as AnyObject).illustration == leftImage && (item as AnyObject).illustration1 == rightImage {
+                    
+                    return true
+                    
+                }
             }
         }
         return false
-        
     }
 }

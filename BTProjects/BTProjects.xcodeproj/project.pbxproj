@@ -15,7 +15,6 @@
 		05025D542AE7817E00178653 /* ExtensionColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D532AE7817E00178653 /* ExtensionColors.swift */; };
 		05025D562AE78AE200178653 /* ExtensionFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05025D552AE78AE200178653 /* ExtensionFonts.swift */; };
 		053029E62B02462E007D4D97 /* QuizDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053029E52B02462E007D4D97 /* QuizDoneView.swift */; };
-		053029E92B024640007D4D97 /* QuizDoneBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053029E82B024640007D4D97 /* QuizDoneBackground.swift */; };
 		053029EB2B024672007D4D97 /* QuizDoneButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053029EA2B024672007D4D97 /* QuizDoneButtons.swift */; };
 		053029ED2B02468C007D4D97 /* QuizDoneContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053029EC2B02468C007D4D97 /* QuizDoneContent.swift */; };
 		055ED2432B00711C000896E7 /* BookCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055ED2422B00711C000896E7 /* BookCoverView.swift */; };
@@ -106,7 +105,6 @@
 		05025D532AE7817E00178653 /* ExtensionColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColors.swift; sourceTree = "<group>"; };
 		05025D552AE78AE200178653 /* ExtensionFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFonts.swift; sourceTree = "<group>"; };
 		053029E52B02462E007D4D97 /* QuizDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDoneView.swift; sourceTree = "<group>"; };
-		053029E82B024640007D4D97 /* QuizDoneBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDoneBackground.swift; sourceTree = "<group>"; };
 		053029EA2B024672007D4D97 /* QuizDoneButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDoneButtons.swift; sourceTree = "<group>"; };
 		053029EC2B02468C007D4D97 /* QuizDoneContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDoneContent.swift; sourceTree = "<group>"; };
 		055ED2422B00711C000896E7 /* BookCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverView.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 		053029E72B024633007D4D97 /* QuizDone */ = {
 			isa = PBXGroup;
 			children = (
-				053029E82B024640007D4D97 /* QuizDoneBackground.swift */,
 				053029EA2B024672007D4D97 /* QuizDoneButtons.swift */,
 				053029EC2B02468C007D4D97 /* QuizDoneContent.swift */,
 			);
@@ -811,7 +808,6 @@
 				059ED83F2AFA129C00AB7630 /* StoryVideo.swift in Sources */,
 				AD751D292B01E852002B3033 /* BookView.swift in Sources */,
 				AD4D956B2AFE45420035E006 /* CategoryMenu.swift in Sources */,
-				053029E92B024640007D4D97 /* QuizDoneBackground.swift in Sources */,
 				ADBE94272AFB62F2008A1390 /* CodingUserInfoKeyExtention.swift in Sources */,
 				ADBE94582AFCB6F7008A1390 /* StoryPage.swift in Sources */,
 				D4B3F37C2B00A264008F105F /* ThumbnailPage.swift in Sources */,

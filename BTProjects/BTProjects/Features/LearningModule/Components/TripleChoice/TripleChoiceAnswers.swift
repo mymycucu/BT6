@@ -52,9 +52,6 @@ struct TripleChoiceAnswers: View {
                         }
                     }
                 }
-                .onAppear{
-                    print(index)
-                }
                 
                 
             }
