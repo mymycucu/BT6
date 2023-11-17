@@ -12,6 +12,7 @@ struct TripleChoiceAnswers: View {
     @State var selectedAnswer: Int? = nil
     @State var count: Int = 0
     
+    @Binding var isCorrectState:Bool
     
     var body: some View {
         HStack {
@@ -31,8 +32,6 @@ struct TripleChoiceAnswers: View {
                             
                         }
                     )
-                    
-                    
                 )
                 .padding(.horizontal, 8)
                 .onTapGesture{
@@ -40,6 +39,9 @@ struct TripleChoiceAnswers: View {
                         selectedAnswer = index
                         if question.lstAnswers[index].isCorrect == true {
                             count += 1
+                            if count == 2{
+                                isCorrectState = true
+                            }
                         }
                     }
                 }

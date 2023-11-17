@@ -66,7 +66,9 @@ struct ConnectImagesView: View {
     @State var isMatchingLeft: Bool = false
     @State var isMatchingRight: Bool = false
     
-    
+    /// show correct state
+    @State var isCorrectState: Bool = false
+    @State var isExitState: Bool = false
     var body: some View {
         
         ZStack {
@@ -75,7 +77,7 @@ struct ConnectImagesView: View {
             
             //MARK: Quiz Header
             VStack{
-                Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
+                Header(isMenu: $isMenu, isExitState: $isExitState, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
                 Spacer()
             }
             .padding(.horizontal,38)
@@ -234,6 +236,14 @@ struct ConnectImagesView: View {
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
             .padding(38)
+            
+            if isCorrectState {
+                CorrectState(isCorrectState: $isCorrectState)
+            }
+            if isExitState{
+                ExitState(isExitState: $isExitState)
+            }
+            
         }
         //MARK: OnAppear
         .onAppear{
@@ -321,6 +331,7 @@ struct ConnectImagesView: View {
                 
                 if correctLeftPosition.count == leftImagesPoint.count{
                     allImagesCorrect = true
+                    isCorrectState = true
                     
                 }
                 

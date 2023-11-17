@@ -10,6 +10,7 @@ import SwiftUI
 struct BookView: View {
     @State var bookScene: Int = 0
     @State var isMenu: Bool = false
+    
     var book: Book
     
     var body: some View {
@@ -24,22 +25,22 @@ struct BookView: View {
                 }
             }
             if (bookScene == book.story.count+1){
-                WordSummaryView(isMenu: $isMenu,bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, word: book.word?.name ?? "")
+                WordSummaryView(isMenu: $isMenu,bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, word: book.word?.name ?? "", videoURL: book.summarySignLanguage ?? Constant.defaultSignLanguage)
             }
             
             ForEach(0..<book.lstQuestions.count, id: \.self){ idx in
                 if(bookScene == idx+book.story.count+2){
                     switch book.lstQuestions[idx].type {
                     case 0:
-                        TirukanView(kata: book.word?.name ?? Constant.defaultTirukanString, isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, currentQuiz: idx+1, totalQuiz: book.lstQuestions.count+1)
+                        TirukanView(kata: book.word!, isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, currentQuiz: idx+1, totalQuiz: book.lstQuestions.count+1)
                     case 1:
                         MultipleChoiceView(question: book.lstQuestions[idx], isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, currentQuiz: idx+1, totalQuiz: book.lstQuestions.count+1)
                     case 2:
-                        TripleChoiceView(question: book.lstQuestions[idx], isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, currentQuiz: idx, totalQuiz: book.lstQuestions.count)
+                        TripleChoiceView(question: book.lstQuestions[idx], isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, currentQuiz: idx+1, totalQuiz: book.lstQuestions.count)
                     case 3:
                         ConnectImagesView(question: book.lstQuestions[idx], isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3)
                     default:
-                        TirukanView(kata: book.word?.name ?? Constant.defaultTirukanString, isMenu: $isMenu,bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, currentQuiz: idx, totalQuiz: book.lstQuestions.count)
+                        TirukanView(kata: book.word!, isMenu: $isMenu,bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, currentQuiz: idx, totalQuiz: book.lstQuestions.count)
                     }
                 }
             }

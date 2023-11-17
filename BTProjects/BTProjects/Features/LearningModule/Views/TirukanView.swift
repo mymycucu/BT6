@@ -12,6 +12,7 @@ struct TirukanView: View {
     var kata: Word
 
     @Binding var isMenu: Bool
+    @State var isExitState: Bool = false
     @Binding var bookScene: Int
     var maxBookScene: Int
     @State var viewState: ViewState = .quiz
@@ -24,7 +25,7 @@ struct TirukanView: View {
             Background(viewState: viewState)
 
             VStack {
-                Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
+                Header(isMenu: $isMenu, isExitState: $isExitState, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
                 
                 TirukanText(kata: kata.name ?? "")
                 
@@ -51,6 +52,10 @@ struct TirukanView: View {
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
             .padding(38)
+            
+            if isExitState {
+                ExitState(isExitState: $isExitState)
+            }
         }
         .overlay(
                 isOverlayVisible ?

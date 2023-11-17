@@ -51,7 +51,6 @@ struct TripleChoiceVideo: View {
         .onAppear {
             
             //MARK: Video Path
-            
             let url = URL(fileURLWithPath: Bundle.main.path(forResource: videoURL, ofType: "mp4")!)
             player = AVPlayer(url: url)
         

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ExitState: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Binding var isExitState: Bool
+    
     var body: some View {
         
         ZStack {
@@ -23,7 +26,7 @@ struct ExitState: View {
                     
                     //MARK: X Button
                     Button(action: {
-                                // Add your action code here
+                        isExitState.toggle()
                             }) {
                                 
                                 HStack(alignment: .center, spacing: 0) {
@@ -57,7 +60,7 @@ struct ExitState: View {
                     .padding(.vertical, 20)
                 
                 Button(action: {
-                    // Your action or code to be executed when the button is tapped
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     HStack(alignment: .center, spacing: 10) {
                         Text("Oke 👍🏻")
@@ -93,5 +96,5 @@ struct ExitState: View {
 }
 
 #Preview {
-    ExitState()
+    ExitState( isExitState: .constant(false))
 }
