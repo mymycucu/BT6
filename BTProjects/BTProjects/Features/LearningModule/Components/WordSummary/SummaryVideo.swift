@@ -13,7 +13,7 @@ struct SummaryVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
     
-    var videoURL: String = "E_Bisindo"
+    var videoURL: String 
     
     init(videoURL: String) {
         self.isVideoFinished = false

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TirukanView: View {
     @State private var isOverlayVisible = false
-    var kata: String
+    var kata: Word
 
     @Binding var isMenu: Bool
     @Binding var bookScene: Int
@@ -26,13 +26,13 @@ struct TirukanView: View {
             VStack {
                 Header(isMenu: $isMenu, headerState: viewState, currentQuiz: currentQuiz, totalQuiz: totalQuiz)
                 
-                TirukanText(kata: kata)
+                TirukanText(kata: kata.name ?? "")
                 
                 Spacer()
                 
                 HStack {
                     // MARK: Sign language video
-                    TirukanVideo()
+                    TirukanVideo(videoURL: kata.signLanguage ?? "")
                         .padding()
                     
                     // MARK: Sign language video capture

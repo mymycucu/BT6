@@ -19,7 +19,7 @@ struct VideoPlayerController: UIViewControllerRepresentable {
         
         // Set videoGravity to .resize to make the video stretch to fit the frame
         controller.videoGravity = .resizeAspectFill
-
+        
         // Delay for 0.8 seconds and then play the video
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
             player.play()

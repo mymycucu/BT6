@@ -17,7 +17,7 @@ struct WordSummaryView: View {
     @State var background: String = "background-word-summary"
     @State var isDisabled: Bool = false
     
-    var videoURL = "dummy"
+
     
     var body: some View {
         VStack(spacing: 0){
@@ -36,7 +36,7 @@ struct WordSummaryView: View {
                         .underline()
                         .padding(.bottom, 50)
                     
-                    SummaryVideo(videoURL: videoURL)
+                    SummaryVideo(videoURL: "dummy")
                         
                     
                     Spacer()
