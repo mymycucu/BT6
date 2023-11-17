@@ -9,6 +9,7 @@ import SwiftUI
 import AVKit
 import SwiftUI
 
+
 struct StoryVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
@@ -26,7 +27,7 @@ struct StoryVideo: View {
                 .offset(x:4, y:4)
                 .shadow(color: Color.white.opacity(0.3), radius: 2, x: 4, y: 4)
             
-            if let player = player {
+            if var player = player {
                 VideoPlayerController(player: player)
                     .frame(width: 310, height: 400)
                     .cornerRadius(22)

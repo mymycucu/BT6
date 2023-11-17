@@ -23,6 +23,7 @@ struct ThumbnailPage: View {
                 .frame(width: 316, height: 230)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .zIndex(1)
+                .overlay(Color.black.opacity(isSelect ? 0 : 0.5))
             Ribbon(order: order)
                 .offset(x: -100, y:-73)
                 .zIndex(3)
