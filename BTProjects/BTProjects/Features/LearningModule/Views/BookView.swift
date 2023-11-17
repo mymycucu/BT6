@@ -35,7 +35,7 @@ struct BookView: View {
                     case 1:
                         MultipleChoiceView(question: book.lstQuestions[idx], isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, currentQuiz: idx+1, totalQuiz: book.lstQuestions.count+1)
                     case 2:
-                        TripleChoiceView(isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, currentQuiz: idx, totalQuiz: book.lstQuestions.count)
+                        TripleChoiceView(question: book.lstQuestions[idx], isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, currentQuiz: idx, totalQuiz: book.lstQuestions.count)
                     case 3:
                         ConnectImagesView(question: book.lstQuestions[idx], isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3)
                     default:

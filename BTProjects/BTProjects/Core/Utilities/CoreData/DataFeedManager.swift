@@ -39,11 +39,11 @@ struct DataFeedManager {
         
         // MARK: Create word
         let wordBahaya = PersistenceController.shared.create(Word.self)
-        wordBahaya?.name = "Bahaya"
+        wordBahaya?.name = "bahaya"
         wordBahaya?.signLanguage = "sl_word_bahaya"
         
         let wordTolong = PersistenceController.shared.create(Word.self)
-        wordTolong?.name = "Tolong"
+        wordTolong?.name = "tolong"
         wordTolong?.signLanguage = "sl_word_tolong"
         
         // MARK: Create Book1 Sarah dan Bahaya Tersembunyi
