@@ -12,11 +12,11 @@ struct TripleCardChoice: View {
     @State var containerColor: Color = .white
     @State var containerOpacity: Bool = true
     @State var containerShadowColor: Color = Color.PB300
-    @Binding var isSelected: Bool 
-    @State var isAnimate: Bool = false
     
+    @Binding var isSelected: Bool
     @Binding var correctAnswer: Bool
     
+    @State var isAnimate: Bool = false
     @State var isCorrect: Bool = false
     
     @State var count: Int = 0
@@ -47,11 +47,7 @@ struct TripleCardChoice: View {
                 .padding(.top, isAnimate ? 14.7 : 8)
                 .padding(.leading, isAnimate ? 14.7 : 8)
         }
-//        .onTapGesture {
-//            isSelected.toggle()
-//            
-//        }
-//        
+        //
         
         .onChange(of: isSelected) {
             if count < 1 {
@@ -60,13 +56,6 @@ struct TripleCardChoice: View {
                     isAnimate.toggle()
                     containerOpacity.toggle()
                     containerShadowColor = .white
-    //                if isCorrect && isSelected {
-    //                    containerShadowColor = .white
-    //                } else {
-    //                    containerShadowColor = .white
-    //                }
-                    
-                    
                 }
                 // Additional delayed animations
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
@@ -101,12 +90,6 @@ struct TripleCardChoice: View {
                     isAnimate.toggle()
                     containerOpacity.toggle()
                     containerShadowColor = .white
-    //                if isCorrect && isSelected {
-    //                    containerShadowColor = .white
-    //                } else {
-    //                    containerShadowColor = .white
-    //                }
-                    
                     
                 }
                 // Additional delayed animations
@@ -138,29 +121,12 @@ struct TripleCardChoice: View {
                 }
             }
             
-//            if !correctAnswer {
-//                withAnimation(Animation.bouncy(duration: 0.1)) {
-//                    isAnimate.toggle()
-//                    containerOpacity.toggle()
-//                    containerColor = .white
-//                    containerShadowColor = .PB300
-////
-//                }
-//
-//
-//            }
- 
+            
         }
-//        .disabled(isCorrect)
         .frame(width: 308, height: 212)
         
     }
-    
-//    func countIsSelectedCorrect (correctAnswer: Bool, ) {
-//
-//        
-//        
-//    }
+   
 }
 
 //#Preview {

@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct QuizDoneView: View {
+    
+    
+    @Binding var bookScene: Int
+    var maxBookScene: Int
+    var viewState: ViewState = .normal
+    
     var body: some View {
         ZStack {
             
-            QuizDoneBackground()
+            Background(viewState: viewState)
             
             VStack {
                 QuizDoneContent()
                 
-                QuizDoneButtons()
+                QuizDoneButtons(bookScene: $bookScene, maxBookScene: maxBookScene)
                     .padding(.top, 50)
             }
             
@@ -25,5 +31,5 @@ struct QuizDoneView: View {
 }
 
 #Preview {
-    QuizDoneView()
+    QuizDoneView(bookScene: .constant(1), maxBookScene: 3)
 }

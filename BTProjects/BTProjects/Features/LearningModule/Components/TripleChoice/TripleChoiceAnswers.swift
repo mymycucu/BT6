@@ -8,25 +8,16 @@
 import SwiftUI
 
 struct TripleChoiceAnswers: View {
-    var answers: [String]
-    var correctAnswer: [String]
-    var tripleChoiceIllustration: String
-    @Binding var selectedAnswer: Int?
-    
-    @State private var isCorrect: Bool = false
-    
-    @State var isSelected: Bool = false
-    
+    var question: Question
+    @State var selectedAnswer: Int? = nil
     @State var count: Int = 0
     
-//    @State var allCorrectIndex: [Int] = []
     
-
     var body: some View {
         HStack {
-            ForEach(0..<answers.count) { index in
+            ForEach(0..<question.lstAnswers.count) { index in
                 TripleCardChoice(
-                    imageTitle: tripleChoiceIllustration,
+                    imageTitle: question.lstAnswers[index].illustration ?? Constant.defaultIllustration,
                     isSelected: Binding(
                         get: { selectedAnswer == index },
                         set: { newValue in
@@ -34,26 +25,23 @@ struct TripleChoiceAnswers: View {
                             
                         }), 
                     correctAnswer: Binding(
-                            get: { correctAnswer.contains(answers[index])},
-                            set: { newValue in
-                                selectedAnswer = newValue ? index : nil
-                                
-                            }
-                        )
-                        
-                        
+                        get: { question.lstAnswers[index].isCorrect},
+                        set: { newValue in
+                            selectedAnswer = newValue ? index : nil
+                            
+                        }
+                    )
+                    
+                    
                 )
                 .padding(.horizontal, 8)
                 .onTapGesture{
                     if count < 2 {
                         selectedAnswer = index
-                        if correctAnswer.contains(answers[index]){
+                        if question.lstAnswers[index].isCorrect == true {
                             count += 1
                         }
                     }
-                }
-                .onAppear{
-                    print(index)
                 }
                 
                 
@@ -61,15 +49,11 @@ struct TripleChoiceAnswers: View {
         }
     }
     
-    
-//    func gotAllCorrectAnswers(correctAnswers: [String], answers: [String] ){
-//        
-//    }
 }
 
 
 
 
-#Preview {
-    TripleChoiceView(isMenu: .constant(false), bookScene: .constant(5), maxBookScene: 3, currentQuiz: 2, totalQuiz: 12)
-}
+//#Preview {
+//    TripleChoiceView(question: <#Question#>, isMenu: .constant(false), bookScene: .constant(5), maxBookScene: 3, currentQuiz: 2, totalQuiz: 12)
+//}

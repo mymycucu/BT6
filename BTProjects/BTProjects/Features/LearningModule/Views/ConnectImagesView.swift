@@ -7,31 +7,6 @@
 
 import SwiftUI
 
-struct Ans: Identifiable, Hashable, Equatable {
-    var id = UUID().uuidString
-    var name: String?
-    var type: Int?
-    var illustration: String
-    var illustration2: String
-    var isCorrect: Bool?
-    var signLanguage: String?
-}
-let answers: [Ans] = [
-    Ans(name: "budi", type: 4, illustration: "mencari-kumbang", illustration2: "mencari-kumbang", isCorrect: true),
-    Ans(name: "sarah", type: 4, illustration: "background", illustration2: "background", isCorrect: true),
-    Ans(name: "fany", type: 4, illustration: "background-word-summary", illustration2: "background-word-summary", isCorrect: true)
-]
-
-struct Quest: Identifiable, Hashable, Equatable  {
-    var id = UUID().uuidString
-    var name: String?
-    var type: Int?
-    var order: Int?
-    var illustration: String?
-    var isDone: Bool?
-    var signLanguage: String?
-    var answers: [Ans]
-}
 
 struct imagePosition: Identifiable, Equatable  {
     var id: Int
@@ -41,7 +16,8 @@ struct imagePosition: Identifiable, Equatable  {
 
 
 struct ConnectImagesView: View {
-
+    var question: Question
+    
     //MARK: Header Binding
     @Binding var isMenu: Bool
     @Binding var bookScene: Int
@@ -90,8 +66,6 @@ struct ConnectImagesView: View {
     @State var isMatchingLeft: Bool = false
     @State var isMatchingRight: Bool = false
     
-    
-    let questions: Quest = Quest(name: "hubungkan", type: 3, order: 1, answers: answers)
     
     var body: some View {
         
@@ -260,14 +234,12 @@ struct ConnectImagesView: View {
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
             .padding(38)
-//            .padding(.horizontal,27)
-//            .padding(.vertical,36)
         }
         //MARK: OnAppear
         .onAppear{
             /// get left and right images shuffled
-            leftImages = getLeftImages(question: questions).shuffled()
-            rightImages = getRightImages(question: questions).shuffled()
+            leftImages = getLeftImages(question: question).shuffled()
+            rightImages = getRightImages(question: question).shuffled()
         }
         .onChange(of: leftSelected) { oldValue, newValue in
             updateIsCorrect()
@@ -280,41 +252,50 @@ struct ConnectImagesView: View {
     }
     
     //MARK: Get All Left & Right Images
-    func getLeftImages(question: Quest) -> [String]{
+    func getLeftImages(question: Question) -> [String]{
         var allLeftImages: [String] = []
-        for item in question.answers {
-            allLeftImages.append(item.illustration)
+        if let answers = question.answers {
+            for item in answers {
+                if let illustration = (item as AnyObject).illustration {
+                    allLeftImages.append(illustration ?? Constant.defaultIllustration)
+                }
+            }
         }
         return allLeftImages
     }
     
-    func getRightImages(question: Quest) -> [String]{
+    func getRightImages(question: Question) -> [String]{
         var allRightImages: [String] = []
-        for item in question.answers {
-            allRightImages.append(item.illustration2)
+        if let answers = question.answers {
+            for item in answers {
+                if let illustration = (item as AnyObject).illustration1 {
+                    allRightImages.append(illustration ?? Constant.defaultIllustration)
+                }
+            }
         }
         return allRightImages
     }
     
     
     //MARK: Check Answers -> Bool
-    func checkedAnswers(leftImage: String, rightImage: String, question: Quest) -> Bool {
+    func checkedAnswers(leftImage: String, rightImage: String, question: Question) -> Bool {
         
-        for item in question.answers {
-            if item.illustration == leftImage && item.illustration2 == rightImage {
-                
-                return true
-                
+        if let answers = question.answers {
+            for item in answers {
+                if (item as AnyObject).illustration == leftImage && (item as AnyObject).illustration1 == rightImage {
+                    
+                    return true
+                    
+                }
             }
         }
         return false
-        
     }
     
     //MARK: Update The Correct Connecting Images
     func updateIsCorrect() {
         if let leftIndex = leftSelected, let rightIndex = rightSelected {
-            isCorrect = checkedAnswers(leftImage: leftImages[leftIndex], rightImage: rightImages[rightIndex], question: questions)
+            isCorrect = checkedAnswers(leftImage: leftImages[leftIndex], rightImage: rightImages[rightIndex], question: question)
             if isCorrect == true{
                 for item in leftImagesPoint{
                     if item.id == leftIndex{
@@ -382,7 +363,7 @@ struct ConnectImagesView: View {
         return false
     }
     
-   
+    
     
 }
 

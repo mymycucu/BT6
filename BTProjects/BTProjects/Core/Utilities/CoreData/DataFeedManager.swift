@@ -39,11 +39,11 @@ struct DataFeedManager {
         
         // MARK: Create word
         let wordBahaya = PersistenceController.shared.create(Word.self)
-        wordBahaya?.name = "Bahaya"
+        wordBahaya?.name = "bahaya"
         wordBahaya?.signLanguage = "sl_word_bahaya"
         
         let wordTolong = PersistenceController.shared.create(Word.self)
-        wordTolong?.name = "Tolong"
+        wordTolong?.name = "tolong"
         wordTolong?.signLanguage = "sl_word_tolong"
         
         // MARK: Create Book1 Sarah dan Bahaya Tersembunyi
@@ -485,6 +485,8 @@ struct DataFeedManager {
         book2Question7Answer1?.type = 2
 //        book2Question3Answer1?.signLanguage = "sl_b1_q3_a1"
 //        book2Question3Answer1?.illustration = "il_b1_q3_a1"
+        book2Question7Answer1?.illustration = "illust_dummy"
+        book2Question7Answer1?.illustration1 = "illust_dummy"
         book2Question7Answer1?.isCorrect = true
         book2Question7Answer1?.question = book2Question7
         
@@ -493,6 +495,8 @@ struct DataFeedManager {
         book2Question7Answer2?.type = 2
 //        book2Question3Answer2?.signLanguage = "sl_b1_q3_a2"
 //        book2Question3Answer2?.illustration = "il_b1_q3_a2"
+        book2Question7Answer2?.illustration = "il_b_default"
+        book2Question7Answer2?.illustration1 = "il_b_default"
         book2Question7Answer2?.isCorrect = true
         book2Question7Answer2?.question = book2Question7
         
@@ -501,6 +505,9 @@ struct DataFeedManager {
         book2Question7Answer3?.type = 2
 //        book2Question3Answer3?.signLanguage = "sl_b1_q3_a3"
 //        book2Question3Answer3?.illustration = "il_b1_q3_a3"
+        
+        book2Question7Answer3?.illustration = "background-word-summary"
+        book2Question7Answer3?.illustration1 = "background-word-summary"
         book2Question7Answer3?.isCorrect = false
         book2Question7Answer3?.question = book2Question7
         

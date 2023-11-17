@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct HomeHeader: View {
+    var userName = "Sarah Octavia"
     var body: some View {
         HStack{
             VStack(alignment: .leading){
                 Text("Selamat Pagi,")
                     .font(.Caption_Regular)
-                Text("Sarah Octavia")
+                Text(userName)
                     .font(.Body_Medium)
             }
             Spacer()
