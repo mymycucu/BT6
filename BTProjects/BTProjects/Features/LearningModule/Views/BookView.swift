@@ -17,7 +17,8 @@ struct BookView: View {
     var body: some View {
         ZStack{
             if (bookScene == 0){
-                BookCoverView(bookScene: $bookScene, book: book, isQuizFinished: false)            }
+                BookCoverView(bookScene: $bookScene, book: book, isQuizFinished: false)
+            }
             ForEach(0..<book.story.count, id: \.self){ idx in
                 if(bookScene == idx+1){
                     if bookScene == 1 {
