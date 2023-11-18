@@ -10,19 +10,36 @@ import SwiftUI
 struct BookView: View {
     @State var bookScene: Int = 0
     @State var isMenu: Bool = false
+    @State private var countPageOne: Int = 0
     
     var book: Book
     
     var body: some View {
         ZStack{
             if (bookScene == 0){
-                BookCoverView(bookScene: $bookScene, book: book, isQuizFinished: false)
-            }
+                BookCoverView(bookScene: $bookScene, book: book, isQuizFinished: false)            }
             ForEach(0..<book.story.count, id: \.self){ idx in
                 if(bookScene == idx+1){
-                    StoryView(isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, storyPage: book.story[idx])
-                        .ignoresSafeArea()
-                        .animation(.easeInOut(duration: 0.5))
+                    if bookScene == 1 {
+                        if countPageOne == 0 {
+                            StoryView(isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, storyPage: book.story[idx])
+                                .ignoresSafeArea()
+                                .transition(.moveAndFade)
+                                .animation(.default)
+                                .background(Background(viewState: .normal))
+                        } else {
+                            StoryView(isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, storyPage: book.story[idx])
+                                .ignoresSafeArea()
+                        }
+                    }else{
+                        
+                        StoryView(isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, storyPage: book.story[idx])
+                            .ignoresSafeArea()
+                            .onAppear{
+                                countPageOne += 1
+                            }
+                    }
+                    
                         
                 }
             }

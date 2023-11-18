@@ -41,6 +41,7 @@ struct BookCoverView: View {
                     Spacer()
                     
                     // MARK: Story Button
+                    
                     Button(action: {
                         bookScene = 1
                     }) {

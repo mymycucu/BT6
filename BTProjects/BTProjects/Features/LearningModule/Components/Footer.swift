@@ -94,7 +94,7 @@ struct Footer: View {
                                     .offset(y: (1 - scale) * geo.size.height)
                                     .opacity(opacity)
                                     .onAppear{
-                                        withAnimation(.easeInOut(duration: 2)){
+                                        withAnimation(.easeInOut(duration: 0.5)){
                                             scale = 1
                                             opacity = 1
                                         }
@@ -104,7 +104,7 @@ struct Footer: View {
                         .cornerRadius(12)
                 }
                 .onAppear{
-                    withAnimation(.spring(duration: 2.5)){
+                    withAnimation(.spring(duration: 2)){
                         offset = 0
                         
                     }

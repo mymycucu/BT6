@@ -37,6 +37,7 @@ struct StoryVideo: View {
                         RoundedRectangle(cornerRadius: 22)
                             .stroke(Color.PB500, lineWidth: 8) // Use your desired stroke color
                     )
+    
             }
             
             //MARK: Replay Button
@@ -56,28 +57,29 @@ struct StoryVideo: View {
         }
         .frame(width: 310, height: 400)
         .onAppear {
-            
-            //MARK: Video Path
-            DispatchQueue.main.async {
+            withAnimation(.easeInOut(duration: 2)){
+                //MARK: Video Path
                 let url = URL(fileURLWithPath: Bundle.main.path(forResource: videoURL, ofType: "mp4")!)
                 player = AVPlayer(url: url)
                 player?.isMuted = true // Video condition is muted
                 player?.play()
                 player?.actionAtItemEnd = .pause // .pause for no replay .none for autoreplay
-            }
-            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { _ in
-                isVideoFinished = true
+                
+                NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { _ in
+                    isVideoFinished = true
+                }
+                
+                NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: .main) { _ in
+                    // App is going to the background, pause the video
+                    player?.pause()
+                }
+                
+                NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
+                    // App has become active, resume the video
+                    player?.play()
+                }
             }
             
-            NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: .main) { _ in
-                // App is going to the background, pause the video
-                player?.pause()
-            }
-            
-            NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
-                // App has become active, resume the video
-                player?.play()
-            }
         }
         .onChange(of: isVideoFinished) { oldValue, newValue in
             countVideoPlayed += 1
