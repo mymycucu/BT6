@@ -12,23 +12,36 @@ struct Footer: View {
     var footerState: ViewState
     @Binding var isDisabled: Bool
     @Binding var bookScene: Int
+    @Binding var countVideoPlayed: Int
     var maxBookScene: Int
     var words: String
     var highlightWord: String
     
-    init(footerState: ViewState, isDisabled:Binding<Bool>, bookScene:Binding<Int>, words: String, highlightWord: String, maxBookScene: Int) {
+    
+    init(footerState: ViewState,  bookScene:Binding<Int>, countVideoPlayed:Binding<Int>, words: String, highlightWord: String, maxBookScene: Int) {
         self.footerState = footerState
-        _isDisabled = isDisabled
+        _isDisabled = .constant(false)
         _bookScene = bookScene
+        _countVideoPlayed = countVideoPlayed
         self.words =  words
         self.highlightWord = highlightWord
         self.maxBookScene = maxBookScene
     }
-    
     init(footerState: ViewState, isDisabled:Binding<Bool>, bookScene:Binding<Int>, maxBookScene: Int) {
         self.footerState = footerState
         _isDisabled = isDisabled
         _bookScene = bookScene
+        _countVideoPlayed = .constant(1)
+        words =  " "
+        highlightWord = " "
+        self.maxBookScene = maxBookScene
+    }
+    
+    init(footerState: ViewState,bookScene:Binding<Int>, countVideoPlayed:Binding<Int>, maxBookScene: Int) {
+        self.footerState = footerState
+        _isDisabled = .constant(false)
+        _bookScene = bookScene
+        _countVideoPlayed = countVideoPlayed
         self.maxBookScene = maxBookScene
         words =  " "
         highlightWord = " "
@@ -52,7 +65,8 @@ struct Footer: View {
                         .font(.Button)
                         
                 }
-                .buttonStyle(CircularButtonStyle())
+                .buttonStyle(CircularButtonStyle(disabled: countVideoPlayed==0))
+                .disabled(countVideoPlayed==0)
                 .opacity(bookScene <= 1 ? 0 : 1)
             }
             
@@ -79,7 +93,7 @@ struct Footer: View {
             // MARK: Next Button
             VStack{
                 Spacer()
-                if footerState != .summary{
+                if footerState == .quiz{
                     
                     Button(action: {
                         if(bookScene >= maxBookScene-1){
@@ -90,9 +104,25 @@ struct Footer: View {
                     }) {
                         Image(systemName: "arrowshape.right.fill")
                             .font(.Button)
-                        
                     }
                     .buttonStyle(CircularButtonStyle(disabled: isDisabled))
+                    .disabled(isDisabled)
+                    
+                    .opacity(bookScene >= maxBookScene ? 0 : 1)
+                    
+                } else if footerState != .summary{
+                    Button(action: {
+                        if(bookScene >= maxBookScene-1){
+                            presentationMode.wrappedValue.dismiss()
+                        }else{
+                            bookScene += 1
+                        }
+                    }) {
+                        Image(systemName: "arrowshape.right.fill")
+                            .font(.Button)
+                    }
+                    .buttonStyle(CircularButtonStyle(disabled: countVideoPlayed==0))
+                    .disabled(countVideoPlayed==0)
                     .opacity(bookScene >= maxBookScene ? 0 : 1)
                     
                 }
@@ -112,8 +142,12 @@ struct Footer: View {
                                 .font(.Button)
                         }
                     }
-                    .buttonStyle(RoundedButtonStyle())
+                    .buttonStyle(RoundedButtonStyle(disabled: countVideoPlayed==0))
+                    .disabled(countVideoPlayed==0)
+                    
+                    
                 }
+                
             }
             
             

@@ -69,6 +69,7 @@ struct ConnectImagesView: View {
     /// show correct state
     @State var isCorrectState: Bool = false
     @State var isExitState: Bool = false
+    
     var body: some View {
         
         ZStack {
@@ -238,7 +239,7 @@ struct ConnectImagesView: View {
             .padding(38)
             
             if isCorrectState {
-                CorrectState(isCorrectState: $isCorrectState)
+                CorrectState(isCorrectState: $isCorrectState, isDisabled: $isDisabled)
             }
             if isExitState{
                 ExitState(isExitState: $isExitState)
@@ -377,6 +378,3 @@ struct ConnectImagesView: View {
     
     
 }
-
-
-

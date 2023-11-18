@@ -12,13 +12,15 @@ import AVKit
 struct SummaryVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
+    @Binding  var countVideoPlayed: Int
     
-    var videoURL: String 
+    var videoURL: String
     
-    init(videoURL: String) {
+    init(videoURL: String, countVideoPlayed: Binding<Int>) {
         self.isVideoFinished = false
         self.player = nil
         self.videoURL = videoURL
+        _countVideoPlayed = countVideoPlayed
     }
     
     var body: some View {
@@ -44,6 +46,7 @@ struct SummaryVideo: View {
                     Button(action: {
                         // Start the video from the beginning
                         isVideoFinished = false
+                        
                         player?.seek(to: .zero)
                         player?.play()
                     }) {
@@ -82,9 +85,12 @@ struct SummaryVideo: View {
                 player?.play()
             }
         }
+        .onChange(of: isVideoFinished) { oldValue, newValue in
+            countVideoPlayed += 1
+        }
     }
 }
 
 #Preview {
-    SummaryVideo(videoURL: "E_Bisindo")
+    SummaryVideo(videoURL: "E_Bisindo", countVideoPlayed: .constant(0))
 }

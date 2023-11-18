@@ -14,7 +14,7 @@ struct TripleChoiceView: View {
     @Binding var isMenu: Bool
     @Binding var bookScene: Int
     var maxBookScene: Int
-    @State var isDisabled: Bool = false
+    @State var isDisabled: Bool = true
     
     @State var viewState: ViewState = .quiz
     var currentQuiz: Int
@@ -23,6 +23,8 @@ struct TripleChoiceView: View {
     /// show correct state
     @State var isCorrectState: Bool = false
     @State var isExitState: Bool = false
+    
+    
     var body: some View {
         ZStack {
             
@@ -54,13 +56,14 @@ struct TripleChoiceView: View {
             VStack {
                 Spacer()
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+                
             }
             .padding(38)
 //            .padding(.horizontal,27)
 //            .padding(.vertical,36)
             
             if isCorrectState {
-                CorrectState(isCorrectState: $isCorrectState)
+                CorrectState(isCorrectState: $isCorrectState, isDisabled: $isDisabled)
             }
             if isExitState{
                 ExitState(isExitState: $isExitState)

@@ -1,5 +1,5 @@
 //
-//  VideoContainer.swift
+//  StoryVideo.swift
 //  BTProjects
 //
 //  Created by Ario Syahputra on 25/10/23.
@@ -13,8 +13,10 @@ import SwiftUI
 struct StoryVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
-    
+        
     var videoURL: String
+    
+    @Binding var countVideoPlayed: Int
     
     var body: some View {
         ZStack {
@@ -78,12 +80,14 @@ struct StoryVideo: View {
                 player?.play()
             }
         }
+        .onChange(of: isVideoFinished) { oldValue, newValue in
+            countVideoPlayed += 1
+        }
     }
 }
 
 
 
 #Preview {
-    StoryVideo(videoURL: "E_Bisindo")
+    StoryVideo(videoURL: "E_Bisindo", countVideoPlayed: .constant(0))
 }
-
