@@ -14,9 +14,15 @@ struct Footer: View {
     @Binding var bookScene: Int
     @Binding var countVideoPlayed: Int
     var maxBookScene: Int
-    var words: String
+    var words: String = " "
     var highlightWord: String
     
+    @State private var isAnimate:Bool = false
+    @State private var offset: CGFloat = 100
+    @State private var heightWord: CGFloat = 0
+    @State private var maxHeightWord: CGFloat = 0
+    @State private var scale: CGFloat = 0
+        @State private var opacity: Double = 0
     
     init(footerState: ViewState,  bookScene:Binding<Int>, countVideoPlayed:Binding<Int>, words: String, highlightWord: String, maxBookScene: Int) {
         self.footerState = footerState
@@ -63,7 +69,7 @@ struct Footer: View {
                 }) {
                     Image(systemName: "arrowshape.left.fill")
                         .font(.Button)
-                        
+                    
                 }
                 .buttonStyle(CircularButtonStyle(disabled: countVideoPlayed==0))
                 .disabled(countVideoPlayed==0)
@@ -72,16 +78,36 @@ struct Footer: View {
             
             if footerState == .story{
                 VStack(alignment: .leading){
-
                     Text(words)
+                        .offset(y:offset)
                         .font(.Subhead1_Medium)
                         .lineLimit(nil)
                         .multilineTextAlignment(.leading)
                         .padding(.horizontal, 22)
                         .padding(.vertical, 18)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(Color(.systemGray6))
+                        .background(
+                            GeometryReader{ geo in
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(Color(.systemGray6))
+                                    .scaleEffect(y: scale)
+                                    .offset(y: (1 - scale) * geo.size.height)
+                                    .opacity(opacity)
+                                    .onAppear{
+                                        withAnimation(.easeInOut(duration: 2)){
+                                            scale = 1
+                                            opacity = 1
+                                        }
+                                    }
+                            }
+                        )
                         .cornerRadius(12)
+                }
+                .onAppear{
+                    withAnimation(.spring(duration: 2.5)){
+                        offset = 0
+                        
+                    }
                     
                 }
             } else {
@@ -158,6 +184,6 @@ struct Footer: View {
     }
 }
 
-//#Preview {
-//    Footer()
-//}
+#Preview {
+    Footer(footerState: .story, bookScene: .constant(3), countVideoPlayed: .constant(0), words: "Sarah bermain bola di halaman rumahnya lalu bolanya tersangkut di atas pohon.", highlightWord: "halo", maxBookScene: 5)
+}

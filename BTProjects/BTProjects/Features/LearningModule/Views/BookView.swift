@@ -22,6 +22,8 @@ struct BookView: View {
                 if(bookScene == idx+1){
                     StoryView(isMenu: $isMenu, bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, storyPage: book.story[idx])
                         .ignoresSafeArea()
+                        .animation(.easeInOut(duration: 0.5))
+                        
                 }
             }
             if (bookScene == book.story.count+1){
