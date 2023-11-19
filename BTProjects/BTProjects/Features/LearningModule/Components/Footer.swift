@@ -12,23 +12,42 @@ struct Footer: View {
     var footerState: ViewState
     @Binding var isDisabled: Bool
     @Binding var bookScene: Int
+    @Binding var countVideoPlayed: Int
     var maxBookScene: Int
-    var words: String
+    var words: String = " "
     var highlightWord: String
     
-    init(footerState: ViewState, isDisabled:Binding<Bool>, bookScene:Binding<Int>, words: String, highlightWord: String, maxBookScene: Int) {
+    @State private var isAnimate:Bool = false
+    @State private var offset: CGFloat = 100
+    @State private var heightWord: CGFloat = 0
+    @State private var maxHeightWord: CGFloat = 0
+    @State private var scale: CGFloat = 0
+        @State private var opacity: Double = 0
+    
+    init(footerState: ViewState,  bookScene:Binding<Int>, isDisabled:Binding<Bool>, words: String, highlightWord: String, maxBookScene: Int) {
         self.footerState = footerState
         _isDisabled = isDisabled
         _bookScene = bookScene
+        _countVideoPlayed = .constant(1)
         self.words =  words
         self.highlightWord = highlightWord
         self.maxBookScene = maxBookScene
     }
-    
     init(footerState: ViewState, isDisabled:Binding<Bool>, bookScene:Binding<Int>, maxBookScene: Int) {
         self.footerState = footerState
         _isDisabled = isDisabled
         _bookScene = bookScene
+        _countVideoPlayed = .constant(1)
+        words =  " "
+        highlightWord = " "
+        self.maxBookScene = maxBookScene
+    }
+    
+    init(footerState: ViewState,bookScene:Binding<Int>, countVideoPlayed:Binding<Int>, maxBookScene: Int) {
+        self.footerState = footerState
+        _isDisabled = .constant(false)
+        _bookScene = bookScene
+        _countVideoPlayed = countVideoPlayed
         self.maxBookScene = maxBookScene
         words =  " "
         highlightWord = " "
@@ -39,35 +58,75 @@ struct Footer: View {
         
         HStack (alignment: .bottom, spacing: 15){
             // MARK: Back Button
-            VStack{
-                Spacer()
-                Button(action: {
-                    if(bookScene <= 1){
-                        bookScene = 1
-                    }else{
-                        bookScene -= 1
-                    }
-                }) {
-                    Image(systemName: "arrowshape.left.fill")
-                        .font(.Button)
+            if footerState == .story{
+                VStack{
+                    Spacer()
+                    Button(action: {
+                        if(bookScene <= 1){
+                            bookScene = 1
+                        }else{
+                            bookScene -= 1
+                        }
+                    }) {
+                        Image(systemName: "arrowshape.left.fill")
+                            .font(.Button)
                         
+                    }
+                    .buttonStyle(CircularButtonStyle(disabled: isDisabled))
+                    .disabled(isDisabled)
+                    .opacity(bookScene <= 1 ? 0 : 1)
                 }
-                .buttonStyle(CircularButtonStyle())
-                .opacity(bookScene <= 1 ? 0 : 1)
+            } else {
+                VStack{
+                    Spacer()
+                    Button(action: {
+                        if(bookScene <= 1){
+                            bookScene = 1
+                        }else{
+                            bookScene -= 1
+                        }
+                    }) {
+                        Image(systemName: "arrowshape.left.fill")
+                            .font(.Button)
+                        
+                    }
+                    .buttonStyle(CircularButtonStyle())
+                    .opacity(bookScene <= 1 ? 0 : 1)
+                }
             }
             
             if footerState == .story{
                 VStack(alignment: .leading){
-
                     Text(words)
+                        .offset(y:offset)
                         .font(.Subhead1_Medium)
                         .lineLimit(nil)
                         .multilineTextAlignment(.leading)
                         .padding(.horizontal, 22)
                         .padding(.vertical, 18)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(Color(.systemGray6))
+                        .background(
+                            GeometryReader{ geo in
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(Color(.systemGray6))
+                                    .scaleEffect(y: scale)
+                                    .offset(y: (1 - scale) * geo.size.height)
+                                    .opacity(opacity)
+                                    .onAppear{
+                                        withAnimation(.easeInOut(duration: 0.5)){
+                                            scale = 1
+                                            opacity = 1
+                                        }
+                                    }
+                            }
+                        )
                         .cornerRadius(12)
+                }
+                .onAppear{
+                    withAnimation(.spring(duration: 2)){
+                        offset = 0
+                        
+                    }
                     
                 }
             } else {
@@ -90,11 +149,11 @@ struct Footer: View {
                     }) {
                         Image(systemName: "arrowshape.right.fill")
                             .font(.Button)
-                        
                     }
                     .buttonStyle(CircularButtonStyle(disabled: isDisabled))
-                    .opacity(bookScene >= maxBookScene ? 0 : 1)
                     .disabled(isDisabled)
+                    
+                    .opacity(bookScene >= maxBookScene ? 0 : 1)
                     
                 }
                 else {
@@ -113,8 +172,12 @@ struct Footer: View {
                                 .font(.Button)
                         }
                     }
-                    .buttonStyle(RoundedButtonStyle())
+                    .buttonStyle(RoundedButtonStyle(disabled: countVideoPlayed==0))
+                    .disabled(countVideoPlayed==0)
+                    
+                    
                 }
+                
             }
             
             
@@ -125,6 +188,6 @@ struct Footer: View {
     }
 }
 
-//#Preview {
-//    Footer()
-//}
+#Preview {
+    Footer(footerState: .story, bookScene: .constant(3), isDisabled: .constant(true), words: "Sarah", highlightWord: "tolong", maxBookScene: 6)
+}

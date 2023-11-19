@@ -17,8 +17,9 @@ struct WordSummaryView: View {
     
     @State var viewState: ViewState = .summary
     @State var background: String = "background-word-summary"
-    @State var isDisabled: Bool = false
+    @State var isDisabled: Bool = true
     
+    @State var countVideoPlayed: Int = 0
 
     
     var body: some View {
@@ -37,7 +38,7 @@ struct WordSummaryView: View {
                     .underline()
                     .padding(.bottom, 50)
                 
-                SummaryVideo(videoURL: videoURL)
+                SummaryVideo(videoURL: videoURL, countVideoPlayed: $countVideoPlayed)
                     
                 
                 Spacer()
@@ -52,7 +53,7 @@ struct WordSummaryView: View {
             VStack(spacing: 0){
                 Spacer()
                 
-                Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
+                Footer(footerState: viewState, bookScene: $bookScene, countVideoPlayed: $countVideoPlayed, maxBookScene: maxBookScene)
                 
             }
             .padding(38)
