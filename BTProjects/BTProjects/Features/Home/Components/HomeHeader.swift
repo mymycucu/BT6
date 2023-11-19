@@ -12,7 +12,7 @@ struct HomeHeader: View {
     var body: some View {
         HStack{
             VStack(alignment: .leading){
-                Text("Selamat Pagi,")
+                Text("\(GetTime.getTimeGreeting()),")
                     .font(.Caption_Regular)
                 Text(userName)
                     .font(.Body_Medium)
