@@ -262,7 +262,7 @@ struct DataFeedManager {
         book2StoryPage10?.name = "Sepulang sekolah, Sarah dan Ario bermain di taman"
         book2StoryPage10?.order = 10
         book2StoryPage10?.signLanguage = "sl_b2_sp10"
-//        book2StoryPage10?.illustration = "il_b2_sp10"
+        book2StoryPage10?.illustration = "il_b2_sp10"
         book2StoryPage10?.desc = ""
         book2StoryPage10?.book = book2
         
@@ -270,7 +270,7 @@ struct DataFeedManager {
         book2StoryPage11?.name = "Saat asik bermain, Ario tersandung batu dan menangis"
         book2StoryPage11?.order = 11
         book2StoryPage11?.signLanguage = "sl_b2_sp11"
-//        book2StoryPage11?.illustration = "il_b2_sp11"
+        book2StoryPage11?.illustration = "il_b2_sp11"
         book2StoryPage11?.desc = ""
         book2StoryPage11?.book = book2
         
@@ -278,9 +278,18 @@ struct DataFeedManager {
         book2StoryPage12?.name = "“Tolong.. tolong, kak Sarah tolong aku” Ucap Ario kesakitan"
         book2StoryPage12?.order = 12
         book2StoryPage12?.signLanguage = "sl_b2_sp12"
-//        book2StoryPage12?.illustration = "il_b2_sp12"
+        book2StoryPage12?.illustration = "il_b2_sp12"
         book2StoryPage12?.desc = ""
         book2StoryPage12?.book = book2
+        
+        let book2StoryPage13 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage13?.name = "Sarah langsung membantu dan membersihkan luka Ario."
+        book2StoryPage13?.order = 13
+        book2StoryPage13?.signLanguage = "sl_b2_sp13"
+        book2StoryPage13?.illustration = "il_b2_sp13"
+        book2StoryPage13?.desc = ""
+        book2StoryPage13?.book = book2
+        
         
         // MARK: Create Q&A Tirukan Bu, Tolong Sarah
         let book2Question = PersistenceController.shared.create(Question.self)

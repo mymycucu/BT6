@@ -118,6 +118,7 @@
 		ADE3CFA92AE3ADA200CED0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */; };
 		ADE3CFAC2AE3ADA200CED0DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE3CFAB2AE3ADA200CED0DD /* Preview Assets.xcassets */; };
 		ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFB92AE3AE9D00CED0DD /* Prompt.swift */; };
+		D404F4D12B09F5F500402AFF /* ConnectImagesQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404F4D02B09F5F500402AFF /* ConnectImagesQuestion.swift */; };
 		D42481812B09585500C29318 /* ExtensionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42481802B09585500C29318 /* ExtensionTransition.swift */; };
 		D444C2D02B00A2A50001E36A /* Ribbon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D444C2CF2B00A2A50001E36A /* Ribbon.swift */; };
 		D46180D02AFB6D6400370DD3 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46180CF2AFB6D6400370DD3 /* CustomButtonStyle.swift */; };
@@ -247,6 +248,7 @@
 		ADE3CFB92AE3AE9D00CED0DD /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		ADE3CFBB2AE3AEBE00CED0DD /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		D404F4D02B09F5F500402AFF /* ConnectImagesQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectImagesQuestion.swift; sourceTree = "<group>"; };
 		D42481802B09585500C29318 /* ExtensionTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTransition.swift; sourceTree = "<group>"; };
 		D444C2CF2B00A2A50001E36A /* Ribbon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ribbon.swift; sourceTree = "<group>"; };
 		D46180C32AFB60DD00370DD3 /* VideoPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
@@ -736,6 +738,7 @@
 			isa = PBXGroup;
 			children = (
 				AD4D958B2AFE46D10035E006 /* ImageContainer.swift */,
+				D404F4D02B09F5F500402AFF /* ConnectImagesQuestion.swift */,
 			);
 			path = ConnectImages;
 			sourceTree = "<group>";
@@ -962,6 +965,7 @@
 				057EDE182AFE37A200A85B51 /* TripleCardChoice.swift in Sources */,
 				057EDDEF2AFC8A5000A85B51 /* MultipleChoiceVideo.swift in Sources */,
 				057EDE0C2AFE327E00A85B51 /* TripleChoiceVideo.swift in Sources */,
+				D404F4D12B09F5F500402AFF /* ConnectImagesQuestion.swift in Sources */,
 				059ED84E2AFA173400AB7630 /* TirukanText.swift in Sources */,
 				059ED8522AFA186200AB7630 /* TirukanBottomBar.swift in Sources */,
 				057EDDFB2AFC8D6300A85B51 /* MultipleChoiceQuestion.swift in Sources */,

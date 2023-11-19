@@ -23,7 +23,7 @@ struct ConnectImagesView: View {
     @Binding var bookScene: Int
     var maxBookScene: Int
     
-    @State var isDisabled: Bool = false
+    @State var isDisabled: Bool = true
     
     @State var viewState: ViewState = .quiz
     @State var currentQuiz: Int = 8
@@ -69,6 +69,7 @@ struct ConnectImagesView: View {
     /// show correct state
     @State var isCorrectState: Bool = false
     @State var isExitState: Bool = false
+    @State var isQuestion: Bool = true
     
     var body: some View {
         
@@ -233,6 +234,36 @@ struct ConnectImagesView: View {
             
             //MARK: Footer
             VStack(spacing: 0){
+                HStack {
+                    Spacer()
+                    
+                    //MARK: X Button
+                    Button(action: {
+                        isQuestion.toggle()
+                    }) {
+                        
+                        HStack(alignment: .center, spacing: 0) {
+                            Image(systemName: "xmark")
+                                .bold()
+                                .imageScale(.large)
+                                .foregroundColor(Color.PB500)
+                            
+                        }
+                        .frame(width: 44, height: 44)
+                        .background(Color.white)
+                        .cornerRadius(100)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .inset(by: 1.5)
+                                .stroke(Color.PB500, lineWidth: 3)
+                        )
+                        
+                        
+                    }
+                    
+                    
+                }
+                .padding(.top, 100)
                 Spacer()
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
@@ -244,6 +275,10 @@ struct ConnectImagesView: View {
             if isExitState{
                 ExitState(isExitState: $isExitState)
             }
+            if isQuestion{
+                ConnectImagesQuestion(isQuestion: $isQuestion)
+            }
+            
             
         }
         //MARK: OnAppear
