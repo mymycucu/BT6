@@ -118,6 +118,7 @@
 		ADE3CFA92AE3ADA200CED0DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE3CFA82AE3ADA200CED0DD /* Assets.xcassets */; };
 		ADE3CFAC2AE3ADA200CED0DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADE3CFAB2AE3ADA200CED0DD /* Preview Assets.xcassets */; };
 		ADE3CFBA2AE3AE9D00CED0DD /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3CFB92AE3AE9D00CED0DD /* Prompt.swift */; };
+		ADFDF2D32B09EEA90049AD55 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFDF2D22B09EEA90049AD55 /* StoryViewModel.swift */; };
 		D444C2D02B00A2A50001E36A /* Ribbon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D444C2CF2B00A2A50001E36A /* Ribbon.swift */; };
 		D46180D02AFB6D6400370DD3 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46180CF2AFB6D6400370DD3 /* CustomButtonStyle.swift */; };
 		D4B3F37A2B00A1CD008F105F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B3F3792B00A1CD008F105F /* MenuView.swift */; };
@@ -246,6 +247,7 @@
 		ADE3CFB92AE3AE9D00CED0DD /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		ADE3CFBB2AE3AEBE00CED0DD /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		ADE3CFC52AE3AF9600CED0DD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		ADFDF2D22B09EEA90049AD55 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		D444C2CF2B00A2A50001E36A /* Ribbon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ribbon.swift; sourceTree = "<group>"; };
 		D46180C32AFB60DD00370DD3 /* VideoPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
 		D46180CF2AFB6D6400370DD3 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
@@ -749,6 +751,7 @@
 			isa = PBXGroup;
 			children = (
 				D4D182F82B066E9B0057FA4C /* QuizViewModel.swift */,
+				ADFDF2D22B09EEA90049AD55 /* StoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -968,6 +971,7 @@
 				ADBE94582AFCB6F7008A1390 /* StoryPage.swift in Sources */,
 				D4B3F37C2B00A264008F105F /* ThumbnailPage.swift in Sources */,
 				D444C2D02B00A2A50001E36A /* Ribbon.swift in Sources */,
+				ADFDF2D32B09EEA90049AD55 /* StoryViewModel.swift in Sources */,
 				AD4D956C2AFE45420035E006 /* CategorySelection.swift in Sources */,
 				AD4D95682AFE45420035E006 /* StoryBookPerCategory.swift in Sources */,
 				ADBE941B2AF3744F008A1390 /* Constant.swift in Sources */,
@@ -1112,22 +1116,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BTProjects/Preview Content\"";
-				DEVELOPMENT_TEAM = AVMBLQT368;
+				DEVELOPMENT_TEAM = 7UW53Z6Q89;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BTProjects/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Koka;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Ensuring your privacy, the app uses the camera for sign language detection";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bt6.BTProjects;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bt6.KoKa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1143,22 +1148,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BTProjects/Preview Content\"";
-				DEVELOPMENT_TEAM = AVMBLQT368;
+				DEVELOPMENT_TEAM = 7UW53Z6Q89;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BTProjects/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Koka;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Ensuring your privacy, the app uses the camera for sign language detection";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bt6.BTProjects;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bt6.KoKa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

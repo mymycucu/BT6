@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="Answer" representedClassName=".Answer" syncable="YES" codeGenerationType="category">
         <attribute name="illustration" optional="YES" attributeType="String"/>
         <attribute name="illustration1" optional="YES" attributeType="String"/>
@@ -11,6 +11,7 @@
     </entity>
     <entity name="Book" representedClassName=".Book" syncable="YES" codeGenerationType="category">
         <attribute name="cover" optional="YES" attributeType="String"/>
+        <attribute name="isRead" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="summarySignLanguage" optional="YES" attributeType="String"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="books" inverseEntity="Category"/>
@@ -36,6 +37,7 @@
     <entity name="StoryPage" representedClassName=".StoryPage" syncable="YES" codeGenerationType="category">
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="illustration" optional="YES" attributeType="String"/>
+        <attribute name="isRead" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="signLanguage" optional="YES" attributeType="String"/>

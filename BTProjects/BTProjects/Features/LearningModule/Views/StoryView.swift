@@ -13,8 +13,9 @@ struct StoryView: View {
     @Binding var bookScene: Int
     var maxBookScene:Int
     var storyPage: StoryPage
-    @State var isDisabled: Bool = false
+    @State var isDisabled: Bool = true
     @State var viewState: ViewState = .story
+    
     
     var body: some View {
         ZStack {
@@ -25,7 +26,7 @@ struct StoryView: View {
                 Header(isMenu: $isMenu, isExitState: $isExitState, headerState: viewState)
                     .padding(.bottom, 80)
                 
-                StoryVideo(videoURL: storyPage.signLanguage ?? "")
+                StoryVideo(storyPage: storyPage, videoURL: storyPage.signLanguage ?? "", isDisabled: $isDisabled)
                     .offset(x: 330, y: 0)
                 
                 Spacer()
@@ -42,6 +43,8 @@ struct StoryView: View {
                 ExitState(isExitState: $isExitState)
             }
             
+        }.onAppear {
+            isDisabled = !storyPage.isRead
         }
     }
 }
