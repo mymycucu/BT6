@@ -7,20 +7,11 @@
 
 import SwiftUI
 
-struct StoryCover: Identifiable {
-    let id = UUID()
-    var storyThumbnail: String
-}
-
-struct QuestionCover: Identifiable {
-    let id = UUID()
-    let storyThumbnail: String
-}
-
 struct MenuView: View {
     @Binding var isMenu : Bool
     @Binding var bookScene: Int
     var book: Book
+    
     
     private let columns: [GridItem] = [
         GridItem(.fixed(316), spacing: 24, alignment: .center),
@@ -40,21 +31,22 @@ struct MenuView: View {
                                 .font(.Heading2_Semibold)
                                 .foregroundColor(.white))
                             {
-                
                                 ForEach(0..<book.story.count, id: \.self) { idx in
                                     Button(action: {
                                         bookScene = idx+1
                                         isMenu.toggle()
                                     }, label: {
-                                        ThumbnailPage(isSelect: bookScene==idx+1, order: idx+1, imageTitle: book.story[idx].illustration ?? "mencari-kumbang" )
+                                        ThumbnailPage(isSelect: bookScene==idx+1, order: idx+1, imageTitle: book.story[idx].illustration ?? "mencari-kumbang", isRead: book.story[idx].isRead )
                                     })
+                                    .disabled(!book.story[idx].isRead)
                                 }
                                 Button(action: {
                                     bookScene = book.story.count+1
                                     isMenu.toggle()
                                 }, label: {
-                                    ThumbnailPage(isSelect: bookScene==book.story.count+1, order: book.story.count+1, imageTitle: "mencari-kumbang" )
+                                    ThumbnailPage(isSelect: bookScene==book.story.count+1, order: book.story.count+1, imageTitle: "mencari-kumbang", isRead: false )
                                 })
+                                
                             }
                             
                             //MARK: Question
@@ -68,8 +60,9 @@ struct MenuView: View {
                                         bookScene = idx+book.story.count+2
                                         isMenu.toggle()
                                     }, label: {
-                                        ThumbnailPage(isSelect: bookScene == idx+book.story.count+2, order: idx+1, imageTitle: book.lstQuestions[idx].illustration ?? "mencari-kumbang")
+                                        ThumbnailPage(isSelect: bookScene == idx+book.story.count+2, order: idx+1, imageTitle: book.lstQuestions[idx].illustration ?? "mencari-kumbang", isRead: book.lstQuestions[idx].isDone)
                                     })
+                                    .disabled(!book.lstQuestions[idx].isDone)
                                 }
                                 
                             }
@@ -94,7 +87,6 @@ struct MenuView: View {
             .padding(.vertical,36)
             
         })
-        
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
             Color.Overlay1.opacity(0.7)

@@ -14,6 +14,7 @@ struct ThumbnailPage: View {
     var imageTitle: String
     
     var isActive: Bool = false
+    @State var isRead: Bool
     
     var body: some View {
         ZStack {
@@ -23,7 +24,10 @@ struct ThumbnailPage: View {
                 .frame(width: 316, height: 230)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .zIndex(1)
-                .overlay(Color.black.opacity(isSelect ? 0 : 0.5))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.black.opacity(isSelect ? 0 : isRead ? 0 : 0.5))
+                    )
             Ribbon(order: order)
                 .offset(x: -100, y:-73)
                 .zIndex(3)
@@ -43,5 +47,5 @@ struct ThumbnailPage: View {
 }
 
 #Preview {
-    ThumbnailPage(isSelect: true, order: 1 , imageTitle: "mencari-kumbang")
+    ThumbnailPage(isSelect: false, order: 1 , imageTitle: "mencari-kumbang", isRead: true)
 }

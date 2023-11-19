@@ -243,7 +243,7 @@ struct ConnectImagesView: View {
                     }) {
                         
                         HStack(alignment: .center, spacing: 0) {
-                            Image(systemName: "xmark")
+                            Image(systemName: "questionmark")
                                 .bold()
                                 .imageScale(.large)
                                 .foregroundColor(Color.PB500)
