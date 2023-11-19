@@ -14,9 +14,10 @@ struct StoryVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
     
+    var viewModel = StoryViewModel()
+    var storyPage: StoryPage
     var videoURL: String
-    
-    @Binding var countVideoPlayed: Int
+    @Binding var isDisabled: Bool
     
     var body: some View {
         ZStack {
@@ -57,38 +58,38 @@ struct StoryVideo: View {
         }
         .frame(width: 310, height: 400)
         .onAppear {
-            withAnimation(.easeInOut(duration: 2)){
-                //MARK: Video Path
-                let url = URL(fileURLWithPath: Bundle.main.path(forResource: videoURL, ofType: "mp4")!)
-                player = AVPlayer(url: url)
-                player?.isMuted = true // Video condition is muted
-                player?.play()
-                player?.actionAtItemEnd = .pause // .pause for no replay .none for autoreplay
-                
-                NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { _ in
-                    isVideoFinished = true
-                }
-                
-                NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: .main) { _ in
-                    // App is going to the background, pause the video
-                    player?.pause()
-                }
-                
-                NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
-                    // App has become active, resume the video
-                    player?.play()
-                }
+            
+            //MARK: Video Path
+            
+            let url = URL(fileURLWithPath: Bundle.main.path(forResource: videoURL, ofType: "mp4")!)
+            player = AVPlayer(url: url)
+            
+            player?.isMuted = true // Video condition is muted
+            player?.play()
+            player?.actionAtItemEnd = .pause // .pause for no replay .none for autoreplay
+            
+            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { _ in
+                isVideoFinished = true
+                viewModel.updateStoryIsReaded(storyPage: storyPage)
+                isDisabled = false
             }
             
-        }
-        .onChange(of: isVideoFinished) { oldValue, newValue in
-            countVideoPlayed += 1
+            NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: .main) { _ in
+                // App is going to the background, pause the video
+                player?.pause()
+            }
+            
+            NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
+                // App has become active, resume the video
+                player?.play()
+            }
         }
     }
 }
 
 
 
-#Preview {
-    StoryVideo(videoURL: "E_Bisindo", countVideoPlayed: .constant(0))
-}
+//#Preview {
+//    StoryVideo(storyPage: <#StoryPage#>, videoURL: "E_Bisindo")
+//}
+

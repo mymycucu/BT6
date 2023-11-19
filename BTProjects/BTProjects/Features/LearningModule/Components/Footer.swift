@@ -24,11 +24,11 @@ struct Footer: View {
     @State private var scale: CGFloat = 0
         @State private var opacity: Double = 0
     
-    init(footerState: ViewState,  bookScene:Binding<Int>, countVideoPlayed:Binding<Int>, words: String, highlightWord: String, maxBookScene: Int) {
+    init(footerState: ViewState,  bookScene:Binding<Int>, isDisabled:Binding<Bool>, words: String, highlightWord: String, maxBookScene: Int) {
         self.footerState = footerState
-        _isDisabled = .constant(false)
+        _isDisabled = isDisabled
         _bookScene = bookScene
-        _countVideoPlayed = countVideoPlayed
+        _countVideoPlayed = .constant(1)
         self.words =  words
         self.highlightWord = highlightWord
         self.maxBookScene = maxBookScene
@@ -58,22 +58,41 @@ struct Footer: View {
         
         HStack (alignment: .bottom, spacing: 15){
             // MARK: Back Button
-            VStack{
-                Spacer()
-                Button(action: {
-                    if(bookScene <= 1){
-                        bookScene = 1
-                    }else{
-                        bookScene -= 1
+            if footerState == .story{
+                VStack{
+                    Spacer()
+                    Button(action: {
+                        if(bookScene <= 1){
+                            bookScene = 1
+                        }else{
+                            bookScene -= 1
+                        }
+                    }) {
+                        Image(systemName: "arrowshape.left.fill")
+                            .font(.Button)
+                        
                     }
-                }) {
-                    Image(systemName: "arrowshape.left.fill")
-                        .font(.Button)
-                    
+                    .buttonStyle(CircularButtonStyle(disabled: isDisabled))
+                    .disabled(isDisabled)
+                    .opacity(bookScene <= 1 ? 0 : 1)
                 }
-                .buttonStyle(CircularButtonStyle(disabled: countVideoPlayed==0))
-                .disabled(countVideoPlayed==0)
-                .opacity(bookScene <= 1 ? 0 : 1)
+            } else {
+                VStack{
+                    Spacer()
+                    Button(action: {
+                        if(bookScene <= 1){
+                            bookScene = 1
+                        }else{
+                            bookScene -= 1
+                        }
+                    }) {
+                        Image(systemName: "arrowshape.left.fill")
+                            .font(.Button)
+                        
+                    }
+                    .buttonStyle(CircularButtonStyle())
+                    .opacity(bookScene <= 1 ? 0 : 1)
+                }
             }
             
             if footerState == .story{
@@ -119,7 +138,7 @@ struct Footer: View {
             // MARK: Next Button
             VStack{
                 Spacer()
-                if footerState == .quiz{
+                if footerState != .summary{
                     
                     Button(action: {
                         if(bookScene >= maxBookScene-1){
@@ -134,21 +153,6 @@ struct Footer: View {
                     .buttonStyle(CircularButtonStyle(disabled: isDisabled))
                     .disabled(isDisabled)
                     
-                    .opacity(bookScene >= maxBookScene ? 0 : 1)
-                    
-                } else if footerState != .summary{
-                    Button(action: {
-                        if(bookScene >= maxBookScene-1){
-                            presentationMode.wrappedValue.dismiss()
-                        }else{
-                            bookScene += 1
-                        }
-                    }) {
-                        Image(systemName: "arrowshape.right.fill")
-                            .font(.Button)
-                    }
-                    .buttonStyle(CircularButtonStyle(disabled: countVideoPlayed==0))
-                    .disabled(countVideoPlayed==0)
                     .opacity(bookScene >= maxBookScene ? 0 : 1)
                     
                 }
@@ -185,5 +189,5 @@ struct Footer: View {
 }
 
 #Preview {
-    Footer(footerState: .story, bookScene: .constant(3), countVideoPlayed: .constant(0), words: "Sarah bermain bola di halaman rumahnya lalu bolanya tersangkut di atas pohon.", highlightWord: "halo", maxBookScene: 5)
+    Footer(footerState: .story, bookScene: .constant(3), isDisabled: .constant(true), words: "Sarah", highlightWord: "tolong", maxBookScene: 6)
 }
