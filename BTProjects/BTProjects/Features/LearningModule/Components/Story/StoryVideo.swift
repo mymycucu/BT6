@@ -14,7 +14,10 @@ struct StoryVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
     
+    var viewModel = StoryViewModel()
+    var storyPage: StoryPage
     var videoURL: String
+    @Binding var isDisabled: Bool
     
     var body: some View {
         ZStack {
@@ -66,6 +69,8 @@ struct StoryVideo: View {
             
             NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { _ in
                 isVideoFinished = true
+                viewModel.updateStoryIsReaded(storyPage: storyPage)
+                isDisabled = false
             }
             
             NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: .main) { _ in
@@ -83,7 +88,7 @@ struct StoryVideo: View {
 
 
 
-#Preview {
-    StoryVideo(videoURL: "E_Bisindo")
-}
+//#Preview {
+//    StoryVideo(storyPage: <#StoryPage#>, videoURL: "E_Bisindo")
+//}
 

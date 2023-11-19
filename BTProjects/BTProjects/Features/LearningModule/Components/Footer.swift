@@ -94,6 +94,7 @@ struct Footer: View {
                     }
                     .buttonStyle(CircularButtonStyle(disabled: isDisabled))
                     .opacity(bookScene >= maxBookScene ? 0 : 1)
+                    .disabled(isDisabled)
                     
                 }
                 else {
