@@ -368,7 +368,7 @@ struct ConnectImagesView: View {
                 if correctLeftPosition.count == leftImagesPoint.count{
                     allImagesCorrect = true
                     isCorrectState = true
-                    
+                    QuizViewModel().updateQuestionIsDone(question: question)
                 }
                 
                 isMatchingRight = false
