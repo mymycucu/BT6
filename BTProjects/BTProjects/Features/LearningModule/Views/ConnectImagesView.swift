@@ -243,18 +243,18 @@ struct ConnectImagesView: View {
                     }) {
                         
                         HStack(alignment: .center, spacing: 0) {
-                            Image(systemName: "xmark")
+                            Image(systemName: "questionmark")
                                 .bold()
                                 .imageScale(.large)
                                 .foregroundColor(Color.PB500)
                             
                         }
-                        .frame(width: 44, height: 44)
+                        .frame(width: 52, height: 52)
                         .background(Color.white)
                         .cornerRadius(100)
                         .overlay(
                             RoundedRectangle(cornerRadius: 100)
-                                .inset(by: 1.5)
+                                .inset(by: 1)
                                 .stroke(Color.PB500, lineWidth: 3)
                         )
                         
@@ -409,7 +409,5 @@ struct ConnectImagesView: View {
         }
         return false
     }
-    
-    
     
 }

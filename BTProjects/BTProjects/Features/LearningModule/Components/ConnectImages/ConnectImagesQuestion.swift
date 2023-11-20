@@ -35,7 +35,7 @@ struct ConnectImagesQuestion: View {
                     Text("Oke 👍🏻")
                         .frame(width: 180)
                 }
-                .buttonStyle(RoundedButtonStyle())
+                .buttonStyle(RoundedSecondaryBlueButtonStyle())
                 .padding(.vertical, 20)
             }
             .padding(.horizontal, 32)

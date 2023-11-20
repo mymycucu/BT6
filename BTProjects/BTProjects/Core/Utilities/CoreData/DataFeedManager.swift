@@ -45,6 +45,7 @@ struct DataFeedManager {
         let wordTolong = PersistenceController.shared.create(Word.self)
         wordTolong?.name = "tolong"
         wordTolong?.signLanguage = "sl_word_tolong"
+        wordTolong?.illustration = "sl_word_tolong"
         
         // MARK: Create Book1 Sarah dan Bahaya Tersembunyi
         let book1 = PersistenceController.shared.create(Book.self)
@@ -182,6 +183,8 @@ struct DataFeedManager {
         let book2 = PersistenceController.shared.create(Book.self)
         book2?.name = "Bu, tolong Sarah"
         book2?.summarySignLanguage = "sl_b2"
+        book2?.cover = "cover_b2"
+        book2?.thumbnail = "thumbnail_b2"
         book2?.word = wordTolong
         book2?.categories = [categoryRumah! as Category, categoryLingkungan! as Category, categorySekolah! as Category]
         
