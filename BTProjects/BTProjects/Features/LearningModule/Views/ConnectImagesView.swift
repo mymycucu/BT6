@@ -71,6 +71,9 @@ struct ConnectImagesView: View {
     @State var isExitState: Bool = false
     @State var isQuestion: Bool = true
     
+    /// state correct stay
+    @Binding var isQuestionDone:Bool
+    
     var body: some View {
         
         ZStack {

@@ -10,6 +10,7 @@ import SwiftUI
 struct CorrectState: View {
     @Binding var isCorrectState: Bool
     @Binding var isDisabled:Bool
+    
     var body: some View {
         ZStack {
             Rectangle()

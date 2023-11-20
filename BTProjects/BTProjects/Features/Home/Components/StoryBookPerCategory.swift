@@ -10,6 +10,7 @@ import SwiftUI
 struct StoryBookPerCategory: View {
     @EnvironmentObject var appState: AppState
     var category : Category
+    var disabledComingSoon: Bool = true
     
     private let columns: [GridItem] = [
         GridItem(.fixed(254), spacing: 24, alignment: .center),
@@ -25,6 +26,7 @@ struct StoryBookPerCategory: View {
             LazyHGrid(
                 rows: columns, spacing: 24
             ){
+                
                 ForEach(category.book, id: \.self){ book in
                     NavigationLink(destination: {
                         BookView(book: book).navigationBarBackButtonHidden(true)
@@ -33,17 +35,34 @@ struct StoryBookPerCategory: View {
                         
                     })
                     
-//                    Button {
-//                        appState.book = book
-//                        NavigationLink(destination: StoryView())
-//                    } label: {
-//                        
-//                    }
+                    
                 }
+                if category.book.count < 4 {
+                    let countBook = 4 - category.book.count
+                    ForEach(0..<countBook, id:\.self){ index in
+                        if index > 2{
+                            Button {
+                                
+                            } label: {
+                                StoryBook(storyThumbnail:  Constant.thumbnailComingSoon[0] , storyTitle:  "Coming Soon", isComingSoon: true)
+                            }
+                            .disabled(disabledComingSoon)
+                        } else {
+                            Button {
+                                
+                            } label: {
+                                StoryBook(storyThumbnail:  Constant.thumbnailComingSoon[index] , storyTitle:  "Coming Soon", isComingSoon: true)
+                            }
+                            .disabled(disabledComingSoon)
+                            
+                        }
+                    }
+                } 
+
             }
         }
         .frame(width: 896, height: 568)
-
+        
     }
 }
 

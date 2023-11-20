@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+
 struct StoryBook: View {
     var storyThumbnail: String
     var storyTitle: String
+    var isComingSoon: Bool = false
     var body: some View {
         ZStack(alignment: .leading){
             //MARK: Orange Back Cover
@@ -39,47 +41,77 @@ struct StoryBook: View {
                 .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             
             //MARK: Story Front Cover
-            ZStack {
-                Image(storyThumbnail)
-                    .resizable()
-                    .scaledToFill()
-                
-                
-                VStack{
-                    Spacer()
-                    LinearGradient(
-                        gradient: Gradient(
-                            stops: [
-                                .init(color: .PB500, location: 0.15), // Starting around $0% from the bottom
-                                .init(color: .clear, location: 0.6) // Strating 0.6 - completely clear
-                            ]
-                        ),
-                        startPoint: .bottom,
-                        endPoint: .top
-                    )
-                    .frame(height:200)
+            if isComingSoon {
+                ZStack {
+                    Image(storyThumbnail)
+                        .resizable()
+                        .scaledToFill()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 0)
+                                .fill(Color.PB800)
+                                .opacity(0.7)
+                        )
                     
+                    VStack(alignment:.leading) {
+                        Spacer()
+                        HStack(alignment:.bottom){
+                            Text(storyTitle)
+                                .font(.Body_Semibold)
+                                .foregroundStyle(.white)
+                            Spacer()
+                        }
+                        .padding(15)
+                        
+                    }.frame(width: 405, height: 254)
                     
                 }
                 .frame(width: 405, height: 254)
-                
-                VStack(alignment:.leading) {
-                    Spacer()
-                    HStack(alignment:.bottom){
-                        Text(storyTitle)
-                            .font(.Body_Semibold)
-                            .foregroundStyle(.white)
-                        Spacer()
-                    }
-                    .padding(15)
+                .cornerRadius(12)
+                .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
+
+            } else {
+                ZStack {
+                    Image(storyThumbnail)
+                        .resizable()
+                        .scaledToFill()
                     
-                }.frame(width: 405, height: 254)
-                
+                    
+                    VStack{
+                        Spacer()
+                        LinearGradient(
+                            gradient: Gradient(
+                                stops: [
+                                    .init(color: .PB500, location: 0.15), // Starting around $0% from the bottom
+                                    .init(color: .clear, location: 0.6) // Strating 0.6 - completely clear
+                                ]
+                            ),
+                            startPoint: .bottom,
+                            endPoint: .top
+                        )
+                        .frame(height:200)
+                        
+                        
+                    }
+                    .frame(width: 405, height: 254)
+                    
+                    VStack(alignment:.leading) {
+                        Spacer()
+                        HStack(alignment:.bottom){
+                            Text(storyTitle)
+                                .font(.Body_Semibold)
+                                .foregroundStyle(.white)
+                            Spacer()
+                        }
+                        .padding(15)
+                        
+                    }.frame(width: 405, height: 254)
+                    
+                }
+                .frame(width: 405, height: 254)
+                .cornerRadius(12)
+                .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
+
             }
-            .frame(width: 405, height: 254)
-            .cornerRadius(12)
-            .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
-            
             
         }
         .frame(width: 420, height: 254)

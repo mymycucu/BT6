@@ -14,6 +14,7 @@ struct MultipleCardChoice: View {
     @State var containerShadowColor: Color = Color.PB300
     @Binding var isSelected: Bool
     @State var isAnimate: Bool = false
+    @Binding var isQuestionDone: Bool
     
 //    var onTap: () -> Void
     var correctAnswer: Bool
@@ -45,26 +46,29 @@ struct MultipleCardChoice: View {
                 .padding(.top, isAnimate ? 14.7 : 8)
                 .padding(.leading, isAnimate ? 14.7 : 8)
         }
+        .onChange(of: isQuestionDone){
+            if correctAnswer && isQuestionDone {
+                containerColor = .Green2
+                containerShadowColor = .Green3 
+            }
+            
+        }
         .onChange(of: isSelected){
             withAnimation(Animation.bouncy(duration: 0.1)) {
-//                onTap()
-//                isSelected.toggle()
                 isAnimate.toggle()
                 containerOpacity.toggle()
                 containerShadowColor = .white
-
-                
             }
             // Additional delayed animations
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                withAnimation (Animation.bouncy(duration: 0.2))  {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                withAnimation (Animation.bouncy(duration: 0.3))  {
                     isAnimate.toggle()
                     if isSelected {
                         containerOpacity.toggle()
                         containerColor = correctAnswer ? .Green2 : .Red2
                         containerShadowColor = correctAnswer ? .Green3 : .Red3
                         if !correctAnswer{
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
                                 withAnimation(Animation.bouncy(duration: 0.3)){
                                     isSelected = false
                                 }
@@ -75,7 +79,6 @@ struct MultipleCardChoice: View {
                         containerColor = .white
                         containerShadowColor = .PB300
                     }
-                    
                 }
             }
         }

@@ -25,6 +25,9 @@ struct MultipleChoiceView: View {
     @State var isCorrectState: Bool = false
     @State var isExitState: Bool = false
     
+    /// state correct stay
+    @Binding var isQuestionDone:Bool
+    
     var body: some View {
         ZStack {
             
@@ -44,7 +47,7 @@ struct MultipleChoiceView: View {
                     }
                     MultipleChoiceQuestion(question: question.name ?? Constant.containerName)
                     
-                    MultipleChoiceAnswers(question: question, isCorrectState: $isCorrectState)
+                    MultipleChoiceAnswers(question: question, isCorrectState: $isCorrectState, isQuestionDone: $isQuestionDone)
                 }
 
                 Spacer()
@@ -55,16 +58,17 @@ struct MultipleChoiceView: View {
             .padding(.vertical,36)
             
             VStack{
-                
                 Spacer()
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
             .padding(38)
-//            .padding(.horizontal,27)
-//            .padding(.vertical,36)
             
             if isCorrectState {
                 CorrectState(isCorrectState: $isCorrectState, isDisabled: $isDisabled)
+                    .onAppear{
+                        isQuestionDone = true
+                    }
+                   
             }
             if isExitState{
                 ExitState(isExitState: $isExitState)
