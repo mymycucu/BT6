@@ -12,16 +12,14 @@ struct WordSummaryView: View {
     @State var isExitState: Bool = false
     @Binding var bookScene: Int
     var maxBookScene: Int
-    var word: String
+    var book: Book
     var videoURL: String
     
+    var viewModel = SummaryViewModel()
     @State var viewState: ViewState = .summary
     @State var background: String = "background-word-summary"
     @State var isDisabled: Bool = true
-    
-    @State var countVideoPlayed: Int = 0
 
-    
     var body: some View {
         ZStack{
             //MARK: Background
@@ -32,13 +30,15 @@ struct WordSummaryView: View {
                 
                 Spacer()
                 
-                Text(word)
+                Text(book.word?.name ?? Constant.defaultWordString)
                     .foregroundStyle(.white)
                     .font(.Heading1_Semibold)
                     .underline()
                     .padding(.bottom, 50)
                 
-                SummaryVideo(videoURL: videoURL, countVideoPlayed: $countVideoPlayed)
+                SummaryVideo(
+                    isDisabled: $isDisabled,
+                    book: book, videoURL: videoURL)
                     
                 
                 Spacer()
@@ -53,8 +53,7 @@ struct WordSummaryView: View {
             VStack(spacing: 0){
                 Spacer()
                 
-                Footer(footerState: viewState, bookScene: $bookScene, countVideoPlayed: $countVideoPlayed, maxBookScene: maxBookScene)
-                
+                Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
             .padding(38)
 //                .padding(.vertical,35)
@@ -62,6 +61,9 @@ struct WordSummaryView: View {
             if isExitState{
                 ExitState(isExitState: $isExitState)
             }
+        }
+        .onAppear {
+            isDisabled = !book.isRead
         }
     }
 }

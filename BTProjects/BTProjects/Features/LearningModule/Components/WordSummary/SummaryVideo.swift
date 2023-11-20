@@ -12,16 +12,11 @@ import AVKit
 struct SummaryVideo: View {
     @State private var isVideoFinished = false
     @State private var player: AVPlayer? = nil
-    @Binding  var countVideoPlayed: Int
     
+    @Binding var isDisabled: Bool
+    var book: Book
+    var viewModel = SummaryViewModel()
     var videoURL: String
-    
-    init(videoURL: String, countVideoPlayed: Binding<Int>) {
-        self.isVideoFinished = false
-        self.player = nil
-        self.videoURL = videoURL
-        _countVideoPlayed = countVideoPlayed
-    }
     
     var body: some View {
         ZStack {
@@ -73,6 +68,8 @@ struct SummaryVideo: View {
             
             NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: .main) { _ in
                 isVideoFinished = true
+                viewModel.updateBookIsReaded(book: book)
+                isDisabled = false
             }
             
             NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: .main) { _ in
@@ -85,12 +82,9 @@ struct SummaryVideo: View {
                 player?.play()
             }
         }
-        .onChange(of: isVideoFinished) { oldValue, newValue in
-            countVideoPlayed += 1
-        }
     }
 }
-
-#Preview {
-    SummaryVideo(videoURL: "E_Bisindo", countVideoPlayed: .constant(0))
-}
+//
+//#Preview {
+//    SummaryVideo(videoURL: "E_Bisindo", countVideoPlayed: .constant(0))
+//}

@@ -17,7 +17,7 @@ struct BookView: View {
     var body: some View {
         ZStack{
             if (bookScene == 0){
-                BookCoverView(bookScene: $bookScene, book: book, isQuizFinished: false)
+                BookCoverView(bookScene: $bookScene, book: book)
             }
             ForEach(0..<book.story.count, id: \.self){ idx in
                 if(bookScene == idx+1){
@@ -45,7 +45,7 @@ struct BookView: View {
                 }
             }
             if (bookScene == book.story.count+1){
-                WordSummaryView(isMenu: $isMenu,bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, word: book.word?.name ?? "", videoURL: book.summarySignLanguage ?? Constant.defaultSignLanguage)
+                WordSummaryView(isMenu: $isMenu,bookScene: $bookScene, maxBookScene: book.lstQuestions.count+book.story.count+3, book: book, videoURL: book.summarySignLanguage ?? Constant.defaultSignLanguage)
             }
             
             ForEach(0..<book.lstQuestions.count, id: \.self){ idx in
