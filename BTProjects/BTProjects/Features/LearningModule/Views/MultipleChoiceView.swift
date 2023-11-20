@@ -15,7 +15,7 @@ struct MultipleChoiceView: View {
     @Binding var bookScene: Int
     var maxBookScene: Int
     
-    @State var isDisabled: Bool = false
+    @State var isDisabled: Bool = true
     
     @State var viewState: ViewState = .quiz
     var currentQuiz: Int
@@ -64,7 +64,7 @@ struct MultipleChoiceView: View {
 //            .padding(.vertical,36)
             
             if isCorrectState {
-                CorrectState(isCorrectState: $isCorrectState)
+                CorrectState(isCorrectState: $isCorrectState, isDisabled: $isDisabled)
             }
             if isExitState{
                 ExitState(isExitState: $isExitState)
