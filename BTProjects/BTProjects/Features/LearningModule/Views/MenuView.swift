@@ -37,16 +37,17 @@ struct MenuView: View {
                                         bookScene = idx+1
                                         isMenu.toggle()
                                     }, label: {
-                                        ThumbnailPage(isSelect: bookScene==idx+1, order: idx+1, imageTitle: book.story[idx].illustration ?? "mencari-kumbang", isRead: book.story[idx].isRead )
+                                        ThumbnailPage(isSelect: bookScene==idx+1, order: idx+1, imageTitle: book.story[idx].illustration ?? "mencari-kumbang", isRead: idx != 0 ?  book.story[idx-1].isRead ? true : false : true)
                                     })
-                                    .disabled(!book.story[idx].isRead)
+                                    .disabled(idx != 0 ? book.story[idx-1].isRead ? false : true : false)
                                 }
                                 Button(action: {
                                     bookScene = book.story.count+1
                                     isMenu.toggle()
                                 }, label: {
-                                    ThumbnailPage(isSelect: bookScene==book.story.count+1, order: book.story.count+1, imageTitle: "mencari-kumbang", isRead: false )
+                                    ThumbnailPage(isSelect: bookScene==book.story.count+1, order: book.story.count+1, imageTitle: "mencari-kumbang", isRead: book.isRead )
                                 })
+                                .disabled(!book.isRead)
                                 
                             }
                             
@@ -61,9 +62,9 @@ struct MenuView: View {
                                         bookScene = idx+book.story.count+2
                                         isMenu.toggle()
                                     }, label: {
-                                        ThumbnailPage(isSelect: bookScene == idx+book.story.count+2, order: idx+1, imageTitle: book.lstQuestions[idx].illustration ?? "mencari-kumbang", isRead: book.lstQuestions[idx].isDone)
+                                        ThumbnailPage(isSelect: bookScene == idx+book.story.count+2, order: idx+1, imageTitle: book.lstQuestions[idx].illustration ?? "mencari-kumbang", isRead: (idx != 0 && idx != 1) ? book.lstQuestions[idx-1].isDone ? true : false : book.isRead)
                                     })
-                                    .disabled(!book.lstQuestions[idx].isDone)
+                                    .disabled((idx != 0 && idx != 1) ? book.lstQuestions[idx-1].isDone ? false : true : !book.isRead)
                                 }
                                 
                             }

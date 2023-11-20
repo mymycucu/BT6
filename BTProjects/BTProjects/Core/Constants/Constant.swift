@@ -15,4 +15,5 @@ struct Constant {
     static let defaultSignLanguage = "dummy"
     static let defaultQuestionName = "pertanyaan?"
     static let defaultTirukanString = "tirukan"
+    static let defaultWordString = "Word"
 }

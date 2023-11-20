@@ -188,6 +188,6 @@ struct Footer: View {
     }
 }
 
-#Preview {
-    Footer(footerState: .story, bookScene: .constant(3), isDisabled: .constant(true), words: "Sarah", highlightWord: "tolong", maxBookScene: 6)
-}
+//#Preview {
+//    Footer(footerState: .story, bookScene: .constant(3), isDisabled: .constant(true), words: "Sarah", highlightWord: "tolong", maxBookScene: 6)
+//}

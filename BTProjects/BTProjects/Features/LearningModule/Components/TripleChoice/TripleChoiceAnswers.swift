@@ -13,7 +13,15 @@ struct TripleChoiceAnswers: View {
     @State var count: Int = 0
     
     @Binding var isCorrectState:Bool
+    @State var questionChoosen:[Bool]
     
+    init(question: Question, isCorrectState: Binding<Bool>) {
+        self.question = question
+        self.selectedAnswer = nil
+        self.count = 0
+        _isCorrectState = isCorrectState
+        self.questionChoosen = [Bool](repeating: false, count: question.lstAnswers.count)
+    }
     
     var body: some View {
         HStack {
@@ -35,15 +43,16 @@ struct TripleChoiceAnswers: View {
                 .onTapGesture{
                     if count < 2 {
                         selectedAnswer = index
-                        if question.lstAnswers[index].isCorrect == true {
+                        if question.lstAnswers[index].isCorrect == true && !questionChoosen[index]{
+                            questionChoosen[index] = true
                             count += 1
                             if count == 2 {
                                 isCorrectState = true
+                                QuizViewModel().updateQuestionIsDone(question: question)
                             }
                         }
                     }
                 }
-                
             }
         }
     }

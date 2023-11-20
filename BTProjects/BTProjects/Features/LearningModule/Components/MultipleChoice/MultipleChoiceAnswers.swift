@@ -32,6 +32,7 @@ struct MultipleChoiceAnswers: View {
                     isCorrect = question.lstAnswers[index].isCorrect
                     if isCorrect{
                         isCorrectState = true
+                        QuizViewModel().updateQuestionIsDone(question: question)
                     }
                 }
                 .disabled(isCorrect)

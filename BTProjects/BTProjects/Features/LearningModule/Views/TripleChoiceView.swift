@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TripleChoiceView: View {
     var question: Question
+    var viewModel = QuizViewModel()
     
     //MARK: Header Binding
     @Binding var isMenu: Bool
