@@ -14,6 +14,7 @@ struct TripleChoiceAnswers: View {
     
     @Binding var isCorrectState:Bool
     
+    
     var body: some View {
         HStack {
             ForEach(0..<question.lstAnswers.count) { index in
@@ -23,15 +24,12 @@ struct TripleChoiceAnswers: View {
                         get: { selectedAnswer == index },
                         set: { newValue in
                             selectedAnswer = newValue ? index : nil
-                            
                         }), 
                     correctAnswer: Binding(
                         get: { question.lstAnswers[index].isCorrect},
                         set: { newValue in
                             selectedAnswer = newValue ? index : nil
-                            
-                        }
-                    )
+                        })
                 )
                 .padding(.horizontal, 8)
                 .onTapGesture{
@@ -39,18 +37,16 @@ struct TripleChoiceAnswers: View {
                         selectedAnswer = index
                         if question.lstAnswers[index].isCorrect == true {
                             count += 1
-                            if count == 2{
+                            if count == 2 {
                                 isCorrectState = true
                             }
                         }
                     }
                 }
                 
-                
             }
         }
     }
-    
 }
 
 

@@ -29,7 +29,7 @@ struct StoryBookPerCategory: View {
                     NavigationLink(destination: {
                         BookView(book: book).navigationBarBackButtonHidden(true)
                     }, label:{
-                        StoryBook(storyThumbnail: "il_b_default", storyTitle: book.name ?? "bookname")
+                        StoryBook(storyThumbnail: book.thumbnail ?? "il_b_default", storyTitle: book.name ?? "bookname")
                         
                     })
                     

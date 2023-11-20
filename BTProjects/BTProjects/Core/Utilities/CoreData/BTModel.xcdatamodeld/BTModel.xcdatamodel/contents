@@ -14,6 +14,7 @@
         <attribute name="isRead" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="summarySignLanguage" optional="YES" attributeType="String"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="books" inverseEntity="Category"/>
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="book" inverseEntity="Question"/>
         <relationship name="storyPages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StoryPage" inverseName="book" inverseEntity="StoryPage"/>

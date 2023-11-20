@@ -27,9 +27,10 @@ struct MenuView: View {
                         LazyVGrid (columns: columns, spacing: 32, content: {
                             
                             //MARK: StoryPage
-                            Section(header: Text("Stories")
-                                .font(.Heading2_Semibold)
-                                .foregroundColor(.white))
+                            Section(header: 
+                                Text("Stories")
+                                    .font(.Heading2_Semibold)
+                                    .foregroundColor(.white))
                             {
                                 ForEach(0..<book.story.count, id: \.self) { idx in
                                     Button(action: {
@@ -51,9 +52,9 @@ struct MenuView: View {
                             
                             //MARK: Question
                             Section(header:
-                                        Text("Question")
-                                .font(.Heading2_Semibold)
-                                .foregroundColor(.white))
+                                Text("Question")
+                                    .font(.Heading2_Semibold)
+                                    .foregroundColor(.white))
                             {
                                 ForEach(0..<book.lstQuestions.count, id: \.self) { idx in
                                     Button(action: {
