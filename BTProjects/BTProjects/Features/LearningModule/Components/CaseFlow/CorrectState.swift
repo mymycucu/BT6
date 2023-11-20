@@ -17,15 +17,11 @@ struct CorrectState: View {
               .background(Color.Overlay3.opacity(0.8))
             
             VStack {
-                
                 LottieView(name: "correct", loopMode: .loop)
                                     .frame(width: 365, height: 240)
                 
                 Image("correct-state")
-                
             }
-            
-            
         }
         .onTapGesture {
             isCorrectState.toggle()

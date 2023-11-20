@@ -24,9 +24,7 @@ struct StoryBook: View {
                 .frame(width: 415, height: 244)
             /// to define different corner radius
                 .clipShape(
-                    RoundedCorner(
-                        radius: 7,
-                        corners: [.topRight, .bottomRight])
+                    RoundedCorner(topLeft: 12, topRight: 7, bottomLeft: 12, bottomRight: 7)
                 )
                 .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             
@@ -35,10 +33,9 @@ struct StoryBook: View {
                 .frame(width: 410, height: 244)
             /// to define different corner radius
                 .clipShape(
-                    RoundedCorner(
-                        radius: 7,
-                        corners: [.topRight, .bottomRight])
+                    RoundedCorner(topLeft: 12, topRight: 7, bottomLeft: 12, bottomRight: 7)
                 )
+                
                 .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             
             //MARK: Story Front Cover
