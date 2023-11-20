@@ -7,7 +7,7 @@
 
 import Foundation
 
-class quizViewModel : ObservableObject {
+class QuizViewModel : ObservableObject {
     //MARK: save array of images
     @Published var leftImages: [String] = []
     @Published var rightImages: [String] = []
@@ -54,4 +54,14 @@ class quizViewModel : ObservableObject {
         }
         return false
     }
+
+    func updateQuestionIsDone(question: Question){
+        question.isDone = true
+        do{
+            try PersistenceController.shared.viewContext.save()
+        }catch(let error){
+            print(error)
+        }
+    }
+
 }

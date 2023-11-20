@@ -9,6 +9,8 @@ import SwiftUI
 
 struct StoryCoverContent: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Binding var bookScene: Int
+    var questionSceneIndex: Int
     var storyPages: Int
     var storyTitle: String
     @State var canStartQuiz: Bool
@@ -40,7 +42,7 @@ struct StoryCoverContent: View {
                 
                 
                 Button(action: {
-                    // Add your action code here
+                    bookScene = questionSceneIndex
                 }) {
                     HStack(alignment: .center, spacing: 0) {
                         Text(isQuizFinished ? "Ulangi Kuis" : "Mulai Kuis")
@@ -58,7 +60,7 @@ struct StoryCoverContent: View {
         }
     }
 }
-
-#Preview {
-    StoryCoverContent(storyPages: 3, storyTitle: "Test", canStartQuiz: true, isQuizFinished: false)
-}
+//
+//#Preview {
+//    StoryCoverContent(storyPages: 3, storyTitle: "Test", canStartQuiz: true, isQuizFinished: false)
+//}

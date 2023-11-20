@@ -10,23 +10,13 @@ import SwiftUI
 struct BookCoverView: View {
     @Binding var bookScene: Int
     var book: Book
-    
-//    struct StoryCover: Identifiable {
-//        let id = UUID()
-//        let storyThumbnail: String
-//        let storyPages: Int
-//        let storyTitle: String
-//        let canStartQuiz: Bool
-//    }
-//    
-//    // Sample data array with 5 items
-//    let dataArray: [StoryCover] = [
-//        StoryCover(storyThumbnail: "story_cover", storyPages: 13, storyTitle: "Tolong Sarah, Bu!", canStartQuiz: false)
-//    ]
     @State var viewState: ViewState = .normal
-    
-    let isQuizFinished: Bool
-    
+//    init(bookScene: Int, book: Book, viewState: ViewState) {
+//        self.bookScene = bookScene
+//        self.book = book
+//        self.viewState = viewState
+//        self.isQuisFinished = book.lstQuestions.last!.isDone
+//    }
     
     var body: some View {
         ZStack {
@@ -34,14 +24,17 @@ struct BookCoverView: View {
             Background(viewState: viewState)
             
             HStack {
-                StoryCoverContent(storyPages: book.storyPages?.count ?? 0, storyTitle: book.name ?? "book", canStartQuiz: false, isQuizFinished: true)
+                StoryCoverContent(
+                    bookScene: $bookScene,
+                    questionSceneIndex: book.story.endIndex+2,
+                    storyPages: book.storyPages?.count ?? 0,
+                    storyTitle: book.name ?? "book",
+                    canStartQuiz: book.isRead, isQuizFinished: book.lstQuestions.last!.isDone)
                     .padding(38)
-//                    .padding(.horizontal,27)
-                    
+                
                     Spacer()
                     
                     // MARK: Story Button
-                    
                     Button(action: {
                         bookScene = 1
                     }) {
