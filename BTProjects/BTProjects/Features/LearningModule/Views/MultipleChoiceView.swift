@@ -68,10 +68,14 @@ struct MultipleChoiceView: View {
                     .onAppear{
                         isQuestionDone = true
                     }
-                   
             }
             if isExitState{
                 ExitState(isExitState: $isExitState)
+            }
+        }
+        .onAppear{
+            if isQuestionDone{
+                isDisabled = false
             }
         }
     }

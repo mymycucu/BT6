@@ -37,6 +37,7 @@ struct MultipleChoiceAnswers: View {
                     }
                 }
                 .disabled(isCorrect)
+                .disabled(isQuestionDone)
             }
         }
     }
