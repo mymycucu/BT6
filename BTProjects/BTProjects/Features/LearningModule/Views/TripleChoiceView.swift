@@ -47,7 +47,7 @@ struct TripleChoiceView: View {
                 .padding(.horizontal, 58)
                 .padding(.vertical)
                 
-                TripleChoiceAnswers(question: question, isCorrectState: $isCorrectState)
+                TripleChoiceAnswers(question: question, isCorrectState: $isCorrectState, isQuestionDone: $isQuestionDone)
                     .padding(.top, 50)
                 
                 Spacer()
@@ -65,9 +65,17 @@ struct TripleChoiceView: View {
             
             if isCorrectState {
                 CorrectState(isCorrectState: $isCorrectState, isDisabled: $isDisabled)
+                    .onAppear{
+                        isQuestionDone = true
+                    }
             }
             if isExitState{
                 ExitState(isExitState: $isExitState)
+            }
+        }
+        .onAppear{
+            if isQuestionDone{
+                isDisabled = false
             }
         }
     }
