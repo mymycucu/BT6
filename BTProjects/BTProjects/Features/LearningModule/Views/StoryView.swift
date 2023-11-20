@@ -16,7 +16,6 @@ struct StoryView: View {
     @State var isDisabled: Bool = true
     @State var viewState: ViewState = .story
     
-    
     var body: some View {
         ZStack {
             Background(viewState: viewState, illustration: storyPage.illustration ?? "illust_dummy")

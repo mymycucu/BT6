@@ -45,6 +45,27 @@ struct RoundedSecondaryButtonStyle: ButtonStyle {
     }
 }
 
+struct RoundedSecondaryBlueButtonStyle: ButtonStyle {
+    
+    public var disabled: Bool = false
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(height: 62)
+            .font(.Caption_Medium)
+            .padding(.horizontal,30)
+            .frame(minWidth: 200)
+            .foregroundColor(configuration.isPressed ? Color.PB800 : disabled ? Color.PB200 : Color.PB500)
+            .background(configuration.isPressed ?  Color.Gray4 : Color.white)
+            .cornerRadius(12) // Adjust size as needed
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(configuration.isPressed ? Color.PB800 : disabled ? Color.PB300 : Color.PB500, lineWidth: 3)
+            )
+        
+    }
+}
+
 struct CircularButtonStyle: ButtonStyle {
     public var disabled: Bool = false
     

@@ -19,7 +19,7 @@ enum ViewState {
 struct Background: View {
     var viewState: ViewState
     var illustration: String
-    @State private var opacity: Double = 0.9
+    @State private var opacity: Double = 0.8
     
     init(viewState: ViewState) {
         self.viewState = viewState
@@ -36,9 +36,13 @@ struct Background: View {
             if viewState == .story {
                 //MARK: Illustration
                 Group{
+                    Rectangle()
+                        .fill(Color.PB500)
                     Image(illustration)
                         .resizable()
                         .scaledToFill()
+                        .animation(.easeInOut)
+                        .opacity(opacity)
                     
                     VStack {
                         
@@ -55,27 +59,30 @@ struct Background: View {
                             .frame(height: 100) // Adjust the height of the bottom shadow as needed
                     }
                 }
-                .opacity(opacity)
+                
                 .onAppear {
-                    withAnimation(.easeInOut(duration: 0.5)) {
+                    withAnimation(.easeInOut(duration: 1)) {
                         self.opacity = 1.0
                     }
                 }
                 
             } else if viewState == .summary{
                 Group {
+                    Rectangle()
+                        .fill(Color.PB500)
                     //MARK: Illustration
                     Image(illustration)
                         .resizable()
                         .scaledToFill()
+                        .opacity(opacity)
                     
                     Rectangle()
                         .fill(Color.Overlay2.opacity(0.6))
                         .edgesIgnoringSafeArea(.all)
                 }
-                .opacity(opacity)
+                
                 .onAppear {
-                    withAnimation(.easeInOut(duration: 0.5)) {
+                    withAnimation(.easeInOut(duration: 1)) {
                         self.opacity = 1.0
                     }
                 }
