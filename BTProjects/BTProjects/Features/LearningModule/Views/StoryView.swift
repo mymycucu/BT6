@@ -16,7 +16,6 @@ struct StoryView: View {
     @State var isDisabled: Bool = true
     @State var viewState: ViewState = .story
     
-    
     var body: some View {
         ZStack {
             Background(viewState: viewState, illustration: storyPage.illustration ?? "illust_dummy")
@@ -35,7 +34,7 @@ struct StoryView: View {
             VStack(spacing:0){
                 
                 Spacer()
-                Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, words: storyPage.name ?? "", highlightWord: storyPage.desc ?? "", maxBookScene: maxBookScene)
+                Footer(footerState: viewState, bookScene: $bookScene, isDisabled: $isDisabled, words: storyPage.name ?? "", highlightWord: storyPage.desc ?? "", maxBookScene: maxBookScene)
             }
             .padding(38)
             
@@ -48,6 +47,3 @@ struct StoryView: View {
         }
     }
 }
-
-
-

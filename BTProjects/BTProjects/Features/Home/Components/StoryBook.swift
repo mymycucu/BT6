@@ -17,11 +17,7 @@ struct StoryBook: View {
                 .fill(Color.Orange4)
                 .frame(width: 420, height: 254)
             /// to define different corner radius
-                .clipShape(
-                    RoundedCorner(
-                        radius: 12,
-                        corners: [.topRight, .bottomRight])
-                )
+                .cornerRadius(12)
             //MARK: Book's Pages
             RoundedRectangle(cornerRadius: 0)
                 .fill(Color.Gray5)
@@ -48,6 +44,8 @@ struct StoryBook: View {
             //MARK: Story Front Cover
             ZStack {
                 Image(storyThumbnail)
+                    .resizable()
+                    .scaledToFill()
                 
                 
                 VStack{
@@ -82,11 +80,7 @@ struct StoryBook: View {
                 
             }
             .frame(width: 405, height: 254)
-            .clipShape(
-                RoundedCorner(
-                    radius: 12,
-                    corners: [.topRight, .bottomRight])
-            )
+            .cornerRadius(12)
             .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             
             
@@ -97,5 +91,5 @@ struct StoryBook: View {
 }
 
 #Preview {
-    StoryBook(storyThumbnail: "sl_b_default", storyTitle: "hallooo")
+    StoryBook(storyThumbnail: "mencari-kumbang", storyTitle: "hallooo")
 }

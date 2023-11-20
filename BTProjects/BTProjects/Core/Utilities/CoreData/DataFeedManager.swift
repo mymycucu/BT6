@@ -45,6 +45,7 @@ struct DataFeedManager {
         let wordTolong = PersistenceController.shared.create(Word.self)
         wordTolong?.name = "tolong"
         wordTolong?.signLanguage = "sl_word_tolong"
+        wordTolong?.illustration = "sl_word_tolong"
         
         // MARK: Create Book1 Sarah dan Bahaya Tersembunyi
         let book1 = PersistenceController.shared.create(Book.self)
@@ -182,6 +183,8 @@ struct DataFeedManager {
         let book2 = PersistenceController.shared.create(Book.self)
         book2?.name = "Bu, tolong Sarah"
         book2?.summarySignLanguage = "sl_b2"
+        book2?.cover = "cover_b2"
+        book2?.thumbnail = "thumbnail_b2"
         book2?.word = wordTolong
         book2?.categories = [categoryRumah! as Category, categoryLingkungan! as Category, categorySekolah! as Category]
         
@@ -211,7 +214,7 @@ struct DataFeedManager {
         book2StoryPage3?.book = book2
         
         let book2StoryPage4 = PersistenceController.shared.create(StoryPage.self)
-        book2StoryPage4?.name = "bu segera membantu. Ibu meraih bola dari atas pohon dan memberikannya kepada Sarah"
+        book2StoryPage4?.name = "Ibu segera membantu. Ibu meraih bola dari atas pohon dan memberikannya kepada Sarah"
         book2StoryPage4?.order = 4
         book2StoryPage4?.signLanguage = "sl_b2_sp4"
         book2StoryPage4?.illustration = "il_b2_sp4"
@@ -323,7 +326,7 @@ struct DataFeedManager {
         book2Question2?.name = "Kesulitan mengambil buku di rak"
         book2Question2?.type = 1
         book2Question2?.order = 2
-        book2Question2?.signLanguage = "sl_b2_q2"
+        book2Question2?.signLanguage = "sl_b2_q1"
 //        book2Question2?.illustration = "il_b2_q2"
         book2Question2?.isDone = false
         book2Question2?.book = book2
@@ -349,7 +352,7 @@ struct DataFeedManager {
         book2Question3?.name = "Tersandung"
         book2Question3?.type = 1
         book2Question3?.order = 3
-        book2Question3?.signLanguage = "sl_b2_q2"
+        book2Question3?.signLanguage = "sl_b2_q1"
 //        book2Question2?.illustration = "il_b2_q2"
         book2Question3?.isDone = false
         book2Question3?.book = book2
@@ -370,10 +373,10 @@ struct DataFeedManager {
         
         // MARK: Create Q&A PG 1 Bu, tolong Sarah
         let book2Question4 = PersistenceController.shared.create(Question.self)
-        book2Question4?.name = "Pilih gambar di bawah yang menunjukkan hal yang tepat untuk menggunakan kata tolong?"
+        book2Question4?.name = "Pilih dua gambar di bawah yang menunjukkan situasi yang tepat untuk menggunakan kata tolong?"
         book2Question4?.type = 2
         book2Question4?.order = 4
-//        book2Question4?.signLanguage = "sl_b2_q3"
+        book2Question4?.signLanguage = "sl_b2_q2"
 //        book2Question3?.illustration = "il_b2_q3"
         book2Question4?.isDone = false
         book2Question4?.book = book2
@@ -401,10 +404,10 @@ struct DataFeedManager {
         
         // MARK: Create Q&A PG 2 Bu, tolong Sarah
         let book2Question5 = PersistenceController.shared.create(Question.self)
-        book2Question5?.name = "Pilih gambar di bawah yang menunjukkan hal yang tepat untuk menggunakan kata tolong?"
+        book2Question5?.name = "Pilih dua gambar di bawah yang menunjukkan situasi yang tepat untuk menggunakan kata tolong?"
         book2Question5?.type = 2
         book2Question5?.order = 5
-//        book2Question5?.signLanguage = "dummy"
+        book2Question5?.signLanguage = "sl_b2_q2"
         book2Question5?.isDone = false
         book2Question5?.book = book2
         
@@ -431,10 +434,10 @@ struct DataFeedManager {
         
         // MARK: Create Q&A PG 2 Bu, tolong Sarah
         let book2Question6 = PersistenceController.shared.create(Question.self)
-        book2Question6?.name = "Pilih gambar di bawah yang menunjukkan hal yang tepat untuk menggunakan kata tolong?"
+        book2Question6?.name = "Pilih dua gambar di bawah yang menunjukkan situasi yang tepat untuk menggunakan kata tolong?"
         book2Question6?.type = 2
         book2Question6?.order = 6
-//        book2Question6?.signLanguage = "sl_b2_q3"
+        book2Question6?.signLanguage = "sl_b2_q2"
         book2Question6?.isDone = false
         book2Question6?.book = book2
         

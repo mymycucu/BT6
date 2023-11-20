@@ -16,13 +16,19 @@ struct StoryCoverBook: View {
             //MARK: Orange Back Cover
             RoundedRectangle(cornerRadius: 0)
                 .fill(Color.Orange4)
-                .frame(width: 610, height: 715)
+                .frame(width: 610, height: 714)
             /// to define different corner radius
                 .clipShape(
                     RoundedCorner(
                         radius: 40,
                         corners: [.topRight, .bottomRight])
                 )
+                .clipShape(
+                    RoundedCorner(
+                        radius: 20,
+                        corners: [.topLeft, .bottomLeft])
+                )
+                
             //MARK: Book's Pages
             RoundedRectangle(cornerRadius: 0)
                 .fill(Color.Gray5)
@@ -32,6 +38,11 @@ struct StoryCoverBook: View {
                     RoundedCorner(
                         radius: 40,
                         corners: [.topRight, .bottomRight])
+                )
+                .clipShape(
+                    RoundedCorner(
+                        radius: 20,
+                        corners: [.topLeft, .bottomLeft])
                 )
                 .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             
@@ -44,11 +55,18 @@ struct StoryCoverBook: View {
                         radius: 40,
                         corners: [.topRight, .bottomRight])
                 )
+                .clipShape(
+                    RoundedCorner(
+                        radius: 20,
+                        corners: [.topLeft, .bottomLeft])
+                )
                 .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             
             //MARK: Story Front Cover
             ZStack {
                 Image(storyThumbnail)
+                    .resizable()
+                    .scaledToFill()
                 
                 VStack{
                     Spacer()
@@ -82,6 +100,11 @@ struct StoryCoverBook: View {
                 RoundedCorner(
                     radius: 40,
                     corners: [.topRight, .bottomRight])
+            )
+            .clipShape(
+                RoundedCorner(
+                    radius: 20,
+                    corners: [.topLeft, .bottomLeft])
             )
             .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             

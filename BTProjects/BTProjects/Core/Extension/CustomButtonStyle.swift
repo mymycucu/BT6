@@ -15,6 +15,7 @@ struct RoundedButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(height: 62)
+            .font(.Caption_Medium)
             .padding(.horizontal,30)
             .frame(minWidth: 200)
             .foregroundColor(disabled ? Color.Orange1 : Color.white)
@@ -39,6 +40,27 @@ struct RoundedSecondaryButtonStyle: ButtonStyle {
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
                     .stroke(configuration.isPressed ? Color.Orange6 : disabled ? Color.Orange3 : Color.Orange5, lineWidth: 3)
+            )
+        
+    }
+}
+
+struct RoundedSecondaryBlueButtonStyle: ButtonStyle {
+    
+    public var disabled: Bool = false
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(height: 62)
+            .font(.Caption_Medium)
+            .padding(.horizontal,30)
+            .frame(minWidth: 200)
+            .foregroundColor(configuration.isPressed ? Color.PB800 : disabled ? Color.PB200 : Color.PB500)
+            .background(configuration.isPressed ?  Color.Gray4 : Color.white)
+            .cornerRadius(12) // Adjust size as needed
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(configuration.isPressed ? Color.PB800 : disabled ? Color.PB300 : Color.PB500, lineWidth: 3)
             )
         
     }

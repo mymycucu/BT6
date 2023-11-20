@@ -1,5 +1,5 @@
 //
-//  VideoContainer.swift
+//  StoryVideo.swift
 //  BTProjects
 //
 //  Created by Ario Syahputra on 25/10/23.
@@ -24,7 +24,7 @@ struct StoryVideo: View {
             //MARK: Video Container
             ///3D effect
             RoundedRectangle(cornerRadius: 22)
-//                .foregroundColor(.clear)
+            //                .foregroundColor(.clear)
                 .fill(Color.PB500)
                 .frame(width: 310, height: 400)
                 .offset(x:4, y:4)
@@ -38,6 +38,7 @@ struct StoryVideo: View {
                         RoundedRectangle(cornerRadius: 22)
                             .stroke(Color.PB500, lineWidth: 8) // Use your desired stroke color
                     )
+    
             }
             
             //MARK: Replay Button
