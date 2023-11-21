@@ -19,14 +19,21 @@ struct HomeHeader: View {
             }
             Spacer()
             Circle()
-                .fill(.white)
-                .frame(width: 52)
+                .fill(Color.white) // Use fill to set the background color
+                .frame(width: 52)   // Set the desired width
                 .overlay(
-                    RoundedRectangle(cornerRadius: 100)
-                    .inset(by: 2)
-                    .stroke(Color(red: 0.59, green: 0.66, blue: 0.8), lineWidth: 4)
-
+                    Image("user_default")
+                        .resizable()
+                        .padding(.top, 5)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 48)  // Adjust the size to be the same as in the second code snippet
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(Color(red: 0.59, green: 0.66, blue: 0.8), lineWidth: 4)
+                        )
                 )
+
         }
         .foregroundColor(.white)
     }
