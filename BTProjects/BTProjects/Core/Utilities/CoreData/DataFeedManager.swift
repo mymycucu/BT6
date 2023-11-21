@@ -187,6 +187,8 @@ struct DataFeedManager {
         let book2 = PersistenceController.shared.create(Book.self)
         book2?.name = "Bu, tolong Sarah"
         book2?.summarySignLanguage = "sl_b2"
+        book2?.thumbnail = "thumbnail_b2"
+        book2?.cover = "cover_b2"
         book2?.word = wordTolong
         book2?.categories = [categoryRumah! as Category, categoryLingkungan! as Category, categorySekolah! as Category]
         
