@@ -19,6 +19,7 @@ struct ImageContainer: View {
     @Binding var isCorrect: Bool
     @Binding var isFalse: Bool
     
+    
     var body: some View {
         /// selection position
         ZStack(alignment: position == .left ? .leading : .trailing){

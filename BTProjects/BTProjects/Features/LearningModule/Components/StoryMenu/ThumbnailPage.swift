@@ -27,18 +27,21 @@ struct ThumbnailPage: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
                         .fill(Color.black.opacity(isSelect ? 0 : isRead ? 0 : 0.5))
-                    )
+                )
+            
             Ribbon(order: order)
                 .offset(x: -100, y:-73)
                 .zIndex(3)
             
             /// order - 1 because data from menu  order + 1
             if isSelect{
-                Rectangle()
+                RoundedRectangle(cornerRadius: 16)
                     .frame(width: 316, height: 230)
                     .opacity(0)
-                    .border(Color.Orange5, width: 7)
-                    .cornerRadius(12)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.Orange5, lineWidth: 7)
+                    )
                     .zIndex(4)
             }
             

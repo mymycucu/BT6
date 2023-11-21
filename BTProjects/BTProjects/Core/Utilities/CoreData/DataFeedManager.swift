@@ -49,6 +49,7 @@ struct DataFeedManager {
         let wordTolong = PersistenceController.shared.create(Word.self)
         wordTolong?.name = "tolong"
         wordTolong?.signLanguage = "sl_word_tolong"
+        wordTolong?.illustration = "il_word_tolong"
         
         // MARK: Create Book1 Sarah dan Bahaya Tersembunyi
         let book1 = PersistenceController.shared.create(Book.self)
@@ -266,7 +267,7 @@ struct DataFeedManager {
         book2StoryPage10?.name = "Sepulang sekolah, Sarah dan Ario bermain di taman"
         book2StoryPage10?.order = 10
         book2StoryPage10?.signLanguage = "sl_b2_sp10"
-//        book2StoryPage10?.illustration = "il_b2_sp10"
+        book2StoryPage10?.illustration = "il_b2_sp10"
         book2StoryPage10?.desc = ""
         book2StoryPage10?.book = book2
         
@@ -274,7 +275,7 @@ struct DataFeedManager {
         book2StoryPage11?.name = "Saat asik bermain, Ario tersandung batu dan menangis"
         book2StoryPage11?.order = 11
         book2StoryPage11?.signLanguage = "sl_b2_sp11"
-//        book2StoryPage11?.illustration = "il_b2_sp11"
+        book2StoryPage11?.illustration = "il_b2_sp11"
         book2StoryPage11?.desc = ""
         book2StoryPage11?.book = book2
         
@@ -282,9 +283,17 @@ struct DataFeedManager {
         book2StoryPage12?.name = "“Tolong.. tolong, kak Sarah tolong aku” Ucap Ario kesakitan"
         book2StoryPage12?.order = 12
         book2StoryPage12?.signLanguage = "sl_b2_sp12"
-//        book2StoryPage12?.illustration = "il_b2_sp12"
+        book2StoryPage12?.illustration = "il_b2_sp12"
         book2StoryPage12?.desc = ""
         book2StoryPage12?.book = book2
+        
+        let book2StoryPage13 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage13?.name = "Sarah langsung membantu dan membersihkan luka Ario."
+        book2StoryPage13?.order = 13
+        book2StoryPage13?.signLanguage = "sl_b2_sp13"
+        book2StoryPage13?.illustration = "il_b2_sp13"
+        book2StoryPage13?.desc = ""
+        book2StoryPage13?.book = book2
         
         // MARK: Create Q&A Tirukan Bu, Tolong Sarah
         let book2Question = PersistenceController.shared.create(Question.self)
@@ -298,7 +307,7 @@ struct DataFeedManager {
         
         // MARK: Create Q&A DoDont 1 Bu, tolong Sarah
         let book2Question1 = PersistenceController.shared.create(Question.self)
-        book2Question1?.name = "Bola tersangkut di pohon"
+        book2Question1?.name = "Berdasarkan gambar disamping, Apa yang akan kamu lakukan?"
         book2Question1?.type = 1
         book2Question1?.order = 1
         book2Question1?.signLanguage = "sl_b2_q1"
@@ -324,7 +333,7 @@ struct DataFeedManager {
         
         // MARK: Create Q&A DoDont 2 Bu, tolong Sarah
         let book2Question2 = PersistenceController.shared.create(Question.self)
-        book2Question2?.name = "Kesulitan mengambil buku di rak"
+        book2Question2?.name = "Berdasarkan gambar disamping, Apa yang akan kamu lakukan?"
         book2Question2?.type = 1
         book2Question2?.order = 2
         book2Question2?.signLanguage = "sl_b2_q1"
@@ -350,7 +359,7 @@ struct DataFeedManager {
         
         // MARK: Create Q&A DoDont 3 Bu, tolong Sarah
         let book2Question3 = PersistenceController.shared.create(Question.self)
-        book2Question3?.name = "Tersandung"
+        book2Question3?.name = "Berdasarkan gambar disamping, Apa yang akan kamu lakukan?"
         book2Question3?.type = 1
         book2Question3?.order = 3
         book2Question3?.signLanguage = "sl_b2_q1"
@@ -492,7 +501,7 @@ struct DataFeedManager {
         book2Question7Answer3?.type = 2
         book2Question7Answer3?.illustration = "background-word-summary"
         book2Question7Answer3?.illustration1 = "background-word-summary"
-        book2Question7Answer3?.isCorrect = false
+        book2Question7Answer3?.isCorrect = true
         book2Question7Answer3?.question = book2Question7
         
         do{

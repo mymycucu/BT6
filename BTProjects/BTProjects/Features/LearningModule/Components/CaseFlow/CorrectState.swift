@@ -10,6 +10,7 @@ import SwiftUI
 struct CorrectState: View {
     @Binding var isCorrectState: Bool
     @Binding var isDisabled:Bool
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -17,15 +18,11 @@ struct CorrectState: View {
               .background(Color.Overlay3.opacity(0.8))
             
             VStack {
-                
                 LottieView(name: "correct", loopMode: .loop)
                                     .frame(width: 365, height: 240)
-                
-                Image("correct-state")
-                
+//                LottieView(name: "kamu-benar", loopMode: .loop)
+//                    .frame(width: 900, height: 700)
             }
-            
-            
         }
         .onTapGesture {
             isCorrectState.toggle()

@@ -40,21 +40,14 @@ struct ExitState: View {
                         .cornerRadius(100)
                         .overlay(
                             RoundedRectangle(cornerRadius: 100)
-                                .inset(by: 1.5)
+                                .inset(by: 1)
                                 .stroke(Color.PB500, lineWidth: 3)
                         )
-                        
-                        
                     }
-                    
-                    
                 }
                 .frame(width: 594, alignment: .bottom)
                 
                 VStack(alignment: .center, spacing: 32) {
-                    
-
-                    
                     LottieView(name: "correct", loopMode: .loop)
                         .frame(width: 365, height: 240)
                     
@@ -91,5 +84,5 @@ struct ExitState: View {
 }
 
 #Preview {
-    ExitState( isExitState: .constant(false))
+    ExitState(isExitState: .constant(false))
 }

@@ -15,6 +15,7 @@ struct ContentView: View {
                 .environmentObject(appState)
                 .environment(\.managedObjectContext, appState.persistenceController.container.viewContext)
                 .tag(0)
+            
         }
     }
 }

@@ -12,9 +12,7 @@ enum ViewState {
     case summary
     case quiz
     case normal
-    
 }
-
 
 struct Background: View {
     var viewState: ViewState
@@ -41,7 +39,7 @@ struct Background: View {
                     Image(illustration)
                         .resizable()
                         .scaledToFill()
-                        .animation(.easeInOut)
+                        
                         .opacity(opacity)
                     
                     VStack {
@@ -59,7 +57,6 @@ struct Background: View {
                             .frame(height: 100) // Adjust the height of the bottom shadow as needed
                     }
                 }
-                
                 .onAppear {
                     withAnimation(.easeInOut(duration: 1)) {
                         self.opacity = 1.0
@@ -80,14 +77,11 @@ struct Background: View {
                         .fill(Color.Overlay2.opacity(0.6))
                         .edgesIgnoringSafeArea(.all)
                 }
-                
                 .onAppear {
                     withAnimation(.easeInOut(duration: 1)) {
                         self.opacity = 1.0
                     }
                 }
-                
-                
             } else {
                 Group{
                     RadialGradient(

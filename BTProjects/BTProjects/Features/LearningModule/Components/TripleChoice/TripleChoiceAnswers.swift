@@ -15,12 +15,15 @@ struct TripleChoiceAnswers: View {
     @Binding var isCorrectState:Bool
     @State var questionChoosen:[Bool]
     
-    init(question: Question, isCorrectState: Binding<Bool>) {
+    @Binding var isQuestionDone: Bool
+    
+    init(question: Question, isCorrectState: Binding<Bool>, isQuestionDone: Binding<Bool>) {
         self.question = question
         self.selectedAnswer = nil
         self.count = 0
         _isCorrectState = isCorrectState
         self.questionChoosen = [Bool](repeating: false, count: question.lstAnswers.count)
+        _isQuestionDone = isQuestionDone
     }
     
     var body: some View {
@@ -37,7 +40,8 @@ struct TripleChoiceAnswers: View {
                         get: { question.lstAnswers[index].isCorrect},
                         set: { newValue in
                             selectedAnswer = newValue ? index : nil
-                        })
+                        }),
+                    isQuestionDone: $isQuestionDone
                 )
                 .padding(.horizontal, 8)
                 .onTapGesture{
@@ -53,6 +57,7 @@ struct TripleChoiceAnswers: View {
                         }
                     }
                 }
+                .disabled(isQuestionDone)
             }
         }
     }
