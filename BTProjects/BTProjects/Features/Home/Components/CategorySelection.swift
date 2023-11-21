@@ -34,8 +34,9 @@ struct CategorySelection: View {
                         Button(action: {
                             self.index = i
                         }) {
-                            Circle()
-                                .fill(index == i ? Color.purple : Color.purple.opacity(0.5))
+                            Image(categories[i].illustration ?? Constant.defaultIllustration)
+                                .resizable()
+                                .scaledToFit()
                                 .frame(width: index == i ? 84 : i == index-1 || i == index+1  ? 68 : 42)
                                 .animation(.easeInOut, value: index)
                         }
@@ -68,12 +69,15 @@ struct CategorySelection: View {
     CategorySelection(index: .constant(1), categories: {
         let categoryRumah = Category(context: PersistenceController.shared.viewContext)
         categoryRumah.name = "Rumah"
+        categoryRumah.illustration = "home_cat_rumah"
         
         let categoryLingkungan = Category(context: PersistenceController.shared.viewContext)
         categoryLingkungan.name = "Lingkungan"
+        categoryLingkungan.illustration = "home_cat_lingkungan"
         
         let categorySekolah = Category(context: PersistenceController.shared.viewContext)
         categorySekolah.name = "Sekolah"
+        categorySekolah.illustration = "home_cat_sekolah"
         
         let categories = Category(context: PersistenceController.shared.viewContext)
         categories.name = "test"

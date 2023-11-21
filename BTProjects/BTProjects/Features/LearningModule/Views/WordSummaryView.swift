@@ -23,7 +23,7 @@ struct WordSummaryView: View {
     var body: some View {
         ZStack{
             //MARK: Background
-            Background(viewState: viewState, illustration: background)
+            Background(viewState: viewState, illustration: book.word?.illustration ?? Constant.defaultIllustration)
             
             VStack(spacing: 0){
                 Header(isMenu: $isMenu, isExitState: $isExitState, headerState: viewState)

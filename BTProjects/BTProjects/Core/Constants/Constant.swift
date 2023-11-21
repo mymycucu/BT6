@@ -16,4 +16,6 @@ struct Constant {
     static let defaultQuestionName = "pertanyaan?"
     static let defaultTirukanString = "tirukan"
     static let defaultWordString = "Word"
+    
+    static let thumbnailComingSoon = ["th_cs_1", "th_cs_2", "th_cs_3"]
 }

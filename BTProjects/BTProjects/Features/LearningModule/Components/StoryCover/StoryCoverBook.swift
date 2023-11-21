@@ -19,15 +19,9 @@ struct StoryCoverBook: View {
                 .frame(width: 610, height: 714)
             /// to define different corner radius
                 .clipShape(
-                    RoundedCorner(
-                        radius: 40,
-                        corners: [.topRight, .bottomRight])
+                    RoundedCorner(topLeft: 20, topRight: 40, bottomLeft: 20, bottomRight: 40)
                 )
-                .clipShape(
-                    RoundedCorner(
-                        radius: 20,
-                        corners: [.topLeft, .bottomLeft])
-                )
+                
                 
             //MARK: Book's Pages
             RoundedRectangle(cornerRadius: 0)
@@ -35,14 +29,7 @@ struct StoryCoverBook: View {
                 .frame(width: 600, height: 714)
             /// to define different corner radius
                 .clipShape(
-                    RoundedCorner(
-                        radius: 40,
-                        corners: [.topRight, .bottomRight])
-                )
-                .clipShape(
-                    RoundedCorner(
-                        radius: 20,
-                        corners: [.topLeft, .bottomLeft])
+                    RoundedCorner(topLeft: 20, topRight: 40, bottomLeft: 20, bottomRight: 40)
                 )
                 .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             
@@ -51,14 +38,7 @@ struct StoryCoverBook: View {
                 .frame(width: 590, height: 714)
             /// to define different corner radius
                 .clipShape(
-                    RoundedCorner(
-                        radius: 40,
-                        corners: [.topRight, .bottomRight])
-                )
-                .clipShape(
-                    RoundedCorner(
-                        radius: 20,
-                        corners: [.topLeft, .bottomLeft])
+                    RoundedCorner(topLeft: 20, topRight: 40, bottomLeft: 20, bottomRight: 40)
                 )
                 .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             
@@ -90,21 +70,11 @@ struct StoryCoverBook: View {
                     .frame(height:200)
                     
                 }
-                .frame(width: 594, height: 714)
-                
-                
-                
+                .frame(width: 583, height: 714)
             }
             .frame(width: 583, height: 714)
             .clipShape(
-                RoundedCorner(
-                    radius: 40,
-                    corners: [.topRight, .bottomRight])
-            )
-            .clipShape(
-                RoundedCorner(
-                    radius: 20,
-                    corners: [.topLeft, .bottomLeft])
+                RoundedCorner(topLeft: 20, topRight: 40, bottomLeft: 20, bottomRight: 40)
             )
             .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
             

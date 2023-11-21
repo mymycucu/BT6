@@ -20,6 +20,8 @@ struct TirukanView: View {
     var totalQuiz: Int
     @State var isDisabled: Bool = false
     
+    @Binding var isQuestionDone:Bool
+    
     var body: some View {
         ZStack {
             Background(viewState: viewState)
