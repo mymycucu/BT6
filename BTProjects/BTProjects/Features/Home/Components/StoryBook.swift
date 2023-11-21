@@ -46,12 +46,20 @@ struct StoryBook: View {
                     Image(storyThumbnail)
                         .resizable()
                         .scaledToFill()
+                        .blur(radius: 8)
                         .overlay(
                             RoundedRectangle(cornerRadius: 0)
-                                .fill(Color.PB800)
-                                .opacity(0.7)
+                                .fill(Color.black)
+                                .opacity(0.45)
                         )
+                       
                     
+                    Circle()
+                        .fill(Color.Gray6.opacity(0.5))
+                        .frame(width: 78, alignment: .center)
+                    Image(systemName: "lock.fill")
+                        .font(.Button)
+                        .foregroundColor(.white)
                     VStack(alignment:.leading) {
                         Spacer()
                         HStack(alignment:.bottom){
@@ -120,5 +128,5 @@ struct StoryBook: View {
 }
 
 #Preview {
-    StoryBook(storyThumbnail: "mencari-kumbang", storyTitle: "hallooo")
+    StoryBook(storyThumbnail: "mencari-kumbang", storyTitle: "hallooo", isComingSoon: true)
 }

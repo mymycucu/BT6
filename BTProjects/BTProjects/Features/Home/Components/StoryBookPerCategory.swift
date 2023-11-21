@@ -44,14 +44,14 @@ struct StoryBookPerCategory: View {
                             Button {
                                 
                             } label: {
-                                StoryBook(storyThumbnail:  Constant.thumbnailComingSoon[0] , storyTitle:  "Coming Soon", isComingSoon: true)
+                                StoryBook(storyThumbnail:  Constant.thumbnailComingSoon[0] , storyTitle:  "Segera dibuka", isComingSoon: true)
                             }
                             .disabled(disabledComingSoon)
                         } else {
                             Button {
                                 
                             } label: {
-                                StoryBook(storyThumbnail:  Constant.thumbnailComingSoon[index] , storyTitle:  "Coming Soon", isComingSoon: true)
+                                StoryBook(storyThumbnail:  Constant.thumbnailComingSoon[index] , storyTitle:  "Segera dibuka", isComingSoon: true)
                             }
                             .disabled(disabledComingSoon)
                             

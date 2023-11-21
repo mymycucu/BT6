@@ -57,6 +57,7 @@ struct TripleChoiceAnswers: View {
                         }
                     }
                 }
+                .disabled(isQuestionDone)
             }
         }
     }

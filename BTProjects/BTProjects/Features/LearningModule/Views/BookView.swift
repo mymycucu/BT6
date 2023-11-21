@@ -77,6 +77,9 @@ struct BookView: View {
             if (bookScene == book.story.count+book.lstQuestions.count+2){
                 QuizDoneView(bookScene: $bookScene, maxBookScene: book.story.count+book.lstQuestions.count+3)
                     .ignoresSafeArea()
+                    .onAppear{
+                        isQuestionDoneState = [Bool](repeating: false, count: book.lstQuestions.count)
+                    }
             }
             
             

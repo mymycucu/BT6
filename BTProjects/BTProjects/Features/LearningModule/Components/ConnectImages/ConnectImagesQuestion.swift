@@ -47,6 +47,7 @@ struct ConnectImagesQuestion: View {
                 RoundedRectangle(cornerRadius: 24)
                     .inset(by: 3)
                     .stroke(Color.PB400, lineWidth: 6)
+                    .transition(.moveAndFadeTopRight)
         )
             
         }

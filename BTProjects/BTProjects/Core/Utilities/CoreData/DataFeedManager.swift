@@ -285,6 +285,14 @@ struct DataFeedManager {
         book2StoryPage12?.desc = ""
         book2StoryPage12?.book = book2
         
+        let book2StoryPage13 = PersistenceController.shared.create(StoryPage.self)
+        book2StoryPage13?.name = "Sarah langsung membantu dan membersihkan luka Ario."
+        book2StoryPage13?.order = 13
+        book2StoryPage13?.signLanguage = "sl_b2_sp13"
+        book2StoryPage13?.illustration = "il_b2_sp13"
+        book2StoryPage13?.desc = ""
+        book2StoryPage13?.book = book2
+        
         // MARK: Create Q&A Tirukan Bu, Tolong Sarah
         let book2Question = PersistenceController.shared.create(Question.self)
         book2Question?.name = "Tirukan"
@@ -491,7 +499,7 @@ struct DataFeedManager {
         book2Question7Answer3?.type = 2
         book2Question7Answer3?.illustration = "background-word-summary"
         book2Question7Answer3?.illustration1 = "background-word-summary"
-        book2Question7Answer3?.isCorrect = false
+        book2Question7Answer3?.isCorrect = true
         book2Question7Answer3?.question = book2Question7
         
         do{

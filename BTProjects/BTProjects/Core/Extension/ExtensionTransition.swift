@@ -14,4 +14,10 @@ extension AnyTransition {
             removal: .move(edge: .leading).combined(with: .opacity)
         )
     }
+    static var moveAndFadeTopRight: AnyTransition {
+        .asymmetric(
+            insertion: .opacity.combined(with: .move(edge: .trailing)).combined(with: .move(edge: .top)),
+            removal: .move(edge: .trailing).combined(with: .move(edge: .top)).combined(with: .opacity)
+        )
+    }
 }
