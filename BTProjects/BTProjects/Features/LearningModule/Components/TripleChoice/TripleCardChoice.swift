@@ -21,6 +21,8 @@ struct TripleCardChoice: View {
     
     @State var count: Int = 0
     
+    @Binding var isQuestionDone: Bool
+    
     var body: some View {
         ZStack(alignment: .topLeading){
             //MARK: Container Shadow
@@ -47,12 +49,18 @@ struct TripleCardChoice: View {
                 .padding(.top, isAnimate ? 14.7 : 8)
                 .padding(.leading, isAnimate ? 14.7 : 8)
         }
-        //
-        
+        .onAppear{
+            DispatchQueue.main.async {
+                if correctAnswer && isQuestionDone {
+                    containerColor = .Green2
+                    containerShadowColor = .Green3
+                }
+            }
+        }
         .onChange(of: isSelected) {
             if count < 1 {
                 count+=1
-                withAnimation(Animation.spring(duration: 0.1)) {
+                withAnimation(Animation.bouncy(duration: 0.1)) {
                     isAnimate.toggle()
                     containerOpacity.toggle()
                     containerShadowColor = .white
@@ -66,8 +74,8 @@ struct TripleCardChoice: View {
                             containerColor = correctAnswer ? .Green2 : .Red2
                             containerShadowColor = correctAnswer ? .Green3 : .Red3
                             if !correctAnswer{
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
-                                    withAnimation(Animation.bouncy(duration: 0.2)){
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                                    withAnimation(Animation.bouncy(duration: 0.5)){
                                         isSelected = false
                                         
                                     }
@@ -81,36 +89,31 @@ struct TripleCardChoice: View {
                             containerColor = .white
                             containerShadowColor = .PB300
                         }
-                        
                     }
                 }
-                
             } else if !correctAnswer {
-                withAnimation(Animation.spring(duration: 0.1)) {
+                withAnimation(Animation.bouncy(duration: 0.1)) {
                     isAnimate.toggle()
                     containerOpacity.toggle()
                     containerShadowColor = .white
-                    
                 }
                 // Additional delayed animations
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    withAnimation (Animation.bouncy(duration: 0.2))  {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    withAnimation (Animation.bouncy(duration: 0.3))  {
                         isAnimate.toggle()
                         if isSelected {
                             containerOpacity.toggle()
                             containerColor = correctAnswer ? .Green2 : .Red2
                             containerShadowColor = correctAnswer ? .Green3 : .Red3
                             if !correctAnswer{
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
-                                    withAnimation(Animation.bouncy(duration: 0.2)){
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                                    withAnimation(Animation.bouncy(duration: 0.3)){
                                         isSelected = false
-                                        
                                     }
                                 }
                             }else{
                                 isCorrect = correctAnswer
                             }
-                            
                         } else {
                             containerOpacity.toggle()
                             containerColor = .white
@@ -120,8 +123,6 @@ struct TripleCardChoice: View {
                     }
                 }
             }
-            
-            
         }
         .frame(width: 308, height: 212)
         

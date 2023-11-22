@@ -13,6 +13,7 @@ struct MultipleChoiceAnswers: View {
     @State var isCorrect: Bool = false
     @Binding var isCorrectState:Bool
 
+    @Binding var isQuestionDone:Bool
     var body: some View {
         HStack {
             ForEach(0..<question.lstAnswers.count) { index in
@@ -24,7 +25,7 @@ struct MultipleChoiceAnswers: View {
                             selectedAnswer = newValue ? index : nil
                         }
                     ),
-                    correctAnswer: question.lstAnswers[index].isCorrect
+                    isQuestionDone: $isQuestionDone, correctAnswer: question.lstAnswers[index].isCorrect
                 )
                 .padding(.horizontal, 8)
                 .onTapGesture {
@@ -36,6 +37,7 @@ struct MultipleChoiceAnswers: View {
                     }
                 }
                 .disabled(isCorrect)
+                .disabled(isQuestionDone)
             }
         }
     }
