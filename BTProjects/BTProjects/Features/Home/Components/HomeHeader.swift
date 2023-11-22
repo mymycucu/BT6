@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeHeader: View {
-    var userName = "Sarah Octavia"
+    var userName = "#user1234"
     var body: some View {
         HStack{
             VStack(alignment: .leading){
