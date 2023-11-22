@@ -19,6 +19,7 @@ struct BTProjectsApp: App {
 //            MultipleChoiceView(isMenu: Binding.constant(false))
 //            ConnectImagesView(isMenu: .constant(false), bookScene: .constant(3), maxBookScene: 5)
                 .environmentObject(appState)
+                .preferredColorScheme(.light)
             
         }
     }
