@@ -23,7 +23,8 @@ struct QuizDoneView: View {
                 QuizDoneContent()
                 
                 QuizDoneButtons(bookScene: $bookScene, maxBookScene: maxBookScene)
-                    .padding(.top, 50)
+                    .padding(.bottom, 50)
+//                    .padding(.top, 50)
             }
             
         }

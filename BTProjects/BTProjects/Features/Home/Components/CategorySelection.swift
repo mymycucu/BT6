@@ -18,15 +18,15 @@ struct CategorySelection: View {
                 if (index == 0){
                     Circle()
                         .fill(Color.purple.opacity(0))
-                        .frame(width: 42)
+                        .frame(width: 30)
                     Circle()
                         .fill(Color.purple.opacity(0))
-                        .frame(width: 68)
+                        .frame(width: 56)
                 }
                 if (index == 1){
                     Circle()
                         .fill(Color.purple.opacity(0))
-                        .frame(width: 42)
+                        .frame(width: 30)
                 }
                 
                 ForEach(0..<categories.count, id: \.self) { i in
@@ -37,7 +37,7 @@ struct CategorySelection: View {
                             Image(categories[i].illustration ?? Constant.defaultIllustration)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: index == i ? 84 : i == index-1 || i == index+1  ? 68 : 42)
+                                .frame(width: index == i ? 72 : i == index-1 || i == index+1  ? 56 : 30)
                                 .animation(.easeInOut, value: index)
                         }
                     }
@@ -46,15 +46,15 @@ struct CategorySelection: View {
                 if (index == categories.count - 2){
                     Circle()
                         .fill(Color.purple.opacity(0))
-                        .frame(width: 42)
+                        .frame(width: 30)
                 }
                 if (index == categories.count - 1){
                     Circle()
                         .fill(Color.purple.opacity(0))
-                        .frame(width: 68)
+                        .frame(width: 56)
                     Circle()
                         .fill(Color.purple.opacity(0))
-                        .frame(width: 42)
+                        .frame(width: 30)
                 }
                 
             }
