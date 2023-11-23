@@ -172,8 +172,8 @@ struct Footer: View {
                                 .font(.Button)
                         }
                     }
-                    .buttonStyle(RoundedButtonStyle(disabled: countVideoPlayed==0))
-                    .disabled(countVideoPlayed==0)
+                    .buttonStyle(RoundedButtonStyle(disabled: isDisabled))
+                    .disabled(isDisabled)
                     
                     
                 }
