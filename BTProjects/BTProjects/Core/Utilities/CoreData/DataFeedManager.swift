@@ -28,22 +28,27 @@ struct DataFeedManager {
         let categoryRumah = PersistenceController.shared.create(Category.self)
         categoryRumah?.name = "Rumah"
         categoryRumah?.illustration = "home_cat_rumah"
+        categoryRumah?.order = 0
         
         let categoryLingkungan = PersistenceController.shared.create(Category.self)
         categoryLingkungan?.name = "Lingkungan"
         categoryLingkungan?.illustration = "home_cat_lingkungan"
+        categoryLingkungan?.order = 1
         
         let categorySekolah = PersistenceController.shared.create(Category.self)
         categorySekolah?.name = "Sekolah"
         categorySekolah?.illustration = "home_cat_sekolah"
+        categorySekolah?.order = 2
         
         let categoryRumahSakit = PersistenceController.shared.create(Category.self)
         categoryRumahSakit?.name = "Rumah Sakit"
         categoryRumahSakit?.illustration = "home_cat_rumahsakit"
+        categoryRumahSakit?.order = 3
         
         let categoryPantai = PersistenceController.shared.create(Category.self)
         categoryPantai?.name = "Pantai"
         categoryPantai?.illustration = "home_cat_pantai"
+        categoryPantai?.order = 4
         
         // MARK: Create word
         let wordBahaya = PersistenceController.shared.create(Word.self)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var appState: AppState
-    @FetchRequest(entity: Category.entity(), sortDescriptors: [])
+    @FetchRequest(entity: Category.entity(), sortDescriptors: [NSSortDescriptor(key: "order", ascending: true)])
     private var categories: FetchedResults<Category>
     @State private var indexCategory = 0
     @State var viewState: ViewState = .normal
