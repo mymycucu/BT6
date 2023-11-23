@@ -73,7 +73,6 @@
 		057EDE142AFE33FC00A85B51 /* TripleChoiceAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE132AFE33FC00A85B51 /* TripleChoiceAnswers.swift */; };
 		057EDE182AFE37A200A85B51 /* TripleCardChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057EDE172AFE37A200A85B51 /* TripleCardChoice.swift */; };
 		05803EB72B007F4200F7555A /* StoryCoverContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05803EB62B007F4200F7555A /* StoryCoverContent.swift */; };
-		058742642B0E1CBD00AFEE67 /* Giffy in Frameworks */ = {isa = PBXBuildFile; productRef = 058742632B0E1CBD00AFEE67 /* Giffy */; };
 		058742662B0E1F3A00AFEE67 /* correct_benar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 058742652B0E1F3A00AFEE67 /* correct_benar.gif */; };
 		0587426A2B0E2F2300AFEE67 /* correct_hebat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 058742692B0E2F2300AFEE67 /* correct_hebat.gif */; };
 		0587426E2B0F006100AFEE67 /* hore-video.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0587426D2B0F006100AFEE67 /* hore-video.gif */; };
@@ -109,6 +108,7 @@
 		AD75513C2AFFFA16006842B5 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = AD75513B2AFFFA16006842B5 /* Lottie */; };
 		AD75513E2AFFFBDF006842B5 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD75513D2AFFFBDF006842B5 /* PersistenceController.swift */; };
 		AD7551402AFFFC48006842B5 /* BTProjectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD75513F2AFFFC48006842B5 /* BTProjectsApp.swift */; };
+		ADA364B42B0FC6B7008F994A /* Giffy in Frameworks */ = {isa = PBXBuildFile; productRef = ADA364B32B0FC6B7008F994A /* Giffy */; };
 		ADBE94192AEB5383008A1390 /* BTModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADBE94172AEB5383008A1390 /* BTModel.xcdatamodeld */; };
 		ADBE941B2AF3744F008A1390 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE941A2AF3744F008A1390 /* Constant.swift */; };
 		ADBE941D2AFB42DF008A1390 /* DataFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE941C2AFB42DF008A1390 /* DataFeedManager.swift */; };
@@ -298,7 +298,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				058742642B0E1CBD00AFEE67 /* Giffy in Frameworks */,
+				ADA364B42B0FC6B7008F994A /* Giffy in Frameworks */,
 				AD75513C2AFFFA16006842B5 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -843,7 +843,7 @@
 			name = BTProjects;
 			packageProductDependencies = (
 				AD75513B2AFFFA16006842B5 /* Lottie */,
-				058742632B0E1CBD00AFEE67 /* Giffy */,
+				ADA364B32B0FC6B7008F994A /* Giffy */,
 			);
 			productName = BTProjects;
 			productReference = ADE3CFA12AE3ADA000CED0DD /* BTProjects.app */;
@@ -875,7 +875,7 @@
 			mainGroup = ADE3CF982AE3ADA000CED0DD;
 			packageReferences = (
 				AD75513A2AFFFA16006842B5 /* XCRemoteSwiftPackageReference "lottie-spm" */,
-				058742622B0E1CBD00AFEE67 /* XCRemoteSwiftPackageReference "Giffy" */,
+				ADA364B22B0FC6B7008F994A /* XCRemoteSwiftPackageReference "Giffy" */,
 			);
 			productRefGroup = ADE3CFA22AE3ADA000CED0DD /* Products */;
 			projectDirPath = "";
@@ -1179,6 +1179,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1216,6 +1217,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1258,14 +1260,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		058742622B0E1CBD00AFEE67 /* XCRemoteSwiftPackageReference "Giffy" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tfmart/Giffy?ref=iosexample.com";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		AD75513A2AFFFA16006842B5 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -1274,18 +1268,26 @@
 				minimumVersion = 4.3.3;
 			};
 		};
+		ADA364B22B0FC6B7008F994A /* XCRemoteSwiftPackageReference "Giffy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tfmart/Giffy.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		058742632B0E1CBD00AFEE67 /* Giffy */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 058742622B0E1CBD00AFEE67 /* XCRemoteSwiftPackageReference "Giffy" */;
-			productName = Giffy;
-		};
 		AD75513B2AFFFA16006842B5 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AD75513A2AFFFA16006842B5 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		ADA364B32B0FC6B7008F994A /* Giffy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADA364B22B0FC6B7008F994A /* XCRemoteSwiftPackageReference "Giffy" */;
+			productName = Giffy;
 		};
 /* End XCSwiftPackageProductDependency section */
 
