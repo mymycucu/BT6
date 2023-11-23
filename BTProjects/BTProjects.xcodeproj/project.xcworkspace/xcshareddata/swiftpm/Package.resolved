@@ -10,9 +10,9 @@
       }
     },
     {
-      "identity" : "giffy?ref=iosexample.com",
+      "identity" : "giffy",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/tfmart/Giffy?ref=iosexample.com",
+      "location" : "https://github.com/tfmart/Giffy.git",
       "state" : {
         "branch" : "main",
         "revision" : "7300767fc9509ce7f86d9c6a2750ceb18f93a464"
