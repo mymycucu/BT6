@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Giffy
 
 struct ConnectImagesQuestion: View {
     @Binding var isQuestion:Bool
@@ -21,8 +22,10 @@ struct ConnectImagesQuestion: View {
             
             VStack(alignment: .center, spacing: 32) {
                
-                LottieView(name: "correct", loopMode: .loop)
-                    .frame(width: 365, height: 240)
+//                LottieView(name: "correct", loopMode: .loop)
+//                    .frame(width: 365, height: 240)
+                Giffy("sl_q3")
+                    .frame(width: 400, height: 300)
                 
                 
                 Text("Hubungkan Gambar yang sesuai")
