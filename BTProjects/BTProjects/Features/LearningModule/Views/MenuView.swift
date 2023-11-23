@@ -62,7 +62,7 @@ struct MenuView: View {
                                         bookScene = idx+book.story.count+2
                                         isMenu.toggle()
                                     }, label: {
-                                        ThumbnailPage(isSelect: bookScene == idx+book.story.count+2, order: idx+1, imageTitle: book.lstQuestions[idx].illustration ?? "mencari-kumbang", isRead: (idx != 0 && idx != 1) ? book.lstQuestions[idx-1].isDone ? true : false : book.isRead)
+                                        ThumbnailPage(isSelect: bookScene == idx+book.story.count+2, order: idx+1, imageTitle: book.lstQuestions[idx].thumbnail ?? "mencari-kumbang", isRead: (idx != 0 && idx != 1) ? book.lstQuestions[idx-1].isDone ? true : false : book.isRead)
                                     })
                                     .disabled((idx != 0 && idx != 1) ? book.lstQuestions[idx-1].isDone ? false : true : !book.isRead)
                                 }

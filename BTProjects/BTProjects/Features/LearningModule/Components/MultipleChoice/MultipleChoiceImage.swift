@@ -14,6 +14,8 @@ struct MultipleChoiceImage: View {
     var body: some View {
         ZStack {
             Image(illustration)
+                .resizable()
+                .scaledToFill()
                 .frame(width: 455, height: 298)
                 .cornerRadius(16)
                 .padding(8)
