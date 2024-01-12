@@ -15,7 +15,6 @@ struct HomeView: View {
     @State var viewState: ViewState = .normal
     
     var body: some View {
-        
         VStack{
             HomeHeader()
             CategorySelection(index: $indexCategory, categories: Array(categories))
@@ -67,8 +66,8 @@ struct HomeView: View {
             }
             
         }
-        .padding(.horizontal,38)
-        .padding(.vertical, 15)
+        .padding(.horizontal,40)
+        .padding(.vertical)
         .background(
             Background(viewState: viewState)
         )

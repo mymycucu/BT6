@@ -13,16 +13,11 @@ struct StoryBookPerCategory: View {
     var disabledComingSoon: Bool = true
     
     private let columns: [GridItem] = [
-        GridItem(.fixed(254), spacing: 24, alignment: .center),
-        GridItem(.fixed(254), spacing: 24, alignment: .center)
+        GridItem(.flexible(minimum: 205, maximum: 330), spacing: 24, alignment: .center),
+        GridItem(.flexible(minimum: 205, maximum: 330), spacing: 24, alignment: .center)
     ]
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color.Gray6)
-                .opacity(0.4)
-                .frame(width: 896, height: 568)
-            
             LazyHGrid(
                 rows: columns, spacing: 24
             ){
@@ -61,7 +56,13 @@ struct StoryBookPerCategory: View {
 
             }
         }
-        .frame(width: 896, height: 568)
+        .padding(15)
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color.Gray6)
+                .opacity(0.4)
+
+        )
         
     }
 }

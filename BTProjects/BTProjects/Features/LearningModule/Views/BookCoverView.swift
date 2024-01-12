@@ -11,40 +11,39 @@ struct BookCoverView: View {
     @Binding var bookScene: Int
     var book: Book
     @State var viewState: ViewState = .normal
-//    init(bookScene: Int, book: Book, viewState: ViewState) {
-//        self.bookScene = bookScene
-//        self.book = book
-//        self.viewState = viewState
-//        self.isQuisFinished = book.lstQuestions.last!.isDone
-//    }
+    //    init(bookScene: Int, book: Book, viewState: ViewState) {
+    //        self.bookScene = bookScene
+    //        self.book = book
+    //        self.viewState = viewState
+    //        self.isQuisFinished = book.lstQuestions.last!.isDone
+    //    }
     
     var body: some View {
-        ZStack {
+        HStack {
+            StoryCoverContent(
+                bookScene: $bookScene,
+                questionSceneIndex: book.story.endIndex+2,
+                storyPages: book.storyPages?.count ?? 0,
+                storyTitle: book.name ?? "book",
+                canStartQuiz: book.isRead, isQuizFinished: book.lstQuestions.last!.isDone)
+            .padding(40)
             
-            Background(viewState: viewState)
+            Spacer()
             
-            HStack {
-                StoryCoverContent(
-                    bookScene: $bookScene,
-                    questionSceneIndex: book.story.endIndex+2,
-                    storyPages: book.storyPages?.count ?? 0,
-                    storyTitle: book.name ?? "book",
-                    canStartQuiz: book.isRead, isQuizFinished: book.lstQuestions.last!.isDone)
-                    .padding(38)
+            // MARK: Story Button
+            Button(action: {
+                bookScene = 1
+            }) {
+                StoryCoverBook(storyThumbnail: book.cover ?? "story_cover", storyTitle: book.name ?? "book")
                 
-                    Spacer()
-                    
-                    // MARK: Story Button
-                    Button(action: {
-                        bookScene = 1
-                    }) {
-                        StoryCoverBook(storyThumbnail: book.cover ?? "story_cover", storyTitle: book.name ?? "book")
-                        
-                    }
-                    .padding(.horizontal, 40)
-                }
-            
+            }
+            .padding(40)
         }
+        .background(
+            Background(viewState: viewState)
+        )
+        
+        
     }
 }
 //

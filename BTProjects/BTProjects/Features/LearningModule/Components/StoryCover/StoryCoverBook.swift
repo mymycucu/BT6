@@ -16,7 +16,6 @@ struct StoryCoverBook: View {
             //MARK: Orange Back Cover
             RoundedRectangle(cornerRadius: 0)
                 .fill(Color.Orange4)
-                .frame(width: 610, height: 714)
             /// to define different corner radius
                 .clipShape(
                     RoundedCorner(topLeft: 20, topRight: 40, bottomLeft: 20, bottomRight: 40)
@@ -26,21 +25,21 @@ struct StoryCoverBook: View {
             //MARK: Book's Pages
             RoundedRectangle(cornerRadius: 0)
                 .fill(Color.Gray5)
-                .frame(width: 600, height: 714)
             /// to define different corner radius
                 .clipShape(
                     RoundedCorner(topLeft: 20, topRight: 40, bottomLeft: 20, bottomRight: 40)
                 )
                 .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
+                .padding(.trailing,10)
             
             RoundedRectangle(cornerRadius: 0)
                 .fill(Color.Gray6)
-                .frame(width: 590, height: 714)
             /// to define different corner radius
                 .clipShape(
                     RoundedCorner(topLeft: 20, topRight: 40, bottomLeft: 20, bottomRight: 40)
                 )
                 .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
+                .padding(.trailing,20)
             
             //MARK: Story Front Cover
             ZStack {
@@ -52,34 +51,32 @@ struct StoryCoverBook: View {
                     Spacer()
                     
                     Image("Play")
-                        .frame(width: 171, height: 171)
+                        .aspectRatio(1/1, contentMode: .fit)
+                        .frame(minWidth: 153, maxWidth:205 , minHeight: 153, maxHeight: 205)
                         .padding(.bottom, 50)
                     
                     
                     
-                    LinearGradient(
-                        gradient: Gradient(
-                            stops: [
-                                .init(color: .PB500, location: 0.15), // Starting around $0% from the bottom
-                                .init(color: .clear, location: 0.6) // Strating 0.6 - completely clear
-                            ]
-                        ),
-                        startPoint: .bottom,
-                        endPoint: .top
-                    )
-                    .frame(height:200)
+                    Spacer()
                     
                 }
-                .frame(width: 583, height: 714)
+                LinearGradient(
+                    gradient: Gradient(colors: [.PB500.opacity(0.5), .PB500.opacity(0.3)]),
+                    startPoint: .bottom,
+                    endPoint: .top
+                )
+
             }
-            .frame(width: 583, height: 714)
             .clipShape(
                 RoundedCorner(topLeft: 20, topRight: 40, bottomLeft: 20, bottomRight: 40)
             )
             .shadow(color: .black.opacity(0.25), radius: 1.5, x: 2, y: 0)
+            .padding(.trailing,30)
             
             
         }
+        .aspectRatio(6.03/7.24, contentMode: .fit)
+        .frame(minWidth: 542, maxWidth:723 , minHeight: 652, maxHeight: 868)
         
     }
 }
