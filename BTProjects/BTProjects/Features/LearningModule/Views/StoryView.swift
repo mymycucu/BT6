@@ -18,31 +18,36 @@ struct StoryView: View {
     
     var body: some View {
         ZStack {
-            Background(viewState: viewState, illustration: storyPage.illustration ?? "illust_dummy")
-            
-            VStack(spacing:0){
-                
+            VStack(spacing:20){
                 Header(isMenu: $isMenu, isExitState: $isExitState, headerState: viewState)
-                    .padding(.bottom, 80)
-                
-                StoryVideo(storyPage: storyPage, videoURL: storyPage.signLanguage ?? "", isDisabled: $isDisabled)
-                    .offset(x: 330, y: 0)
-                
                 Spacer()
-            }
-            .padding(38)
-            VStack(spacing:0){
-                
+                VStack(alignment: .trailing, spacing:0){
+                    HStack{
+                        Spacer()
+                        StoryVideo(storyPage: storyPage, videoURL: storyPage.signLanguage ?? "", isDisabled: $isDisabled)
+                            .frame(minWidth: 300, maxWidth: 366, minHeight: 300, maxHeight: 486)
+                            .aspectRatio(3/4, contentMode: .fit)
+                    }
+                    .padding(.horizontal,70)
+                    
+                }
                 Spacer()
                 Footer(footerState: viewState, bookScene: $bookScene, isDisabled: $isDisabled, words: storyPage.name ?? "", highlightWord: storyPage.desc ?? "", maxBookScene: maxBookScene)
+                    .padding(.top, 40)
+                
             }
-            .padding(38)
+            .padding(40)
+            
             
             if isExitState{
                 ExitState(isExitState: $isExitState)
             }
             
-        }.onAppear {
+        }
+        .background(
+            Background(viewState: viewState, illustration: storyPage.illustration ?? "illust_dummy")
+        )
+        .onAppear {
             isDisabled = !storyPage.isRead
         }
     }

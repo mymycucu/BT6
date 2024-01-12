@@ -26,13 +26,13 @@ struct StoryVideo: View {
             RoundedRectangle(cornerRadius: 22)
             //                .foregroundColor(.clear)
                 .fill(Color.PB500)
-                .frame(width: 310, height: 400)
+//                .frame(width: 310, height: 400)
                 .offset(x:4, y:4)
                 .shadow(color: Color.white.opacity(0.3), radius: 2, x: 4, y: 4)
             
             if var player = player {
                 VideoPlayerController(player: player)
-                    .frame(width: 310, height: 400)
+//                    .frame(width: 310, height: 400)
                     .cornerRadius(22)
                     .overlay(
                         RoundedRectangle(cornerRadius: 22)
@@ -56,7 +56,7 @@ struct StoryVideo: View {
                 .buttonStyle(ReplayButtonStyle())
             }
         }
-        .frame(width: 310, height: 400)
+//        .frame(width: 310, height: 400)
         .onAppear {
             
             //MARK: Video Path
@@ -92,4 +92,3 @@ struct StoryVideo: View {
 //#Preview {
 //    StoryVideo(storyPage: <#StoryPage#>, videoURL: "E_Bisindo")
 //}
-

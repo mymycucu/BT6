@@ -22,10 +22,7 @@ struct WordSummaryView: View {
 
     var body: some View {
         ZStack{
-            //MARK: Background
-            Background(viewState: viewState, illustration: book.word?.illustration ?? Constant.defaultIllustration)
-            
-            VStack(spacing: 0){
+            VStack(spacing:10){
                 Header(isMenu: $isMenu, isExitState: $isExitState, headerState: viewState)
                 
                 Spacer()
@@ -34,34 +31,30 @@ struct WordSummaryView: View {
                     .foregroundStyle(.white)
                     .font(.Heading1_Semibold)
                     .underline()
-                    .padding(.bottom, 50)
+                    
                 
                 SummaryVideo(
                     isDisabled: $isDisabled,
                     book: book, videoURL: videoURL)
+                .aspectRatio(6.2/4.3, contentMode: .fit)
+                .frame(minWidth: 558, maxWidth: 744, minHeight: 337, maxHeight: 516)
+                .padding(.top, 30)
                     
                 
                 Spacer()
-                    .frame(maxHeight: .infinity)
-                
-            }
-            .padding(.horizontal,38)
-            .padding(.vertical,36)
-            
-            
-            
-            VStack(spacing: 0){
-                Spacer()
-                
                 Footer(footerState: viewState, isDisabled: $isDisabled, bookScene: $bookScene, maxBookScene: maxBookScene)
             }
-            .padding(38)
-//                .padding(.vertical,35)
+            .padding(.horizontal,40)
+            .padding(.top)
             
             if isExitState{
                 ExitState(isExitState: $isExitState)
             }
         }
+        .background(
+            //MARK: Background
+            Background(viewState: viewState, illustration: book.word?.illustration ?? Constant.defaultIllustration)
+        )
         .onAppear {
             isDisabled = !book.isRead
         }

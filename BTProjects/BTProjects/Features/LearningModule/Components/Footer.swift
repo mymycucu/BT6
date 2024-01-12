@@ -105,6 +105,7 @@ struct Footer: View {
                         .padding(.horizontal, 22)
                         .padding(.vertical, 18)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(height: 105)
                         .background(
                             GeometryReader{ geo in
                                 RoundedRectangle(cornerRadius: 12)

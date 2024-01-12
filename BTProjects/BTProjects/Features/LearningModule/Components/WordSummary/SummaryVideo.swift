@@ -24,13 +24,11 @@ struct SummaryVideo: View {
             //MARK: Video Container
             if let player = player {
                 VideoPlayerController(player: player)
-                    .frame(width: 646, height: 436)
                     .cornerRadius(32)
                     .overlay(
                         RoundedRectangle(cornerRadius: 32)
                             .inset(by: 1)
                             .stroke(Color.PB500, lineWidth: 6)
-                        
                     )
             }
             
@@ -52,11 +50,8 @@ struct SummaryVideo: View {
                     .buttonStyle(ReplayButtonStyle())
                 }
             }
-            .frame(width: 646, height: 436)
         }
-        .frame(width: 646, height: 436)
         .onAppear {
-            
             //MARK: Video Path
             
             let url = URL(fileURLWithPath: Bundle.main.path(forResource: videoURL, ofType: "mp4")!)
